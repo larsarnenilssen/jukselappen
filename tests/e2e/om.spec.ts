@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { SYNLIG_SIDE } from './hjelp.ts';
 import { expect, test } from '@playwright/test';
 
 const versjon = (JSON.parse(readFileSync(new URL('../../package.json', import.meta.url), 'utf8')) as { version: string }).version;
@@ -38,7 +39,7 @@ test('forsiden sier at appen er utviklet privat og kan ha feil, og lenker til «
 
 test('tilbakemeldingen åpner e-post med versjonen og siden brukeren kom fra, og adressen kan kopieres (eier 05.10.2026)', async ({ page }) => {
   await page.goto('./#/fylker/46');
-  await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+  await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
   await page.goto('./#/om');
   const boks = page.getByTestId('tilbakemelding');
   const lenke = boks.getByRole('link', { name: 'Skriv e-post' });

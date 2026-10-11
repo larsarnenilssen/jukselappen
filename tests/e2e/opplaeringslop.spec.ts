@@ -1,22 +1,22 @@
 // Opplæringsløp (pakke 5, avgjørelse 035): program → tilbud → fag og timer, med lenker begge veier og til Vilbli.
 import { expect, test } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('opplæringsløp', () => {
   test('fra forsiden til programmet, tilbudet og fagarket', async ({ page }) => {
     await page.goto('./');
     // Modulen heter Opplæringstilbud, og Opplæringsløp er en underside (eier 03.10.2026).
     await page.getByRole('link', { name: /Opplæringstilbud/ }).first().click();
-    await expect(page.locator('main h1')).toHaveText('Opplæringstilbud');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringstilbud');
     await page.getByRole('link', { name: /^Opplæringsløp/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Opplæringsløp');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringsløp');
     await expect(page).toHaveURL(/#\/opplaeringslop\/lop$/);
     // Gruppene er lukket fra start (eier 02.10.2026).
     const yrkesfag = page.getByRole('button', { name: /^Yrkesfaglige utdanningsprogram/ });
     await expect(yrkesfag).toHaveAttribute('aria-expanded', 'false');
     await yrkesfag.click();
     await page.getByRole('link', { name: /Helse- og oppvekstfag/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Helse- og oppvekstfag');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helse- og oppvekstfag');
     // Løpet går fra vg1 videre til vg2 og lærefag. Grenene er lukket til brukeren åpner dem (eier 02.10.2026).
     // Knappen til neste trinn er bunnen av kortet: «Vis 7 tilbud på vg2».
     await expect(page.locator('.lop > li > .lop-kort > .tilbudslenke').first()).toContainText('Vg1 Helse- og oppvekstfag');
@@ -27,7 +27,7 @@ test.describe('opplæringsløp', () => {
     await vg2.click();
     await expect(vg2).toHaveText(/^Skjul tilbudene på vg2/);
     await page.locator('.lop-videre .tilbudslenke', { hasText: 'Vg2 Helsearbeiderfag' }).click();
-    await expect(page.locator('main h1')).toHaveText('Helsearbeiderfag');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helsearbeiderfag');
     await expect(page).toHaveURL(/#\/opplaeringslop\/HS\/HSHEA2$/);
     // Timene totalt, og felles programfag i egen rubrikk med timene for hvert fag og eksamen nederst.
     await expect(page.locator('.tilbud-totalt')).toContainText('982');
@@ -43,21 +43,21 @@ test.describe('opplæringsløp', () => {
     await programfag.getByRole('button').click();
     // Lenken til fagarket ligger i fagnavnet, og fagarket lenker tilbake til tilbudet.
     await programfag.getByRole('link', { name: 'Helsefremmende arbeid' }).click();
-    await expect(page.locator('main h1')).toHaveText('Helsefremmende arbeid');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helsefremmende arbeid');
     // Fagarket viser hvordan faget inngår i hvert tilbud, med timene (eier 02.10.2026).
     await page.getByRole('button', { name: /^Inngår i tilbud/ }).click();
     await expect(page.locator('.inngar-liste li', { hasText: 'HSHEA2' })).toContainText('Felles programfag · 197 timer');
     await page.locator('.inngar-liste').getByRole('link', { name: /Helsearbeiderfag.*HSHEA2/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Helsearbeiderfag');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helsearbeiderfag');
     // Stien tilbake til programmet og oversikten.
     await page.getByRole('navigation', { name: 'Plassering' }).getByRole('link', { name: 'Helse- og oppvekstfag' }).click();
-    await expect(page.locator('main h1')).toHaveText('Helse- og oppvekstfag');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helse- og oppvekstfag');
   });
 
   test('fagene i et tilbud kan regnes ut i Arbeidsplan', async ({ page }) => {
     await page.goto('./#/opplaeringslop/HS/HSHEA2');
     await page.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.locator('.fagkort', { hasText: 'Helsefremmende arbeid' }).getByLabel('Antall årstimer')).toHaveValue('197');
     await expect(page.locator('.fagkort', { hasText: 'Kroppsøving' })).toHaveCount(1);
   });
@@ -68,7 +68,7 @@ test.describe('opplæringsløp', () => {
     await expect(fellesfag).toContainText(/velg én:\s*2P · R1 · S1/);
     await expect(fellesfag).toContainText('R1 og S1 er programfag på 140 timer');
     await page.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.locator('.fagkort', { hasText: 'Matematikk 2P' })).toHaveCount(1);
     await expect(page.locator('.fagkort', { hasText: /Matematikk (R1|S1)/ })).toHaveCount(0);
     // Fremmedspråk: det første språket i listen følger med, ikke alle.
@@ -84,7 +84,7 @@ test.describe('opplæringsløp', () => {
     await expect(page.locator('[data-rubrikk$="-fellesfag"]')).toContainText('Eleven kan i stedet velge det studieforberedende tilbudet, 1P eller 1T. Det har 140 timer i stedet for 84');
     await page.goto('./#/opplaeringslop/TP/TPMAR2');
     await page.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.locator('.fagkort', { hasText: /Dekk|Maskin/ })).toHaveCount(1);
   });
 
@@ -94,7 +94,7 @@ test.describe('opplæringsløp', () => {
     await expect(page.getByRole('link', { name: /Skoler og lærebedrifter i Vestland/ })).toHaveAttribute('href', 'https://www.vilbli.no/nb/nb/vestland/helse-og-oppvekstfag/program/v.hs/v.hshea2----/p5');
     await page.locator('[data-rubrikk$="-pabygging"]').getByRole('link').click();
     await expect(page).toHaveURL(/PBPBY3\?via=HSHEA2/);
-    await expect(page.locator('main h1')).toHaveText(/påbygging/i);
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText(/påbygging/i);
     // Tilpassede ordninger: fagene som ikke er med, som kommer til og som har andre timer (eier 02.10.2026).
     await page.getByRole('button', { name: /^Tilpassede ordninger/ }).click();
     const samisk = page.locator('.tilpasning', { hasText: 'Elever med samisk' });
@@ -138,7 +138,7 @@ test.describe('opplæringsløp', () => {
     await page.getByRole('searchbox', { name: /Søk/ }).fill('helsearb');
     await expect(page.locator('main').getByRole('status')).toContainText(/\d+ tilbud/);
     await page.getByRole('link', { name: /Vg2 Helsearbeiderfag/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Helsearbeiderfag');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Helsearbeiderfag');
   });
 
   test('avvik mellom rundskrivet og Grep står som merknad (eier 02.10.2026)', async ({ page }) => {
@@ -177,7 +177,7 @@ test.describe('opplæringsløp', () => {
 
   test('ukjent tilbud gir en melding', async ({ page }) => {
     await page.goto('./#/opplaeringslop/HS/FINNES');
-    await expect(page.locator('main h1')).toHaveText('Fant ikke tilbudet.');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fant ikke tilbudet.');
   });
 
   test('Vg2 på yrkesfag etter Vg1 studiespesialisering står i en boks med søk, ikke som liste (eier 03.10.2026)', async ({ page }) => {
@@ -218,12 +218,12 @@ test.describe('opplæringsløp', () => {
     await settLagret(page, { fylke: '46', skole: { id: '974557479', navn: 'Åsane vidaregåande skule' } });
     await page.goto('./#/opplaeringslop');
     // Landingssiden har to likestilte deler: utdanningsprogram og løp, og skoler og opplæringskontorer (eier 03.10.2026).
-    await expect(page.locator('main h1')).toHaveText('Opplæringstilbud');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringstilbud');
     await expect(page.getByRole('heading', { name: 'Utdanningsprogram og løp' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Skoler og opplæringskontorer' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Skoler og tilbud.*skoler i Vestland/ })).toBeVisible();
     await page.getByRole('link', { name: /^Opplæringsløp.*utdanningsprogram ved Åsane vidaregåande skule/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Opplæringsløp');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringsløp');
     await expect(page.getByRole('navigation', { name: 'Plassering' }).getByRole('link', { name: 'Opplæringstilbud' })).toBeVisible();
     await expect(page.getByRole('radio', { name: 'Min skole' })).toBeChecked();
     await expect(page.getByText('Viser tilbudene ved Åsane vidaregåande skule.')).toBeVisible();
@@ -256,7 +256,7 @@ test.describe('opplæringsløp', () => {
     const skoler = page.locator('[data-rubrikk="lop-HSHEA2-skoler"]');
     await expect(skoler).toContainText('Åsane vidaregåande skule har tilbudet.');
     await skoler.getByRole('link', { name: /skoler i Vestland/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Skoler og tilbud');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoler og tilbud');
     await expect(page.getByText('Har Vg2 Helsearbeiderfag')).toBeVisible();
     await expect(page.locator('.skoleliste > li').first()).toContainText('Åsane vidaregåande skule');
     const antall = await page.locator('.skoleliste > li').count();
@@ -299,7 +299,7 @@ test.describe('opplæringsløp', () => {
     await expect(yrker.getByRole('link', { name: /Helsefagarbeider/ })).toHaveAttribute('href', 'https://utdanning.no/yrker/beskrivelse/helsefagarbeider');
     await page.getByRole('button', { name: /^Opplæringskontorer/ }).click();
     await page.getByRole('link', { name: /opplæringskontorer godkjent i Vestland/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Opplæringskontorer');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringskontorer');
     await expect(page.getByLabel('Fylke')).toHaveValue('46');
     await expect(page.locator('.kontor-status')).toContainText('i Vestland');
     await page.getByLabel('Søk etter kontor eller kommune').fill('bilbransjens');
@@ -324,7 +324,7 @@ test.describe('opplæringsløp', () => {
     await page.getByRole('searchbox').fill('åsane');
     await expect(page.getByRole('heading', { name: 'Skoler (1)' })).toBeVisible();
     await page.getByRole('link', { name: /Åsane vidaregåande skule/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Skoler og tilbud');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoler og tilbud');
     await expect(page.locator('.skoleliste > li')).toHaveCount(1);
     await page.goto('./#/opplaeringslop/skoler?fylke=alle');
     await page.getByLabel('Finn skolene som har et tilbud').fill('helsearbeider');
@@ -337,6 +337,6 @@ test.describe('opplæringsløp', () => {
     await page.goto('./');
     await page.getByRole('searchbox').first().fill('åsane vidaregåande');
     await page.getByRole('link', { name: /Åsane vidaregåande skule/ }).first().click();
-    await expect(page.locator('main h1')).toHaveText('Skoler og tilbud');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoler og tilbud');
   });
 });

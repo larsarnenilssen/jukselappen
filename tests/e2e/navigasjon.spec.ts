@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { ruter, settLagret, venterPaaSide } from './hjelp.ts';
+import { ruter, settLagret, SYNLIG_SIDE, venterPaaSide } from './hjelp.ts';
 
 test.describe('navigasjon', () => {
   test('forsiden har søk, favoritter og moduler', async ({ page }) => {
@@ -95,6 +95,48 @@ test.describe('navigasjon', () => {
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(250);
   });
 
+  test('sidene står klare i bakgrunnen: tilbake og fram viser samme side der brukeren var (avgjørelse 111)', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 600 });
+    await page.goto('./');
+    await venterPaaSide(page);
+    // Merk forsiden, så vi ser at tilbake viser den samme siden og ikke tegner den på nytt.
+    await page.evaluate(() => {
+      (document.querySelector('main > .sideramme') as HTMLElement & { merket?: boolean }).merket = true;
+      window.scrollTo(0, 500);
+    });
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(500);
+    await page.evaluate(() => (window.location.hash = '#/inntak'));
+    await expect(page.getByRole('heading', { level: 1, name: 'Inntak' })).toBeVisible();
+    await page.evaluate(() => (window.location.hash = '#/om'));
+    await expect(page.getByRole('heading', { level: 1, name: 'Om appen' })).toBeVisible();
+    // Bare siden som vises, er synlig. De andre står skjult etter den.
+    await expect(page.locator('main > .sideramme')).toHaveCount(3);
+    await expect(page.locator('main > .sideramme:not([hidden])')).toHaveCount(1);
+    await expect(page.locator('main > .sideramme').first()).not.toHaveAttribute('hidden');
+
+    await page.goBack();
+    await page.goBack();
+    await expect(page.getByRole('searchbox')).toBeVisible();
+    expect(await page.evaluate(() => (document.querySelector('main > .sideramme:not([hidden])') as HTMLElement & { merket?: boolean }).merket)).toBe(true);
+    expect(await page.evaluate(() => window.scrollY)).toBe(500);
+    // Fram igjen viser Inntak, som også sto i bakgrunnen.
+    await page.goForward();
+    await expect(page.getByRole('heading', { level: 1, name: 'Inntak' })).toBeVisible();
+    await expect(page.locator('main > .sideramme')).toHaveCount(3);
+  });
+
+  test('høyst fem sider står i bakgrunnen (avgjørelse 111)', async ({ page }) => {
+    await page.goto('./');
+    await venterPaaSide(page);
+    for (const sti of ['/inntak', '/vurdering', '/eksamen', '/skolemiljo', '/tilrettelegging', '/om', '/innstillinger']) {
+      await page.evaluate((s) => (window.location.hash = `#${s}`), sti);
+      await venterPaaSide(page);
+    }
+    await expect(page.locator('main > .sideramme')).toHaveCount(6);
+    await expect(page.locator('main > .sideramme:not([hidden])')).toHaveCount(1);
+    await expect(page.getByRole('heading', { level: 1, name: 'Innstillinger' })).toBeVisible();
+  });
+
   test('pinch-zoom er ikke slått av', async ({ page }) => {
     await page.goto('./');
     const viewport = await page.locator('meta[name="viewport"]').getAttribute('content');
@@ -163,7 +205,7 @@ test.describe('alle sider under en modul har sti øverst', () => {
     test(rute, async ({ page }) => {
       await page.goto(`./${rute}`);
       await venterPaaSide(page);
-      await expect(page.locator('main nav.brodsmuler').first()).toBeVisible();
+      await expect(page.locator(`${SYNLIG_SIDE} nav.brodsmuler`).first()).toBeVisible();
     });
   }
 });
@@ -171,12 +213,12 @@ test.describe('alle sider under en modul har sti øverst', () => {
 test.describe('innstillingsknappen i toppfeltet (eier 09.10.2026)', () => {
   test('i Innstillinger er den gul og fører tilbake til siden brukeren kom fra', async ({ page }) => {
     await page.goto('./#/fylker/46');
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     const meny = page.getByRole('navigation', { name: 'Hovedmeny' });
     await meny.getByRole('link', { name: 'Innstillinger' }).click();
     await expect(page.getByRole('heading', { level: 1, name: 'Innstillinger' })).toBeVisible();
     await meny.getByRole('button', { name: 'Innstillinger' }).click();
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     await expect(meny.getByRole('link', { name: 'Innstillinger' })).toBeVisible();
   });
 
@@ -191,7 +233,7 @@ test.describe('innstillingsknappen i toppfeltet (eier 09.10.2026)', () => {
 test.describe('søket fra toppfeltet (eier 05.10.2026)', () => {
   test('åpnes over siden, og Esc viser siden der brukeren var, uten egen knapp for å lukke (eier 09.10.2026)', async ({ page }) => {
     await page.goto('./#/fylker/46');
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     // Rull først når siden er lastet, så posisjonen ikke flyttes av innhold som kommer etterpå.
     await venterPaaSide(page);
     await page.evaluate(() => window.scrollTo(0, 400));
@@ -203,7 +245,7 @@ test.describe('søket fra toppfeltet (eier 05.10.2026)', () => {
     // Esc lyttes etter når søket er åpnet, ikke i samme øyeblikk som trykket.
     await page.keyboard.press('Escape');
     await expect(page.getByRole('searchbox')).toHaveCount(0);
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(y);
   });
 
@@ -214,7 +256,7 @@ test.describe('søket fra toppfeltet (eier 05.10.2026)', () => {
     const y = await page.evaluate(() => window.scrollY);
     await page.locator('.topplinje').getByRole('button', { name: 'Søk' }).dispatchEvent('click');
     await expect(page.getByRole('searchbox')).toBeFocused();
-    await expect(page.locator('main h1')).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeVisible();
     // Siden bak kan ikke nås med tastatur mens søket er åpent.
     await expect(page.locator('main')).toHaveAttribute('inert', '');
     const vindu = page.viewportSize();
@@ -234,7 +276,7 @@ test.describe('søket fra toppfeltet (eier 05.10.2026)', () => {
     await expect(page.getByRole('searchbox')).toHaveValue('årsramme');
     await page.goBack();
     await expect(page.getByRole('searchbox')).toHaveCount(0);
-    await expect(page.locator('main h1')).toHaveText('Om appen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Om appen');
   });
 
   test('med valgt fylke viser søket bare skolene i fylket, til knappen med fylket slås av', async ({ page }) => {

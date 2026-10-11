@@ -2,7 +2,7 @@
 // det nye steget, kildene i en lukket boks, lenker til Regelverk, kartet over hele prosessen og prosessen i egen
 // kolonne på stor skjerm.
 import { expect, test } from '@playwright/test';
-import { aapneAlleSteg, aapneSteg, erMobil } from './hjelp.ts';
+import { aapneAlleSteg, aapneSteg, erMobil, SYNLIG_SIDE } from './hjelp.ts';
 
 const VEIVISER = './#/tilrettelegging/tilpasset-og-individuell';
 
@@ -197,6 +197,6 @@ test.describe('veiviser: særskilt språkopplæring og kort botid', () => {
     await page.getByRole('link', { name: /^Nei, eleven har norsk eller samisk/ }).click();
     await expect(page.locator('.veiviser-stegtittel')).toHaveText(['Ikke særskilt språkopplæring']);
     await page.locator('.veiviser-steg').getByRole('link', { name: 'tilpasset opplæring' }).click();
-    await expect(page.locator('main h1')).toHaveText('Tilpasset opplæring og individuell tilrettelegging');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Tilpasset opplæring og individuell tilrettelegging');
   });
 });

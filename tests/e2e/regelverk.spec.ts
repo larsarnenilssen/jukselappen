@@ -1,13 +1,13 @@
 // Regelverk (fase 3, avgjørelse 039): lover og forskrifter fra Lovdata, lokale forskrifter for valgt fylke og avtaler
 // med egne ord, med søk, rubrikker, bokser og en adresse per paragraf og bestemmelse.
 import { expect, test } from '@playwright/test';
-import { aapneDel, erMobil, settLagret } from './hjelp.ts';
+import { aapneDel, erMobil, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('regelverk', () => {
   test('fra forsiden til oversikten med dokumentene i grupper', async ({ page }, info) => {
     await page.goto('./');
     await page.getByRole('link', { name: /^Regelverk/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Regelverk');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Regelverk');
     const grupper = [/^Lover \d+$/, /^Forskrifter \d+$/, /^Lokale forskrifter$/, /^Avtaler \d+$/];
     if (erMobil(info)) {
       // På mobil er gruppene lukket fra start, så oversikten viser gruppene (eier 09.10.2026).
@@ -17,7 +17,7 @@ test.describe('regelverk', () => {
       await page.getByRole('button', { name: /^Lokale forskrifter$/ }).click();
       // Det brukeren åpner, huskes for siden: tilbake fra et dokument er gruppen åpen igjen.
       await page.getByRole('link', { name: /Opplæringslova/ }).click();
-      await expect(page.locator('main h1')).toHaveText(/Opplæringslova/);
+      await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText(/Opplæringslova/);
       await page.goBack();
       await expect(page.getByRole('button', { name: /^Lover \d+$/ })).toHaveAttribute('aria-expanded', 'true');
     } else {
@@ -66,13 +66,13 @@ test.describe('regelverk', () => {
     const regler = page.getByRole('link', { name: /^Skoleregler i Vestland/ });
     await expect(regler).toContainText('I kraft');
     await regler.click();
-    await expect(page.locator('main h1')).toHaveText('Skoleregler i Vestland');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoleregler i Vestland');
     await expect(page.getByText('Gjelder bare Vestland.', { exact: false })).toBeVisible();
   });
 
   test('avtalene er skrevet med egne ord, med lenke til punktet i avtalen', async ({ page }) => {
     await page.goto('./#/lov/hovedtariffavtalen/hta-ansettelse');
-    await expect(page.locator('main h1')).toHaveText('Hovedtariffavtalen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Hovedtariffavtalen');
     await expect(page.getByText('Bestemmelsene er skrevet med egne ord')).toBeVisible();
     const boks = page.locator('[data-rubrikk="lov-hta-ansettelse"]');
     await expect(boks.getByRole('button', { name: '§ 2 Ansettelse', exact: true })).toHaveAttribute('aria-expanded', 'true');

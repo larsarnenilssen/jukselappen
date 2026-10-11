@@ -18,6 +18,7 @@ import { Favorittliste, useFavorittbare } from '../Favorittliste.tsx';
 import { Gruppe, SIDEKOLONNE_FRA, useMinstBredde } from '../Forsidegruppe.tsx';
 import { Innganger } from '../Innganger.tsx';
 import { settForsidesokSynlig } from '../forsidesok.ts';
+import { useSideAktiv } from '../sideaktiv.ts';
 import { erAktivtSok, Sokeboks } from '../Sokeboks.tsx';
 import { Aktuelt, PANEL, useAktuelt, type Visning, VISNINGER, Visningsgruppe } from '../Forsidepanel.tsx';
 import { Stedmerknad } from '../Stedmerknad.tsx';
@@ -45,11 +46,14 @@ function Sidekolonne({ children }: { children: ComponentChildren }) {
   const kolonne = useRef<HTMLDivElement>(null);
   const rull = useRef<HTMLDivElement>(null);
   const [mer, settMer] = useState({ over: false, under: false });
+  // Står forsiden skjult i bakgrunnen (avgjørelse 111), måles ingenting. Kommer den fram igjen, måles kolonnen før
+  // siden tegnes.
+  const aktiv = useSideAktiv();
   // Kolonnen er aldri høyere enn den synlige delen av skjermen under toppen sin, også før den har festet seg øverst.
   // Da synes toningen nederst med en gang.
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = kolonne.current;
-    if (!el) return;
+    if (!el || !aktiv) return;
     let ramme = 0;
     const mal = () => {
       ramme = 0;
@@ -75,10 +79,10 @@ function Sidekolonne({ children }: { children: ComponentChildren }) {
       window.removeEventListener('resize', planlegg);
       observator?.disconnect();
     };
-  }, []);
+  }, [aktiv]);
   useEffect(() => {
     const el = rull.current;
-    if (!el) return;
+    if (!el || !aktiv) return;
     const sjekk = () => {
       const over = el.scrollTop > 1;
       const under = el.scrollTop + el.clientHeight < el.scrollHeight - 1;
@@ -94,7 +98,7 @@ function Sidekolonne({ children }: { children: ComponentChildren }) {
       el.removeEventListener('scroll', sjekk);
       observator?.disconnect();
     };
-  }, []);
+  }, [aktiv]);
   return (
     <div class="forside-sidekolonne" ref={kolonne}>
       <div class={`sidekolonne-ramme${mer.over ? ' mer-over' : ''}${mer.under ? ' mer-under' : ''}`}>
@@ -312,10 +316,12 @@ export default function Forside() {
   const skrivebord = useMinstBredde(SIDEKOLONNE_FRA);
 
 
-  // Toppfeltet viser en søkeknapp når søkefeltet er rullet ut av syne (avgjørelse 056).
+  // Toppfeltet viser en søkeknapp når søkefeltet er rullet ut av syne (avgjørelse 056). Bare mens forsiden vises, ikke
+  // når den står skjult i bakgrunnen (avgjørelse 111).
+  const aktiv = useSideAktiv();
   useEffect(() => {
     const felt = topp.current?.querySelector('.sokefelt');
-    if (!felt || typeof IntersectionObserver === 'undefined') return;
+    if (!felt || !aktiv || typeof IntersectionObserver === 'undefined') return;
     const hoyde = parseFloat(getComputedStyle(document.documentElement).fontSize) * 3.25;
     const observator = new IntersectionObserver(([e]) => settForsidesokSynlig(e?.isIntersecting ?? true), { rootMargin: `-${hoyde}px 0px 0px 0px` });
     observator.observe(felt);
@@ -323,7 +329,7 @@ export default function Forside() {
       observator.disconnect();
       settForsidesokSynlig(true);
     };
-  }, []);
+  }, [aktiv]);
   const kategorier = kategorierMedModuler();
   const grupper = ordneGrupper([PANEL, FAVORITTER, ...kategorier.map((k) => k.id)], forside.rekkefolge);
   const kategoriForModul = new Map(kategorier.flatMap((k) => k.moduler.map((m) => [m.id, k.id] as const)));

@@ -144,12 +144,18 @@ export const ruter = [
   '#/finnes-ikke',
 ];
 
+/**
+ * Siden som vises. Sidene brukeren har gått gjennom, står skjult i bakgrunnen i main (avgjørelse 111), så tester som
+ * ser etter innhold på siden etter en navigasjon i appen, ser her.
+ */
+export const SYNLIG_SIDE = 'main > .sideramme:not([hidden])';
+
 /** Venter til siden er tegnet (h1 finnes og lasteteksten er borte). */
 export async function venterPaaSide(side: Page): Promise<void> {
-  await side.locator('main h1').first().waitFor();
-  await side.locator('main .laster').waitFor({ state: 'detached' }).catch(() => undefined);
+  await side.locator(`${SYNLIG_SIDE} h1`).first().waitFor();
+  await side.locator(`${SYNLIG_SIDE} .laster`).waitFor({ state: 'detached' }).catch(() => undefined);
   // Deler som lastes etter siden, f.eks. tallene på fylkessiden, er merket aria-busy til de er lastet.
-  await side.locator('main [aria-busy="true"]').first().waitFor({ state: 'detached' }).catch(() => undefined);
+  await side.locator(`${SYNLIG_SIDE} [aria-busy="true"]`).first().waitFor({ state: 'detached' }).catch(() => undefined);
 }
 
 /** Finner elementer som går utenfor skjermen horisontalt. */
@@ -174,7 +180,7 @@ export async function finnOverflyt(side: Page): Promise<string[]> {
 }
 
 /** Åpner alle forklaringer og utregninger, så også skjult innhold blir sjekket. */
-export async function aapneAlt(side: Page, omraade = 'main'): Promise<void> {
+export async function aapneAlt(side: Page, omraade = SYNLIG_SIDE): Promise<void> {
   const lukket = side.locator(`${omraade} button[aria-expanded="false"]`);
   for (let i = 0; i < 20 && (await lukket.count()) > 0; i++) await lukket.first().click();
   // Lukkede <details>, f.eks. kildene i en veiviser.

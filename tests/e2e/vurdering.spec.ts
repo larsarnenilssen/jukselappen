@@ -2,7 +2,7 @@
 // kilder i lukkede rader nederst, faget fra adressen og oppslaget over karakterkodene. Pakke 2: fraværsgrensen, med
 // lenker fra fagarket og til veiviseren. Eksamen, klage på karakter og prøvene står i eksamen.spec.ts (avgjørelse 078).
 import { expect, test } from '@playwright/test';
-import { aapneDel } from './hjelp.ts';
+import { aapneDel, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('vurdering', () => {
   test('fra oversikten gjennom fravær og varsel til karakter uten varsel', async ({ page }) => {
@@ -79,10 +79,10 @@ test.describe('vurdering', () => {
     await expect(page.locator('.fag-ifaget')).toContainText('Sentralt gitt');
     await page.getByRole('link', { name: 'Fraværskalkulatoren for faget' }).click();
     await expect(page).toHaveURL(/#\/vurdering\/fravaer\?fag=ENG1007$/);
-    await expect(page.locator('main h1')).toHaveText('Fraværsgrensen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fraværsgrensen');
     await page.getByRole('link', { name: /veiviseren «Grunnlag for vurdering»/ }).click();
     await expect(page.locator('.veiviser-stegtittel').last()).toHaveText('Fravær i faget');
     await page.getByRole('link', { name: 'kalkulatoren for fraværsgrensen' }).click();
-    await expect(page.locator('main h1')).toHaveText('Fraværsgrensen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fraværsgrensen');
   });
 });

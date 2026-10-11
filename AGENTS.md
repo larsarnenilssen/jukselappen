@@ -104,6 +104,7 @@ Oppskriftene ligger i `.claude/skills/<navn>/SKILL.md`. Bruk dem når oppgaven p
 - Utseendet følger `docs/DESIGN.md` (kort, flater, overskrifter, valgknapper, to kolonner, veiviserne og tall). Finnes det et mønster der, brukes det i stedet for en ny variant (fase 8b, eier 08.10.2026).
 - Ett scrollområde. Ingen horisontal overflyt i 320–430 px (testes).
 - Native scroll og tilbakenavigasjon. Ingen egne sveipebevegelser for navigasjon.
+- Sidene brukeren har gått gjennom, står skjult i bakgrunnen, så tilbake og fram viser dem med en gang (avgjørelse 111). En side eller komponent som lytter på hele vinduet (rulling, størrelse) eller måler seg selv, bruker `useSideAktiv()`. Oppslag i dokumentet (`querySelector`, `getElementById`) ser i siden som vises, og ende-til-ende-testene ser i `SYNLIG_SIDE`.
 - Pinch-zoom slås ikke av globalt.
 - Forklaringer er skjult til brukeren åpner dem.
 - Merker, piler og ikoner som står sammen med tekst, står midt i teksthøyden: `vertical-align: middle` i løpende tekst, `align-items: center` i flex og grid, uten egne småjusteringer (eier 08.10.2026, avgjørelse 092). Testes for alle rutene.

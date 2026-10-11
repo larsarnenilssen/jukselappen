@@ -194,8 +194,11 @@ export function utforScroll(): void {
 
 export type Navigasjonstype = 'forste' | 'ny' | 'historikk';
 
-export function usePlassering(): Plassering & { type: Navigasjonstype } {
-  const [plassering, settPlassering] = useState(() => ({ ...lesHash(location.hash), type: 'forste' as Navigasjonstype }));
+/** Plasseringen med hvordan brukeren kom dit, og hvor langt inn i appen siden står (dybden i historikken). */
+export type Navigasjon = Plassering & { type: Navigasjonstype; dybde: number };
+
+export function usePlassering(): Navigasjon {
+  const [plassering, settPlassering] = useState<Navigasjon>(() => ({ ...lesHash(location.hash), type: 'forste', dybde }));
   useEffect(() => {
     const vedEndring = () => {
       let type: Navigasjonstype = 'historikk';
@@ -211,7 +214,7 @@ export function usePlassering(): Plassering & { type: Navigasjonstype } {
       const id = gjeldende();
       oensketScroll = type === 'ny' && beholdRulling ? null : type === 'ny' || !id ? 0 : (scrollPosisjoner.get(id.appId) ?? 0);
       beholdRulling = false;
-      settPlassering({ ...lesHash(location.hash), type });
+      settPlassering({ ...lesHash(location.hash), type, dybde });
     };
     window.addEventListener('hashchange', vedEndring);
     return () => window.removeEventListener('hashchange', vedEndring);

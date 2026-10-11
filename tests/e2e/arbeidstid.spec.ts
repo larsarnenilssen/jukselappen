@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, type Locator, type Page, test } from '@playwright/test';
-import { settLagret, venterPaaSide } from './hjelp.ts';
+import { settLagret, SYNLIG_SIDE, venterPaaSide } from './hjelp.ts';
 
 async function aapne(page: Page, rute: string) {
   await page.goto(`./#${rute}`);
@@ -33,7 +33,7 @@ test.describe('arbeidstid', () => {
     await arbeidstid.getByRole('button', { name: /Flere kalkulatorer/ }).click();
     await expect(arbeidstid.getByRole('link', { name: /Beskjeftigelse/ })).toBeVisible();
     await arbeidstid.getByRole('link', { name: /Vikartimer/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Vikartimer');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vikartimer');
     // Tilbake til forsiden: boksen er fortsatt åpen.
     await page.goBack();
     await expect(arbeidstid.getByRole('link', { name: /Vikartimer/ })).toBeVisible();
@@ -298,7 +298,7 @@ test.describe('arbeidstid', () => {
     await velgFag(page, 'engelsk stud vg1', 'Engelsk · Studiespesialisering Vg1');
     await expect(page.getByLabel('Antall årstimer')).toHaveValue('140');
     const [vindu] = await Promise.all([page.waitForEvent('popup'), knapp.click()]);
-    await expect(vindu.locator('main h1')).toHaveText('Beskjeftigelse');
+    await expect(vindu.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Beskjeftigelse');
     await expect(vindu.getByLabel('Antall årstimer')).toHaveValue('140');
     await expect(vindu.locator('.resultatkort-verdi').first()).toContainText('26,67');
     // Vinduene er uavhengige: en endring i det nye vinduet endrer ikke det første.
@@ -486,7 +486,7 @@ test.describe('arbeidstid', () => {
     // Det som er lagt sammen, huskes når brukeren går til en annen side og tilbake.
     await aapne(page, '/arbeidstid/beskjeftigelse');
     await page.goBack();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.getByRole('button', { name: /^Fag 1/ })).toHaveAttribute('aria-expanded', 'false');
     await expect(page.locator('.fordeling-tabell')).toBeHidden();
     await page.getByRole('button', { name: /^Fag 1/ }).click();
@@ -668,7 +668,7 @@ test.describe('arbeidstid', () => {
     await velgFag(page, 'engelsk stud vg1', 'Engelsk · Studiespesialisering Vg1');
     await expect(page.getByLabel('Antall årstimer')).toHaveValue('140');
     await page.getByRole('link', { name: 'Fortsett i Arbeidsplan med disse fagene' }).click();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.getByLabel('Antall årstimer')).toHaveValue('140');
     await expect(page.locator('.resultatkort', { hasText: 'Samlet beskjeftigelse' }).locator('.resultatkort-verdi')).toContainText('26,67');
   });
@@ -855,7 +855,7 @@ test.describe('arbeidstid', () => {
     await expect(differanse).toHaveAttribute('data-differanse', 'overtid');
     await expect(differanse).toContainText('3,13 % = 15,52 årsrammetimer');
     await page.getByRole('link', { name: /Regn ut overtidsbetaling for 103,13 %/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Overtid over 100 %');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Overtid over 100 %');
     await expect(page.getByLabel('Samlet beskjeftigelse i prosent')).toHaveValue('103,13');
   });
 
@@ -1075,7 +1075,7 @@ test.describe('arbeidstid', () => {
   test('kalkulatorene finnes på nynorsk', async ({ page }) => {
     await settLagret(page, { malform: 'nn' });
     await aapne(page, '/arbeidstid/beskjeftigelse');
-    await expect(page.locator('main h1')).toHaveText('Sysselsetjing');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Sysselsetjing');
   });
 
   test('begrepene er søkbare', async ({ page }) => {

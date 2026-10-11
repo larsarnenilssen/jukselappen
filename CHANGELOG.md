@@ -6,6 +6,7 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ### Endret
 
+- **Tilbake og fram uten ny lasting:** De siste sidene du har vært på, står klare i bakgrunnen. Går du tilbake eller fram, også med sveip på mobil, kommer siden med en gang, der du var, uten at skjermen blir tom eller hopper. Mest merkbart tilbake til forsiden.
 - **Ingen zoom ved dobbelttrykk:** Raske trykk etter hverandre, f.eks. på en knapp i en kalkulator, forstørrer ikke lenger siden. Du kan fortsatt zoome med to fingre.
 
 ## [1.2.3] – 2026-10-11

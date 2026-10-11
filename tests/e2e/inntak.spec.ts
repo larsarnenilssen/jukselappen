@@ -1,7 +1,7 @@
 // Inntak (fase 5, pakke 1): veiviseren «Rett, inntak og søknad» med de nasjonale reglene, Vestland-innholdet som
 // egne bokser når Vestland er valgt, merknaden om lokale regler og lenkene begge veier til særskilt språkopplæring.
 import { expect, test } from '@playwright/test';
-import { aapneSteg, erMobil, settLagret } from './hjelp.ts';
+import { aapneSteg, erMobil, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 const VEIVISER = './#/inntak/rett-inntak-soknad';
 
@@ -146,7 +146,7 @@ test.describe('mer opplæring', () => {
   test('fra Inntak til siden: «Hvem har rett?» er åpen, og de andre delene viser kortene til de åpnes', async ({ page }) => {
     await page.goto('./#/inntak');
     await page.getByRole('link', { name: /Mer opplæring i fag som ikke er bestått/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Mer opplæring');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Mer opplæring');
     await expect(page.locator('.brodsmuler')).toContainText('Inntak');
     const hvem = page.locator('.seksjon-knapp', { hasText: 'Hvem har rett?' });
     await expect(hvem).toHaveAttribute('aria-expanded', 'true');
@@ -178,7 +178,7 @@ test.describe('mer opplæring', () => {
     await expect(steg).toHaveText(['Mer opplæring']);
     await expect(page.locator('.veiviser-stegnr').last()).toHaveText(/^Her ender veien/);
     await page.locator('.veiviser-steg').getByRole('link', { name: 'Mer opplæring', exact: true }).click();
-    await expect(page.locator('main h1')).toHaveText('Mer opplæring');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Mer opplæring');
   });
 
   test('søk på «meropplæring» og «meiropplæring» i ett ord finner siden', async ({ page }) => {

@@ -1,12 +1,12 @@
 // Eksamen og klage (avgjørelse 078): oversikten med de fire kortene, eksamen, klage på karakter og prøvene (fase 6,
 // pakke 3), og de gamle adressene i Vurdering, som sender videre.
 import { expect, test } from '@playwright/test';
-import { aapneDel, settLagret } from './hjelp.ts';
+import { aapneDel, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('eksamen og klage', () => {
   test('oversikten har eksamen, prøvene, klage og kalenderen', async ({ page }) => {
     await page.goto('./#/eksamen');
-    await expect(page.locator('main h1')).toHaveText('Eksamen og klage');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Eksamen og klage');
     await page.locator('main').getByRole('link', { name: /^Eksamen Trekk/ }).click();
     await expect(page).toHaveURL(/#\/eksamen\/regler$/);
     await page.goBack();
@@ -37,7 +37,7 @@ test.describe('eksamen og klage', () => {
   test('Vestland-boksen på eksamen vises bare når Vestland er valgt', async ({ page }) => {
     await page.goto('./#/eksamen/regler');
     // Siden må være tegnet før vi ser at boksen mangler.
-    await expect(page.locator('main h1')).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeVisible();
     await expect(page.locator('.innholdskort').first()).toBeVisible();
     await expect(page.locator('#ek-vl-bortvisning')).toHaveCount(0);
     // Vestland settes før siden lastes, i en ny fane, som i de andre testene. Før ble den samme siden lastet to ganger
