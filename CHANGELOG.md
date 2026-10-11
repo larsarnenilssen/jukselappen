@@ -4,6 +4,8 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+## [1.2.3] – 2026-10-11
+
 ### Endret
 
 - **Overskrifter på oversiktene i modulene:** Inntak, Vurdering, Eksamen og klage, Skolemiljø og Tilrettelegging har én overskrift over hver kolonne, som Opplæringstilbud. Til venstre står det hva sidene handler om, f.eks. «Reglene for vurdering». Over veiviserne, kalkulatorene og fristene står «Verktøy», eller «Veiviser» når det bare er en veiviser.
