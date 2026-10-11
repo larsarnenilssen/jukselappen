@@ -3,6 +3,8 @@ import type { inntakNb } from './inntak.nb.ts';
 
 export const inntakNn: typeof inntakNb = {
   tittel: 'Inntak',
+  // Overskriften over venstre kolonne på oversikten (avgjørelse 109).
+  delRetten: 'Retten til opplæring',
   innledning: 'Rettar og søkjarkategoriar ved inntak til vidaregåande opplæring, etter opplæringslova og opplæringsforskrifta. Kvart steg viser fristane og paragrafane i regelverket.',
   bareNasjonalt: 'Viser dei nasjonale reglane. Fylket kan ha lokale reglar om inntak.',
   velgFylke: 'Vel fylke',

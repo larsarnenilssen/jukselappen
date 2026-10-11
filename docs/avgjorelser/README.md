@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-108 avgjørelser: 73 gjeldende, 34 endret og 1 erstattet.
+109 avgjørelser: 74 gjeldende, 34 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -113,7 +113,7 @@ Status:
 | 097 | [Robusthet: lagringen, feilgrensen, regelperiodene og ustabile tester](097-robusthet-lagring-og-feilgrense.md) | endret av 104 |
 | 098 | [Alle data fra main ved publisering, og nyhetene på egen gren](098-data-fra-main-og-nyhetene.md) | gjeldende |
 | 099 | [Dependabot, Node 24 og overvåking av jukselappen.no](099-dependabot-node-og-overvaking.md) | endret |
-| 100 | [Større tekst, hovedinnholdet åpent og bedre treff i søket](100-lesbarhet-apent-innhold-og-sok.md) | endret |
+| 100 | [Større tekst, hovedinnholdet åpent og bedre treff i søket](100-lesbarhet-apent-innhold-og-sok.md) | endret av 109 |
 | 101 | [Velkomsten i fire trinn](101-velkomst-i-fire-trinn.md) | endret |
 | 102 | [Aktuelt på forsiden](102-aktuelt-pa-forsiden.md) | endret av 108 |
 | 103 | [«Skule» på nynorsk i innholdet](103-nynorsk-skule.md) | endret |
@@ -122,3 +122,4 @@ Status:
 | 106 | [Plan for kontrollen: ukens kontroll og fylkeslenkene](106-plan-for-kontrollen.md) | endret |
 | 107 | [Kildestatus: «virker» og «endret» for seg, og kontrolloversikten etter godkjenning](107-kildestatus-virker-og-endret.md) | gjeldende |
 | 108 | [Forsiden: lukkede grupper rykker opp, like høye favoritter og dagens jukselapp i «Tilpass»](108-forsiden-lukkede-grupper-og-favoritter.md) | gjeldende |
+| 109 | [Én overskrift over hver kolonne på landingssidene](109-overskrifter-pa-landingssidene.md) | gjeldende |

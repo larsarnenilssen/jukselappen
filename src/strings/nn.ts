@@ -633,9 +633,12 @@ export const nn: Tekster = {
     kilder: 'Kjelder',
     lukk: 'Lukk',
     eksternLenke: '(blir opna på {nettsted})',
+    verktoy: 'Verktøy',
     veiviser: 'Vegvisar',
     veivisere: 'Vegvisarar',
     kalkulator: 'Kalkulator',
+    kalkulatorer: 'Kalkulatorar',
+    frister: 'Fristar',
   },
   utvikling: {
     tittel: 'Komponentkatalog',

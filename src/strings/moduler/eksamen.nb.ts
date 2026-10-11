@@ -4,8 +4,6 @@ export const eksamenNb = {
   tittel: 'Eksamen og klage',
   innledning: 'Eksamen og prøvene i fag- og yrkesopplæringen som sluttvurdering, klage på karakter og datoene gjennom året, etter opplæringsforskrifta kapittel 9 og 10.',
   delEksamen: 'Eksamen og prøver',
-  delKlage: 'Klage',
-  delDatoer: 'Datoer',
   ikkeFunnet: 'Fant ikke veiviseren.',
   eksamen: {
     tittel: 'Eksamen',

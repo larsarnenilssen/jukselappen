@@ -3,8 +3,7 @@
 export const skolemiljoNn = {
   tittel: 'Aktivitetsplikt og skulereglar',
   innledning: 'Retten til eit trygt og godt skulemiljø, aktivitetsplikta steg for steg og skulereglane i fylket og på skulen. Kvart steg viser kven som har ansvaret, kva som skal dokumenterast og paragrafane i regelverket.',
-  rettenOgResultatene: 'Retten og pliktene',
-  oppslag: 'Oppslag',
+  delRetten: 'Retten og reglane',
   ikkeFunnet: 'Fann ikkje sida.',
   kapittel12: {
     tittel: 'Eit trygt og godt skulemiljø',

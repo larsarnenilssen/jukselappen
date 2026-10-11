@@ -514,7 +514,7 @@ main {
   margin-top: var(--rom-5);
 }
 
-/* En del med bare én inngang står uten overskrift, og flere slike etter hverandre står som én liste (avgjørelse 100). */
+/* Gruppene med kort i en kolonne står uten egne overskrifter, som én liste (avgjørelse 100 og 109). */
 .lop-del-enkel + .lop-del-enkel {
   margin-top: var(--rom-3);
 }

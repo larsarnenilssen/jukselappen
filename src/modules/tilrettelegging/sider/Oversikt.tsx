@@ -3,8 +3,8 @@ import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { ToKolonner } from '../../../components/ToKolonner.tsx';
 import { oversiktsid } from '../../favoritter.ts';
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
-import { veiviseroverskrift, Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
-import { Oversiktsdel } from '../../../components/Oversiktsdel.tsx';
+import { Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
+import { Oversiktsdel, verktoyoverskrift } from '../../../components/Oversiktsdel.tsx';
 import { velgSynlige } from '../../../core/innhold/status.ts';
 import { hentInnhold, veiviserRute, type Veiviserinnhold } from '../innhold.ts';
 import { Begrepstekst } from '../../../components/Begrepstekst.tsx';
@@ -64,11 +64,12 @@ export default function Oversikt() {
       <p class="ingress">
         <Begrepstekst tekst={t('tilrettelegging.innledning')} />
       </p>
-      {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): figuren til venstre, veiviserne til høyre. */}
+      {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): figuren med tittelen som overskrift til venstre, og
+          veiviserne til høyre (avgjørelse 109). */}
       <ToKolonner
         hoved={<Figur />}
         side={
-          <Oversiktsdel tittel={t(veiviseroverskrift(veivisere.length))} antall={veivisere.length}>
+          <Oversiktsdel tittel={t(verktoyoverskrift({ veivisere: veivisere.length }))}>
             {/* Like høye kort med en liten fasestolpe, som stolpen øverst i veiviseren (eier 03.10.2026). */}
             {innhold === null ? (
               <p class="dempet">{t('app.lasterInn')}</p>
