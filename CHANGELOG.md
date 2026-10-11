@@ -4,6 +4,10 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+### Endret
+
+- **Ingen zoom ved dobbelttrykk:** Raske trykk etter hverandre, f.eks. på en knapp i en kalkulator, forstørrer ikke lenger siden. Du kan fortsatt zoome med to fingre.
+
 ## [1.2.3] – 2026-10-11
 
 ### Endret
