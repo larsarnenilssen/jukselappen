@@ -1,6 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, type Locator, type Page, test } from '@playwright/test';
-import { settLagret, SYNLIG_SIDE, venterPaaSide } from './hjelp.ts';
+import { settLagret, synlig, SYNLIG_SIDE, venterPaaSide } from './hjelp.ts';
 
 async function aapne(page: Page, rute: string) {
   await page.goto(`./#${rute}`);
@@ -20,8 +20,10 @@ function resultat(page: Page) {
 
 /** Søker etter et fag og velger treffet som begynner med navnet. */
 async function velgFag(omraade: Locator | Page, sok: string, treff: string) {
-  await omraade.getByLabel('Fag', { exact: true }).last().fill(sok);
-  await omraade.locator('.fagtreff button', { hasText: treff }).first().click();
+  // På hele siden: bare i siden som vises, ikke i sidene i bakgrunnen (avgjørelse 111).
+  const sted = 'goto' in omraade ? omraade.locator(SYNLIG_SIDE) : omraade;
+  await sted.getByLabel('Fag', { exact: true }).last().fill(sok);
+  await sted.locator('.fagtreff button', { hasText: treff }).first().click();
 }
 
 test.describe('arbeidstid', () => {
@@ -490,7 +492,8 @@ test.describe('arbeidstid', () => {
     await expect(page.getByRole('button', { name: /^Fag 1/ })).toHaveAttribute('aria-expanded', 'false');
     await expect(page.locator('.fordeling-tabell')).toBeHidden();
     await page.getByRole('button', { name: /^Fag 1/ }).click();
-    await expect(page.getByLabel('Antall årstimer')).toHaveValue('420');
+    // Beskjeftigelse står skjult i bakgrunnen med sitt eget felt (avgjørelse 111).
+    await expect(page.locator(SYNLIG_SIDE).getByLabel('Antall årstimer')).toHaveValue('420');
   });
 
   test('fag og funksjoner: feltet står øverst i kortet, og kortnavnet i lukkede kort og i stolpen (eier 09.10.2026)', async ({ page }) => {
@@ -666,11 +669,29 @@ test.describe('arbeidstid', () => {
   test('beskjeftigelse kan fortsette i arbeidsplan med fagene', async ({ page }) => {
     await aapne(page, '/arbeidstid/beskjeftigelse');
     await velgFag(page, 'engelsk stud vg1', 'Engelsk · Studiespesialisering Vg1');
-    await expect(page.getByLabel('Antall årstimer')).toHaveValue('140');
+    await expect(synlig(page).getByLabel('Antall årstimer')).toHaveValue('140');
     await page.getByRole('link', { name: 'Fortsett i Arbeidsplan med disse fagene' }).click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
-    await expect(page.getByLabel('Antall årstimer')).toHaveValue('140');
-    await expect(page.locator('.resultatkort', { hasText: 'Samlet beskjeftigelse' }).locator('.resultatkort-verdi')).toContainText('26,67');
+    await expect(synlig(page).getByLabel('Antall årstimer')).toHaveValue('140');
+    await expect(synlig(page).locator('.resultatkort', { hasText: 'Samlet beskjeftigelse' }).locator('.resultatkort-verdi')).toContainText('26,67');
+  });
+
+  test('«Fortsett i Arbeidsplan» gir en ny Arbeidsplan med fagene, også når en Arbeidsplan står i bakgrunnen (avgjørelse 111)', async ({ page }) => {
+    await aapne(page, '/arbeidstid/arbeidsplan');
+    await velgFag(page, 'engelsk stud vg1', 'Engelsk · Studiespesialisering Vg1');
+    await page.locator(SYNLIG_SIDE).getByLabel('Antall årstimer').fill('420');
+    await page.evaluate(() => (window.location.hash = '#/arbeidstid/beskjeftigelse'));
+    await venterPaaSide(page);
+    await velgFag(page, 'engelsk stud vg1', 'Engelsk · Studiespesialisering Vg1');
+    await expect(page.locator(SYNLIG_SIDE).getByLabel('Antall årstimer')).toHaveValue('140');
+    await page.getByRole('link', { name: 'Fortsett i Arbeidsplan med disse fagene' }).click();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
+    await expect(page.locator(SYNLIG_SIDE).getByLabel('Antall årstimer')).toHaveValue('140');
+    // Tilbake to ganger: den første Arbeidsplan, med det som var fylt inn der.
+    await page.goBack();
+    await page.goBack();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
+    await expect(page.locator(SYNLIG_SIDE).getByLabel('Antall årstimer')).toHaveValue('420');
   });
 
   test('kalkulatorene kan skrives ut, og beløp vises med tusenskille', async ({ page }) => {

@@ -125,6 +125,35 @@ test.describe('navigasjon', () => {
     await expect(page.locator('main > .sideramme')).toHaveCount(3);
   });
 
+  test('med sider i bakgrunnen peker etiketter og id-er på siden som vises (avgjørelse 111)', async ({ page }) => {
+    // To statistikksider har samme felt med samme id. Etiketten skal styre feltet på siden som vises.
+    await page.goto('./#/statistikk/ungdom?fylke=46');
+    await venterPaaSide(page);
+    await page.evaluate(() => (window.location.hash = '#/statistikk/fullforing'));
+    await venterPaaSide(page);
+    await expect(page.locator('main > .sideramme')).toHaveCount(2);
+    expect(await page.evaluate(() => (document.getElementById('st-fylke')?.closest('.sideramme') as HTMLElement | null)?.hidden)).toBe(false);
+    const felt = page.locator(SYNLIG_SIDE).getByLabel('Vis tall for');
+    await expect(felt).toBeVisible();
+    await felt.selectOption('46');
+    await expect(page).toHaveURL(/fullforing\?.*fylke=46/);
+    // Tilbake viser den første siden, og nå er det dens felt etiketten styrer. Valget av fylke endrer adressen uten ny
+    // oppføring i historikken.
+    await page.goBack();
+    await expect(page).toHaveURL(/ungdom\?fylke=46$/);
+    expect(await page.evaluate(() => (document.getElementById('st-fylke')?.closest('.sideramme') as HTMLElement | null)?.hidden)).toBe(false);
+  });
+
+  test('overskriften på siden fra bakgrunnen får fokus ved tilbake (avgjørelse 111)', async ({ page }) => {
+    await page.goto('./#/om');
+    await venterPaaSide(page);
+    await page.evaluate(() => (window.location.hash = '#/inntak'));
+    await venterPaaSide(page);
+    await page.goBack();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Om appen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeFocused();
+  });
+
   test('høyst fem sider står i bakgrunnen (avgjørelse 111)', async ({ page }) => {
     await page.goto('./');
     await venterPaaSide(page);
@@ -200,6 +229,22 @@ test.describe('navigasjon', () => {
 // innstillingene og Om appen (eier 05.10.2026). Overordnet del åpnes på oversikten i Læreplanverket, og testsidene og
 // siden som ikke finnes, står utenfor. Nye sider kommer med av seg selv, fordi hver rute har en adresse i hjelp.ts.
 const UTEN_STI = /^#\/[^/?]*(\?.*)?$|^#\/(kategori|utvikling|laereplanverket\/overordnet-del)\//;
+test('en bred side i bakgrunnen gjør ikke siden som vises bredere (avgjørelse 111)', async ({ page }) => {
+  await page.setViewportSize({ width: 1400, height: 900 });
+  await page.goto('./#/om');
+  await venterPaaSide(page);
+  const smal = await page.locator('main').evaluate((m) => m.getBoundingClientRect().width);
+  // Kalenderen gjør main bredere (main:has(.kalender)). Står den i bakgrunnen, skal Om appen være like smal som før.
+  await page.evaluate(() => (window.location.hash = '#/kalender'));
+  await venterPaaSide(page);
+  expect(await page.locator('main').evaluate((m) => m.getBoundingClientRect().width)).toBeGreaterThan(smal);
+  await page.evaluate(() => (window.location.hash = '#/om'));
+  await venterPaaSide(page);
+  // Om appen igjen er et nytt besøk: to Om appen og kalenderen.
+  await expect(page.locator('main > .sideramme')).toHaveCount(3);
+  expect(await page.locator('main').evaluate((m) => m.getBoundingClientRect().width)).toBe(smal);
+});
+
 test.describe('alle sider under en modul har sti øverst', () => {
   for (const rute of ruter.filter((r) => !UTEN_STI.test(r))) {
     test(rute, async ({ page }) => {

@@ -150,6 +150,11 @@ export const ruter = [
  */
 export const SYNLIG_SIDE = 'main > .sideramme:not([hidden])';
 
+/** Siden som vises, som locator. Den finner alltid siden som vises når den brukes, også etter en navigasjon. */
+export function synlig(side: Page): Locator {
+  return side.locator(SYNLIG_SIDE);
+}
+
 /** Venter til siden er tegnet (h1 finnes og lasteteksten er borte). */
 export async function venterPaaSide(side: Page): Promise<void> {
   await side.locator(`${SYNLIG_SIDE} h1`).first().waitFor();

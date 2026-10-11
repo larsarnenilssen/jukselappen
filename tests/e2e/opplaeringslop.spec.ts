@@ -1,6 +1,6 @@
 // Opplæringsløp (pakke 5, avgjørelse 035): program → tilbud → fag og timer, med lenker begge veier og til Vilbli.
 import { expect, test } from '@playwright/test';
-import { settLagret, SYNLIG_SIDE } from './hjelp.ts';
+import { settLagret, synlig, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('opplæringsløp', () => {
   test('fra forsiden til programmet, tilbudet og fagarket', async ({ page }) => {
@@ -78,26 +78,26 @@ test.describe('opplæringsløp', () => {
   test('på alle trinn følger ett av valgene med til Arbeidsplan: 1P eller 1T, og dekk eller maskin (eier 03.10.2026)', async ({ page }) => {
     await page.goto('./#/opplaeringslop/ST/STUSP1');
     await page.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
-    await expect(page.locator('.fagkort', { hasText: /MAT10(19|21)/ })).toHaveCount(1);
+    await expect(synlig(page).locator('.fagkort', { hasText: /MAT10(19|21)/ })).toHaveCount(1);
     // Vg1 yrkesfag: 1P eller 1T står som merknad med timetallet.
     await page.goto('./#/opplaeringslop/HS/HSHSF1');
-    await expect(page.locator('[data-rubrikk$="-fellesfag"]')).toContainText('Eleven kan i stedet velge det studieforberedende tilbudet, 1P eller 1T. Det har 140 timer i stedet for 84');
+    await expect(synlig(page).locator('[data-rubrikk$="-fellesfag"]')).toContainText('Eleven kan i stedet velge det studieforberedende tilbudet, 1P eller 1T. Det har 140 timer i stedet for 84');
     await page.goto('./#/opplaeringslop/TP/TPMAR2');
     await page.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
-    await expect(page.locator('.fagkort', { hasText: /Dekk|Maskin/ })).toHaveCount(1);
+    await expect(synlig(page).locator('.fagkort', { hasText: /Dekk|Maskin/ })).toHaveCount(1);
   });
 
   test('Vilbli-lenken bruker fylket fra innstillingene, og påbygging står under programmet brukeren kom fra', async ({ page }) => {
     await settLagret(page, { fylke: '46' });
     await page.goto('./#/opplaeringslop/HS/HSHEA2');
     await expect(page.getByRole('link', { name: /Skoler og lærebedrifter i Vestland/ })).toHaveAttribute('href', 'https://www.vilbli.no/nb/nb/vestland/helse-og-oppvekstfag/program/v.hs/v.hshea2----/p5');
-    await page.locator('[data-rubrikk$="-pabygging"]').getByRole('link').click();
+    await synlig(page).locator('[data-rubrikk$="-pabygging"]').getByRole('link').click();
     await expect(page).toHaveURL(/PBPBY3\?via=HSHEA2/);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText(/påbygging/i);
     // Tilpassede ordninger: fagene som ikke er med, som kommer til og som har andre timer (eier 02.10.2026).
     await page.getByRole('button', { name: /^Tilpassede ordninger/ }).click();
-    const samisk = page.locator('.tilpasning', { hasText: 'Elever med samisk' });
+    const samisk = synlig(page).locator('.tilpasning', { hasText: 'Elever med samisk' });
     await expect(samisk.locator('dt')).toHaveText(['Fag som ikke er med', 'Fag som kommer til', 'Andre timer']);
     await expect(samisk).toContainText('Historie: 140 → 113 timer');
     await expect(page.getByRole('link', { name: /Skoler og lærebedrifter i Vestland/ })).toHaveAttribute('href', /\/helse-og-oppvekstfag\/program\/v\.hs\/v\.pbpby3----\/p5$/);
@@ -194,23 +194,23 @@ test.describe('opplæringsløp', () => {
 
   test('lærefagene fører videre til Vg4 påbygging (eier 03.10.2026)', async ({ page }) => {
     await page.goto('./#/opplaeringslop/HS/HSHEA3');
-    await page.locator('[data-rubrikk$="-pabygging"]').getByRole('link', { name: /Vg4 Fag for studiekompetanse/ }).click();
-    await expect(page.locator('.merke').filter({ hasText: /^Vg4$/ })).toBeVisible();
+    await synlig(page).locator('[data-rubrikk$="-pabygging"]').getByRole('link', { name: /Vg4 Fag for studiekompetanse/ }).click();
+    await expect(synlig(page).locator('.merke').filter({ hasText: /^Vg4$/ })).toBeVisible();
     // Kildene står i en lukket boks (eier 06.10.2026).
-    await page.locator('.kildeboks').getByText(/^Kilder \(\d+\)$/).click();
+    await synlig(page).locator('.kildeboks').getByText(/^Kilder \(\d+\)$/).click();
     await expect(page.getByRole('link', { name: /VIGO Kodeverksbase/ }).first()).toBeVisible();
   });
 
   test('løp kildene ikke er enige om, er merket, og tilbudet lenker til utdanning.no (avgjørelse 052 og 070)', async ({ page }) => {
     // Løp som bare én kilde har, er med og merket med kilden. Er flere enige, står kilden som mangler løpet.
     await page.goto('./#/opplaeringslop/SR/SRSSR2');
-    await expect(page.locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Sikkerhetsfaget.*Står bare i VIGO/ })).toBeVisible();
+    await expect(synlig(page).locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Sikkerhetsfaget.*Står bare i VIGO/ })).toBeVisible();
     await page.goto('./#/opplaeringslop/IM/IMMED2');
-    await expect(page.locator('[data-rubrikk$="-kryss"]').getByRole('link', { name: /Profileringsdesignfaget.*Står ikke i utdanning\.no/ })).toBeVisible();
+    await expect(synlig(page).locator('[data-rubrikk$="-kryss"]').getByRole('link', { name: /Profileringsdesignfaget.*Står ikke i utdanning\.no/ })).toBeVisible();
     await page.goto('./#/opplaeringslop/BA/BAKEM2');
-    await expect(page.locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Rørleggerfaget.*Står bare i Grep/ })).toBeVisible();
+    await expect(synlig(page).locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Rørleggerfaget.*Står bare i Grep/ })).toBeVisible();
     await page.getByRole('button', { name: 'Kildene er ikke enige om alle løpene' }).click();
-    await expect(page.getByText('Merknaden sier bare at kildene er uenige')).toBeVisible();
+    await expect(synlig(page).getByText('Merknaden sier bare at kildene er uenige')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Tilbudet på utdanning.no' })).toHaveAttribute('href', 'https://utdanning.no/utdanning/vgs/BAKEM2----');
   });
 

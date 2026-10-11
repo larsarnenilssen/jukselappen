@@ -2,7 +2,7 @@
 // siden for hver vei, og «Veiene hit» på prøvesiden i Vurdering. Testene setter bredden selv, fordi siden står i én
 // kolonne på mobil og i to fra 64rem.
 import { expect, test } from '@playwright/test';
-import { SYNLIG_SIDE } from './hjelp.ts';
+import { synlig, SYNLIG_SIDE } from './hjelp.ts';
 
 const SIDE = './#/opplaeringslop/laerlinger-og-kandidater';
 
@@ -15,7 +15,7 @@ test.describe('lærlinger og kandidater på mobil', () => {
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Lærlinger og kandidater');
     await expect(page.getByRole('tab', { name: 'Veiene' })).toHaveAttribute('aria-selected', 'true');
     // Veiene er lukket fra start (eier 04.10.2026).
-    const kort = page.locator('.fb-vei');
+    const kort = synlig(page).locator('.fb-vei');
     await expect(kort).toHaveCount(8);
     const laerling = kort.first().getByRole('button');
     await expect(laerling).toHaveAttribute('aria-expanded', 'false');
@@ -29,13 +29,13 @@ test.describe('lærlinger og kandidater på mobil', () => {
     await kort.first().getByRole('link', { name: /^Mer om lærling/ }).click();
     await expect(page).toHaveURL(/#\/opplaeringslop\/laerlinger-og-kandidater\/laerling$/);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Lærling');
-    await expect(page.locator('.brodsmuler')).toContainText('Lærlinger og kandidater');
+    await expect(synlig(page).locator('.brodsmuler')).toContainText('Lærlinger og kandidater');
     // Prøven i Vurdering er første kort, merket «I Vurdering».
-    await expect(page.locator('.fag-ifaget-i').first()).toHaveText(/I Vurdering/i);
-    await page.locator('.fb-prove').click();
+    await expect(synlig(page).locator('.fag-ifaget-i').first()).toHaveText(/I Vurdering/i);
+    await synlig(page).locator('.fb-prove').click();
     await expect(page).toHaveURL(/#\/eksamen\/fag-og-svenneproven$/);
     // «Veiene hit» er et lukket kort under prøvene, og lenker tilbake til hver vei.
-    const hit = page.locator('.fb-hit');
+    const hit = synlig(page).locator('.fb-hit');
     await expect(hit.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
     await hit.getByRole('button').click();
     await hit.getByRole('link', { name: 'Lærekandidat', exact: true }).click();
@@ -118,10 +118,10 @@ test.describe('lærlinger og kandidater på mobil', () => {
 
   test('oppsigelse og heving står bare på veiene med kontrakt i bedrift', async ({ page }) => {
     await page.goto(`${SIDE}/laerling`);
-    await expect(page.locator('.fb-om')).toContainText('Når kontrakten sies opp eller heves');
+    await expect(synlig(page).locator('.fb-om')).toContainText('Når kontrakten sies opp eller heves');
     await page.goto(`${SIDE}/praksiskandidat`);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Praksiskandidat');
-    await expect(page.locator('.fb-om')).not.toContainText('Når kontrakten sies opp eller heves');
+    await expect(synlig(page).locator('.fb-om')).not.toContainText('Når kontrakten sies opp eller heves');
   });
 
   test('en vei som ikke finnes', async ({ page }) => {
@@ -172,16 +172,16 @@ test.describe('lærlinger og kandidater: «Om veien» på stor skjerm', () => {
   test('feltene fyller bredden to og to, også uten «Voksne»', async ({ page }) => {
     // Uten «Voksne»: fellesfagene står over to rader til høyre.
     await page.goto(`${SIDE}/laerling-tidlig`);
-    await expect(page.locator('.fb-om .fb-fakta-hoy')).toHaveCount(1);
-    const melder = await page.locator('.fb-om .fb-fakta > div', { hasText: 'Melder opp' }).boundingBox();
-    const dok = await page.locator('.fb-om .fb-fakta > div', { hasText: 'Dokumentasjon' }).boundingBox();
-    const fellesfag = await page.locator('.fb-om .fb-fakta-hoy').boundingBox();
+    await expect(synlig(page).locator('.fb-om .fb-fakta-hoy')).toHaveCount(1);
+    const melder = await synlig(page).locator('.fb-om .fb-fakta > div', { hasText: 'Melder opp' }).boundingBox();
+    const dok = await synlig(page).locator('.fb-om .fb-fakta > div', { hasText: 'Dokumentasjon' }).boundingBox();
+    const fellesfag = await synlig(page).locator('.fb-om .fb-fakta-hoy').boundingBox();
     expect(melder && dok && Math.abs(melder.x - dok.x) < 2).toBe(true);
     expect(melder && fellesfag && fellesfag.x > melder.x + melder.width - 1).toBe(true);
     // Med «Voksne»: seks felt to og to, uten felt over to rader.
     await page.goto(`${SIDE}/laerling`);
-    await expect(page.locator('.fb-om .fb-fakta > div', { hasText: 'Voksne' })).toBeVisible();
-    await expect(page.locator('.fb-om .fb-fakta-hoy')).toHaveCount(0);
+    await expect(synlig(page).locator('.fb-om .fb-fakta > div', { hasText: 'Voksne' })).toBeVisible();
+    await expect(synlig(page).locator('.fb-om .fb-fakta-hoy')).toHaveCount(0);
   });
 });
 

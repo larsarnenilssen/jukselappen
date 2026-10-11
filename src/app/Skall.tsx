@@ -207,18 +207,22 @@ function sideProps(o: Oppforing, parametre: Record<string, string>): SideProps {
 }
 
 /**
- * Siden som vises, og sidene i bakgrunnen (avgjørelse 111). Siden som vises, står først i main, så id-er, etiketter og
+ * Siden som vises, og sidene i bakgrunnen (avgjørelse 111). Hver side hører til et besøk (se sidestabel.ts). Siden som vises, står først i main, så id-er, etiketter og
  * oppslag i dokumentet finner den før de skjulte.
  */
 function useSiderIBakgrunnen(plassering: Navigasjon): { oppforing: Oppforing; aktiv: boolean }[] {
   const stabel = useRef<Oppforing[]>([]);
+  const aktiv = useRef<Oppforing | null>(null);
   const forrige = useRef<Navigasjon | null>(null);
-  const aktiv: Oppforing = { dybde: plassering.dybde, sti: plassering.sti, sporring: plassering.sporring.toString() };
-  if (forrige.current !== plassering) {
-    stabel.current = oppdaterStabel(stabel.current, aktiv, plassering.type);
+  if (forrige.current !== plassering || !aktiv.current) {
+    const ny = { dybde: plassering.dybde, sti: plassering.sti, sporring: plassering.sporring.toString() };
+    const resultat = oppdaterStabel(stabel.current, ny, plassering.type, aktiv.current);
+    stabel.current = resultat.stabel;
+    aktiv.current = resultat.aktiv;
     forrige.current = plassering;
   }
-  return [{ oppforing: aktiv, aktiv: true }, ...siderIBakgrunnen(stabel.current, aktiv).map((oppforing) => ({ oppforing, aktiv: false }))];
+  const vises = aktiv.current;
+  return [{ oppforing: vises, aktiv: true }, ...siderIBakgrunnen(stabel.current, vises).map((oppforing) => ({ oppforing, aktiv: false }))];
 }
 
 export function Skall() {
@@ -325,14 +329,14 @@ export function Skall() {
           const funnet = finnRute(oppforing.sti);
           if (!funnet) {
             return aktiv ? (
-              <div key={oppforing.sti} class="sideramme">
+              <div key={oppforing.besok} class="sideramme">
                 <IkkeFunnet />
               </div>
             ) : null;
           }
           return (
             <Side
-              key={oppforing.sti}
+              key={oppforing.besok}
               rute={funnet.rute}
               props={sideProps(oppforing, funnet.parametre)}
               adresse={`${oppforing.sti}?${oppforing.sporring}`}
