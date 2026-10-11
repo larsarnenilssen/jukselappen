@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, synlig } from './hjelp.ts';
 
 function status(kjort: Date, ...statuser: ('ok' | 'endret' | 'feilet')[]) {
   return {
@@ -76,12 +76,12 @@ test.describe('kildestatus', () => {
 
   test('varselet kan skjules til neste sjekk og vises igjen', async ({ page }) => {
     await medStatus(page, status(dagerSiden(1), 'feilet', 'ok'));
-    const indikator = page.locator('.indikator');
+    const indikator = synlig(page).locator('.indikator');
     await page.goto('./#/innstillinger');
     await expect(indikator).toHaveAttribute('data-status', 'feilet');
     await indikator.click();
     await page.getByRole('button', { name: 'Skjul varselet til neste sjekk' }).click();
-    await expect(page.getByText('Varselet er skjult på denne enheten til neste kildesjekk.')).toBeVisible();
+    await expect(synlig(page).getByText('Varselet er skjult på denne enheten til neste kildesjekk.')).toBeVisible();
     await page.reload();
     await expect(page.getByRole('button', { name: 'Vis varselet igjen' })).toBeVisible();
     await page.goto('./#/innstillinger');

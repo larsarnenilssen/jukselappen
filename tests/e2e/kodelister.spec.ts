@@ -1,6 +1,7 @@
 // Fagmerknader (FAM) og vitnemålsmerknader (VMM) fra VIGO Kodeverksbase i begrepsbanken: oppslag med søk, og
 // treff i det samlede søket (avgjørelse 026).
 import { expect, test } from '@playwright/test';
+import { synlig } from './hjelp.ts';
 
 test.describe('kodelister i begrepsbanken', () => {
   test('oppslaget viser FAM-kodene, og søket i oppslaget filtrerer og står i adressen', async ({ page }) => {
@@ -24,10 +25,10 @@ test.describe('kodelister i begrepsbanken', () => {
 
   test('vitnemålsmerknadene har eget oppslag, og nynorsk viser VIGOs nynorske tekst', async ({ page }) => {
     await page.goto('./#/begreper/vitnemalsmerknader?q=VMM01');
-    await expect(page.locator('#kode-VMM01')).toContainText('Fulgt opplæringen fra');
+    await expect(synlig(page).locator('#kode-VMM01')).toContainText('Fulgt opplæringen fra');
     await page.goto('./#/innstillinger');
     await page.getByRole('radio', { name: 'Nynorsk' }).check();
     await page.goto('./#/begreper/vitnemalsmerknader?q=VMM01');
-    await expect(page.locator('#kode-VMM01')).toContainText('Følgt opplæringa frå');
+    await expect(synlig(page).locator('#kode-VMM01')).toContainText('Følgt opplæringa frå');
   });
 });
