@@ -10,3 +10,5 @@
 - Tallboksen har sin egen merkelapp og ingen overskrift.
 
 **Konsekvens:** Alle landingssidene har samme oppbygning, og alle kort står under en overskrift. En ny landingsside følger regelen (AGENTS.md og docs/DESIGN.md). Overskriftene «Klage», «Datoer», «Vurdering i fag», «Orden og oppførsel», «Retten og pliktene» og «Oppslag» er tatt bort.
+
+**Endret 11.10.2026:** Eier: lokale regler skal stå i venstre kolonne. Delen «Lokale regler for …» står nederst i venstre kolonne på landingssidene, med sin egen overskrift under kolonneoverskriften, og det gjelder også nye landingssider med lokale regler. I Inntak står den under «Retten til opplæring».

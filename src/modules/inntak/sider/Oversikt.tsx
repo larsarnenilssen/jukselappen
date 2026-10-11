@@ -37,20 +37,25 @@ export default function Oversikt() {
       ) : (
         <>
           <Lokalmerknad innhold={innhold} />
-          {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): mer opplæring til venstre, og verktøyene, de lokale
-              reglene og tallene til høyre (eier 08.10.2026). Hver kolonne har én overskrift (avgjørelse 109). */}
+          {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): mer opplæring og de lokale reglene til venstre, og
+              verktøyene og tallene til høyre (eier 08.10.2026). Hver kolonne har én overskrift (avgjørelse 109). */}
           <ToKolonner
             hoved={
-              <Oversiktsdel tittel={t('inntak.delRetten')}>
-                <a class="frist-inngang" href={`#${UNDERSIDER.merOpplaering.rute}`}>
-                  <span class="frist-inngang-tittel">
-                    <Ikon navn={UNDERSIDER.merOpplaering.ikon} />
-                    {t('inntak.merOpplaering.kort')}
-                  </span>
-                  <span class="frist-inngang-neste">{t('inntak.merOpplaering.beskrivelse')}</span>
-                  <Ikon navn="hoyre" class="frist-inngang-pil" />
-                </a>
-              </Oversiktsdel>
+              <>
+                <Oversiktsdel tittel={t('inntak.delRetten')}>
+                  <a class="frist-inngang" href={`#${UNDERSIDER.merOpplaering.rute}`}>
+                    <span class="frist-inngang-tittel">
+                      <Ikon navn={UNDERSIDER.merOpplaering.ikon} />
+                      {t('inntak.merOpplaering.kort')}
+                    </span>
+                    <span class="frist-inngang-neste">{t('inntak.merOpplaering.beskrivelse')}</span>
+                    <Ikon navn="hoyre" class="frist-inngang-pil" />
+                  </a>
+                </Oversiktsdel>
+                {/* Lokale regler om inntak for fylket og skolen (fase 9, avgjørelse 093), nederst i venstre kolonne
+                    (eier 11.10.2026, avgjørelse 109). */}
+                <LokaleRegler tema="inntak" />
+              </>
             }
             side={
               <>
@@ -85,9 +90,6 @@ export default function Oversikt() {
                     </a>
                   </Inngangsgruppe>
                 </Oversiktsdel>
-                {/* Lokale regler om inntak for fylket og skolen (fase 9, avgjørelse 093), etter verktøyene, så de ikke
-                    står mellom kort de ikke gjelder (avgjørelse 109). */}
-                <LokaleRegler tema="inntak" />
                 {/* Søkerne fra Udir og ungdomskullene fra SSB, nederst etter sidens eget innhold (avgjørelse 090 og 091). */}
                 <InntakBoks fylke={innstillinger.fylke} />
               </>

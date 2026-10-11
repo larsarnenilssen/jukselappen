@@ -33,14 +33,14 @@ test.describe('modulregister og søk', () => {
     }
   });
 
-  test('Inntak: de lokale reglene står etter verktøyene i høyre kolonne (avgjørelse 109)', async ({ page }) => {
+  test('Inntak: de lokale reglene står nederst i venstre kolonne (eier 11.10.2026, avgjørelse 109)', async ({ page }) => {
     await settLagret(page, { fylke: '46' });
     await page.goto('./#/inntak');
-    const side = page.locator('.to-kolonner-side');
-    await expect(side.getByTestId('lokale-regler-side')).toBeVisible();
-    await expect(page.locator('.to-kolonner-hoved').getByTestId('lokale-regler-side')).toHaveCount(0);
-    const klasser = await side.evaluate((el) => [...el.children].map((c) => c.className));
-    expect(klasser.findIndex((k) => k.includes('lokaleregler-del'))).toBe(klasser.findIndex((k) => k.includes('lop-del')) + 1);
+    const hoved = page.locator('.to-kolonner-hoved');
+    await expect(hoved.getByTestId('lokale-regler-side')).toBeVisible();
+    await expect(page.locator('.to-kolonner-side').getByTestId('lokale-regler-side')).toHaveCount(0);
+    const klasser = await hoved.evaluate((el) => [...el.children].map((c) => c.className));
+    expect(klasser.at(-1)).toContain('lokaleregler-del');
   });
 
   test('forsiden har ikke bildet på kalkulatorene (eier 08.10.2026)', async ({ page }) => {
