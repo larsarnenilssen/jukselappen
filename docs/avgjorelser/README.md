@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-109 avgjørelser: 74 gjeldende, 34 endret og 1 erstattet.
+109 avgjørelser: 73 gjeldende, 35 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -122,4 +122,4 @@ Status:
 | 106 | [Plan for kontrollen: ukens kontroll og fylkeslenkene](106-plan-for-kontrollen.md) | endret |
 | 107 | [Kildestatus: «virker» og «endret» for seg, og kontrolloversikten etter godkjenning](107-kildestatus-virker-og-endret.md) | gjeldende |
 | 108 | [Forsiden: lukkede grupper rykker opp, like høye favoritter og dagens jukselapp i «Tilpass»](108-forsiden-lukkede-grupper-og-favoritter.md) | gjeldende |
-| 109 | [Én overskrift over hver kolonne på landingssidene](109-overskrifter-pa-landingssidene.md) | gjeldende |
+| 109 | [Én overskrift over hver kolonne på landingssidene](109-overskrifter-pa-landingssidene.md) | endret |

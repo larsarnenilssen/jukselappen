@@ -6,7 +6,7 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ### Endret
 
-- **Overskrifter på oversiktene i modulene:** Inntak, Vurdering, Eksamen og klage, Skolemiljø og Tilrettelegging har én overskrift over hver kolonne, som Opplæringstilbud. Til venstre står det hva sidene handler om, f.eks. «Reglene for vurdering». Over veiviserne, kalkulatorene og fristene står «Verktøy», eller «Veiviser» når det bare er en veiviser. Lokale regler i Inntak står nå etter verktøyene.
+- **Overskrifter på oversiktene i modulene:** Inntak, Vurdering, Eksamen og klage, Skolemiljø og Tilrettelegging har én overskrift over hver kolonne, som Opplæringstilbud. Til venstre står det hva sidene handler om, f.eks. «Reglene for vurdering». Over veiviserne, kalkulatorene og fristene står «Verktøy», eller «Veiviser» når det bare er en veiviser.
 - **Nyhetene heter «Nyheter» på begge forsidene:** Som egen gruppe på favorittforsiden het de «Siste nytt», mens fanen i Aktuelt heter «Nyheter».
 
 ## [1.2.2] – 2026-10-10
