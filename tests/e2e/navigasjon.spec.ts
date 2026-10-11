@@ -101,6 +101,18 @@ test.describe('navigasjon', () => {
     expect(viewport).not.toMatch(/user-scalable\s*=\s*no|maximum-scale\s*=\s*1(\.0)?\b/);
   });
 
+  test('dobbelttrykk zoomer ikke, men knipezoom er på (avgjørelse 110)', async ({ page }) => {
+    await page.goto('./');
+    await venterPaaSide(page);
+    const verdier = await page.evaluate(() =>
+      ['html', 'body', 'main', 'button', 'a'].map((velger) => {
+        const element = document.querySelector(velger);
+        return element ? getComputedStyle(element).touchAction : 'mangler';
+      }),
+    );
+    expect(verdier).toEqual(['manipulation', 'manipulation', 'manipulation', 'manipulation', 'manipulation']);
+  });
+
   test('topplinjen viser appnavnet uten logo (eier 02.10.2026)', async ({ page }) => {
     await page.goto('./');
     await expect(page.locator('.topplinje .appnavn')).toHaveText('Jukselappen');

@@ -7,6 +7,15 @@
 }
 
 /*
+ * Ingen zoom ved dobbelttrykk, så raske trykk på samme sted ikke forstørrer siden. Knipezoom og rulling virker
+ * som før (avgjørelse 110). Står på alle elementer fordi en rullbar boks (f.eks. en bred tabell) ikke arver
+ * det fra html. Håndtaket i sorterbare lister har sin egen `touch-action: none`.
+ */
+* {
+  touch-action: manipulation;
+}
+
+/*
  * Lerretet bak siden. iOS tar fargen bak statuslinjen fra bakgrunnsfargen (background-color)
  * til html og body, så begge har toppfeltets farge. Fargeovergangen gir sidefargen nederst,
  * der installerte nettapper på iOS kan vise en stripe under innholdet (bunnmenyen er tatt bort,
