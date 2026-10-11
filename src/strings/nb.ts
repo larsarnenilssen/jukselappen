@@ -637,10 +637,14 @@ export const nb = {
     kilder: 'Kilder',
     lukk: 'Lukk',
     eksternLenke: '(åpnes på {nettsted})',
-    // Overskriftene over verktøyene på oversiktene, i entall eller flertall etter hvor mange det er (eier 08.10.2026).
+    // Overskriftene over verktøyene på oversiktene: «Verktøy» for flere typer, ellers typen i entall eller flertall
+    // (eier 08.10.2026 og 11.10.2026, avgjørelse 109).
+    verktoy: 'Verktøy',
     veiviser: 'Veiviser',
     veivisere: 'Veivisere',
     kalkulator: 'Kalkulator',
+    kalkulatorer: 'Kalkulatorer',
+    frister: 'Frister',
   },
   utvikling: {
     tittel: 'Komponentkatalog',

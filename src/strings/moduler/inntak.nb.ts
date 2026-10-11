@@ -2,6 +2,8 @@
 
 export const inntakNb = {
   tittel: 'Inntak',
+  // Overskriften over venstre kolonne på oversikten (avgjørelse 109).
+  delRetten: 'Retten til opplæring',
   innledning: 'Rettigheter og søkerkategorier ved inntak til videregående opplæring, etter opplæringslova og opplæringsforskrifta. Hvert steg viser fristene og paragrafene i regelverket.',
   bareNasjonalt: 'Viser de nasjonale reglene. Fylket kan ha lokale regler om inntak.',
   velgFylke: 'Velg fylke',

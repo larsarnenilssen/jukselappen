@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { veiviseroverskrift } from '../../src/components/Veiviserinnganger.tsx';
+import { verktoyoverskrift } from '../../src/components/Oversiktsdel.tsx';
 import { ANBEFALTE, lesRolle, ROLLER } from '../../src/app/velkomst/roller.ts';
 import { samleFavorittbare } from '../../src/modules/register.ts';
 import { velkomstNb } from '../../src/strings/velkomst.nb.ts';
@@ -28,9 +28,19 @@ describe('velkomsten (fase 10)', () => {
   });
 });
 
-describe('overskriften over veiviserne', () => {
-  it('står i entall for én og i flertall for flere (eier 08.10.2026)', () => {
-    expect(veiviseroverskrift(1)).toBe('felles.veiviser');
-    expect(veiviseroverskrift(2)).toBe('felles.veivisere');
+describe('overskriften over verktøyene på oversiktene (avgjørelse 109)', () => {
+  it('står i entall for én og i flertall for flere av samme type (eier 08.10.2026)', () => {
+    expect(verktoyoverskrift({ veivisere: 1 })).toBe('felles.veiviser');
+    expect(verktoyoverskrift({ veivisere: 2 })).toBe('felles.veivisere');
+    expect(verktoyoverskrift({ kalkulatorer: 1 })).toBe('felles.kalkulator');
+    expect(verktoyoverskrift({ kalkulatorer: 2 })).toBe('felles.kalkulatorer');
+    expect(verktoyoverskrift({ frister: 1 })).toBe('felles.frister');
+  });
+
+  it('heter «Verktøy» når det står flere typer (eier 11.10.2026)', () => {
+    expect(verktoyoverskrift({ veivisere: 1, kalkulatorer: 1 })).toBe('felles.verktoy');
+    expect(verktoyoverskrift({ veivisere: 1, frister: 1 })).toBe('felles.verktoy');
+    expect(verktoyoverskrift({ veivisere: 2, kalkulatorer: 1, frister: 1 })).toBe('felles.verktoy');
+    expect(verktoyoverskrift({ veivisere: 0, kalkulatorer: 1 })).toBe('felles.kalkulator');
   });
 });

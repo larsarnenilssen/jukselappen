@@ -1,12 +1,12 @@
-// Oversikten i Skolemiljø (fase 7): «Retten og resultatene» øverst (kapittel 12 og Elevundersøkelsen, eier 06.10.2026),
-// veiviseren for aktivitetsplikten og skolereglene.
+// Oversikten i Skolemiljø (fase 7): «Retten og reglene» til venstre (kapittel 12 og skolereglene, eier 06.10.2026) og
+// veiviseren for aktivitetsplikten til høyre (avgjørelse 109).
 import { useEffect, useState } from 'preact/hooks';
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { Begrepstekst } from '../../../components/Begrepstekst.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { ToKolonner } from '../../../components/ToKolonner.tsx';
-import { veiviseroverskrift, Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
-import { Oversiktsdel } from '../../../components/Oversiktsdel.tsx';
+import { Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
+import { Inngangsgruppe, Oversiktsdel, verktoyoverskrift } from '../../../components/Oversiktsdel.tsx';
 import { velgSynlige } from '../../../core/innhold/status.ts';
 import { oversiktsid } from '../../favoritter.ts';
 import { Inngang } from '../../vurdering/sider/Inngang.tsx';
@@ -28,30 +28,21 @@ export default function Oversikt() {
         <Begrepstekst tekst={t('skolemiljo.innledning')} />
       </p>
       {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): retten og skolereglene til venstre, veiviseren til høyre
-          (eier 08.10.2026). */}
+          (eier 08.10.2026). Hver kolonne har én overskrift (avgjørelse 109). */}
       <ToKolonner
         hoved={
-          <>
-            {/* Retten og pliktene øverst (eier 06.10.2026): kapittel 12. Elevundersøkelsen er egen modul (avgjørelse 087). */}
-            {/* Delene med én inngang står uten overskrift, som én liste (avgjørelse 100). */}
-            <Oversiktsdel tittel={t('skolemiljo.rettenOgResultatene')} antall={1}>
-              <ul class="vu-videre">
-                <li>
-                  <Inngang {...UNDERSIDER.kapittel12} tittel={t('skolemiljo.kapittel12.kort')} tekst={t('skolemiljo.kapittel12.beskrivelse')} />
-                </li>
-              </ul>
-            </Oversiktsdel>
-            <Oversiktsdel tittel={t('skolemiljo.oppslag')} antall={1}>
-              <ul class="vu-videre">
-                <li>
-                  <Inngang {...UNDERSIDER.skoleregler} tittel={t('skolemiljo.skoleregler.kort')} tekst={t('skolemiljo.skoleregler.beskrivelse')} />
-                </li>
-              </ul>
-            </Oversiktsdel>
-          </>
+          // Retten og pliktene øverst (eier 06.10.2026): kapittel 12. Elevundersøkelsen er egen modul (avgjørelse 087).
+          <Oversiktsdel tittel={t('skolemiljo.delRetten')}>
+            <Inngangsgruppe>
+              <Inngang {...UNDERSIDER.kapittel12} tittel={t('skolemiljo.kapittel12.kort')} tekst={t('skolemiljo.kapittel12.beskrivelse')} />
+            </Inngangsgruppe>
+            <Inngangsgruppe>
+              <Inngang {...UNDERSIDER.skoleregler} tittel={t('skolemiljo.skoleregler.kort')} tekst={t('skolemiljo.skoleregler.beskrivelse')} />
+            </Inngangsgruppe>
+          </Oversiktsdel>
         }
         side={
-          <Oversiktsdel tittel={t(veiviseroverskrift(veivisere.length))} antall={veivisere.length}>
+          <Oversiktsdel tittel={t(verktoyoverskrift({ veivisere: veivisere.length }))}>
             {innhold === null ? (
               <p class="dempet">{t('app.lasterInn')}</p>
             ) : (

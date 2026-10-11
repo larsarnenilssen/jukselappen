@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { settLagret } from './hjelp.ts';
 
 test.describe('modulregister og søk', () => {
   test('oversiktene i modulene: veivisere, kalkulatorer og kalendere står i høyre kolonne (eier 08.10.2026)', async ({ page }) => {
@@ -14,6 +15,32 @@ test.describe('modulregister og søk', () => {
     await expect(kalkulator).toHaveCount(1);
     await expect(kalkulator.locator('.inngangsbilde-ledd')).toHaveCount(3);
     await expect(kalkulator.locator('.inngangsbilde-ut')).toContainText('Fraværsgrensen');
+  });
+
+  test('oversiktene i modulene: én overskrift over hver kolonne (eier 11.10.2026, avgjørelse 109)', async ({ page }) => {
+    // Over verktøyene står «Verktøy» når det er flere typer, ellers navnet på typen i entall eller flertall.
+    for (const [rute, venstre, hoyre] of [
+      ['#/inntak', 'Retten til opplæring', 'Verktøy'],
+      ['#/vurdering', 'Reglene for vurdering', 'Verktøy'],
+      ['#/eksamen', 'Eksamen og prøver', 'Verktøy'],
+      ['#/skolemiljo', 'Retten og reglene', 'Veiviser'],
+      ['#/tilrettelegging', 'Hvem får hva', 'Veivisere'],
+      ['#/opplaeringslop', 'Utdanningsprogram og løp', 'Skoler og opplæringskontorer'],
+    ] as const) {
+      await page.goto(`./${rute}`);
+      await expect(page.locator('.to-kolonner-hoved .liten-overskrift'), rute).toHaveText([venstre]);
+      await expect(page.locator('.to-kolonner-side > .lop-del > h2'), rute).toHaveText([hoyre]);
+    }
+  });
+
+  test('Inntak: de lokale reglene står etter verktøyene i høyre kolonne (avgjørelse 109)', async ({ page }) => {
+    await settLagret(page, { fylke: '46' });
+    await page.goto('./#/inntak');
+    const side = page.locator('.to-kolonner-side');
+    await expect(side.getByTestId('lokale-regler-side')).toBeVisible();
+    await expect(page.locator('.to-kolonner-hoved').getByTestId('lokale-regler-side')).toHaveCount(0);
+    const klasser = await side.evaluate((el) => [...el.children].map((c) => c.className));
+    expect(klasser.findIndex((k) => k.includes('lokaleregler-del'))).toBe(klasser.findIndex((k) => k.includes('lop-del')) + 1);
   });
 
   test('forsiden har ikke bildet på kalkulatorene (eier 08.10.2026)', async ({ page }) => {

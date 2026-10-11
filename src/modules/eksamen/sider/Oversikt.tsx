@@ -1,6 +1,6 @@
 // Oversikten i Eksamen og klage (eier 06.10.2026, avgjørelse 078): de fire kortene som stod under «Eksamen og klage» i
-// Vurdering: «Eksamen og prøver» med eksamen og prøvene, «Klage» med veiviseren og «Datoer» med kalenderen. Kortet for
-// kalenderen viser den neste datoen.
+// Vurdering: «Eksamen og prøver» med eksamen og prøvene til venstre, og veiviseren for klage og kalenderen under
+// verktøyene til høyre (avgjørelse 109). Kortet for kalenderen viser den neste datoen.
 import { useEffect, useState } from 'preact/hooks';
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { Begrepstekst } from '../../../components/Begrepstekst.tsx';
@@ -8,7 +8,7 @@ import { Ikon } from '../../../components/Ikon.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { ToKolonner } from '../../../components/ToKolonner.tsx';
 import { Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
-import { Oversiktsdel } from '../../../components/Oversiktsdel.tsx';
+import { Inngangsgruppe, Oversiktsdel, verktoyoverskrift } from '../../../components/Oversiktsdel.tsx';
 import { velgSynlige } from '../../../core/innhold/status.ts';
 import { nesteFrist, tidspunkt } from '../../../core/tidslinje.ts';
 import { lastEksamensdatoer } from '../../../data/eksamen.ts';
@@ -50,10 +50,7 @@ export default function Oversikt() {
         // andre modulene (fase 8b, eier 08.10.2026).
         <ToKolonner
           hoved={
-            <section class="lop-del" aria-labelledby="ek-del-eksamen">
-              <h2 class="liten-overskrift" id="ek-del-eksamen">
-                {t('eksamen.delEksamen')}
-              </h2>
+            <Oversiktsdel tittel={t('eksamen.delEksamen')}>
               <Veiviserinnganger
                 veivisere={[]}
                 rute={veiviserRute}
@@ -62,15 +59,14 @@ export default function Oversikt() {
                   { id: 'provene', kort: <Inngang {...UNDERSIDER.provene} tittel={t('eksamen.provene.kort')} tekst={t('eksamen.provene.beskrivelse')} /> },
                 ]}
               />
-            </section>
+            </Oversiktsdel>
           }
           side={
-            <>
-              {/* Delene med én inngang står uten overskrift, som én liste (avgjørelse 100). */}
-              <Oversiktsdel tittel={t('eksamen.delKlage')} antall={veivisere.length}>
+            <Oversiktsdel tittel={t(verktoyoverskrift({ veivisere: veivisere.length, frister: 1 }))}>
+              <Inngangsgruppe>
                 <Veiviserinnganger veivisere={veivisere} rute={veiviserRute} />
-              </Oversiktsdel>
-              <Oversiktsdel tittel={t('eksamen.delDatoer')} antall={1}>
+              </Inngangsgruppe>
+              <Inngangsgruppe>
                 {/* Kortet viser den neste datoen, så brukeren ser hva som kommer uten å åpne kalenderen. */}
                 <a class="frist-inngang" href={`#${UNDERSIDER.frister.rute}`}>
                   <span class="frist-inngang-tittel">
@@ -88,8 +84,8 @@ export default function Oversikt() {
                   )}
                   <Ikon navn="hoyre" class="frist-inngang-pil" />
                 </a>
-              </Oversiktsdel>
-            </>
+              </Inngangsgruppe>
+            </Oversiktsdel>
           }
         />
       )}

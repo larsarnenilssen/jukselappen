@@ -7,8 +7,8 @@ import { settLagret } from './hjelp.ts';
 test.describe('Aktivitetsplikt og skoleregler', () => {
   test('oversikten har retten og pliktene øverst, så skolereglene, og veiviseren til høyre (eier 08.10.2026)', async ({ page }) => {
     await page.goto('./#/skolemiljo');
-    // Hver del har én inngang og står derfor uten overskrift, i samme rekkefølge (avgjørelse 100).
-    await expect(page.locator('main h2')).toHaveCount(0);
+    // Én overskrift over hver kolonne, og kortene under uten egne overskrifter (avgjørelse 100 og 109).
+    await expect(page.locator('main h2')).toHaveText(['Retten og reglene', 'Veiviser']);
     const innganger = page.locator('main .lop-del a[href]');
     await expect(innganger.nth(0)).toContainText('Et trygt og godt skolemiljø');
     await expect(innganger.nth(1)).toContainText('Skoleregler');

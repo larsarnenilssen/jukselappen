@@ -7,12 +7,12 @@ import { Begrepstekst } from '../../../components/Begrepstekst.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { ToKolonner } from '../../../components/ToKolonner.tsx';
 import { oversiktsid } from '../../favoritter.ts';
-import { veiviseroverskrift, Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
+import { Veiviserinnganger } from '../../../components/Veiviserinnganger.tsx';
 import { velgSynlige } from '../../../core/innhold/status.ts';
 import { hentInnhold, UNDERSIDER, veiviserRute, type Vurderingsinnhold } from '../innhold.ts';
 import { Inngang } from './Inngang.tsx';
 import { Kalkulatorinngang } from '../../../components/Kalkulatorinngang.tsx';
-import { Oversiktsdel } from '../../../components/Oversiktsdel.tsx';
+import { Inngangsgruppe, Oversiktsdel, verktoyoverskrift } from '../../../components/Oversiktsdel.tsx';
 
 export default function Oversikt() {
   const { t } = useTekst();
@@ -30,25 +30,24 @@ export default function Oversikt() {
         <Begrepstekst tekst={t('vurdering.innledning')} />
       </p>
       {/* To kolonner på skrivebord (fase 8b, docs/DESIGN.md): sidene i modulen til venstre, veiviseren og kalkulatoren
-          til høyre (eier 08.10.2026). */}
+          til høyre (eier 08.10.2026). Hver kolonne har én overskrift (avgjørelse 109). */}
       <ToKolonner
         hoved={
-          <>
-            {/* Delene med én inngang står uten overskrift, som én liste (avgjørelse 100). */}
-            <Oversiktsdel tittel={t('vurdering.delFag')} antall={1}>
+          <Oversiktsdel tittel={t('vurdering.delRegler')}>
+            <Inngangsgruppe>
               <Inngang {...UNDERSIDER.underveisSlutt} tittel={t('vurdering.underveisSlutt.kort')} tekst={t('vurdering.underveisSlutt.beskrivelse')} />
-            </Oversiktsdel>
-            <Oversiktsdel tittel={t('vurdering.delOrden')} antall={1}>
+            </Inngangsgruppe>
+            <Inngangsgruppe>
               <Inngang {...UNDERSIDER.orden} tittel={t('vurdering.orden.kort')} tekst={t('vurdering.orden.beskrivelse')} />
-            </Oversiktsdel>
-          </>
+            </Inngangsgruppe>
+          </Oversiktsdel>
         }
         side={
-          <>
-            <Oversiktsdel tittel={t(veiviseroverskrift(veivisere.length))} antall={veivisere.length}>
+          <Oversiktsdel tittel={t(verktoyoverskrift({ veivisere: veivisere.length, kalkulatorer: 1 }))}>
+            <Inngangsgruppe>
               {innhold === null ? <p class="dempet">{t('app.lasterInn')}</p> : <Veiviserinnganger veivisere={veivisere} rute={veiviserRute} />}
-            </Oversiktsdel>
-            <Oversiktsdel tittel={t('felles.kalkulator')} antall={1}>
+            </Inngangsgruppe>
+            <Inngangsgruppe>
               <Kalkulatorinngang
                 href={`#${UNDERSIDER.fravaer.rute}`}
                 ikon={UNDERSIDER.fravaer.ikon}
@@ -56,8 +55,8 @@ export default function Oversikt() {
                 inn={[t('vurdering.fravaer.faget'), t('vurdering.fravaer.okter')]}
                 ut={t('vurdering.fravaer.resultat.tittel')}
               />
-            </Oversiktsdel>
-          </>
+            </Inngangsgruppe>
+          </Oversiktsdel>
         }
       />
     </div>

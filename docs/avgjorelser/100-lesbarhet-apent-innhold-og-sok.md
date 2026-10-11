@@ -18,3 +18,5 @@
 - Fordelingen av årsverket i en tom Arbeidsplan («Annen planfestet tid 65,5 %») er ikke endret. Den er riktig regnet for en stilling uten undervisning og vises med vilje før noe er fylt inn (eier 08.10.2026).
 
 **Endret 09.10.2026:** Eier: «Lukket på mobil.» Kompetansemålene og vurderingsordningen på fagsiden er åpne fra start på skrivebord (fra 64rem, `useBred` i `ToKolonner`) og lukket på mobil. I Regelverk står dokumentene i den åpne listen på skrivebord, og på mobil i grupper som er lukket fra start, som før denne avgjørelsen. Det brukeren åpner og lukker, huskes for siden.
+
+**Endret 11.10.2026:** Eier vil ha overskrifter på landingssidene. Hver kolonne på oversiktene i modulene har nå én overskrift, også når det står ett kort under, og verktøyene heter «Verktøy» når det står flere typer (avgjørelse 109). Kortene i en kolonne står fortsatt som én liste, uten egne overskrifter.
