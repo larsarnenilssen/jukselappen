@@ -207,8 +207,8 @@ function sideProps(o: Oppforing, parametre: Record<string, string>): SideProps {
 }
 
 /**
- * Siden som vises, og sidene i bakgrunnen (avgjørelse 111). Hver side hører til et besøk (se sidestabel.ts). Siden som vises, står først i main, så id-er, etiketter og
- * oppslag i dokumentet finner den før de skjulte.
+ * Siden som vises, og sidene i bakgrunnen (avgjørelse 111). Hver side hører til et besøk (se sidestabel.ts). Siden som
+ * vises, står først i main, så id-er, etiketter og oppslag i dokumentet finner den før de skjulte.
  */
 function useSiderIBakgrunnen(plassering: Navigasjon): { oppforing: Oppforing; aktiv: boolean }[] {
   const stabel = useRef<Oppforing[]>([]);
