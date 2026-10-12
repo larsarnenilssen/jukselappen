@@ -87,7 +87,7 @@ export default function Kontor({ sporring }: SideProps) {
           </p>
           {kontor && (
             <p class="skolefilter-tilbud">
-              <span class="merke merke-skole">{data.kontor.find((k) => k.orgnr === kontor)?.navn ?? kontor}</span>{' '}
+              <span class="merke merke-info">{data.kontor.find((k) => k.orgnr === kontor)?.navn ?? kontor}</span>{' '}
               <button type="button" class="lenkeknapp liten" onClick={() => oppdater(fylke, sok)}>
                 {t('opplaeringslop.skoler.fjernTilbud')}
               </button>

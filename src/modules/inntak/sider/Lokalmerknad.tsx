@@ -11,7 +11,7 @@ export function Lokalmerknad({ innhold }: { innhold: Inntaksinnhold }) {
   const fylke = fylkesnavn(innstillinger.fylke);
   if (fylke && harLokalt(innhold, innstillinger.fylke)) {
     return (
-      <p class="sted-valgt">
+      <p class="sted-valgt sted-valgt-ja">
         <Ikon navn="skole" class="ikon-liten" />
         <a href="#/innstillinger">{t('inntak.lokaleMed', { fylke })}</a>
       </p>

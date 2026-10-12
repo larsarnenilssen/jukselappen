@@ -33,7 +33,7 @@ export function HosFylket({ tema, tekst }: { tema: Fylketema; tekst: Flerspraak 
   // Åpen fra start på stor skjerm, lukket på mobil (eier 05.10.2026). Om den er åpen, huskes for siden (husket.ts).
   const [aapen, settAapen] = useHusketApen(`hos-fylket:${tema}`, typeof matchMedia === 'function' && matchMedia('(min-width: 48rem)').matches);
   return (
-    <details class="hos-fylket" open={aapen} onToggle={(e) => settAapen((e.currentTarget as HTMLDetailsElement).open)}>
+    <details class={valgt ? 'hos-fylket hos-fylket-valgt' : 'hos-fylket'} open={aapen} onToggle={(e) => settAapen((e.currentTarget as HTMLDetailsElement).open)}>
       <summary class="hos-fylket-topp">
         <span class="hos-fylket-tittel">
           <Ikon navn="kontor" class="ikon-liten" />

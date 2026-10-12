@@ -33,7 +33,6 @@ export const lovNn: typeof lovNb = {
   iKraftPeriode: 'Gjeld {fra}–{til}',
   endret: 'endra {dato}',
   iKraftSetning: 'I kraft frå {dato}.',
-  skolenDin: 'Skulen din',
   gjelderSkole: 'Gjeld berre skulen.',
   fastsatt: 'Fastsett på {malform}',
   kapitler: 'kapittel {liste}',

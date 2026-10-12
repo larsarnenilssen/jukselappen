@@ -16,3 +16,5 @@
 - Hver henting kontrolleres før filen skrives (skjema og minstekrav), skriver bare når innholdet er endret, og legger endringene i kildesjekken og kontrollsaken. Feiler en del, blir forrige fil stående. Felles hjelpere i `scripts/data/hent.ts`.
 
 **Konsekvens:** Opplæringsløp får to nye oppslag (`#/opplaeringslop/skoler` og `#/opplaeringslop/opplaeringskontor`), tilbudssidene får skolene med tilbudet, yrkene og opplæringskontorene, og tilbudene ved brukerens skole er merket overalt i Opplæringsløp. Dataene lastes først når de trengs. Fire nye kilder i kilderegisteret (`utdanning-no` utvidet, `utdanning-no-beskrivelser`, `udir-nor`, `ndla`).
+
+**Endret 12.10.2026:** Skolefargen heter nå stedfargen (`--farge-sted`) og brukes for alt som vises fordi brukeren har valgt fylke eller skole. Merket er `Stedmerke` («✓ Din skole»), og valget heter «Din skole» / «Alle» (avgjørelse 119).

@@ -452,6 +452,10 @@ export const nb = {
       forLite: 'Tallet må være minst {min}.',
       forStort: 'Tallet kan ikke være større enn {maks}.',
     },
+    sted: {
+      dinSkole: 'Din skole',
+      dittFylke: 'Ditt fylke',
+    },
     niva: {
       nasjonal: 'Nasjonal',
       fylke: 'Fylke',

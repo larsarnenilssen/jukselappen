@@ -448,6 +448,10 @@ export const nn: Tekster = {
       forLite: 'Talet må vere minst {min}.',
       forStort: 'Talet kan ikkje vere større enn {maks}.',
     },
+    sted: {
+      dinSkole: 'Skulen din',
+      dittFylke: 'Fylket ditt',
+    },
     niva: {
       nasjonal: 'Nasjonal',
       fylke: 'Fylke',

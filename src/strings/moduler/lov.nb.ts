@@ -32,7 +32,6 @@ export const lovNb = {
   iKraftPeriode: 'Gjelder {fra}–{til}',
   endret: 'endret {dato}',
   iKraftSetning: 'I kraft fra {dato}.',
-  skolenDin: 'Skolen din',
   gjelderSkole: 'Gjelder bare skolen.',
   fastsatt: 'Fastsatt på {malform}',
   kapitler: 'kapittel {liste}',
