@@ -10,7 +10,7 @@ export const opplaeringslopNn = {
   tilbudVedSkolen: 'Tilboda ved {skole}',
   visning: {
     etikett: 'Vis tilbod',
-    skole: 'Din skule',
+    skole: 'Skulen din',
     alle: 'Alle',
     viser: 'Viser tilboda ved {skole}.',
     velgSkole: 'Vel skule under Innstillingar, så ser du tilboda ved skulen din.',

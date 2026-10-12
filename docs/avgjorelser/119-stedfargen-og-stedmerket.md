@@ -4,7 +4,7 @@
 
 **Valg:**
 - **Stedfargen** er den dempede turkisen appen allerede brukte for tilbud ved skolen din (avgjørelse 053). Tokenene heter nå `--farge-sted`, `--farge-sted-flate` og `--farge-sted-knapp`. Ingen ny farge kommer inn i appen.
-- **Ett merke:** `Stedmerke` («✓ Din skole» / «✓ Ditt fylke», nynorsk «Din skule» / «Ditt fylke») brukes overalt der skolen eller fylket ditt merkes. Valget i Opplæringsløp heter «Din skole» / «Alle».
+- **Ett merke:** `Stedmerke` («✓ Din skole» / «✓ Ditt fylke», nynorsk «Skulen din» / «Fylket ditt»: ulik ordstilling på de to målformene, eier 12.10.2026) brukes overalt der skolen eller fylket ditt merkes. Valget i Opplæringsløp heter «Din skole» / «Alle».
 - **Fargen brukes for:** merket, linjen med valgt sted øverst på forsiden og i Inntak, boksen «Hos fylkeskommunen» når fylket er valgt, `Nivamerke` for fylke og skole, og fylkets og skolens oppføringer i kalenderen. Regelen står i `docs/DESIGN.md` («Stedfargen»).
 - **Uten valgt fylke og skole** står linjen øverst på forsiden som før, og «Hos fylkeskommunen» står i den blå flaten med valget av fylke.
 - **Filtre** i skoleregisteret og blant opplæringskontorene, og privatskolemerket i Regelverk, er blå (`merke-info`), fordi de ikke kommer av valget av sted.

@@ -449,8 +449,8 @@ export const nn: Tekster = {
       forStort: 'Talet kan ikkje vere større enn {maks}.',
     },
     sted: {
-      dinSkole: 'Din skule',
-      dittFylke: 'Ditt fylke',
+      dinSkole: 'Skulen din',
+      dittFylke: 'Fylket ditt',
     },
     niva: {
       nasjonal: 'Nasjonal',
