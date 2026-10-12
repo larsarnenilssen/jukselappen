@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-115 avgjørelser: 79 gjeldende, 35 endret og 1 erstattet.
+116 avgjørelser: 79 gjeldende, 36 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -74,7 +74,7 @@ Status:
 | 058 | [Jukselappen, favoritter på alle sider og filtre i søket](058-jukselappen-favoritter-og-sokefilter.md) | gjeldende |
 | 059 | [Eksamen og klage, og eksamensdatoene fra Udir og fylkene](059-eksamen-klage-og-eksamensdatoer.md) | gjeldende |
 | 060 | [Lager for Grep-hentingen](060-grep-lager.md) | gjeldende |
-| 061 | [Fylkene og lokale forskrifter](061-fylkene-og-lokale-forskrifter.md) | gjeldende |
+| 061 | [Fylkene og lokale forskrifter](061-fylkene-og-lokale-forskrifter.md) | endret av 117 |
 | 062 | [Lenkesjekk for alle lenker i appen](062-lenkesjekk.md) | endret av 106 |
 | 063 | [Kildesjekkens rytme](063-kildesjekkens-rytme.md) | endret av 098 |
 | 064 | [Tilbakemelding på e-post](064-tilbakemelding-pa-epost.md) | gjeldende |
@@ -129,3 +129,4 @@ Status:
 | 113 | [Nettleseren gjenoppretter også rullingen](113-nettleseren-gjenoppretter-rullingen.md) | gjeldende |
 | 114 | [Endringer på nettsider under overskriftene](114-endringer-under-overskrifter.md) | gjeldende |
 | 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
+| 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | gjeldende |

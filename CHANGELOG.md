@@ -4,10 +4,13 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+### Endret
+
+- **«Fylkene» på forsiden heter det samme for alle:** Har du valgt fylke, står det under «Fylkene», f.eks. «Vestland og de andre fylkene.», og fylket ditt står øverst i listen med merket «Ditt fylke». Før het boksen det samme som fylket ditt og gikk rett dit.
+
 ### Rettet
 
 - **Bedre treff i søket:** «frister» gir Kalender først, og «statistikk» gir Videregående i tall først. Fylkene står bare én gang i treffene.
-
 - **Lave bokser under «Flere kalkulatorer» igjen:** Beskjeftigelse, Vikartimer og Overtid på forsiden er like lave som boksene under «Oppslag», slik de var før 1.2.2.
 
 ## [1.2.4] – 2026-10-12

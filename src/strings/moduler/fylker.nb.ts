@@ -1,6 +1,7 @@
 // UI-tekster for fylkessiden (fase 6, pakke 4, avgjørelse 061) på bokmål. fylker.nn.ts må ha de samme nøklene.
 export const fylkerNb = {
   tittel: 'Fylkene',
+  dittFylke: 'Ditt fylke',
   innledning: 'Det fylkeskommunen bestemmer selv, står på sidene til fylket. Velg fylket for å se lenkene, de lokale forskriftene fra Lovdata og skolene og opplæringskontorene i fylket.',
   fylkeInnledning: 'Det fylkeskommunen bestemmer selv: lenker til fylkets sider, de lokale forskriftene fra Lovdata og skolene og opplæringskontorene i fylket.',
   ukjent: 'Fant ikke fylket. Velg et fylke i listen.',
