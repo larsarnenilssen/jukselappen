@@ -6,18 +6,20 @@ Kilder vi har prøvd å ta med i appen, men som ikke er med, eller bare er delvi
 
 ## Nyheter (fase 7b)
 
+Alle radene er kontrollert på nytt 12.10.2026 med prøvehentingen fra Actions (eier).
+
 | Kilde | Hva vi ville ha | Hvorfor ikke | Hva kan åpne den |
 |---|---|---|---|
 | Trøndelag fylkeskommune | Nyheter om videregående i Trøndelag | Nyhetsarkivet lastes av JavaScript fra `/api/`, og robots.txt stenger `/api/`. | En feed fra fylket, eller at fylket tillater `/api/`. |
-| Oslo kommune, Utdanningsetaten | Nyheter om videregående i Oslo | Ingen nyhetsliste for videregående. | En nyhetsside eller feed for videregående. |
+| Oslo kommune, Utdanningsetaten | Nyheter om videregående i Oslo | Utdanningsetaten har ingen nyhetsliste. Kommunen har en feed for hele kommunen (`aktuelt.oslo.kommune.no/rss`), og robots.txt tillater den. Prøvehentingen 12.10.2026: 50 saker, om lag 14 i uka, og filteret for videregående slapp gjennom 4, hvorav 1–2 om videregående. | Eier avgjør om kommunefeeden skal med, eller en egen feed for Utdanningsetaten. |
 | Agder, Akershus, Buskerud, Finnmark, Møre og Romsdal, Nordland, Rogaland, Troms og Østfold | – | Med. Østfold fra 12.10.2026, etter at nettstedet flyttet til `ofk.no`. Feeden (`/ArtikkelRSS.ashx`) er tillatt etter ordlyden i robots.txt, som stenger `/artikkelRSS.aspx`. | Tas ut hvis et fylke sier fra. |
 | Skolenes landsforbund | – | Med fra 12.10.2026, med filteret for videregående. Adressen var feil: `skolenes.no` finnes ikke, forbundet er på `skoleneslandsforbund.no`. | – |
-| Norsk Lektorlag | Nyheter fra et lærerforbund | Ingen feed, og listen har ingen datoer. Det ville krevd henting av hver sak. | En feed, eller datoer i listen. |
+| Norsk Lektorlag | Nyheter fra et lærerforbund | Ingen feed, og listen har ingen datoer. Det ville krevd henting av hver sak. Sitemap.xml har en dato for hver sak, men det er datoen saken sist ble endret. | En feed, eller datoer i listen. |
 | KS | Nyheter om skole og arbeidsgiverpolitikk | Ingen feed, og robots.txt stenger hele nettstedet. Nyhetssiden har i stedet en fast lenke til KS. | En feed, eller at KS åpner for henting. |
-| KF Infoserie (Kommuneforlaget) | Nyheter om regelverk | Krever abonnement og innlogging. Henting kan bryte vilkårene. | Avtale med Kommuneforlaget. |
-| Utdanningsforskning.no og KSU | Forskningsnytt om skolen | Ingen feed. | En feed. |
-| Fafo, SINTEF, Forskningsrådet, Idunn, nasjonale sentre og andre universiteter og høyskoler | Forskningsnytt om skolen | Ingen feed, eller lite om videregående. forskning.no og NIFU dekker en del. | En feed med eget tema for skole. |
-| Lovdata, RSS for Norsk Lovtidend | Nye endringer i regelverket | RSS-en svarer 405 fra skymiljøet og er ikke prøvd fra Actions. Nyhetene bygges i stedet fra Lovdata-dataene appen har. | Prøv RSS-en fra Actions, hvis dataene vi har, ikke er nok. |
+| KF Infoserie (Kommuneforlaget) | Nyheter om regelverk | Krever abonnement og innlogging. Henting kan bryte vilkårene. kf.no har ingen feed. | Avtale med Kommuneforlaget. |
+| Utdanningsforskning.no og KSU | Forskningsnytt om skolen | Ingen feed, og begge svarer 403 også fra Actions (KSU-siden hos uis.no). | En feed, og at nettstedene slipper inn henting. |
+| Fafo, SINTEF, Forskningsrådet, Idunn, nasjonale sentre og andre universiteter og høyskoler | Forskningsnytt om skolen | Ingen feed, eller lite om videregående. forskning.no og NIFU dekker en del. Idunn svarer 403, og robots.txt stenger `/rss`. | En feed med eget tema for skole. |
+| Lovdata, RSS for Norsk Lovtidend | Nye endringer i regelverket | RSS-en svarer fra Actions, men robots.txt slipper bare søkemotorene inn. Nyhetene bygges i stedet fra Lovdata-dataene appen har. | At Lovdata tillater henting av RSS-en, hvis dataene vi har, ikke er nok. |
 
 ## Fylkene: tekst, lenker og datoer
 
