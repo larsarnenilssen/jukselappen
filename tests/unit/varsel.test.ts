@@ -1,10 +1,11 @@
 // Varslene til eier (avgjørelse 085): når en sak gir e-post, teksten når en arbeidsflyt feiler, og saken om
 // nyhetskilder som ikke kan hentes.
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Nyheter } from '../../src/modules/nyheter/skjema.ts';
 import { nyhetsvarsel } from '../../scripts/nyheter/status.ts';
 import { arbeidsflytmerke, feiltekst, loggutdrag } from '../../scripts/varsel/feil.ts';
 import { FORMATRAD, feiltype } from '../../scripts/varsel/feiltype.ts';
+import { lagGithub } from '../../scripts/varsel/github.ts';
 import { lesMerke, planleggVarsel, punktnokkel, type Varsel } from '../../scripts/varsel/plan.ts';
 
 const varsel = (tekst: string | null, idag: string): Varsel => ({
@@ -135,5 +136,39 @@ describe('saken om nyhetskilder', () => {
 
   it('venter to dager før en kilde kommer med, og gir null når alle virker', () => {
     expect(nyhetsvarsel(nyheter({ udir: { status: 'feilet', feilSiden: '2026-10-06' }, nifu: { status: 'ok' } }), kilder, '2026-10-07T04:47:00Z')).toBeNull();
+  });
+});
+
+describe('kall til GitHub', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    vi.restoreAllMocks();
+  });
+
+  const svarene = (...statuser: number[]) => {
+    const fetch = vi.fn<typeof globalThis.fetch>();
+    for (const status of statuser) fetch.mockResolvedValueOnce(new Response(status === 204 ? null : JSON.stringify({ status }), { status }));
+    vi.stubGlobal('fetch', fetch);
+    vi.spyOn(console, 'log').mockImplementation(() => undefined);
+    return fetch;
+  };
+  const gh = () => lagGithub('token', 'eier/repo', 'https://api', () => Promise.resolve());
+
+  it('prøver igjen når GitHub svarer 502, som da kommentaren til kontrollsaken feilet 12.10.2026', async () => {
+    const fetch = svarene(502, 201);
+    await expect(gh().kall('POST', '/issues/92/comments', { body: 'x' })).resolves.toEqual({ status: 201 });
+    expect(fetch).toHaveBeenCalledTimes(2);
+  });
+
+  it('gir opp etter tre forsøk', async () => {
+    const fetch = svarene(502, 503, 500);
+    await expect(gh().kall('GET', '/issues')).rejects.toThrow('GitHub GET /issues: 500');
+    expect(fetch).toHaveBeenCalledTimes(3);
+  });
+
+  it('prøver ikke igjen ved svar i 400-serien', async () => {
+    const fetch = svarene(404);
+    await expect(gh().kall('GET', '/labels/x')).rejects.toThrow('404');
+    expect(fetch).toHaveBeenCalledTimes(1);
   });
 });

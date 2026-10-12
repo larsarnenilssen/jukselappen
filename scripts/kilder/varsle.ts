@@ -61,19 +61,10 @@ const periode = process.env.KONTROLLRUNDE === 'ja' ? idag.slice(0, 7) : rundeper
 const fagindeks = lesJson(join(rot, 'data/grep/fagindeks.json')) as Fagindeks | null;
 const runde = periode ? lagKontrollrunde(periode, praksisTilBekreftelse(praksis, idag), indeks, repo, fagindeks ? kontrollenker(fagindeks) : [], register) : null;
 
+const gh = token ? lagGithub(token, repo, api) : null;
 async function github<T>(metode: string, sti: string, kropp?: unknown): Promise<T> {
-  const svar = await fetch(`${api}/repos/${repo}${sti}`, {
-    method: metode,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/vnd.github+json',
-      'X-GitHub-Api-Version': '2022-11-28',
-      'Content-Type': 'application/json',
-    },
-    ...(kropp === undefined ? {} : { body: JSON.stringify(kropp) }),
-  });
-  if (!svar.ok) throw new Error(`GitHub ${metode} ${sti}: ${svar.status} ${await svar.text()}`);
-  return (svar.status === 204 ? null : await svar.json()) as T;
+  if (!gh) throw new Error('GITHUB_TOKEN mangler');
+  return gh.kall<T>(metode, sti, kropp);
 }
 
 type Sak = { number: number; body: string | null; pull_request?: unknown };
@@ -99,7 +90,7 @@ if (!token || !process.env.GITHUB_REPOSITORY) {
   const [kontroll] = await aapneSaker(KONTROLLETIKETT);
   const gamle = (await aapneSaker(GAMMEL_ETIKETT)).map((s) => s.number);
   const handlinger = planleggKontrollsak(rapport, kontroll ? { nummer: kontroll.number, tekst: kontroll.body } : null, gamle, idag);
-  await utforVarsel(lagGithub(token), handlinger, KONTROLLETIKETT, 'Ukentlig kontrollsak fra kildesjekken');
+  await utforVarsel(gh, handlinger, KONTROLLETIKETT, 'Ukentlig kontrollsak fra kildesjekken');
 
   if (runde && periode) {
     // Bare én sak per runde, også om jobben kjøres flere ganger i uken.
