@@ -11,7 +11,7 @@
  "iKraft": "2025-08-15",
  "iKraftTil": "2027-08-01",
  "lokaltype": "fagfordeling",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-12",
  "gyldighet": {
   "niva": "skole",
   "fylke": "31",
@@ -240,7 +240,7 @@
          ],
          [
           [
-           "Elektriske kretser og nettverk 197 Energi og styresystemer 280 Datateknologi og elektronikk vg2"
+           "Elektriske kretser og nettverk 197\nEnergi og styresystemer 280\nDatateknologi og elektronikk vg2"
           ],
           [
            "140 + 140 + 197"

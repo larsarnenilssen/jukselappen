@@ -27,7 +27,7 @@ Kontrollen av hver kolonne i rundskrivet fant disse. De påvirker ikke tilbudene
 
 ### Løpene i Grep, VIGO og utdanning.no
 
-648 koblinger mellom programområdene i Grep står i minst én av kildene, og alle vises i appen. 578 har ingen kilde som er uenig. Hver kilde teller bare der den beskriver løpet (se avgjørelse 052 og 070). Uenigheter som er nye siden forrige uke, kommer i kontrollsaken.
+648 koblinger mellom programområdene i Grep står i minst én av kildene, og alle vises i appen. 579 har ingen kilde som er uenig. Hver kilde teller bare der den beskriver løpet (se avgjørelse 052 og 070). Uenigheter som er nye siden forrige uke, kommer i kontrollsaken.
 
 Står bare i Grep, ikke i VIGO og utdanning.no (61):
 
@@ -93,9 +93,8 @@ Står bare i Grep, ikke i VIGO og utdanning.no (61):
 - Teknologi- og industrifag (TPTIP1) → Trearbeid (DTDTR2) · vist i appen, merket
 - Teknologi- og industrifag (TPTIP1) → Yrkessjåførkurs for voksne (TPYSL3) · vist i appen, merket
 
-Står i Grep og VIGO, ikke i utdanning.no (6):
+Står i Grep og VIGO, ikke i utdanning.no (5):
 
-- Medieproduksjon (IMMED2) → Profileringsdesignfaget (FDPFD3) · vist i appen, merket
 - Kjøretøy (TPKJT2) → Anleggsmaskinmekanikerfaget (TPAMM3) · vist i appen, merket
 - Kjøretøy (TPKJT2) → Landbruksmaskinmekanikerfaget (TPLMM3) · vist i appen, merket
 - Kjøretøy (TPKJT2) → Sykkelmekanikerfaget (TPSYM3) · vist i appen, merket

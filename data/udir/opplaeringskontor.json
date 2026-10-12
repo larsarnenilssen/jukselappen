@@ -1,6 +1,6 @@
 {
 "kilde": "udir-nor",
-"hentet": "2026-10-08T08:30:59.320Z",
+"hentet": "2026-10-12T11:57:30.644Z",
 "lisens": "NLOD",
 "kontor": [
 {"orgnr":"938371547","navn":"Adam og Eva skolen AS","fylke":"03","kommune":"Oslo","nettside":"https://www.adamogeva.no/","laerlinger":74,"godkjentI":["03","31","32","46","50"]},
@@ -13,7 +13,6 @@
 {"orgnr":"924534273","navn":"Aurskog-Høland opplæringskontor","fylke":"32","kommune":"Aurskog-Høland","nettside":null,"laerlinger":1,"godkjentI":["32"]},
 {"orgnr":"976709446","navn":"Austevoll opplæringskontor","fylke":"46","kommune":"Austevoll","nettside":null,"laerlinger":290,"godkjentI":["40","46","50"]},
 {"orgnr":"929792076","navn":"Avarn Security AS avd opplæringskontor","fylke":"03","kommune":"Oslo","nettside":null,"laerlinger":114,"godkjentI":["03","11","15","18","31","32","33","34","39","42","46","50","55","56"]},
-{"orgnr":"920762220","navn":"Baker & Konditor Opplæring","fylke":"03","kommune":"Oslo","nettside":null,"laerlinger":null,"godkjentI":["11","18","32","39","42","46","50"]},
 {"orgnr":"931079344","navn":"Baker- Bransjens opplæringskontor AS","fylke":"46","kommune":"Øygarden","nettside":null,"laerlinger":86,"godkjentI":["03","11","15","31","32","33","34","39","42","46","50"]},
 {"orgnr":"981430123","navn":"Bauda Kompetanse","fylke":"33","kommune":"Drammen","nettside":null,"laerlinger":103,"godkjentI":["03","31","32","33"]},
 {"orgnr":"931012509","navn":"Bertel O Steen Detalj AS avd Bos Akademiet","fylke":"32","kommune":"Lørenskog","nettside":null,"laerlinger":71,"godkjentI":["03","32","33","34","39"]},

@@ -2,7 +2,7 @@
 
 <!-- Generert av `npm run kontroll:rapport`. Kildesjekken lager den på nytt hver uke. Ikke rediger for hånd. -->
 
-Oppdatert 09.10.2026. Kildesjekken kjørte sist 09.10.2026, verdisjekken 09.10.2026.
+Oppdatert 12.10.2026. Kildesjekken kjørte sist 12.10.2026, verdisjekken 12.10.2026.
 
 Oversikten viser hva som bygger på hver kilde, og hvor langt kontrollen er kommet. «Automatisk sjekk» betyr at sitatet med tallet fortsatt står i kilden. Det er ikke det samme som din kontroll. Se `docs/EIER.md`, punkt 10–12.
 
@@ -16,7 +16,7 @@ Når du har kontrollert noe, skriver du `/godkjent` og id-ene i en kommentar i k
 | Kilden er endret etter kontrollen | 0 |
 | Bør kontrolleres på nytt (over 12 måneder) | 0 |
 | Ikke kontrollert | 557 |
-| Praksis og tolkninger som bør bekreftes | 25 av 25 |
+| Praksis og tolkninger som bør bekreftes | 0 av 25 |
 
 | Automatisk sjekk av regelverdier | Antall |
 |---|---|
@@ -29,7 +29,8 @@ Når du har kontrollert noe, skriver du `/godkjent` og id-ene i en kommentar i k
 
 ## Må ses på
 
-- **Administrere eksamen:** ⚠️ endret siden 09.10.2026, ikke gått gjennom
+- **Standpunktvurdering:** ⚠️ endret siden 12.10.2026, ikke gått gjennom
+- **Administrere eksamen:** ⚠️ endret siden 12.10.2026, ikke gått gjennom
 - **Eksamensdatoer fra udir.no og fylkeskommunene:** ⚠️ endret siden 06.10.2026, ikke gått gjennom
 
 ## Praksis og tolkninger
@@ -38,77 +39,91 @@ Dette bygger appen på uten at det står i kildene. Du bekrefter punktene i kont
 
 | Praksis | Spørsmål | Grunnlag | Kilder å sjekke mot | Bekreftet |
 |---|---|---|---|---|
-| **Lønn i brutte måneder** | Regnes lønn for deler av en måned fortsatt som arbeidsdagene ÷ 21,67 av månedslønnen, med offentlige fridager som arbeidsdager? | Eier 30.09.2026. Praksis i lønnssystemet og i Vestland fylkeskommune. | [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970); [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet) | ikke bekreftet |
-| **Variabel lønn for deltidsansatte** | Gjelder det fortsatt at beskjeftigelse over en stilling under 100 %, opp til hel stilling, gir variabel lønn uten overtidstillegg? Er dommen om overtid for deltidsansatte blitt rettskraftig? | Eier 30.09.2026, inntil dommen om overtid for deltidsansatte er rettskraftig. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.2, Kap. 1 § 12.4, Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 3.25 Beregning av lønn for vikartimer](https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer): Kalkulert tid; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og punkt 9.1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Variabel lønn for timevikarer** | Får timevikarer fortsatt vikartimene utbetalt som variabel lønn, med timelønn etter kalkulert tid? | Eier 01.10.2026. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.2 og Kap. 1 § 12.4; [Visma InSchool – 3.25 Beregning av lønn for vikartimer](https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer): Kalkulert tid | ikke bekreftet |
-| **Overtidsbetaling for undervisning** | Betales overtid for undervisning fortsatt som kalkulert tid × timelønn × 1,5? | Eier 29.09.2026. Hovedtariffavtalen § 6.4 og § 6.5.3. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.5.3, Kap. 1 § 6.4, Kap. 1 § 7.4.2, Kap. 1 § 12.4 og Kap. 4 punkt 4.1; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 5.2, punkt 4, punkt 5.1, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Planleggingsdager** | Brukes fortsatt 45 timer planleggingsdager for alle, tatt fra annen planfestet tid, slik Visma InSchool gjør? | Eier 30.09.2026. Visma InSchool. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4 a, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Skoleåret og timer per uke** | Er elevenes skoleår fortsatt 190 dager og 38 uker, og skal timene per uke fordeles på 38 skoleuker? | Opplæringslova. Paragrafen er ikke lagt inn i kilderegisteret ennå, så tallene sjekkes ikke automatisk. | [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30): § 14-1 første ledd; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 5.1, punkt 5.2, punkt 4, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Planfestet tid fra 60 år** | Regnes planfestet tid for lærere som er 60 år og eldre fortsatt som samme andel av årsverket (1150 × 1650 ÷ 1687,5 = 1124,44 timer)? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Periodenøkkel** | Regnes periodebeskjeftigelse fortsatt med undervisningsdager i perioden ÷ undervisningsdager i skoleåret, slik Visma InSchool gjør? | Eier 30.09.2026. Visma InSchool. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og punkt 9.1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Frigjort tid for 57-åringer** | Skal redusert undervisning for lærere som har fylt 57 år, fortsatt regnes som for nyutdannede og lærere over 60 år, selv om avtaleteksten ikke sier det uttrykkelig? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 6, punkt 5.1, punkt 5.2, punkt 5.3, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Funksjoner i årsrammetimer** | Gjøres funksjoner som er oppgitt i årsrammetimer, fortsatt om til prosent med årsrammen 607,5? | Tolkning av vedlegg 1 til SFS 2213 (årsramme ved redusert undervisning på grunn av funksjon). | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 7.3 b, punkt 9.1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3 og punkt 6; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§14-2): § 14-2 femte ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§11-1): § 11-1 andre ledd; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Utvidet arbeidsår** | Regnes utvidelsen av arbeidsåret fortsatt som timene over 37,5 × 38 + 45 = 1470 planfestede timer, delt på 7,5 timer per dag? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.3, punkt 5.1, punkt 5.2, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Tillegg for funksjoner** | Er 12 000 kroner fortsatt riktig standardbeløp når navnet på en funksjon ikke kjennes igjen, og har fylket egne satser for andre funksjoner? | Appens valg, med utgangspunkt i SFS 2213 punkt 9.1. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 9.1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | ikke bekreftet |
-| **Årsramme for yrkesfaglig fordypning** | Skal yrkesfaglig fordypning (YFF) ha årsrammen for felles programfag på utdanningsprogrammet og trinnet, slik vedlegg 1 sier om prosjekt til fordypning? | Claude 30.09.2026, ut fra vedlegg 1 til SFS 2213 («Prosjekt til fordypning»). Prosjekt til fordypning ble yrkesfaglig fordypning med fagfornyelsen i 2020. | [Grep – fag, læreplaner, vurderingsordninger og årstimetall](https://www.udir.no/om-udir/data/kl06-grep/) | ikke bekreftet |
-| **Fagfornyelsen og LK20** | Heter revisjonen av læreplanverket som innføres nå, fortsatt fagfornyelsen, og viderefører den LK20? | Eier 02.10.2026. Står ikke i overordnet del på udir.no, som appen bruker som kilde. | [Læreplanverket (udir.no)](https://www.udir.no/laring-og-trivsel/lareplanverket/): Ingressen: «Læreplanverket består av …»; [Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet (Udir-1-2026)](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/vedlegg-1/1-hele-grunnopplaringen/1.1-lareplanverket/): Vedlegg 1, 1.1 Læreplanverket for Kunnskapsløftet; [Overordnet del – verdier og prinsipper for grunnopplæringen](https://www.udir.no/lk20/overordnet-del/om-overordnet-del/): Om overordnet del | ikke bekreftet |
-| **Foreløpig svar i saker om individuelt tilrettelagt opplæring** | Regnes fristen på én måned for foreløpig svar (forvaltningsloven § 11 a tredje ledd) fra den sakkyndige vurderingen er mottatt? | Eier 03.10.2026. Forvaltningsloven § 11 a sier «innen en måned etter at den er mottatt» om henvendelsen, ikke om den sakkyndige vurderingen. | [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#kommunen-og-fylkeskommunen-skal-fatte-vedtak-om-individuell-tilrettelegging): punkt 7.1 Kommunen og fylkeskommunen skal fatte vedtak om individuell tilrettelegging; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#delegere-oppgaven-fatte-vedtak): punkt 7.2 Delegere oppgaven med å fatte vedtak; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#krav-innholdet-vedtaket): punkt 7.3 Krav til innholdet i vedtaket; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#vedtakets-varighet): punkt 7.4 Vedtakets varighet; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/individuelt-tilrettelagt-opplaring-fritak-vurdering-karakter/): punkt 12 Individuelt tilrettelagt opplæring og fritak fra vurdering med karakter | ikke bekreftet |
-| **Samtykke til innføringsopplæring** | Samtykker eleven selv til innføringsopplæring så lenge eleven er samtykkekompetent, og ellers foreldrene? | Eier 03.10.2026. Opplæringslova § 6-6 sier at eleven må samtykke, og Udir skriver «eleven eller foreldrene». | [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#varighet-p-inntil-to-r): Varighet på inntil to år; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#eleven-eller-foreldrene-m-samtykke): Eleven eller foreldrene må samtykke; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#avvik-fra-lreplaner-i-fag-og-fra-fag--og-timefordelingen): Avvik fra læreplaner i fag og fra fag- og timefordelingen; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#fritak-fra-vurdering-for-elever-i-innfringsopplring): Fritak fra vurdering for elever i innføringsopplæring | ikke bekreftet |
-| **Kompetansegivende læreplaner i særskilt språkopplæring** | Er en læreplan kompetansegivende når den gir karakter, og ikke kompetansegivende når det ikke gis vurdering med karakter? | Eier 03.10.2026 ba om at det står om læreplanene er kompetansegivende. Ordet står ikke i kildene. Vurderingsordningene i Grep sier at det ikke gis karakter etter NOR07-03 og NOR08-03, og at NOR09-05 gir standpunktkarakter. GNS02-01 har bare en midtveisvurdering med godkjent eller ikke godkjent, og eier valgte 03.10.2026 at den står uten merke. | [Særskilt språkopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/sarskilt-sprakopplaring/): Læreplaner for særskilt språkopplæring; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§5-12): § 5-12 Opplæring og eksamen etter læreplanen i norsk for språklege minoritetar med kort butid i Noreg; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor07-03/om-faget/vurdering): Grunnleggende norsk for språklige minoriteter (NOR07-03), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor09-05/om-faget/vurdering): Norsk for språklige minoriteter med kort botid (NOR09-05), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor08-03/om-faget/vurdering): Morsmål for språklige minoriteter (NOR08-03), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/gns02-01/kompetansemaal-og-vurdering/kv852): Norsk og samfunnskunnskap for språklige minoriteter – modulstrukturert opplæring for voksne (GNS02-01), Kompetansemål og vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/gns02-01/vurderingsordning): Norsk og samfunnskunnskap for språklige minoriteter – modulstrukturert opplæring for voksne (GNS02-01), Vurderingsordning | ikke bekreftet |
-| **Hvem klagen på inntak sendes til** | Sendes klagen på et vedtak om inntak vanligvis til inntakskontoret i fylkeskommunen? | Eier 03.10.2026. Forvaltningsloven § 32 første ledd bokstav a sier at klagen settes fram for organet som har truffet vedtaket. At det vanligvis er inntakskontoret, står ikke i kildene. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-9): § 4-9 Fristar for å søkje om inntak; [Hvem er klageinstanser etter enkeltvedtak?](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/hvem-er-klageinstanser/#andre-delen): Kapittel 4 Inntak til vidaregåande opplæring; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§29-1): § 29-1 Klageinstans for enkeltvedtak; [Lov om behandlingsmåten i forvaltningssaker (forvaltningsloven)](https://lovdata.no/lov/1967-02-10/§29): § 29 Klagefrist og § 32 Klagens adressat, form og innhold; [VIGO Kodeverksbase – erstattede fag, fag som brukes sammen, fagmerknader, vitnemålsmerknader, status på søkerønsker og grunnlag for inntak](https://kodeverk.vigo.no/): Status på søkerønsker (wish-statuses); [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-16): § 2-16 Søknadsfrist; [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-19): § 2-18 Frammøte første skuledag og § 2-19 Rektor sin rett til inntak av elevar | ikke bekreftet |
-| **Avrunding i poengberegningen ved inntak** | Regnes gjennomsnittet først med to desimaler (vanlig avrunding) og så ganges med ti, slik at 62 ÷ 14 gir 44,3 poeng? | Eier 03.10.2026 (44,3 i F1). Forskriften (§ 4-19 og § 4-25) sier gjennomsnitt med to desimaler, ganget med ti. Udirs merknad sier «vanlige avrundingsregler», men beskriver rekkefølgen som sum × 10 ÷ antall fag, som gir 44,29 for F1. Appen følger forskriften. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900): § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-19): § 4-19 første ledd bokstav a, b og e; [Merknader til opplæringsforskrifta, kapittel 4 Inntak til vidaregåande opplæring](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/): Merknad til § 4-19 | ikke bekreftet |
-| **Karakterene som teller ved inntak til Vg3 i Vestland** | Teller karakterene fra både Vg1 og Vg2 ved inntak til Vg3 i Vestland, selv om den lokale forskriften bare nevner Vg2? | Eier 03.10.2026. Opplæringsforskrifta § 4-25 sier Vg1 og eventuelt Vg2. Vestlands forskrift § 2-3 andre ledd nevner bare Vg2. | [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-3): § 2-3 andre ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-25): § 4-25 første ledd | ikke bekreftet |
-| **Den siste vurderingen gjelder i fag som fortsetter, ved inntak til Vg3** | Gjelder det fortsatt at bare den siste vurderingen teller i et fag som fortsetter, slik at halvårsvurderingen fra Vg1 ikke teller når faget har halvår eller standpunkt på Vg2, mens standpunkt står? | Eier 03.10.2026: «Siste halvårsvurdering i sammenhengende fag gjelder … halvårsvurderingene ‹overskriver› hverandre etter hvert som nye kommer. Standpunkt står.» Udirs merknad til § 4-25 nevner norsk. Ordlyden i § 4-25 sier ikke noe om fag som fortsetter. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-25): § 4-25 første ledd bokstav a og d; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-13): § 9-13 tredje ledd; [Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet (Udir-1-2026)](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/): Vedlegg 1, kapittel 3 Videregående opplæring; [Merknader til opplæringsforskrifta, kapittel 4 Inntak til vidaregåande opplæring](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/): Merknad til § 4-25 | ikke bekreftet |
-| **Helsefravær med legeerklæring før grensen og rektors skjønn** | Teller helserelatert fravær som er dokumentert av helsepersonell før 10 prosent er nådd, med i rammen på 15 prosent for rektors skjønn, sammen med det udokumenterte fraværet? | Eier 04.10.2026: «De ti og de fem teller.» Opplæringsforskrifta § 9-8 fjerde ledd sier «eigenmeldt eller udokumentert fråvær». Udirs rundskriv sier ikke noe om helsefravær med legeerklæring før grensen. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-8): § 9-8 fjerde ledd; [Merknader til opplæringsforskrifta, kapittel 9 Individuell vurdering](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/i.-generelle-reglar/-9-8-fravarsgrense-i-vidaregaande-skole/): Merknad til § 9-8; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/3.-hva-omfattes-av-fravarsgrensen/): punkt 3.4 Skjønn opp til 15 prosent; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/5.hva-er-skillet-mellom-fravarsgrensen-og-annet-regelverk/): punkt 5.2 Fraværsgrensen og vurderingsgrunnlaget; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900): § 9-8 fjerde ledd | ikke bekreftet |
-| **Helsefravær «etter grensen» når grensen ikke er nådd** | Teller helsefravær dokumentert av helsepersonell mot grensen helt til grensen er nådd, også når det er lagt inn som fravær «etter at grensen ble nådd» i kalkulatoren? | Eier 04.10.2026 (svar 2 på forslaget til pakke 2). Opplæringsforskrifta § 9-8 tredje ledd og rundskrivet punkt 3.3.2: helserelatert fravær teller til 10 prosent er nådd, og dokumentasjon fra helsepersonell får først betydning for fravær over det. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-8): § 9-8 tredje ledd; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/3.-hva-omfattes-av-fravarsgrensen/): punkt 3.1 og 3.3 Fravær som kan dokumenteres | ikke bekreftet |
-| **Skoleruta ved den enkelte skolen** | Kan skoleruta ved en videregående skole avvike fra fylkets skolerute, og hva er i så fall grunnlaget? | Eier 05.10.2026 (avgjørelse 061). Opplæringslova § 14-1 sier bare at fylkeskommunen gir forskrift om skolerute. | [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§14-1): § 14-1 Skolerute og lengda på skoleåret; [Lokale forskrifter etter opplæringsloven](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/lokale-forskrifter-etter-ny-opplaringslov/): På hvilke områder må kommunene og fylkeskommunene fastsette forskrift? (Skolerute); [Lokale forskrifter hos Lovdata](https://lovdata.no/register/lokaleForskrifter): Lokale forskrifter om skolerute for de videregående skolene | ikke bekreftet |
-| **Fra lærling til lærekandidat etter en prøve som ikke er bestått** | Kan en lærling som ikke har bestått fag- eller svenneprøven, bytte til lærekandidat, og må lærekontrakten da fortsatt være i kraft? | Eier spurte 06.10.2026 om det stemmer. Opplæringslova § 7-2 andre ledd (kontrakten kan endres med samtykke fra fylkeskommunen) og fjerde ledd (kontrakter som avviker fra det fastsatte løpet). Udirs veiledning om mer opplæring nevner ikke bytte til lærekandidat. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§5-2): § 5-2 tredje ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-9): § 4-9 femte ledd; [Rett til mer opplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring/mer-opplaring--nar-fag--eller-svenneproven-ikke-er-bestatt/): punkt 3. Mer opplæring når fag- eller svenneprøven ikke er bestått; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-66): § 9-66 første og andre ledd og § 9-66 tredje ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-67): § 9-67; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§7-2): § 7-2 andre og fjerde ledd | ikke bekreftet |
+| **Lønn i brutte måneder** | Regnes lønn for deler av en måned fortsatt som arbeidsdagene ÷ 21,67 av månedslønnen, med offentlige fridager som arbeidsdager? | Eier 30.09.2026. Praksis i lønnssystemet og i Vestland fylkeskommune. | [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970); [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet) | 09.10.2026 |
+| **Variabel lønn for deltidsansatte** | Gjelder det fortsatt at beskjeftigelse over en stilling under 100 %, opp til hel stilling, gir variabel lønn uten overtidstillegg? Er dommen om overtid for deltidsansatte blitt rettskraftig? | Eier 30.09.2026, inntil dommen om overtid for deltidsansatte er rettskraftig. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.2, Kap. 1 § 12.4, Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 3.25 Beregning av lønn for vikartimer](https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer): Kalkulert tid; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og punkt 9.1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Variabel lønn for timevikarer** | Får timevikarer fortsatt vikartimene utbetalt som variabel lønn, med timelønn etter kalkulert tid? | Eier 01.10.2026. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.2 og Kap. 1 § 12.4; [Visma InSchool – 3.25 Beregning av lønn for vikartimer](https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer): Kalkulert tid | 09.10.2026 |
+| **Overtidsbetaling for undervisning** | Betales overtid for undervisning fortsatt som kalkulert tid × timelønn × 1,5? | Eier 29.09.2026. Hovedtariffavtalen § 6.4 og § 6.5.3. | [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 1 § 6.5.3, Kap. 1 § 6.4, Kap. 1 § 7.4.2, Kap. 1 § 12.4 og Kap. 4 punkt 4.1; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 5.2, punkt 4, punkt 5.1, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Planleggingsdager** | Brukes fortsatt 45 timer planleggingsdager for alle, tatt fra annen planfestet tid, slik Visma InSchool gjør? | Eier 30.09.2026. Visma InSchool. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4 a, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Skoleåret og timer per uke** | Er elevenes skoleår fortsatt 190 dager og 38 uker, og skal timene per uke fordeles på 38 skoleuker? | Opplæringslova. Paragrafen er ikke lagt inn i kilderegisteret ennå, så tallene sjekkes ikke automatisk. | [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30): § 14-1 første ledd; [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 5.1, punkt 5.2, punkt 4, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Planfestet tid fra 60 år** | Regnes planfestet tid for lærere som er 60 år og eldre fortsatt som samme andel av årsverket (1150 × 1650 ÷ 1687,5 = 1124,44 timer)? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Periodenøkkel** | Regnes periodebeskjeftigelse fortsatt med undervisningsdager i perioden ÷ undervisningsdager i skoleåret, slik Visma InSchool gjør? | Eier 30.09.2026. Visma InSchool. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og punkt 9.1; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Frigjort tid for 57-åringer** | Skal redusert undervisning for lærere som har fylt 57 år, fortsatt regnes som for nyutdannede og lærere over 60 år, selv om avtaleteksten ikke sier det uttrykkelig? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 6, punkt 5.1, punkt 5.2, punkt 5.3, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Funksjoner i årsrammetimer** | Gjøres funksjoner som er oppgitt i årsrammetimer, fortsatt om til prosent med årsrammen 607,5? | Tolkning av vedlegg 1 til SFS 2213 (årsramme ved redusert undervisning på grunn av funksjon). | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): Vedlegg 1, punkt 7.3 b, punkt 9.1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3 og punkt 6; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§14-2): § 14-2 femte ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§11-1): § 11-1 andre ledd; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Utvidet arbeidsår** | Regnes utvidelsen av arbeidsåret fortsatt som timene over 37,5 × 38 + 45 = 1470 planfestede timer, delt på 7,5 timer per dag? | Eier 30.09.2026. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 4, punkt 5.3, punkt 5.1, punkt 5.2, punkt 6, punkt 7.3 b, punkt 9.1 og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Tillegg for funksjoner** | Er 12 000 kroner fortsatt riktig standardbeløp når navnet på en funksjon ikke kjennes igjen, og har fylket egne satser for andre funksjoner? | Appens valg, med utgangspunkt i SFS 2213 punkt 9.1. | [SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e): punkt 9.1, punkt 4, punkt 5.1, punkt 5.2, punkt 5.3, punkt 6, punkt 7.3 b og Vedlegg 1; [Hovedtariffavtalen 1.5.2026–30.4.2028](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf): Kap. 4 punkt 4.1 og Kap. 1 § 7.4.2; [Visma InSchool – 2a.17 Periodebeskjeftigelse](https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet); [Visma InSchool – 3.13 Kontering og generering av fastlønn og faste tillegg](https://inschool.zendesk.com/hc/no/articles/19452863757970) | 09.10.2026 |
+| **Årsramme for yrkesfaglig fordypning** | Skal yrkesfaglig fordypning (YFF) ha årsrammen for felles programfag på utdanningsprogrammet og trinnet, slik vedlegg 1 sier om prosjekt til fordypning? | Claude 30.09.2026, ut fra vedlegg 1 til SFS 2213 («Prosjekt til fordypning»). Prosjekt til fordypning ble yrkesfaglig fordypning med fagfornyelsen i 2020. | [Grep – fag, læreplaner, vurderingsordninger og årstimetall](https://www.udir.no/om-udir/data/kl06-grep/) | 09.10.2026 |
+| **Fagfornyelsen og LK20** | Heter revisjonen av læreplanverket som innføres nå, fortsatt fagfornyelsen, og viderefører den LK20? | Eier 02.10.2026. Står ikke i overordnet del på udir.no, som appen bruker som kilde. | [Læreplanverket (udir.no)](https://www.udir.no/laring-og-trivsel/lareplanverket/): Ingressen: «Læreplanverket består av …»; [Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet (Udir-1-2026)](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/vedlegg-1/1-hele-grunnopplaringen/1.1-lareplanverket/): Vedlegg 1, 1.1 Læreplanverket for Kunnskapsløftet; [Overordnet del – verdier og prinsipper for grunnopplæringen](https://www.udir.no/lk20/overordnet-del/om-overordnet-del/): Om overordnet del | 09.10.2026 |
+| **Foreløpig svar i saker om individuelt tilrettelagt opplæring** | Regnes fristen på én måned for foreløpig svar (forvaltningsloven § 11 a tredje ledd) fra den sakkyndige vurderingen er mottatt? | Eier 03.10.2026. Forvaltningsloven § 11 a sier «innen en måned etter at den er mottatt» om henvendelsen, ikke om den sakkyndige vurderingen. | [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#kommunen-og-fylkeskommunen-skal-fatte-vedtak-om-individuell-tilrettelegging): punkt 7.1 Kommunen og fylkeskommunen skal fatte vedtak om individuell tilrettelegging; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#delegere-oppgaven-fatte-vedtak): punkt 7.2 Delegere oppgaven med å fatte vedtak; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#krav-innholdet-vedtaket): punkt 7.3 Krav til innholdet i vedtaket; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/vedtak-om-individuell-tilrettelegging/#vedtakets-varighet): punkt 7.4 Vedtakets varighet; [Veileder om tilpasset opplæring og individuell tilrettelegging](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/individuelt-tilrettelagt-opplaring-fritak-vurdering-karakter/): punkt 12 Individuelt tilrettelagt opplæring og fritak fra vurdering med karakter | 09.10.2026 |
+| **Samtykke til innføringsopplæring** | Samtykker eleven selv til innføringsopplæring så lenge eleven er samtykkekompetent, og ellers foreldrene? | Eier 03.10.2026. Opplæringslova § 6-6 sier at eleven må samtykke, og Udir skriver «eleven eller foreldrene». | [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#varighet-p-inntil-to-r): Varighet på inntil to år; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#eleven-eller-foreldrene-m-samtykke): Eleven eller foreldrene må samtykke; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#avvik-fra-lreplaner-i-fag-og-fra-fag--og-timefordelingen): Avvik fra læreplaner i fag og fra fag- og timefordelingen; [Innføringsopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/#fritak-fra-vurdering-for-elever-i-innfringsopplring): Fritak fra vurdering for elever i innføringsopplæring | 09.10.2026 |
+| **Kompetansegivende læreplaner i særskilt språkopplæring** | Er en læreplan kompetansegivende når den gir karakter, og ikke kompetansegivende når det ikke gis vurdering med karakter? | Eier 03.10.2026 ba om at det står om læreplanene er kompetansegivende. Ordet står ikke i kildene. Vurderingsordningene i Grep sier at det ikke gis karakter etter NOR07-03 og NOR08-03, og at NOR09-05 gir standpunktkarakter. GNS02-01 har bare en midtveisvurdering med godkjent eller ikke godkjent, og eier valgte 03.10.2026 at den står uten merke. | [Særskilt språkopplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/sarskilt-sprakopplaring/): Læreplaner for særskilt språkopplæring; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§5-12): § 5-12 Opplæring og eksamen etter læreplanen i norsk for språklege minoritetar med kort butid i Noreg; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor07-03/om-faget/vurdering): Grunnleggende norsk for språklige minoriteter (NOR07-03), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor09-05/om-faget/vurdering): Norsk for språklige minoriteter med kort botid (NOR09-05), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/nor08-03/om-faget/vurdering): Morsmål for språklige minoriteter (NOR08-03), Vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/gns02-01/kompetansemaal-og-vurdering/kv852): Norsk og samfunnskunnskap for språklige minoriteter – modulstrukturert opplæring for voksne (GNS02-01), Kompetansemål og vurdering; [Læreplaner i Kunnskapsløftet 2020 (LK20) på udir.no](https://www.udir.no/lk20/gns02-01/vurderingsordning): Norsk og samfunnskunnskap for språklige minoriteter – modulstrukturert opplæring for voksne (GNS02-01), Vurderingsordning | 09.10.2026 |
+| **Hvem klagen på inntak sendes til** | Sendes klagen på et vedtak om inntak vanligvis til inntakskontoret i fylkeskommunen? | Eier 03.10.2026. Forvaltningsloven § 32 første ledd bokstav a sier at klagen settes fram for organet som har truffet vedtaket. At det vanligvis er inntakskontoret, står ikke i kildene. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-9): § 4-9 Fristar for å søkje om inntak; [Hvem er klageinstanser etter enkeltvedtak?](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/hvem-er-klageinstanser/#andre-delen): Kapittel 4 Inntak til vidaregåande opplæring; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§29-1): § 29-1 Klageinstans for enkeltvedtak; [Lov om behandlingsmåten i forvaltningssaker (forvaltningsloven)](https://lovdata.no/lov/1967-02-10/§29): § 29 Klagefrist og § 32 Klagens adressat, form og innhold; [VIGO Kodeverksbase – erstattede fag, fag som brukes sammen, fagmerknader, vitnemålsmerknader, status på søkerønsker og grunnlag for inntak](https://kodeverk.vigo.no/): Status på søkerønsker (wish-statuses); [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-16): § 2-16 Søknadsfrist; [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-19): § 2-18 Frammøte første skuledag og § 2-19 Rektor sin rett til inntak av elevar | 09.10.2026 |
+| **Avrunding i poengberegningen ved inntak** | Regnes gjennomsnittet først med to desimaler (vanlig avrunding) og så ganges med ti, slik at 62 ÷ 14 gir 44,3 poeng? | Eier 03.10.2026 (44,3 i F1). Forskriften (§ 4-19 og § 4-25) sier gjennomsnitt med to desimaler, ganget med ti. Udirs merknad sier «vanlige avrundingsregler», men beskriver rekkefølgen som sum × 10 ÷ antall fag, som gir 44,29 for F1. Appen følger forskriften. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900): § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-19): § 4-19 første ledd bokstav a, b og e; [Merknader til opplæringsforskrifta, kapittel 4 Inntak til vidaregåande opplæring](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/): Merknad til § 4-19 | 09.10.2026 |
+| **Karakterene som teller ved inntak til Vg3 i Vestland** | Teller karakterene fra både Vg1 og Vg2 ved inntak til Vg3 i Vestland, selv om den lokale forskriften bare nevner Vg2? | Eier 03.10.2026. Opplæringsforskrifta § 4-25 sier Vg1 og eventuelt Vg2. Vestlands forskrift § 2-3 andre ledd nevner bare Vg2. | [Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune](https://lovdata.no/forskrift/2020-09-29-3380/§2-3): § 2-3 andre ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-25): § 4-25 første ledd | 09.10.2026 |
+| **Den siste vurderingen gjelder i fag som fortsetter, ved inntak til Vg3** | Gjelder det fortsatt at bare den siste vurderingen teller i et fag som fortsetter, slik at halvårsvurderingen fra Vg1 ikke teller når faget har halvår eller standpunkt på Vg2, mens standpunkt står? | Eier 03.10.2026: «Siste halvårsvurdering i sammenhengende fag gjelder … halvårsvurderingene ‹overskriver› hverandre etter hvert som nye kommer. Standpunkt står.» Udirs merknad til § 4-25 nevner norsk. Ordlyden i § 4-25 sier ikke noe om fag som fortsetter. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-25): § 4-25 første ledd bokstav a og d; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-13): § 9-13 tredje ledd; [Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet (Udir-1-2026)](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/): Vedlegg 1, kapittel 3 Videregående opplæring; [Merknader til opplæringsforskrifta, kapittel 4 Inntak til vidaregåande opplæring](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/): Merknad til § 4-25 | 09.10.2026 |
+| **Helsefravær med legeerklæring før grensen og rektors skjønn** | Teller helserelatert fravær som er dokumentert av helsepersonell før 10 prosent er nådd, med i rammen på 15 prosent for rektors skjønn, sammen med det udokumenterte fraværet? | Eier 04.10.2026: «De ti og de fem teller.» Opplæringsforskrifta § 9-8 fjerde ledd sier «eigenmeldt eller udokumentert fråvær». Udirs rundskriv sier ikke noe om helsefravær med legeerklæring før grensen. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-8): § 9-8 fjerde ledd; [Merknader til opplæringsforskrifta, kapittel 9 Individuell vurdering](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/i.-generelle-reglar/-9-8-fravarsgrense-i-vidaregaande-skole/): Merknad til § 9-8; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/3.-hva-omfattes-av-fravarsgrensen/): punkt 3.4 Skjønn opp til 15 prosent; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/5.hva-er-skillet-mellom-fravarsgrensen-og-annet-regelverk/): punkt 5.2 Fraværsgrensen og vurderingsgrunnlaget; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900): § 9-8 fjerde ledd | 09.10.2026 |
+| **Helsefravær «etter grensen» når grensen ikke er nådd** | Teller helsefravær dokumentert av helsepersonell mot grensen helt til grensen er nådd, også når det er lagt inn som fravær «etter at grensen ble nådd» i kalkulatoren? | Eier 04.10.2026 (svar 2 på forslaget til pakke 2). Opplæringsforskrifta § 9-8 tredje ledd og rundskrivet punkt 3.3.2: helserelatert fravær teller til 10 prosent er nådd, og dokumentasjon fra helsepersonell får først betydning for fravær over det. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-8): § 9-8 tredje ledd; [Rundskriv om fraværsgrensen](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/3.-hva-omfattes-av-fravarsgrensen/): punkt 3.1 og 3.3 Fravær som kan dokumenteres | 09.10.2026 |
+| **Skoleruta ved den enkelte skolen** | Kan skoleruta ved en videregående skole avvike fra fylkets skolerute, og hva er i så fall grunnlaget? | Eier 05.10.2026 (avgjørelse 061). Opplæringslova § 14-1 sier bare at fylkeskommunen gir forskrift om skolerute. | [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§14-1): § 14-1 Skolerute og lengda på skoleåret; [Lokale forskrifter etter opplæringsloven](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/lokale-forskrifter-etter-ny-opplaringslov/): På hvilke områder må kommunene og fylkeskommunene fastsette forskrift? (Skolerute); [Lokale forskrifter hos Lovdata](https://lovdata.no/register/lokaleForskrifter): Lokale forskrifter om skolerute for de videregående skolene | 09.10.2026 |
+| **Fra lærling til lærekandidat etter en prøve som ikke er bestått** | Kan en lærling som ikke har bestått fag- eller svenneprøven, bytte til lærekandidat, og må lærekontrakten da fortsatt være i kraft? | Eier spurte 06.10.2026 om det stemmer. Opplæringslova § 7-2 andre ledd (kontrakten kan endres med samtykke fra fylkeskommunen) og fjerde ledd (kontrakter som avviker fra det fastsatte løpet). Udirs veiledning om mer opplæring nevner ikke bytte til lærekandidat. | [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§5-2): § 5-2 tredje ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§4-9): § 4-9 femte ledd; [Rett til mer opplæring](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring/mer-opplaring--nar-fag--eller-svenneproven-ikke-er-bestatt/): punkt 3. Mer opplæring når fag- eller svenneprøven ikke er bestått; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-66): § 9-66 første og andre ledd og § 9-66 tredje ledd; [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-67): § 9-67; [Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)](https://lovdata.no/lov/2023-06-09-30/§7-2): § 7-2 andre og fjerde ledd | 09.10.2026 |
 
 ## Nettsteder som ikke kan sjekkes automatisk
 
-Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under. De stenger trolig for automatiske forespørsler, så lenkene dit blir ikke sjekket. Åpne noen av dem av og til. Virker en lenke ikke, si fra til Claude.
+Lenkesjekken 12.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under. De stenger trolig for automatiske forespørsler, så lenkene dit blir ikke sjekket. Åpne noen av dem av og til. Virker en lenke ikke, si fra til Claude.
 
+- **ilare.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
 - **inschool.zendesk.com** (3 lenker)
   - https://inschool.zendesk.com/hc/no/articles/19452863757970 (står i `content/kilder.yaml`)
   - https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet (står i `content/kilder.yaml`)
   - https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer (står i `content/kilder.yaml`)
+- **mekkbil.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
+- **naturbrukssenter.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
+- **ohhi.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
+- **ohs-haugalandet.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
+- **orv-vestfold.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
 - **skolenes.no** (én lenke)
   - https://www.skolenes.no/feed/ (står i `content/nyheter/kilder.yaml`)
 - **vilbli.no** (8 lenker)
   - https://www.vilbli.no/ (står i `content/inntak/frister.yaml`, `content/inntak/rett-inntak-soknad.yaml`, `content/kilder.yaml`)
   - https://www.vilbli.no/nb/nb/no/aktivitorfaget/program/v.hs/v.hsakt3----/p5 (står i `src/modules/fag/tilbud/vilbli.ts`)
   - 6 lenker fra dataene, som sjekkes med stikkprøver.
+- **ww.aofok.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
 
 ## Per kilde
 
 ### SFS 2213 med vedlegg 1 og protokoll (avtaleteksten)
 
-`ks-sfs2213-avtaletekst` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e)
+`ks-sfs2213-avtaletekst` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.kf-infoserie.no/a/h/931fe8f5-8cdf-47ab-a8fb-9e8dba6f8e66/250413?ticketId=be4f9bea-3190-4670-89e2-df98ec83dd5e)
 
 **Regelverdier**
 
 | Verdi | Punkt | Tall | Automatisk sjekk | Din kontroll |
 |---|---|---|---|---|
-| `arsverk_timer` (sfs2213-2026-2027) | 4 | 1687,5 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `arsverk_timer_60_ar` (sfs2213-2026-2027) | 4 | 1650 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `arbeidsaar_tillegg_dager` (sfs2213-2026-2027) | 4 a | 6 dager | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `timer_per_dag` (sfs2213-2026-2027) | 4 a | 7,5 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
+| `arsverk_timer` (sfs2213-2026-2027) | 4 | 1687,5 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `arsverk_timer_60_ar` (sfs2213-2026-2027) | 4 | 1650 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `arbeidsaar_tillegg_dager` (sfs2213-2026-2027) | 4 a | 6 dager | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `timer_per_dag` (sfs2213-2026-2027) | 4 a | 7,5 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
 | `arbeidsdager_per_uke` (sfs2213-2026-2027) | 5.1 | 5 dager | avledet av andre verdier | ikke kontrollert |
-| `planfestet_timer` (sfs2213-2026-2027) | 5.1 | 1150 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `planfestet_maks_dag` (sfs2213-2026-2027) | 5.1 | 9 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `planfestet_maks_uke` (sfs2213-2026-2027) | 5.1 | 37,5 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `arsramme_funksjon` (sfs2213-2026-2027) | Vedlegg 1 | 607,5 årsrammetimer (60 min) | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `arsramme_funksjon_45` (sfs2213-2026-2027) | Vedlegg 1 | 810 årsrammetimer (45 min) | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `stjernetillegg` (sfs2213-2026-2027) | Vedlegg 1 | 52,5 årsrammetimer (60 min) | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `stjernetillegg_45` (sfs2213-2026-2027) | Vedlegg 1 | 70 årsrammetimer (45 min) | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `stjerne_maks_elever` (sfs2213-2026-2027) | Vedlegg 1 | 15 elever | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `kontaktlaerer_reduksjon` (sfs2213-2026-2027) | 7.3 b | 28,5 årsrammetimer (60 min) | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `livsfase_nyutdannet_prosent` (sfs2213-2026-2027) | 6 | 6 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `livsfase_57_prosent` (sfs2213-2026-2027) | 6 | 6 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `livsfase_60_prosent` (sfs2213-2026-2027) | 6 | 12,5 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `godtgjoring_kontaktlaerer` (sfs2213-2026-2027) | 9.1 | 12000 kroner per år | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `godtgjoring_radgiver` (sfs2213-2026-2027) | 9.1 | 12000 kroner per år | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `arsrammer` (sfs2213-2026-2027) | Vedlegg 1 | tabell, 151 rader | ✅ samsvarer (09.10.2026). Alle 151 radene stemmer. | ikke kontrollert |
+| `planfestet_timer` (sfs2213-2026-2027) | 5.1 | 1150 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `planfestet_maks_dag` (sfs2213-2026-2027) | 5.1 | 9 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `planfestet_maks_uke` (sfs2213-2026-2027) | 5.1 | 37,5 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `arsramme_funksjon` (sfs2213-2026-2027) | Vedlegg 1 | 607,5 årsrammetimer (60 min) | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `arsramme_funksjon_45` (sfs2213-2026-2027) | Vedlegg 1 | 810 årsrammetimer (45 min) | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `stjernetillegg` (sfs2213-2026-2027) | Vedlegg 1 | 52,5 årsrammetimer (60 min) | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `stjernetillegg_45` (sfs2213-2026-2027) | Vedlegg 1 | 70 årsrammetimer (45 min) | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `stjerne_maks_elever` (sfs2213-2026-2027) | Vedlegg 1 | 15 elever | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `kontaktlaerer_reduksjon` (sfs2213-2026-2027) | 7.3 b | 28,5 årsrammetimer (60 min) | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `livsfase_nyutdannet_prosent` (sfs2213-2026-2027) | 6 | 6 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `livsfase_57_prosent` (sfs2213-2026-2027) | 6 | 6 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `livsfase_60_prosent` (sfs2213-2026-2027) | 6 | 12,5 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `godtgjoring_kontaktlaerer` (sfs2213-2026-2027) | 9.1 | 12000 kroner per år | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `godtgjoring_radgiver` (sfs2213-2026-2027) | 9.1 | 12000 kroner per år | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `arsrammer` (sfs2213-2026-2027) | Vedlegg 1 | tabell, 151 rader | ✅ samsvarer (12.10.2026). Alle 151 radene stemmer. | ikke kontrollert |
 
 **Innhold som bygger på kilden**
 
@@ -163,20 +178,20 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Hovedtariffavtalen 1.5.2026–30.4.2028
 
-`ks-hovedtariffavtalen` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf)
+`ks-hovedtariffavtalen` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.ks.no/globalassets/fagomrader/lonn-og-tariff/tariff-2024/hovedtariffavtalen-2026-2028---interaktiv-til-nettsiden.pdf)
 
 **Regelverdier**
 
 | Verdi | Punkt | Tall | Automatisk sjekk | Din kontroll |
 |---|---|---|---|---|
-| `timelonn_konstant` (hta-2026-2028) | Kap. 1 § 12.4 | 1400 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `timelonn_arsverk_timer` (hta-2026-2028) | Kap. 1 § 12.4 | 1687,5 timer | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `timelonn_ferie_teller` (hta-2026-2028) | Kap. 1 § 12.4 | 100 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `timelonn_ferie_nevner` (hta-2026-2028) | Kap. 1 § 12.4 | 112 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `feriepenger_prosent` (hta-2026-2028) | Kap. 1 § 7.4.2 | 12 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `feriepenger_prosent_over_60` (hta-2026-2028) | Kap. 1 § 7.4.2 | 14,3 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `overtidstillegg_prosent` (hta-2026-2028) | Kap. 1 § 6.5.3 | 50 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `garantilonn` (hta-2026-2028) | Kap. 4 punkt 4.1 | tabell, 5 rader | ✅ samsvarer (09.10.2026). Alle 5 radene stemmer. | ikke kontrollert |
+| `timelonn_konstant` (hta-2026-2028) | Kap. 1 § 12.4 | 1400 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `timelonn_arsverk_timer` (hta-2026-2028) | Kap. 1 § 12.4 | 1687,5 timer | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `timelonn_ferie_teller` (hta-2026-2028) | Kap. 1 § 12.4 | 100 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `timelonn_ferie_nevner` (hta-2026-2028) | Kap. 1 § 12.4 | 112 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `feriepenger_prosent` (hta-2026-2028) | Kap. 1 § 7.4.2 | 12 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `feriepenger_prosent_over_60` (hta-2026-2028) | Kap. 1 § 7.4.2 | 14,3 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `overtidstillegg_prosent` (hta-2026-2028) | Kap. 1 § 6.5.3 | 50 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `garantilonn` (hta-2026-2028) | Kap. 4 punkt 4.1 | tabell, 5 rader | ✅ samsvarer (12.10.2026). Alle 5 radene stemmer. | ikke kontrollert |
 | `garantilonn_ansiennitet` (hta-2026-2028) | Kap. 4 punkt 4.1 | liste: 0, 6, 8, 10, 16 | tabell eller liste, sjekkes ikke automatisk ennå | ikke kontrollert |
 
 **Innhold som bygger på kilden**
@@ -216,7 +231,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om arbeidsmiljø, arbeidstid og stillingsvern mv. (arbeidsmiljøloven)
 
-`arbeidsmiljoloven` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2005-06-17-62)
+`arbeidsmiljoloven` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2005-06-17-62)
 
 **Innhold som bygger på kilden**
 
@@ -228,13 +243,13 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringslova)
 
-`opplaeringslova` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2023-06-09-30)
+`opplaeringslova` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2023-06-09-30)
 
 **Regelverdier**
 
 | Verdi | Punkt | Tall | Automatisk sjekk | Din kontroll |
 |---|---|---|---|---|
-| `skolear_uker` (sfs2213-2026-2027) | § 14-1 første ledd | 38 uker | ✅ samsvarer (09.10.2026) | ikke kontrollert |
+| `skolear_uker` (sfs2213-2026-2027) | § 14-1 første ledd | 38 uker | ✅ samsvarer (12.10.2026) | ikke kontrollert |
 | `skolear_dager` (sfs2213-2026-2027) | § 14-1 første ledd | 190 dager | avledet av andre verdier | ikke kontrollert |
 
 **Innhold som bygger på kilden**
@@ -383,18 +398,18 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)
 
-`opplaeringsforskrifta` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2024-06-03-900)
+`opplaeringsforskrifta` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2024-06-03-900)
 
 **Regelverdier**
 
 | Verdi | Punkt | Tall | Automatisk sjekk | Din kontroll |
 |---|---|---|---|---|
-| `snitt_desimaler` (inntak-2024) | § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a | 2 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `poeng_faktor` (inntak-2024) | § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a | 10 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `valgfag_desimaler` (inntak-2024) | § 4-19 første ledd bokstav b | 2 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `iv_im_verdi` (inntak-2024) | § 4-19 første ledd bokstav e og § 4-25 første ledd bokstav d | 0 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `fravaer_grense_prosent` (vurdering-2025) | § 9-8 første ledd | 10 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `fravaer_skjonn_prosent` (vurdering-2025) | § 9-8 fjerde ledd | 15 prosent | ✅ samsvarer (09.10.2026) | ikke kontrollert |
+| `snitt_desimaler` (inntak-2024) | § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a | 2 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `poeng_faktor` (inntak-2024) | § 4-19 første ledd bokstav a og § 4-25 første ledd bokstav a | 10 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `valgfag_desimaler` (inntak-2024) | § 4-19 første ledd bokstav b | 2 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `iv_im_verdi` (inntak-2024) | § 4-19 første ledd bokstav e og § 4-25 første ledd bokstav d | 0 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `fravaer_grense_prosent` (vurdering-2025) | § 9-8 første ledd | 10 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `fravaer_skjonn_prosent` (vurdering-2025) | § 9-8 fjerde ledd | 15 prosent | ✅ samsvarer (12.10.2026) | ikke kontrollert |
 
 **Innhold som bygger på kilden**
 
@@ -643,7 +658,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om private skolar med rett til statstilskot (privatskolelova)
 
-`privatskolelova` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2003-07-04-84)
+`privatskolelova` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2003-07-04-84)
 
 **Innhold som bygger på kilden**
 
@@ -653,7 +668,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift til privatskolelova (privatskoleforskrifta)
 
-`privatskoleforskrifta` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2024-06-03-901)
+`privatskoleforskrifta` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2024-06-03-901)
 
 **Innhold som bygger på kilden**
 
@@ -663,7 +678,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om behandlingsmåten i forvaltningssaker (forvaltningsloven)
 
-`forvaltningsloven` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/1967-02-10)
+`forvaltningsloven` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/1967-02-10)
 
 **Innhold som bygger på kilden**
 
@@ -690,7 +705,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om rett til innsyn i dokument i offentleg verksemd (offentleglova)
 
-`offentleglova` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2006-05-19-16)
+`offentleglova` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2006-05-19-16)
 
 **Innhold som bygger på kilden**
 
@@ -704,7 +719,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om dokumentasjon og arkiv (arkivlova)
 
-`arkivlova` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2025-06-20-96)
+`arkivlova` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2025-06-20-96)
 
 **Innhold som bygger på kilden**
 
@@ -716,7 +731,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift om dokumentasjon og arkiv (arkivforskrifta)
 
-`arkivforskrifta` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2025-12-17-2647)
+`arkivforskrifta` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2025-12-17-2647)
 
 **Innhold som bygger på kilden**
 
@@ -729,7 +744,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift om helse og miljø i barnehager, skoler og skolefritidsordninger
 
-`forskrift-helse-miljo-skoler` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2023-03-28-449)
+`forskrift-helse-miljo-skoler` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/forskrift/2023-03-28-449)
 
 **Innhold som bygger på kilden**
 
@@ -739,7 +754,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Grep – fag, læreplaner, vurderingsordninger og årstimetall
 
-`udir-grep` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/om-udir/data/kl06-grep/)
+`udir-grep` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/om-udir/data/kl06-grep/)
 
 **Regelverdier**
 
@@ -771,7 +786,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Fag- og timefordeling og tilbudsstruktur for Kunnskapsløftet (Udir-1-2026)
 
-`udir-fag-og-timefordeling` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/)
+`udir-fag-og-timefordeling` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/)
 
 **Innhold som bygger på kilden**
 
@@ -806,7 +821,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Udir-1-2026, teksten øverst i rundskrivet
 
-`udir-fag-og-timefordeling-forside` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/)
+`udir-fag-og-timefordeling-forside` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/Innhold-i-opplaringen/udir-1-2026/)
 
 **Innhold som bygger på kilden**
 
@@ -816,7 +831,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Registreringshåndboken, A03 Programområdekode
 
-`udir-regbok-programomradekode` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1014307)
+`udir-regbok-programomradekode` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1014307)
 
 **Innhold som bygger på kilden**
 
@@ -827,7 +842,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Yrkesfaglig fordypning for de yrkesfaglige utdanningsprogrammene (YFF), forskrift fastsatt av Utdanningsdirektoratet 3.11.2020
 
-`udir-yff-forskrift` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/utdanningslopet/videregaende-opplaring/felles-for-fagopplaringen/yrkesfagleg-fordjuping/yrkesfaglig-fordypning-for-de-yrkesfaglige-utdanningsprogrammene-yff/)
+`udir-yff-forskrift` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/utdanningslopet/videregaende-opplaring/felles-for-fagopplaringen/yrkesfagleg-fordjuping/yrkesfaglig-fordypning-for-de-yrkesfaglige-utdanningsprogrammene-yff/)
 
 **Innhold som bygger på kilden**
 
@@ -838,7 +853,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Føring av vitnemål og kompetansebevis for videregående opplæring, kapittel 3 Merknader til vitnemål og kompetansebevis
 
-`udir-foring-vitnemal-merknader` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/eksamen-og-prover/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs-25/3-merknader-til-vitnemal-og-kompetansebevis/)
+`udir-foring-vitnemal-merknader` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/eksamen-og-prover/vitnemal-og-kompetansebevis/foring-vitnemal-kompetansebevis-vgs-25/3-merknader-til-vitnemal-og-kompetansebevis/)
 
 **Innhold som bygger på kilden**
 
@@ -849,7 +864,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Registreringshåndboken, B16 FAM-kode og B17 FAM-merknad
 
-`udir-regbok-fam` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1015037)
+`udir-regbok-fam` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1015037)
 
 **Innhold som bygger på kilden**
 
@@ -859,7 +874,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Registreringshåndboken, B18 VMM-kode og B19 VMM-merknad
 
-`udir-regbok-vmm` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1015039)
+`udir-regbok-vmm` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1015039)
 
 **Innhold som bygger på kilden**
 
@@ -869,7 +884,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### VIGO Kodeverksbase – erstattede fag, fag som brukes sammen, fagmerknader, vitnemålsmerknader, status på søkerønsker og grunnlag for inntak
 
-`vigo-kodeverk` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://kodeverk.vigo.no/)
+`vigo-kodeverk` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://kodeverk.vigo.no/)
 
 **Innhold som bygger på kilden**
 
@@ -883,7 +898,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Nasjonalt organisasjonsregister for fag- og yrkesopplæring (NOR) – opplæringskontorene
 
-`udir-nor` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://data-nor.udir.no/swagger/index.html)
+`udir-nor` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://data-nor.udir.no/swagger/index.html)
 
 **Innhold som bygger på kilden**
 
@@ -909,7 +924,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Læreplanverket (udir.no)
 
-`udir-lareplanverket` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/laring-og-trivsel/lareplanverket/)
+`udir-lareplanverket` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/laring-og-trivsel/lareplanverket/)
 
 **Innhold som bygger på kilden**
 
@@ -920,7 +935,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lokale forskrifter hos Lovdata
 
-`lovdata-lokale` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/register/lokaleForskrifter)
+`lovdata-lokale` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/register/lokaleForskrifter)
 
 **Innhold som bygger på kilden**
 
@@ -947,18 +962,18 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift om inntak til vidaregåande opplæring og formidling til læreplass i Vestland fylkeskommune
 
-`vestland-forskrift-inntak` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/dokument/LF/forskrift/2020-09-29-3380)
+`vestland-forskrift-inntak` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/dokument/LF/forskrift/2020-09-29-3380)
 
 **Regelverdier**
 
 | Verdi | Punkt | Tall | Automatisk sjekk | Din kontroll |
 |---|---|---|---|---|
-| `tilleggspoeng_mdd_1` (inntak-vestland-2024) | § 2-7 andre ledd | 3 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `tilleggspoeng_mdd_2` (inntak-vestland-2024) | § 2-7 andre ledd | 6 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `tilleggspoeng_mdd_3` (inntak-vestland-2024) | § 2-7 andre ledd | 9 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `tilleggspoeng_idrett_1` (inntak-vestland-2024) | § 2-8 andre ledd | 3 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `tilleggspoeng_idrett_2` (inntak-vestland-2024) | § 2-8 andre ledd | 6 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
-| `tilleggspoeng_idrett_3` (inntak-vestland-2024) | § 2-8 andre ledd | 9 | ✅ samsvarer (09.10.2026) | ikke kontrollert |
+| `tilleggspoeng_mdd_1` (inntak-vestland-2024) | § 2-7 andre ledd | 3 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `tilleggspoeng_mdd_2` (inntak-vestland-2024) | § 2-7 andre ledd | 6 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `tilleggspoeng_mdd_3` (inntak-vestland-2024) | § 2-7 andre ledd | 9 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `tilleggspoeng_idrett_1` (inntak-vestland-2024) | § 2-8 andre ledd | 3 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `tilleggspoeng_idrett_2` (inntak-vestland-2024) | § 2-8 andre ledd | 6 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
+| `tilleggspoeng_idrett_3` (inntak-vestland-2024) | § 2-8 andre ledd | 9 | ✅ samsvarer (12.10.2026) | ikke kontrollert |
 
 **Innhold som bygger på kilden**
 
@@ -985,7 +1000,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Forskrift om skulereglar, Vestland fylkeskommune
 
-`vestland-forskrift-skulereglar` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/dokument/LF/forskrift/2026-06-16-1587)
+`vestland-forskrift-skulereglar` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/dokument/LF/forskrift/2026-06-16-1587)
 
 **Innhold som bygger på kilden**
 
@@ -997,7 +1012,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lokale forskrifter etter opplæringsloven
 
-`udir-lokale-forskrifter` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/lokale-forskrifter-etter-ny-opplaringslov/)
+`udir-lokale-forskrifter` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/lokale-forskrifter-etter-ny-opplaringslov/)
 
 **Innhold som bygger på kilden**
 
@@ -1014,7 +1029,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Ord og omgrep i opplæringslova (nye og gamle begreper)
 
-`udir-ord-og-omgrep` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/ord-og-omgrep/)
+`udir-ord-og-omgrep` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/ord-og-omgrep/)
 
 **Innhold som bygger på kilden**
 
@@ -1025,7 +1040,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Veileder om tilpasset opplæring og individuell tilrettelegging
 
-`udir-veileder-tilpasset-opplaering` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/)
+`udir-veileder-tilpasset-opplaering` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-for-tilpasset-opplaring-og-individuell-tilrettelegging/)
 
 **Innhold som bygger på kilden**
 
@@ -1066,7 +1081,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Særskilt språkopplæring
 
-`udir-sarskilt-sprakopplaring` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/sarskilt-sprakopplaring/)
+`udir-sarskilt-sprakopplaring` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/sarskilt-sprakopplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1086,7 +1101,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Innføringsopplæring
 
-`udir-innforingsopplaring` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/)
+`udir-innforingsopplaring` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/innforingsopplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1101,7 +1116,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Tilrettelegge opplæringen for minoritetsspråklige og nyankomne elever
 
-`udir-minoritetsspraklige` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/laring-og-trivsel/minoritetsspraklige-og-nyankomne/minoritetsspraklige/tilrettelegge-opplaringen-for-minoritetsspraklige-og-nyankomne-elever/)
+`udir-minoritetsspraklige` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/laring-og-trivsel/minoritetsspraklige-og-nyankomne/minoritetsspraklige/tilrettelegge-opplaringen-for-minoritetsspraklige-og-nyankomne-elever/)
 
 **Innhold som bygger på kilden**
 
@@ -1114,7 +1129,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Retten til videregående opplæring
 
-`udir-retten-til-vgo` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/)
+`udir-retten-til-vgo` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1140,7 +1155,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø
 
-`udir-rundskriv-skolemiljo` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/6.-skolen-har-en-aktivitetsplikt/)
+`udir-rundskriv-skolemiljo` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/6.-skolen-har-en-aktivitetsplikt/)
 
 **Innhold som bygger på kilden**
 
@@ -1167,7 +1182,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø, kapittel 7 Å melde saken til statsforvalteren
 
-`udir-rundskriv-skolemiljo-statsforvalteren` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/7.-a-melde-saken-til-statsforvalteren-handhevingsordningen/)
+`udir-rundskriv-skolemiljo-statsforvalteren` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/7.-a-melde-saken-til-statsforvalteren-handhevingsordningen/)
 
 **Innhold som bygger på kilden**
 
@@ -1182,7 +1197,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø, kapittel 2 For hvem og hvor gjelder reglene om et trygt og godt skolemiljø?
 
-`udir-rundskriv-skolemiljo-hvem` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/2.-for-hvem-og-hvor-gjelder-reglene-om-et-trygt-og-godt-skolemiljo/)
+`udir-rundskriv-skolemiljo-hvem` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/2.-for-hvem-og-hvor-gjelder-reglene-om-et-trygt-og-godt-skolemiljo/)
 
 **Innhold som bygger på kilden**
 
@@ -1192,7 +1207,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø, kapittel 3 Retten til et trygt og godt skolemiljø
 
-`udir-rundskriv-skolemiljo-retten` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/3.-retten-til-et-trygt-og-godt-skolemiljo/)
+`udir-rundskriv-skolemiljo-retten` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/3.-retten-til-et-trygt-og-godt-skolemiljo/)
 
 **Innhold som bygger på kilden**
 
@@ -1204,7 +1219,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø, kapittel 4 Nulltoleranse
 
-`udir-rundskriv-skolemiljo-nulltoleranse` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/4.-nulltoleranse/)
+`udir-rundskriv-skolemiljo-nulltoleranse` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/4.-nulltoleranse/)
 
 **Innhold som bygger på kilden**
 
@@ -1216,7 +1231,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om skolemiljø, kapittel 5 Skolene skal informere elever og foreldre
 
-`udir-rundskriv-skolemiljo-informasjon` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/5.-skolene-skal-informere-elever-og-foreldre/)
+`udir-rundskriv-skolemiljo-informasjon` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-skolemiljo/5.-skolene-skal-informere-elever-og-foreldre/)
 
 **Innhold som bygger på kilden**
 
@@ -1226,7 +1241,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Elevundersøkelsen i videregående, Udirs statistikkbank
 
-`udir-elevundersokelsen` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/tall-og-forskning/brukerundersokelser/elevundersokelsen/resultater/offentlige-resultater-vgs/)
+`udir-elevundersokelsen` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/tall-og-forskning/brukerundersokelser/elevundersokelsen/resultater/offentlige-resultater-vgs/)
 
 **Innhold som bygger på kilden**
 
@@ -1236,7 +1251,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rett til mer opplæring
 
-`udir-mer-opplaering` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring/)
+`udir-mer-opplaering` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1263,7 +1278,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rett til mer opplæring for voksne
 
-`udir-mer-opplaering-voksne` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring-for-voksne/)
+`udir-mer-opplaering-voksne` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/rett-til-mer-opplaring-for-voksne/)
 
 **Innhold som bygger på kilden**
 
@@ -1274,7 +1289,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Fullføringsretten for elever med individuelt tilrettelagt opplæring
 
-`udir-fullforingsretten-iop` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/fullforingsretten-vgo-individuelt-tilrettelagt-opplaring/)
+`udir-fullforingsretten-iop` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/retten-til-videregaende-opplaring/fullforingsretten-vgo-individuelt-tilrettelagt-opplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1287,7 +1302,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Merknader til opplæringsforskrifta, kapittel 4 Inntak til vidaregåande opplæring
 
-`udir-merknader-ofo` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/)
+`udir-merknader-ofo` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/andre-delen--vidaregaande-opplaring/kapittel-4-inntak-til-vidaregaande-opplaring/)
 
 **Innhold som bygger på kilden**
 
@@ -1307,7 +1322,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Hvem er klageinstanser etter enkeltvedtak?
 
-`udir-klageinstanser` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/hvem-er-klageinstanser/)
+`udir-klageinstanser` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/hvem-er-klageinstanser/)
 
 **Innhold som bygger på kilden**
 
@@ -1323,7 +1338,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Merknader til opplæringsforskrifta, kapittel 9 Individuell vurdering
 
-`udir-merknader-ofo-kap9` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/)
+`udir-merknader-ofo-kap9` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/)
 
 **Innhold som bygger på kilden**
 
@@ -1365,7 +1380,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Rundskriv om fraværsgrensen
 
-`udir-rundskriv-fravarsgrensen` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/)
+`udir-rundskriv-fravarsgrensen` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/rundskriv-om-fravarsgrensen/)
 
 **Regelverdier**
 
@@ -1402,7 +1417,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Standpunktvurdering
 
-`udir-standpunktvurdering` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/eksamen-og-prover/vurdering/standpunktvurdering/)
+`udir-standpunktvurdering` · Kildesjekk: ⚠️ endret siden 12.10.2026, ikke gått gjennom · [Åpne kilden](https://www.udir.no/eksamen-og-prover/vurdering/standpunktvurdering/)
 
 **Innhold som bygger på kilden**
 
@@ -1412,7 +1427,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Merknader til opplæringsforskrifta, kapittel 10 Klage på sluttvurderingar
 
-`udir-merknader-ofo-kap10` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-10-klage-pa-sluttvurderingar/)
+`udir-merknader-ofo-kap10` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-10-klage-pa-sluttvurderingar/)
 
 **Innhold som bygger på kilden**
 
@@ -1433,7 +1448,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Regelverkstolkninger til opplæringslova (forarbeidene til hver paragraf)
 
-`udir-merknader-opplaeringslova` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/lov-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringslova/)
+`udir-merknader-opplaeringslova` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/lov-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringslova/)
 
 **Innhold som bygger på kilden**
 
@@ -1449,7 +1464,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Merknader til opplæringsforskrifta, kapittel 12 Personalet i skolen
 
-`udir-merknader-ofo-kap12` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-12-personalet-i-skolen/)
+`udir-merknader-ofo-kap12` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-12-personalet-i-skolen/)
 
 **Innhold som bygger på kilden**
 
@@ -1461,7 +1476,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Plikt til å følge opp fravær
 
-`udir-oppfolging-fravaer` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/plikt-til-a-folge-opp-fravar/)
+`udir-oppfolging-fravaer` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/plikt-til-a-folge-opp-fravar/)
 
 **Innhold som bygger på kilden**
 
@@ -1471,7 +1486,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Meldeplikt til barnevernet
 
-`udir-meldeplikt-barnevernet` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/meldeplikt-til-barnevernet/)
+`udir-meldeplikt-barnevernet` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/meldeplikt-til-barnevernet/)
 
 **Innhold som bygger på kilden**
 
@@ -1481,7 +1496,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Veileder om gratisprinsippet i grunnskolen og videregående opplæring
 
-`udir-gratisprinsippet` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-om-gratisprinsippet-i-grunnskolen-og-videregaende-opplaring/laremidler-og-utstyr/)
+`udir-gratisprinsippet` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/veileder-om-gratisprinsippet-i-grunnskolen-og-videregaende-opplaring/laremidler-og-utstyr/)
 
 **Innhold som bygger på kilden**
 
@@ -1491,7 +1506,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lov om straff (straffeloven)
 
-`straffeloven` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://lovdata.no/lov/2005-05-20-28)
+`straffeloven` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://lovdata.no/lov/2005-05-20-28)
 
 **Innhold som bygger på kilden**
 
@@ -1501,7 +1516,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Behandling av klager på standpunktkarakterer i fag
 
-`udir-klage-standpunkt` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/behandling-av-klager-pa-standpunktkarakterer-i-fag/)
+`udir-klage-standpunkt` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/regelverk-og-tilsyn/skole-og-opplaring/behandling-av-klager-pa-standpunktkarakterer-i-fag/)
 
 **Innhold som bygger på kilden**
 
@@ -1519,7 +1534,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Generelt om særskilt tilrettelegging av eksamen
 
-`udir-sarskilt-tilrettelegging-eksamen` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/)
+`udir-sarskilt-tilrettelegging-eksamen` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/)
 
 **Innhold som bygger på kilden**
 
@@ -1530,16 +1545,18 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Administrere eksamen
 
-`udir-administrere-eksamen` · Kildesjekk: ⚠️ endret siden 09.10.2026, ikke gått gjennom · [Åpne kilden](https://www.udir.no/eksamen-og-prover/eksamen/administrere-eksamen/)
+`udir-administrere-eksamen` · Kildesjekk: ⚠️ endret siden 12.10.2026, ikke gått gjennom · [Åpne kilden](https://www.udir.no/eksamen-og-prover/eksamen/administrere-eksamen/)
 
 **Innhold som bygger på kilden**
 
 | Innhold | Type | Punkt | Fil | Din kontroll |
 |---|---|---|---|---|
+| Særskilt tilrettelegging av eksamen (`sarskilt-tilrettelegging-av-eksamen`) | begrep | Særskilt tilrettelegging, Sikker nettleser | `content/begreper/eksamen.yaml` | ikke kontrollert |
 | Oppmelding (`oppmelding`) | begrep | Påmelding av eksamenskandidater | `content/begreper/eksamen.yaml` | ikke kontrollert |
 | Hurtigklage (`hurtigklage`) | begrep | Hurtigklage | `content/begreper/eksamen.yaml` | ikke kontrollert |
 | Oppmelding (`ek-oppmelding`) | forklaring | Påmelding av eksamenskandidater | `content/eksamen/eksamen.yaml` | ikke kontrollert |
 | Trekket blir kjent (`ek-trekket`) | forklaring | Trekk på videregående | `content/eksamen/eksamen.yaml` | ikke kontrollert |
+| Særskilt tilrettelegging av eksamen (`ek-tilrettelegging`) | forklaring | Særskilt tilrettelegging, Sikker nettleser | `content/eksamen/eksamen.yaml` | ikke kontrollert |
 | Skolene melder opp til høsteksamen (`fe-skoler-oppmelding-host`) | frist | Påmelding av eksamenskandidater | `content/eksamen/frister-eksamen.yaml` | ikke kontrollert |
 | Privatister melder seg opp til høsteksamen (`fe-privatister-oppmelding-host`) | frist | Påmelding av eksamenskandidater | `content/eksamen/frister-eksamen.yaml` | ikke kontrollert |
 | Trekket til høsteksamen blir kjent (`fe-trekk-host`) | frist | Trekk på videregående | `content/eksamen/frister-eksamen.yaml` | ikke kontrollert |
@@ -1551,7 +1568,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Lærekandidat – din vei til yrkeslivet
 
-`udir-laerekandidatordningen` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://www.udir.no/utdanningslopet/videregaende-opplaring/larekandidatordningen/larekandidat--din-vei-til-yrkeslivet/)
+`udir-laerekandidatordningen` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://www.udir.no/utdanningslopet/videregaende-opplaring/larekandidatordningen/larekandidat--din-vei-til-yrkeslivet/)
 
 **Innhold som bygger på kilden**
 
@@ -1573,7 +1590,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Registreringshåndboken, B26 Karakterer og andre vurderingsuttrykk
 
-`udir-regbok-karakterer` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1021153)
+`udir-regbok-karakterer` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://regbok.udir.no/felt/?Id=1021153)
 
 **Innhold som bygger på kilden**
 
@@ -1585,7 +1602,7 @@ Lenkesjekken 09.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under
 
 ### Registreringshåndboken, oversikt over alle feltene
 
-`udir-regbok-oversikt` · Kildesjekk: i orden (09.10.2026) · [Åpne kilden](https://regbok.udir.no/oversikt)
+`udir-regbok-oversikt` · Kildesjekk: i orden (12.10.2026) · [Åpne kilden](https://regbok.udir.no/oversikt)
 
 **Innhold som bygger på kilden**
 
@@ -3107,9 +3124,10 @@ Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande o
 
 **Særskilt tilrettelegging av eksamen** (`sarskilt-tilrettelegging-av-eksamen`, begrep, ikke kontrollert)
 
+- Er setningen om lese- og skrivestøtte og sikker nettleser riktig og nyttig i begrepet, eller hører den bare hjemme på eksamenssiden?
 - Er det greit å skrive at det er «noe annet enn individuelt tilrettelagt opplæring», så de to ikke blandes?
 
-Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-34): § 9-34; [Generelt om særskilt tilrettelegging av eksamen](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/): Generelt om særskilt tilrettelegging av eksamen
+Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-34): § 9-34; [Generelt om særskilt tilrettelegging av eksamen](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/): Generelt om særskilt tilrettelegging av eksamen; [Administrere eksamen](https://www.udir.no/eksamen-og-prover/eksamen/administrere-eksamen/): Særskilt tilrettelegging, Sikker nettleser
 
 **Fag- og svenneprøve** (`fag-og-svenneprove`, begrep, ikke kontrollert)
 
@@ -3398,10 +3416,12 @@ Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande o
 
 **Særskilt tilrettelegging av eksamen** (`ek-tilrettelegging`, forklaring, ikke kontrollert)
 
+- Gjelder det at kandidater med lese- og skrivestøtte må søke om tilrettelegging for å slippe sikker nettleser, både elever og privatister i videregående (Udir, «Sikker nettleser»)?
+- Er det riktig å skrive at unntaket registreres ved påmeldingen i PAS-eksamen, også for privatister, der det er eksamenskontoret og ikke skolen som melder på?
 - Er det riktig å si at fylkeskommunen ikke kan avslå bare fordi søknaden kom etter den veiledende fristen (merknaden til § 9-34)?
 - Er rektor ofte delegert myndighet til å avgjøre søknadene? Bør det stå (forslaget nevnte «eller rektor ved delegering»)?
 
-Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-34): § 9-34; [Merknader til opplæringsforskrifta, kapittel 9 Individuell vurdering](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/v.-eksamen/-9-34-sarskild-tilrettelegging-av-eksamen/): Merknad til § 9-34; [Generelt om særskilt tilrettelegging av eksamen](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/): Generelt om særskilt tilrettelegging av eksamen
+Kilder å sjekke mot: [Forskrift om grunnskoleopplæringa og den vidaregåande opplæringa (opplæringsforskrifta)](https://lovdata.no/forskrift/2024-06-03-900/§9-34): § 9-34; [Merknader til opplæringsforskrifta, kapittel 9 Individuell vurdering](https://www.udir.no/regelverkstolkninger/opplaring/forskrift-om-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-opplaringsforskrifta/tredje-delen--fellesreglar-for-grunnskoleopplaringa-og-den-vidaregaande-opplaringa-for-barn-og-unge/kapittel-9-individuell-vurdering/v.-eksamen/-9-34-sarskild-tilrettelegging-av-eksamen/): Merknad til § 9-34; [Generelt om særskilt tilrettelegging av eksamen](https://www.udir.no/eksamen-og-prover/eksamen/sarskilt-tilrettelegging-av-eksamen/): Generelt om særskilt tilrettelegging av eksamen; [Administrere eksamen](https://www.udir.no/eksamen-og-prover/eksamen/administrere-eksamen/): Særskilt tilrettelegging, Sikker nettleser
 
 **Utsatt, ny og særskilt eksamen** (`ek-utsatt-ny-sarskilt`, forklaring, ikke kontrollert)
 

@@ -1,6 +1,11 @@
 {
-  "sjekket": "2026-10-09",
+  "sjekket": "2026-10-12",
   "nettsteder": [
+    {
+      "vert": "ilare.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
     {
       "vert": "inschool.zendesk.com",
       "lenker": [
@@ -24,6 +29,31 @@
         }
       ],
       "stikkprover": 0
+    },
+    {
+      "vert": "mekkbil.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "naturbrukssenter.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "ohhi.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "ohs-haugalandet.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "orv-vestfold.no",
+      "lenker": [],
+      "stikkprover": 1
     },
     {
       "vert": "skolenes.no",
@@ -56,6 +86,11 @@
         }
       ],
       "stikkprover": 6
+    },
+    {
+      "vert": "ww.aofok.no",
+      "lenker": [],
+      "stikkprover": 1
     }
   ]
 }

@@ -11,7 +11,7 @@
  "iKraft": "2025-01-01",
  "iKraftTil": null,
  "lokaltype": "fagfordeling",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-12",
  "gyldighet": {
   "niva": "fylke",
   "fylke": "34"
@@ -250,7 +250,7 @@
          ],
          [
           [
-           "Felles programfag* *Felles programfag er fordelt på tre ulike fag på Vg1 og Vg2. Informasjon om fagene finnes på nettstedet: ",
+           "Felles programfag*\n*Felles programfag er fordelt på tre ulike fag på Vg1 og Vg2. Informasjon om fagene finnes på nettstedet: ",
            {
             "t": "www.vilbli.no",
             "l": "https://www.vilbli.no/"
@@ -335,7 +335,7 @@
          ],
          [
           [
-           "Læretid i bedrift på Vg1 Felles programfag foregår både i skole og bedrift. Eleven får ca. 3 dager i skole og ca. 2 dager ute i bedrift per uke."
+           "Læretid i bedrift på Vg1\nFelles programfag foregår både i skole og bedrift. Eleven får ca. 3 dager i skole og ca. 2 dager ute i bedrift per uke."
           ],
           [],
           [],
@@ -345,7 +345,7 @@
          ],
          [
           [
-           "Læretid i bedrift på Vg2 Felles programfag foregår både i skole og bedrift. Eleven får ca. 3 dager i skole og ca. 2 dager ute i bedrift per uke."
+           "Læretid i bedrift på Vg2\nFelles programfag foregår både i skole og bedrift. Eleven får ca. 3 dager i skole og ca. 2 dager ute i bedrift per uke."
           ],
           [],
           [],
@@ -355,7 +355,7 @@
          ],
          [
           [
-           "Læretid i bedrift på Vg3 Fag i skole ca. 3 dager i uka. Ute i bedrift, ca. 2 dager"
+           "Læretid i bedrift på Vg3\nFag i skole ca. 3 dager i uka. Ute i bedrift, ca. 2 dager"
           ],
           [],
           [],
@@ -365,7 +365,7 @@
          ],
          [
           [
-           "Læretid i bedrift på Vg4 Fag i skole ca. 2 dager i uka. Ute i bedrift, ca. 3 dager"
+           "Læretid i bedrift på Vg4\nFag i skole ca. 2 dager i uka. Ute i bedrift, ca. 3 dager"
           ],
           [],
           [],

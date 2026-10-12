@@ -11,7 +11,7 @@
  "iKraft": "2016-08-01",
  "iKraftTil": null,
  "lokaltype": "fagfordeling",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-12",
  "gyldighet": {
   "niva": "fylke",
   "fylke": "40"
@@ -363,14 +363,14 @@
          ],
          [
           [
-           "Kjemi Biologi"
+           "Kjemi\nBiologi"
           ],
           [],
           [
-           "Enten 5 (KJ1) Eller 5 (BI1)"
+           "Enten 5 (KJ1)\nEller 5 (BI1)"
           ],
           [
-           "Enten 5 (KJ2) Eller 5 (BI2)"
+           "Enten 5 (KJ2)\nEller 5 (BI2)"
           ]
          ],
          [
@@ -412,7 +412,7 @@
            "5 (R1)"
           ],
           [
-           "5 (R2) Eller 5 (KJ1) Eller 5 (BI1)"
+           "5 (R2)\nEller 5 (KJ1)\nEller 5 (BI1)"
           ]
          ],
          [

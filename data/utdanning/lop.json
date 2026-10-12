@@ -1,6 +1,6 @@
 {
 "kilde": "utdanning-no",
-"hentet": "2026-10-03T18:25:20.731Z",
+"hentet": "2026-10-12T11:56:43.694Z",
 "noder": {
 "BAAMF3----":"Anleggsmaskinførerfaget (opplæring i bedrift)",
 "BAANG2----":"Vg2 Anleggsgartner",
@@ -456,7 +456,7 @@
 "IMITK2----":["IMITD3----","IMIUV3----","PBPBY3----"],
 "IMIUV3----":["PBPBY4YK--"],
 "IMMDF3----":["PBPBY4YK--"],
-"IMMED2----":["IMIHP3----","IMMDF3----","IMMET3----","PBPBY3----","TPGPT3----"],
+"IMMED2----":["FDPFD3----","IMIHP3----","IMMDF3----","IMMET3----","PBPBY3----","TPGPT3----"],
 "IMMET3----":["PBPBY4YK--"],
 "KDKDA1----":["KDKDA2----"],
 "KDKDA2----":["KDKDA3----"],
@@ -580,8 +580,10 @@
 "ELDEL2----":["ELTEL3----"],
 "ELELE1----":["DTUIM2----","TPAMK2----","TPBRT2----","TPKJT2----","TPKPL2----","TPMAR2----","TPPIN2----"],
 "ELELE2----":["ELTAV3----","ELVIK3----"],
+"FDIED2----":["FDPFD3----"],
 "HSAMB2----":["HSHEA3----","HSPOR3----"],
 "HSHES2----":["HSPOR3----"],
+"IMMED2----":["FDPFD3----"],
 "NANAB1----":["BAANG2----"],
 "RMBAK2----":["RMFVF3----"],
 "RMMPR2----":["RMFVF3----","RMSMP3----"],
