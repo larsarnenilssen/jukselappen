@@ -1,8 +1,9 @@
 // Fylkene (fase 6, pakke 4, avgjørelse 061): én side per fylke med lenker til fylkets egne sider per tema, de lokale
 // forskriftene fra Lovdata (også skolenes egne regler), og skolene, opplæringskontorene og kalenderne for fylket.
-// Står under Oppslag på forsiden med navnet på fylket brukeren har valgt (eier 05.10.2026). Boksen «Hos
-// fylkeskommunen» i veiviserne lenker hit.
-import { fylker } from '../../app/Stedmerknad.tsx';
+// Står under Oppslag på forsiden som «Fylkene». Har brukeren valgt fylke, nevner undertittelen det, og fylket står
+// øverst i oversikten med merket «Ditt fylke» (eier 12.10.2026, avgjørelse 117). Boksen «Hos fylkeskommunen» i
+// veiviserne lenker hit.
+import { fylker, fylkesnavn } from '../../app/Stedmerknad.tsx';
 import { bareSpurte, oversiktsfavoritt } from '../favoritter.ts';
 import type { Modulmanifest } from '../typer.ts';
 import { fylkeFor, fylkeRute } from './innhold.ts';
@@ -28,8 +29,8 @@ export const manifest: Modulmanifest = {
       rute: '/fylker',
       ikon: 'kontor',
       etterFylke: (fylke) => {
-        const f = fylkeFor(fylke);
-        return f ? { tittel: f.navn, rute: fylkeRute(f.fylke) } : null;
+        const navn = fylkeFor(fylke) ? fylkesnavn(fylke) : null;
+        return navn ? { beskrivelse: 'moduler.fylker.beskrivelseValgt', verdier: { fylke: navn } } : null;
       },
     },
   ],

@@ -4,6 +4,10 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+### Endret
+
+- **«Fylkene» på forsiden heter det samme for alle:** Har du valgt fylke, står det under «Fylkene», f.eks. «Vestland og de andre fylkene.», og fylket ditt står øverst i listen med merket «Ditt fylke». Før het boksen det samme som fylket ditt og gikk rett dit.
+
 ### Rettet
 
 - **«Sist oppdatert» ved nyhetene er den siste hentingen:** Appen publiseres etter hver henting, også når det ikke kom nye saker. Før kunne tidspunktet bli stående i mange timer.

@@ -526,6 +526,7 @@ export const nn: Tekster = {
     fylker: {
       navn: 'Fylka',
       beskrivelse: 'Sidene til fylket, forskrifter og skular.',
+      beskrivelseValgt: '{fylke} og dei andre fylka.',
     },
     lov: {
       navn: 'Regelverk',
