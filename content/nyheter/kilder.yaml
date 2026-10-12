@@ -478,4 +478,16 @@ prove:
   - { id: skolenes, navn: Skolenes landsforbund, url: https://www.skolenes.no/feed/, alle: true }
 
 # Sider der prøvehentingen leter etter feeder (<link rel="alternate">), leser robots.txt og viser HTML-en rundt datoene.
-oppdag: []
+oppdag:
+  - "https://ofk.no/ArtikkelRSS.ashx?NyhetsKategoriId=20687&Spraak=Norsk"
+  - "https://lovdata.no/feed?data=LT&type=RSS"
+  - "https://kf.no/"
+  - "https://utdanningsforskning.no/"
+  - "https://www.uis.no/nb/forskning/ksu"
+  - "https://www.fafo.no/"
+  - "https://www.sintef.no/"
+  - "https://www.forskningsradet.no/"
+  - "https://www.idunn.no/"
+  - "https://www.nrk.no/"
+  - "https://www.uv.uio.no/ils/"
+  - "https://aktuelt.oslo.kommune.no/"
