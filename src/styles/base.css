@@ -3992,8 +3992,9 @@ p.fagkort-tittel {
   --favoritt-hoyde: 4.5rem;
 }
 
-/* Høydene for modulene gjelder boksene i kategoriene, ikke favorittene under kategoriene med «Bare favoritter». */
-.forside .kategori[data-kategori] .liste:not(.favorittliste) > li > .listelenke {
+/* Høydene for modulene gjelder boksene i kategoriene, ikke favorittene under kategoriene med «Bare favoritter», og ikke
+   boksene i «Flere kalkulatorer», som har sin egen høyde under. */
+.forside .kategori[data-kategori] .liste:not(.flere-liste, .favorittliste) > li > .listelenke {
   min-height: var(--modul-hoyde);
 }
 
