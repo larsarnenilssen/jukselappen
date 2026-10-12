@@ -9,9 +9,8 @@ Kilder vi har prøvd å ta med i appen, men som ikke er med, eller bare er delvi
 | Kilde | Hva vi ville ha | Hvorfor ikke | Hva kan åpne den |
 |---|---|---|---|
 | Trøndelag fylkeskommune | Nyheter om videregående i Trøndelag | Nyhetsarkivet lastes av JavaScript fra `/api/`, og robots.txt stenger `/api/`. | En feed fra fylket, eller at fylket tillater `/api/`. |
-| Østfold fylkeskommune | Nyheter om videregående i Østfold | Nettstedet svarer ikke, verken fra skymiljøet eller fra Actions. | Prøv igjen fra Actions (`npm run nyheter:prove`). |
 | Oslo kommune, Utdanningsetaten | Nyheter om videregående i Oslo | Ingen nyhetsliste for videregående. | En nyhetsside eller feed for videregående. |
-| Agder, Akershus, Buskerud, Finnmark, Møre og Romsdal, Nordland, Rogaland og Troms | – | Med. Feeden (`/ArtikkelRSS.ashx`) er tillatt etter ordlyden i robots.txt, som stenger `/artikkelRSS.aspx`. | Tas ut hvis et fylke sier fra. |
+| Agder, Akershus, Buskerud, Finnmark, Møre og Romsdal, Nordland, Rogaland, Troms og Østfold | – | Med. Østfold fra 12.10.2026, etter at nettstedet flyttet til `ofk.no`. Feeden (`/ArtikkelRSS.ashx`) er tillatt etter ordlyden i robots.txt, som stenger `/artikkelRSS.aspx`. | Tas ut hvis et fylke sier fra. |
 | Skolenes landsforbund | – | Med fra 12.10.2026, med filteret for videregående. Adressen var feil: `skolenes.no` finnes ikke, forbundet er på `skoleneslandsforbund.no`. | – |
 | Norsk Lektorlag | Nyheter fra et lærerforbund | Ingen feed, og listen har ingen datoer. Det ville krevd henting av hver sak. | En feed, eller datoer i listen. |
 | KS | Nyheter om skole og arbeidsgiverpolitikk | Ingen feed, og robots.txt stenger hele nettstedet. Nyhetssiden har i stedet en fast lenke til KS. | En feed, eller at KS åpner for henting. |

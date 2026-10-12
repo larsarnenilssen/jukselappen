@@ -358,6 +358,19 @@ kilder:
     ingress: true
     fylker: ["32"]
 
+  # Østfold (eier 12.10.2026): nettstedet flyttet til ofk.no. Feeden «Aktuelt skole og opplæring», som siden selv lenker
+  # til. Samme plattform og samme robots.txt som Akershus og Buskerud.
+  - id: fylkeskommune-ostfold
+    navn: { nb: Østfold fylkeskommune, nn: Østfold fylkeskommune }
+    kortnavn: { nb: Østfold fylkeskommune, nn: Østfold fylkeskommune }
+    type: myndighet
+    kilde: fylkeskommunene-nyheter
+    format: rss
+    url: "https://ofk.no/ArtikkelRSS.ashx?NyhetsKategoriId=20687&Spraak=Norsk"
+    filter: vgs
+    ingress: true
+    fylker: ["31"]
+
   - id: fylkeskommune-buskerud
     navn: { nb: Buskerud fylkeskommune, nn: Buskerud fylkeskommune }
     kortnavn: { nb: Buskerud fylkeskommune, nn: Buskerud fylkeskommune }
