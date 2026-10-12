@@ -43,13 +43,18 @@ export function lesForrige<T>(fil: string): T | null {
   return existsSync(fil) ? (JSON.parse(readFileSync(fil, 'utf8')) as T) : null;
 }
 
-/** Skriver filen (kompakt, én linje per oppføring) når innholdet uten tidspunktet er endret. Gir true når den ble skrevet. */
-export function skrivHvisEndret<T extends { hentet: string }>(fil: string, forrige: T | null, ny: T): boolean {
+/**
+ * Skriver filen (kompakt, én linje per oppføring) når innholdet uten tidspunktet er endret. Gir true når innholdet er
+ * endret. Med `alltid` skrives filen også når bare tidspunktet er nytt, f.eks. nyhetene, der appen viser når de sist ble
+ * hentet (avgjørelse 116).
+ */
+export function skrivHvisEndret<T extends { hentet: string }>(fil: string, forrige: T | null, ny: T, { alltid = false } = {}): boolean {
   const utenTid = (d: T) => vigoJson({ ...d, hentet: '' });
-  if (forrige && utenTid(forrige) === utenTid(ny)) return false;
+  const endret = !forrige || utenTid(forrige) !== utenTid(ny);
+  if (!endret && !alltid) return false;
   mkdirSync(dirname(fil), { recursive: true });
   writeFileSync(fil, vigoJson(ny));
-  return true;
+  return endret;
 }
 
 /** Skriver endringene til kildesjekken (.generert/<navn>-endringer.json). */

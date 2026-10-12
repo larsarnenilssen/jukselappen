@@ -132,9 +132,10 @@ async function main() {
   const ny: Nyheter = { skjema: 1, hentet: naa.toISOString(), kilder: Object.fromEntries(kilder.map((k) => [k.id, status[k.id] ?? { status: 'feilet' }])), saker };
   const sjekk = nyheterSkjema.safeParse(ny);
   if (!sjekk.success) throw new Error(`Nyhetene passer ikke skjemaet: ${sjekk.error.message}`);
-  const skrevet = skrivHvisEndret(FIL, forrige, ny);
+  // Filen skrives hver gang, så tidspunktet for hentingen er nytt og appen publiseres (avgjørelse 116).
+  const endret = skrivHvisEndret(FIL, forrige, ny, { alltid: true });
   const feilet = Object.entries(status).filter(([, s]) => s.status !== 'ok');
-  console.log(`Nyheter: ${saker.length} saker fra ${kilder.length} kilder${skrevet ? '' : ' (uendret)'}.`);
+  console.log(`Nyheter: ${saker.length} saker fra ${kilder.length} kilder${endret ? '' : ' (uendret)'}.`);
   for (const [id, s] of feilet) console.log(`  ${id}: ${s.status}${s.melding ? ` – ${s.melding}` : ''}`);
 }
 
