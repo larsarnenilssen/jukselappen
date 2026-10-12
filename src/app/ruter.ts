@@ -76,7 +76,10 @@ export function gaaTilbake(): void {
 }
 
 export function startRuting(): void {
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  // Nettleseren gjenoppretter også rullingen selv (auto), i tillegg til appen. iOS venter på det før bildet fra
+  // sveipet tilbake tas bort. Med «manual» ble skjermen stående blank til en tidsfrist gikk ut (eier 12.10.2026,
+  // avgjørelse 113). Appen setter rullingen etterpå uansett, så de to gir samme sted.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
   const naa = gjeldende();
   if (naa) dybde = naa.dybde;
   else history.replaceState({ appId: nyId(), dybde: 0 }, '');

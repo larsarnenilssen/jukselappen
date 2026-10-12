@@ -154,6 +154,12 @@ test.describe('navigasjon', () => {
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeFocused();
   });
 
+  test('nettleseren gjenoppretter også rullingen selv, så iOS tar bort bildet fra sveipet tilbake (avgjørelse 113)', async ({ page }) => {
+    await page.goto('./');
+    await venterPaaSide(page);
+    expect(await page.evaluate(() => history.scrollRestoration)).toBe('auto');
+  });
+
   test('høyst fem sider står i bakgrunnen (avgjørelse 111)', async ({ page }) => {
     await page.goto('./');
     await venterPaaSide(page);
