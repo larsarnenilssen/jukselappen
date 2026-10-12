@@ -69,30 +69,26 @@ Dette bygger appen på uten at det står i kildene. Du bekrefter punktene i kont
 
 Lenkesjekken 12.10.2026 fikk ikke svar fra noen av lenkene til nettstedene under. De stenger trolig for automatiske forespørsler, så lenkene dit blir ikke sjekket. Åpne noen av dem av og til. Virker en lenke ikke, si fra til Claude.
 
-- **ilare.no** (én lenke)
-  - Én lenke fra dataene, som sjekkes med stikkprøver.
 - **inschool.zendesk.com** (3 lenker)
   - https://inschool.zendesk.com/hc/no/articles/19452863757970 (står i `content/kilder.yaml`)
   - https://inschool.zendesk.com/hc/no/articles/27581133712274-2a-17-Fag-og-timefordeling-Periodebeskjeftigelse-ny-funksjonalitet (står i `content/kilder.yaml`)
   - https://inschool.zendesk.com/hc/no/articles/4417711337105-3-25-Beregning-av-l%C3%B8nn-for-vikartimer (står i `content/kilder.yaml`)
-- **mekkbil.no** (én lenke)
+- **overbo.vgs.no** (én lenke)
   - Én lenke fra dataene, som sjekkes med stikkprøver.
-- **naturbrukssenter.no** (én lenke)
+- **pro.sf.no** (én lenke)
   - Én lenke fra dataene, som sjekkes med stikkprøver.
-- **ohhi.no** (én lenke)
-  - Én lenke fra dataene, som sjekkes med stikkprøver.
-- **ohs-haugalandet.no** (én lenke)
-  - Én lenke fra dataene, som sjekkes med stikkprøver.
-- **orv-vestfold.no** (én lenke)
+- **rvbl.no** (én lenke)
   - Én lenke fra dataene, som sjekkes med stikkprøver.
 - **skolenes.no** (én lenke)
   - https://www.skolenes.no/feed/ (står i `content/nyheter/kilder.yaml`)
+- **tobok.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
+- **treringen.no** (én lenke)
+  - Én lenke fra dataene, som sjekkes med stikkprøver.
 - **vilbli.no** (8 lenker)
   - https://www.vilbli.no/ (står i `content/inntak/frister.yaml`, `content/inntak/rett-inntak-soknad.yaml`, `content/kilder.yaml`)
   - https://www.vilbli.no/nb/nb/no/aktivitorfaget/program/v.hs/v.hsakt3----/p5 (står i `src/modules/fag/tilbud/vilbli.ts`)
   - 6 lenker fra dataene, som sjekkes med stikkprøver.
-- **ww.aofok.no** (én lenke)
-  - Én lenke fra dataene, som sjekkes med stikkprøver.
 
 ## Per kilde
 
