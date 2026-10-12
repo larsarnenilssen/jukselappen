@@ -1,9 +1,9 @@
 # Nyhetene (fase 7b, avgjørelse 084 og 098): henter kildene i content/nyheter/kilder.yaml hver time til
 # data/nyheter/nyheter.json. Filen ligger på grenen nyheter, som har én commit som skrives over (som grep-lager,
-# avgjørelse 060), så nyhetene ikke gir commits på main. Passer filen skjemaet og testene for nyhetene, lagres den der.
-# Er sakene endret, publiseres appen på nytt (deploy.yml henter nyhetene fra grenen). Er bare statusen for en kilde
-# endret, lagres den uten publisering og kommer med neste gang appen publiseres. Feiler en kilde, står sakene fra før,
-# og kilden får status i filen og i kildesjekken.
+# avgjørelse 060), så nyhetene ikke gir commits på main. Passer filen skjemaet og testene for nyhetene, lagres den der,
+# og appen publiseres på nytt etter hver henting (deploy.yml henter nyhetene fra grenen), så tidspunktet for hentingen i
+# appen alltid er det siste (avgjørelse 116). Feiler en kilde, står sakene fra før, og kilden får status i filen og i
+# kildesjekken.
 #
 # Feiler en nyhetskilde i mer enn to dager, kommer den i saken med etiketten «nyheter». Feiler arbeidsflyten, kommer
 # den i saken med etiketten «feil» (avgjørelse 085).
@@ -44,7 +44,7 @@ jobs:
       issues: write
       pages: read
     outputs:
-      nye_saker: ${{ steps.lagre.outputs.nye_saker }}
+      publiser: ${{ steps.lagre.outputs.publiser }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -102,7 +102,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
       # Grenen har bare én commit, som skrives over (avgjørelse 098). En push med GITHUB_TOKEN starter ingen
-      # arbeidsflyter. Appen publiseres bare når sakene er endret, ikke når bare statusen for en kilde er det.
+      # arbeidsflyter. Appen publiseres etter hver henting, også når bare tidspunktet eller statusen for en kilde er
+      # endret, så appen viser når nyhetene sist ble hentet (avgjørelse 116).
       - name: Lagre nyhetene på grenen nyheter
         id: lagre
         if: github.event_name != 'pull_request'
@@ -113,7 +114,7 @@ jobs:
           forrige=.generert/nyheter-forrige.json
           if [ "$FRA" = gren ] && cmp -s "$f" "$forrige"; then
             echo "Nyhetene er uendret."
-            echo nye_saker=nei >> "$GITHUB_OUTPUT"
+            echo publiser=nei >> "$GITHUB_OUTPUT"
             exit 0
           fi
           export GIT_AUTHOR_NAME="github-actions[bot]" GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
@@ -123,16 +124,14 @@ jobs:
           commit=$(git commit-tree "$tree" -m "Nyheter $(date -u '+%F %H.%M')")
           git push --force origin "$commit:refs/heads/nyheter"
           if [ -s "$forrige" ] && [ "$(jq -cS '.saker' "$f")" = "$(jq -cS '.saker' "$forrige")" ]; then
-            echo "Bare statusen for kildene er endret. Den kommer med neste gang appen publiseres."
-            echo nye_saker=nei >> "$GITHUB_OUTPUT"
-          else
-            echo nye_saker=ja >> "$GITHUB_OUTPUT"
+            echo "Ingen nye saker. Appen publiseres likevel, så tidspunktet for hentingen er det siste."
           fi
+          echo publiser=ja >> "$GITHUB_OUTPUT"
 
   publiser:
-    name: Publiser med de nye nyhetene
+    name: Publiser med nyhetene
     needs: hent
-    if: needs.hent.outputs.nye_saker == 'ja'
+    if: needs.hent.outputs.publiser == 'ja'
     uses: ./.github/workflows/deploy.yml
     with:
       tag: ''

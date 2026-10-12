@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-116 avgjørelser: 79 gjeldende, 36 endret og 1 erstattet.
+117 avgjørelser: 79 gjeldende, 37 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -97,7 +97,7 @@ Status:
 | 081 | [Panelet øverst på forsiden: kalender, nyheter og tall](081-panelet-overst-pa-forsiden.md) | endret av 102 |
 | 082 | [Stiler som lastes med sidene](082-stiler-som-lastes-med-sidene.md) | gjeldende |
 | 083 | [Målformene lastes hver for seg](083-malformene-lastes-hver-for-seg.md) | gjeldende |
-| 084 | [Nyhetene hentes og publiseres hver dag](084-nyhetene-hentes-og-publiseres-hver-dag.md) | endret av 098 |
+| 084 | [Nyhetene hentes og publiseres hver dag](084-nyhetene-hentes-og-publiseres-hver-dag.md) | endret av 098, 116 |
 | 085 | [Varsler til eier](085-varsler-til-eier.md) | endret av 099, 106 |
 | 086 | [Dagens jukselapp](086-dagens-jukselapp.md) | endret av 102 |
 | 087 | [Elevundersøkelsen som egen modul, og Skolemiljø får nytt navn](087-elevundersokelsen-som-egen-modul.md) | gjeldende |
@@ -111,7 +111,7 @@ Status:
 | 095 | [Testversjonen tas ned når en versjon publiseres](095-testversjonen-tas-ned.md) | gjeldende |
 | 096 | [Grafikken i kalkulatorene og vurderingen](096-grafikken-i-kalkulatorene.md) | gjeldende |
 | 097 | [Robusthet: lagringen, feilgrensen, regelperiodene og ustabile tester](097-robusthet-lagring-og-feilgrense.md) | endret av 104 |
-| 098 | [Alle data fra main ved publisering, og nyhetene på egen gren](098-data-fra-main-og-nyhetene.md) | gjeldende |
+| 098 | [Alle data fra main ved publisering, og nyhetene på egen gren](098-data-fra-main-og-nyhetene.md) | endret av 116 |
 | 099 | [Dependabot, Node 24 og overvåking av jukselappen.no](099-dependabot-node-og-overvaking.md) | endret |
 | 100 | [Større tekst, hovedinnholdet åpent og bedre treff i søket](100-lesbarhet-apent-innhold-og-sok.md) | endret av 109 |
 | 101 | [Velkomsten i fire trinn](101-velkomst-i-fire-trinn.md) | endret |
@@ -129,4 +129,5 @@ Status:
 | 113 | [Nettleseren gjenoppretter også rullingen](113-nettleseren-gjenoppretter-rullingen.md) | gjeldende |
 | 114 | [Endringer på nettsider under overskriftene](114-endringer-under-overskrifter.md) | gjeldende |
 | 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
+| 116 | [Appen publiseres etter hver henting av nyhetene](116-appen-publiseres-etter-hver-nyhetshenting.md) | gjeldende |
 | 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | gjeldende |

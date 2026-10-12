@@ -103,11 +103,16 @@ describe('arbeidsflyter', () => {
     expect(steg.find((s) => s.id === 'delfeil')?.run).toContain('Bekreft lenkene til fylkene');
   });
 
-  it('nyhetene lagres på grenen nyheter, ikke på main, og publiseres bare når sakene er endret (avgjørelse 098)', () => {
+  it('nyhetene lagres på grenen nyheter, ikke på main, og appen publiseres etter hver henting (avgjørelse 098 og 116)', () => {
     const nyheter = readFileSync(join(rot, '.github/workflows/nyheter.yml'), 'utf8');
     expect(nyheter).toContain('refs/heads/nyheter');
     expect(nyheter).not.toContain('git add');
-    expect(nyheter).toContain("if: needs.hent.outputs.nye_saker == 'ja'");
+    expect(nyheter).toContain("if: needs.hent.outputs.publiser == 'ja'");
+    // Ingen nye saker gir også publisering, så tidspunktet for hentingen i appen er det siste.
+    const jobber = (parse(nyheter) as { jobs: Record<string, { steps?: { id?: string; run?: string }[] }> }).jobs;
+    const lagre = jobber.hent?.steps?.find((s) => s.id === 'lagre')?.run ?? '';
+    expect(lagre.match(/publiser=nei/g)).toHaveLength(1);
+    expect(lagre).toMatch(/cmp -s[\s\S]*publiser=nei[\s\S]*publiser=ja/);
     const deploy = readFileSync(join(rot, '.github/workflows/deploy.yml'), 'utf8');
     expect(deploy).toContain('origin nyheter');
     expect(readFileSync(join(rot, '.gitignore'), 'utf8')).toContain('data/nyheter/');
