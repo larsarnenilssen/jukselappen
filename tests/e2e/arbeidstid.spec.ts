@@ -34,6 +34,12 @@ test.describe('arbeidstid', () => {
     await expect(arbeidstid.getByRole('link', { name: /Vikartimer/ })).toBeHidden();
     await arbeidstid.getByRole('button', { name: /Flere kalkulatorer/ }).click();
     await expect(arbeidstid.getByRole('link', { name: /Beskjeftigelse/ })).toBeVisible();
+    // Kalkulatorene i boksen er like høye som boksene under «Oppslag» (eier 08.10.2026).
+    const hoyde = async (l: Locator) => (await l.boundingBox())?.height ?? 0;
+    const oppslag = await hoyde(page.locator('[data-kategori="felles"] .liste > li > .listelenke').first());
+    for (const navn of [/Beskjeftigelse/, /Vikartimer/, /Overtid/]) {
+      expect(Math.abs((await hoyde(arbeidstid.getByRole('link', { name: navn }))) - oppslag)).toBeLessThan(1);
+    }
     await arbeidstid.getByRole('link', { name: /Vikartimer/ }).click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vikartimer');
     // Tilbake til forsiden: boksen er fortsatt åpen.
