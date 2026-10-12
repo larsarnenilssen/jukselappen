@@ -4,6 +4,7 @@ import { fylker } from '../../../app/Stedmerknad.tsx';
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { Ikon } from '../../../components/Ikon.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
+import { Stedmerke } from '../../../components/Stedmerke.tsx';
 import { oversiktsid } from '../../favoritter.ts';
 import { fylkeFor, fylkeRute } from '../innhold.ts';
 
@@ -29,10 +30,7 @@ export default function Oversikt() {
                 <span class="listelenke-tittel">{f.navn}</span>
                 {f.nummer === innstillinger.fylke && (
                   <span class="listelenke-under">
-                    <span class="ditt-fylke">
-                      <Ikon navn="hake" class="ikon-liten" />
-                      {t('fylker.dittFylke')}
-                    </span>
+                    <Stedmerke sted="fylke" />
                   </span>
                 )}
               </span>

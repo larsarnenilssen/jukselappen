@@ -5,6 +5,7 @@
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { Brodsmuler } from '../../../components/Brodsmuler.tsx';
 import { Ikon, type Ikonnavn } from '../../../components/Ikon.tsx';
+import { Stedmerke } from '../../../components/Stedmerke.tsx';
 import { Rubrikk } from '../../../components/Rubrikk.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { ToKolonner } from '../../../components/ToKolonner.tsx';
@@ -20,7 +21,7 @@ import { FylketITall } from '../../statistikk/komponenter.tsx';
 
 const REKKEFOLGE: Lokaltype[] = ['skoleregler', 'skoleregler-voksne', 'inntak', 'skolerute', 'skyss'];
 
-function Lenkerad({ href, tittel, under, ikon, ekstern = false, merke }: { href: string; tittel: string; under?: string; ikon?: Ikonnavn; ekstern?: boolean; merke?: string }) {
+function Lenkerad({ href, tittel, under, ikon, ekstern = false, merke }: { href: string; tittel: string; under?: string; ikon?: Ikonnavn; ekstern?: boolean; merke?: boolean }) {
   return (
     <li>
       <a class="listelenke" href={href} {...(ekstern ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
@@ -28,7 +29,7 @@ function Lenkerad({ href, tittel, under, ikon, ekstern = false, merke }: { href:
         <span class="listelenke-tekst">
           <span class="listelenke-tittel">
             {tittel}
-            {merke && <span class="merke merke-skole">{merke}</span>}
+            {merke && <Stedmerke sted="skole" />}
           </span>
           {under && <span class="listelenke-under">{under}</span>}
         </span>
@@ -100,7 +101,7 @@ export default function Fylke({ parametre, sporring }: SideProps) {
                       <Lenkerad key={d.id} href={`#${dokumentRute(d.id)}`} tittel={dokumentnavn(d, malform)} under={iKraft(d)} />
                     ))}
                     {mine.map((d) => (
-                      <Lenkerad key={d.id} href={`#${dokumentRute(d.id)}`} tittel={dokumentnavn(d, malform)} under={iKraft(d)} merke={t('lov.skolenDin')} />
+                      <Lenkerad key={d.id} href={`#${dokumentRute(d.id)}`} tittel={dokumentnavn(d, malform)} under={iKraft(d)} merke />
                     ))}
                   </ul>
                 )}

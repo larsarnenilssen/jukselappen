@@ -47,6 +47,15 @@ Et kort samler én ting: et skjema, en oppføring eller en forklaring.
 
 *Eksempler:* sidekolonnen på forsiden, «Kort fortalt» på temasidene, tallboksene.
 
+## Stedfargen
+
+- **Stedfargen** (`--farge-sted`, `--farge-sted-flate`, `--farge-sted-knapp`, dempet turkis) brukes bare for det som vises fordi brukeren har valgt fylke eller skole (eier 12.10.2026, avgjørelse 119). Uten valgt fylke og skole brukes den ikke, og linjen øverst på forsiden står som før.
+- **Merket** er alltid `Stedmerke`: «✓ Din skole» eller «✓ Ditt fylke». Teksten i merket sier det samme som fargen.
+- **Brukes for:** merket, linjen med valgt sted øverst på forsiden og i Inntak, boksen «Hos fylkeskommunen» med valgt fylke, merket for lokale verdier for fylket og skolen (`Nivamerke`), fylkets og skolens oppføringer i kalenderen og tilbudene ved skolen din i Opplæringsløp.
+- **Ikke for:** filtre (f.eks. en skole eller et tilbud i skoleregisteret), som er blå (`merke-info`), eller brede flater og hele kort utenom tilbudene ved skolen. Fargen skal være lett å kjenne igjen fordi den er sjelden.
+
+*Eksempler:* «Ditt fylke» i Fylkene, «Din skole» i skoleregisteret og i Regelverk, «Hos fylkeskommunen» i veiviserne.
+
 ## Overskrifter og merkelapper
 
 - **Sidetittel** (`h1`) med stjernen til høyre (`Sidetopp`) og stien over (`Brodsmuler`).

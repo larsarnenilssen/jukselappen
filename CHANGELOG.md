@@ -6,6 +6,7 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ### Endret
 
+- **Én farge for skolen og fylket ditt:** Det som vises fordi du har valgt fylke eller skole, står i samme dempede turkise farge, med merket «Din skole» eller «Ditt fylke». Det gjelder f.eks. linjen øverst på forsiden, boksen «Hos fylkeskommunen» og lokale verdier. Valget i Opplæringsløp heter «Din skole» / «Alle».
 - **Nyhetene hentes hver time:** Før kom de bare når GitHub startet hentingen, noen ganger med mange timers mellomrom.
 - **«Fylkene» på forsiden heter det samme for alle:** Har du valgt fylke, står det under «Fylkene», f.eks. «Vestland og de andre fylkene.», og fylket ditt står øverst i listen med merket «Ditt fylke». Før het boksen det samme som fylket ditt og gikk rett dit.
 

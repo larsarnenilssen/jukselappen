@@ -382,7 +382,7 @@ export default function Skoler({ sporring }: SideProps) {
           </div>
           {filter.skole && (
             <p class="skolefilter-tilbud">
-              <span class="merke merke-skole">{register.skoler.find((x) => x.nr === filter.skole)?.navn ?? filter.skole}</span>{' '}
+              <span class="merke merke-info">{register.skoler.find((x) => x.nr === filter.skole)?.navn ?? filter.skole}</span>{' '}
               <button type="button" class="lenkeknapp liten" onClick={() => sett({ skole: '' })}>
                 {t('opplaeringslop.skoler.fjernTilbud')}
               </button>
@@ -390,7 +390,7 @@ export default function Skoler({ sporring }: SideProps) {
           )}
           {filter.tilbud && (
             <p class="skolefilter-tilbud">
-              <span class="merke merke-skole">{t('opplaeringslop.skoler.tilbud', { tilbud: tilbudsnavn(t, data.indeks, filter.tilbud, malform) })}</span>{' '}
+              <span class="merke merke-info">{t('opplaeringslop.skoler.tilbud', { tilbud: tilbudsnavn(t, data.indeks, filter.tilbud, malform) })}</span>{' '}
               <button type="button" class="lenkeknapp liten" onClick={() => sett({ tilbud: '' })}>
                 {t('opplaeringslop.skoler.fjernTilbud')}
               </button>

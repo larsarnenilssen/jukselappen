@@ -225,7 +225,7 @@ test.describe('opplæringsløp', () => {
     await page.getByRole('link', { name: /^Opplæringsløp.*utdanningsprogram ved Åsane vidaregåande skule/ }).click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Opplæringsløp');
     await expect(page.getByRole('navigation', { name: 'Plassering' }).getByRole('link', { name: 'Opplæringstilbud' })).toBeVisible();
-    await expect(page.getByRole('radio', { name: 'Min skole' })).toBeChecked();
+    await expect(page.getByRole('radio', { name: 'Din skole' })).toBeChecked();
     await expect(page.getByText('Viser tilbudene ved Åsane vidaregåande skule.')).toBeVisible();
     await expect(page.getByRole('link', { name: /Helse- og oppvekstfag.*tilbud ved skolen/ })).toBeVisible();
     // Løpet starter fra skolens tilbud. Tilbudene ved skolen har egen farge, og knappen sier hvor mange som er ved skolen.
@@ -247,7 +247,7 @@ test.describe('opplæringsløp', () => {
   test('uten valgt skole står en merknad om å velge skole (avgjørelse 053)', async ({ page }) => {
     await page.goto('./#/opplaeringslop/lop');
     await expect(page.getByText('Velg skole under Innstillinger, så ser du tilbudene ved skolen din.')).toBeVisible();
-    await expect(page.getByRole('radio', { name: 'Min skole' })).toHaveCount(0);
+    await expect(page.getByRole('radio', { name: 'Din skole' })).toHaveCount(0);
   });
 
   test('tilbudet lenker til skolene i fylket, og oppslaget kan utvides til hele landet (avgjørelse 053)', async ({ page }) => {
