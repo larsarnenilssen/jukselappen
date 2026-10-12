@@ -4,6 +4,8 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+## [1.3.0] – 2026-10-12
+
 ### Lagt til
 
 - **Nyheter fra Skolenes landsforbund:** Sakene om videregående fra LO-forbundet for skolen står nå sammen med de andre organisasjonene.
