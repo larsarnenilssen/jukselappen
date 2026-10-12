@@ -7,7 +7,7 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 ### Lagt til
 
 - **Nyheter fra Skolenes landsforbund:** Sakene om videregående fra LO-forbundet for skolen står nå sammen med de andre organisasjonene.
-- **Nyheter fra Østfold fylkeskommune:** Har du valgt Østfold, får du nå fylkets nyheter om skole og opplæring, som i de andre fylkene med feed.
+- **Nyheter fra Østfold og Oslo:** Har du valgt Østfold eller Oslo, får du nå nyhetene om videregående derfra, som i de andre fylkene med feed. Fra Oslo blir det få saker, fordi feeden gjelder hele kommunen.
 
 ### Endret
 

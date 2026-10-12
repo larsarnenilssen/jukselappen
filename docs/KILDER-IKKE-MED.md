@@ -11,7 +11,7 @@ Alle radene er kontrollert på nytt 12.10.2026 med prøvehentingen fra Actions (
 | Kilde | Hva vi ville ha | Hvorfor ikke | Hva kan åpne den |
 |---|---|---|---|
 | Trøndelag fylkeskommune | Nyheter om videregående i Trøndelag | Nyhetsarkivet lastes av JavaScript fra `/api/`, og robots.txt stenger `/api/`. | En feed fra fylket, eller at fylket tillater `/api/`. |
-| Oslo kommune, Utdanningsetaten | Nyheter om videregående i Oslo | Utdanningsetaten har ingen nyhetsliste. Kommunen har en feed for hele kommunen (`aktuelt.oslo.kommune.no/rss`), og robots.txt tillater den. Prøvehentingen 12.10.2026: 50 saker, om lag 14 i uka, og filteret for videregående slapp gjennom 4, hvorav 1–2 om videregående. | Eier avgjør om kommunefeeden skal med, eller en egen feed for Utdanningsetaten. |
+| Oslo kommune | – | Med fra 12.10.2026: feeden for hele kommunen (`aktuelt.oslo.kommune.no/rss`) med filteret for videregående, selv om det gir få saker (eier). Utdanningsetaten har ingen egen nyhetsliste. | – |
 | Agder, Akershus, Buskerud, Finnmark, Møre og Romsdal, Nordland, Rogaland, Troms og Østfold | – | Med. Østfold fra 12.10.2026, etter at nettstedet flyttet til `ofk.no`. Feeden (`/ArtikkelRSS.ashx`) er tillatt etter ordlyden i robots.txt, som stenger `/artikkelRSS.aspx`. | Tas ut hvis et fylke sier fra. |
 | Skolenes landsforbund | – | Med fra 12.10.2026, med filteret for videregående. Adressen var feil: `skolenes.no` finnes ikke, forbundet er på `skoleneslandsforbund.no`. | – |
 | Norsk Lektorlag | Nyheter fra et lærerforbund | Ingen feed, og listen har ingen datoer. Det ville krevd henting av hver sak. Sitemap.xml har en dato for hver sak, men det er datoen saken sist ble endret. | En feed, eller datoer i listen. |
