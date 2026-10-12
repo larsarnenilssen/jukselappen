@@ -7,6 +7,7 @@ import { harAndreFylker, rangerTreff, synligeTreff, treffIFylket } from '../core
 import { fylker } from './Stedmerknad.tsx';
 import { hentSok } from './sokeklient.ts';
 import { useTekst, useTilstand } from './tilstand.ts';
+import { slippTastaturet } from './tastatur.ts';
 
 interface Props {
   etikett: string;
@@ -50,7 +51,11 @@ export function Sokeboks({ etikett, plassholder, startverdi = '', autofokus = fa
 
   useEffect(() => {
     if (startverdi) lastIndeks();
-    if (autofokus) felt.current?.focus({ preventScroll: true });
+    if (autofokus) {
+      felt.current?.focus({ preventScroll: true });
+      // Søkefeltet har tatt over tastaturet fra det usynlige feltet (avgjørelse 112).
+      slippTastaturet();
+    }
   }, []);
 
   useEffect(() => {

@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-111 avgjørelser: 75 gjeldende, 35 endret og 1 erstattet.
+112 avgjørelser: 76 gjeldende, 35 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -125,3 +125,4 @@ Status:
 | 109 | [Én overskrift over hver kolonne på landingssidene](109-overskrifter-pa-landingssidene.md) | endret |
 | 110 | [Ingen zoom ved dobbelttrykk](110-ingen-zoom-ved-dobbelttrykk.md) | gjeldende |
 | 111 | [Sidene i bakgrunnen](111-sidene-i-bakgrunnen.md) | gjeldende |
+| 112 | [Søket lukkes ved et treff, og tastaturet åpnes på iPhone](112-sok-lukkes-og-tastatur-pa-iphone.md) | gjeldende |

@@ -11,8 +11,9 @@ import type { SideProps } from '../modules/typer.ts';
 import { Feilgrense } from './Feilgrense.tsx';
 import { Flyttevarsel } from './Flyttevarsel.tsx';
 import { Oppdateringsvarsel } from './Oppdateringsvarsel.tsx';
-import { apneToppsok, gaaTilbake, lukkToppsok, matchRute, settToppsok, usePlassering, useToppsok, utforScroll, type Navigasjon, type Navigasjonstype } from './ruter.ts';
+import { apneToppsok, gaaFraToppsok, gaaTilbake, lukkToppsok, matchRute, settToppsok, usePlassering, useToppsok, utforScroll, type Navigasjon, type Navigasjonstype } from './ruter.ts';
 import { SideAktiv } from './sideaktiv.ts';
+import { holdTastaturetKlart } from './tastatur.ts';
 import { oppdaterStabel, siderIBakgrunnen, type Oppforing } from './sidestabel.ts';
 import { Sokeboks } from './Sokeboks.tsx';
 import { merkSide } from './tilbakemelding.ts';
@@ -289,7 +290,11 @@ export function Skall() {
                 <Ikon navn="sok" />
               </button>
             ) : (
-              <button type="button" class="ikonknapp" aria-label={t('nav.sok')} title={t('nav.sok')} onClick={apneToppsok}>
+              <button type="button" class="ikonknapp" aria-label={t('nav.sok')} title={t('nav.sok')} onClick={() => {
+                  // Tastaturet åpnes i trykket på iPhone (avgjørelse 112).
+                  holdTastaturetKlart();
+                  apneToppsok();
+                }}>
                 <Ikon navn="sok" />
               </button>
             )}
@@ -314,7 +319,15 @@ export function Skall() {
         <div
           class="toppsok-lag"
           onClick={(e) => {
-            if (e.target === e.currentTarget) lukkToppsok();
+            if (e.target === e.currentTarget) {
+              lukkToppsok();
+              return;
+            }
+            // En lenke i søket lukker søket før den følges, så tilbake viser siden uten søket (avgjørelse 112).
+            const lenke = (e.target as Element).closest('a[href^="#"]');
+            if (!lenke || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            e.preventDefault();
+            gaaFraToppsok(lenke.getAttribute('href') ?? '#/');
           }}
         >
           <div class="toppsok forside-topp" role="dialog" aria-modal="true" aria-label={t('nav.sok')}>

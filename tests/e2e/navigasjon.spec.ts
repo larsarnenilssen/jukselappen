@@ -311,17 +311,33 @@ test.describe('søket fra toppfeltet (eier 05.10.2026)', () => {
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(y);
   });
 
-  test('tilbake fra et treff viser søket igjen, og tilbake en gang til viser siden', async ({ page }) => {
-    await page.goto('./#/om');
+  test('et treff lukker søket, og tilbake viser siden uten søket, med fokus på siden (eier 12.10.2026, avgjørelse 112)', async ({ page }) => {
+    await page.goto('./');
+    await venterPaaSide(page);
+    await page.evaluate(() => (window.location.hash = '#/om'));
+    await venterPaaSide(page);
     await page.locator('.topplinje').getByRole('button', { name: 'Søk' }).click();
     await page.getByRole('searchbox').fill('årsramme');
-    await page.locator('.sokeresultater a').first().click();
+    await page.locator('.toppsok .sokeresultater a').first().click();
     await expect(page).not.toHaveURL(/#\/om$/);
+    await expect(page.locator('.toppsok')).toHaveCount(0);
     await page.goBack();
-    await expect(page.getByRole('searchbox')).toHaveValue('årsramme');
-    await page.goBack();
-    await expect(page.getByRole('searchbox')).toHaveCount(0);
+    await expect(page).toHaveURL(/#\/om$/);
+    await expect(page.locator('.toppsok')).toHaveCount(0);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Om appen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeFocused();
+    // Søket har ingen egen oppføring igjen: tilbake en gang til går til forsiden.
+    await page.goBack();
+    await expect(page.getByRole('searchbox')).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} .forside`)).toHaveCount(1);
+  });
+
+  test('søkefeltet får fokus når søket åpnes, og det usynlige feltet for tastaturet er borte (avgjørelse 112)', async ({ page }) => {
+    await page.goto('./#/om');
+    await venterPaaSide(page);
+    await page.locator('.topplinje').getByRole('button', { name: 'Søk' }).click();
+    await expect(page.locator('.toppsok').getByRole('searchbox')).toBeFocused();
+    await expect(page.locator('.tastaturfelt')).toHaveCount(0);
   });
 
   test('med valgt fylke viser søket bare skolene i fylket, til knappen med fylket slås av', async ({ page }) => {

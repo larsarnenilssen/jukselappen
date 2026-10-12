@@ -95,7 +95,8 @@ export function startRuting(): void {
 // Søket fra toppfeltet (eier 05.10.2026): legges over siden brukeren står på, som en egen oppføring i historikken på
 // samme adresse. Siden står synlig bak. Tilbake (også sveip tilbake i nettleseren), «Lukk» og et trykk utenfor søket
 // lukker det.
-// Følges en lenke i søket, kommer brukeren tilbake til søket med tilbake.
+// Følges en lenke i søket, lukkes søket først, så tilbake fra treffet viser siden uten søket (eier 12.10.2026,
+// avgjørelse 112).
 const toppsokLyttere = new Set<() => void>();
 const varsleToppsok = () => {
   for (const l of toppsokLyttere) l();
@@ -115,6 +116,23 @@ export function apneToppsok(): void {
   scrollPosisjoner.set(id, window.scrollY);
   history.pushState({ appId: id, dybde, sok: '' }, '');
   varsleToppsok();
+}
+
+/**
+ * Følger en lenke fra søket i toppfeltet. Oppføringen med søket fjernes først (tilbake), og lenken blir en ny oppføring
+ * etter siden brukeren søkte fra. Tilbake fra treffet viser da siden uten søket (eier 12.10.2026, avgjørelse 112).
+ */
+export function gaaFraToppsok(adresse: string): void {
+  if (toppsok() === null) {
+    window.location.hash = adresse;
+    return;
+  }
+  const videre = () => {
+    window.removeEventListener('popstate', videre);
+    window.location.hash = adresse;
+  };
+  window.addEventListener('popstate', videre);
+  history.back();
 }
 
 export function lukkToppsok(): void {
