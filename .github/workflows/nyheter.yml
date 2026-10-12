@@ -11,18 +11,23 @@
 # Oppetiden (avgjørelse 099): Hver kjøring sjekker også at jukselappen.no svarer. Svarer den ikke, prøves det igjen
 # etter ti minutter, og svarer den ikke da heller, kommer saken «Feil i automatikken: Oppetid» (etikett «feil»).
 #
-# I PR-er som endrer hentingen eller kildene, og ved manuell kjøring, prøvehentes også prøvekildene (npm run
-# nyheter:prove). Rapporten står i sammendraget for kjøringen. En PR lagrer ingenting.
+# I PR-er som endrer hentingen eller kildene, og når eier starter arbeidsflyten med «prøv prøvekildene», prøvehentes
+# også prøvekildene (npm run nyheter:prove). Rapporten står i sammendraget for kjøringen. En PR lagrer ingenting.
 name: Nyheter
 
 on:
-  # GitHub starter planlagte kjøringer i dette repoet 6,5–7 timer for sent (08.10.2026: 05.47 kom 12.57 og 13.17 kom
-  # 19.53, kildesjekken 7 timer for sent). Derfor kjører hentingen hver time: med samme forsinkelse kommer det likevel en
-  # kjøring hver time, også om morgenen. Hentingen er den samme hver gang, og bare nye saker publiseres
-  # (avgjørelse 084, tillegg 09.10.2026, og 098). Repoet er offentlig, så kjøringene koster ikke Actions-minutter.
+  # Hentingen startes hver time av cron-job.org, med et kall til GitHub (workflow_dispatch, avgjørelse 118). GitHub
+  # starter planlagte kjøringer i dette repoet timer for sent eller ikke i det hele tatt (avgjørelse 084, tillegg
+  # 09.10.2026), så planen her er bare reserve, hver tredje time. Doble kjøringer venter på hverandre (concurrency) og
+  # gjør ingen skade. Repoet er offentlig, så kjøringene koster ikke Actions-minutter.
   schedule:
-    - cron: '47 * * * *'
+    - cron: '47 */3 * * *'
   workflow_dispatch:
+    inputs:
+      prove:
+        description: 'Prøv også prøvekildene (rapporten står i sammendraget)'
+        type: boolean
+        default: false
   pull_request:
     paths:
       - 'scripts/hent-nyheter.ts'
@@ -89,8 +94,9 @@ jobs:
             grep -E '^(Nyheter:|[a-z0-9-]+: [0-9]+ i feeden|  [a-z0-9-]+: (feilet|tom))' .generert/nyheter-rapport.txt || true
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
+      # Bare i PR-er og når eier ber om det, ikke når cron-job.org starter hentingen hver time (avgjørelse 118).
       - name: Prøvekildene
-        if: github.event_name != 'schedule'
+        if: github.event_name == 'pull_request' || inputs.prove
         continue-on-error: true
         run: npm run --silent nyheter:prove | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Test nyhetene

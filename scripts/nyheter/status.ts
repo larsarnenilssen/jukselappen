@@ -47,7 +47,7 @@ export function nyhetsvarsel(nyheter: Nyheter, kilder: readonly Nyhetskildeinfo[
   });
   if (linjer.length === 0) return null;
   return [
-    `Nyhetene hentes hver morgen. Kildene under har ikke kunnet hentes på mer enn ${GRENSE_DAGER} dager. Appen viser sakene som ble hentet før, men ingen nye fra dem.`,
+    `Nyhetene hentes hver time. Kildene under har ikke kunnet hentes på mer enn ${GRENSE_DAGER} dager. Appen viser sakene som ble hentet før, men ingen nye fra dem.`,
     '',
     ...linjer,
     '',

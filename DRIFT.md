@@ -17,7 +17,7 @@ Jobbene går av seg selv i GitHub Actions. Eier får e-post bare når noe har g�
 |---|---|---|---|
 | **Kildesjekk** (`kilder.yml`) | Mandag 04.17 UTC, og 2. januar, juli og august (avgjørelse 063) | Sjekker kildene og lenkene, henter dataene (Grep, skoleregisteret, lov- og forskriftsteksten, datoene, statistikken og de andre), tester dem og lagrer dem på `main`. Lager kontrollsaken, `docs/KONTROLL.md` og endringsforslag som PR, og publiserer appen på nytt. | `kontroll`, `lenker` |
 | **Lovteksten fra Lovdata** | Med kildesjekken | Publiseres fra `main` uten ny versjon (avgjørelse 098), så den er ute innen et døgn etter 1. januar, 1. juli og 1. august. Lovdata kan bare nås fra Actions, ikke fra skymiljøet. | `kontroll` |
-| **Nyheter** (`nyheter.yml`) | Hver time | Henter nyhetene til grenen `nyheter` og publiserer når sakene er endret (avgjørelse 084 og 098). Sjekker også at jukselappen.no svarer (avgjørelse 099). | `nyheter`, `feil` |
+| **Nyheter** (`nyheter.yml`) | Hver time, startet av cron-job.org, og hver tredje time fra GitHub som reserve (avgjørelse 118) | Henter nyhetene til grenen `nyheter` og publiserer appen etter hver henting (avgjørelse 084, 098 og 116). Sjekker også at jukselappen.no svarer (avgjørelse 099). | `nyheter`, `feil` |
 | **Kontrollrundene** | Første mandag i mai og august | Praksis og tolkninger som skal bekreftes, innhold som bør kontrolleres på nytt, lenkene til Vilbli og særavtalesiden hos KS, som sjekkes for hånd (avgjørelse 019). Mai har også påminnelsen om inntaksdatoene. | `kontrollrunde` |
 | **Godkjenning** (`godkjenning.yml`) | Når eier skriver `/godkjent` i en kontrollsak | Setter datoen for det eier har krysset av (avgjørelse 021). | – |
 | **Lokale regler** (`lokale-regler.yml`) | Når en PR som endrer `lokale/regler.yaml`, er flettet | Publiserer uten ny versjon (avgjørelse 093). | – |
@@ -99,6 +99,7 @@ Punkter eier har valgt å vente med, eller som venter på andre. Avklarte punkte
 | Poengberegning ved inntak i Vestland | Venter. Spørsmålene om inntaksområdepoeng og klagenemnd står åpne. |
 | Gjennomføring per fylke fra kullet som startet i 2020 | Venter på at Udir legger ut kullet. Appen regner om de eldre kullene (avgjørelse 080). |
 | KS og KF Infoserie | Hentes ikke (robots.txt og abonnement, eier 07.10.2026). Særavtalesiden sjekkes for hånd i kontrollrundene, og Utdanningsforbundets gjengivelse av SFS 2213 hver uke (`docs/KILDER-IKKE-MED.md`). |
+| Nøkkelen cron-job.org bruker for å starte Nyheter | Eier fornyer den før den utløper (utløpsdatoen står hos GitHub under Fine-grained tokens). Bare repoet `jukselappen` og «Actions: Read and write». Ny nøkkel limes inn i Authorization-feltet hos cron-job.org, etter «Bearer ». Utløper den, kommer nyhetene bare hver tredje time, eller sjeldnere (avgjørelse 118). |
 | Reklamefilm (fase 11) | Ikke startet. Arbeidsordren står i `docs/arkiv/arbeidsordrer/fase-11.md`. Tas som et eget lite oppdrag når eier vil. |
 
 ## Hvor ting står

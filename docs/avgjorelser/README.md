@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-117 avgjørelser: 78 gjeldende, 38 endret og 1 erstattet.
+118 avgjørelser: 79 gjeldende, 38 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -97,7 +97,7 @@ Status:
 | 081 | [Panelet øverst på forsiden: kalender, nyheter og tall](081-panelet-overst-pa-forsiden.md) | endret av 102 |
 | 082 | [Stiler som lastes med sidene](082-stiler-som-lastes-med-sidene.md) | gjeldende |
 | 083 | [Målformene lastes hver for seg](083-malformene-lastes-hver-for-seg.md) | gjeldende |
-| 084 | [Nyhetene hentes og publiseres hver dag](084-nyhetene-hentes-og-publiseres-hver-dag.md) | endret av 098, 116 |
+| 084 | [Nyhetene hentes og publiseres hver dag](084-nyhetene-hentes-og-publiseres-hver-dag.md) | endret av 098, 116, 118 |
 | 085 | [Varsler til eier](085-varsler-til-eier.md) | endret av 099, 106 |
 | 086 | [Dagens jukselapp](086-dagens-jukselapp.md) | endret av 102 |
 | 087 | [Elevundersøkelsen som egen modul, og Skolemiljø får nytt navn](087-elevundersokelsen-som-egen-modul.md) | gjeldende |
@@ -131,3 +131,4 @@ Status:
 | 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
 | 116 | [Appen publiseres etter hver henting av nyhetene](116-appen-publiseres-etter-hver-nyhetshenting.md) | endret |
 | 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | gjeldende |
+| 118 | [Nyhetene startes fra cron-job.org](118-nyhetene-startes-fra-cron-job-org.md) | gjeldende |

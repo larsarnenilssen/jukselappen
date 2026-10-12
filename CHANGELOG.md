@@ -6,6 +6,7 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ### Endret
 
+- **Nyhetene hentes hver time:** Før kom de bare når GitHub startet hentingen, noen ganger med mange timers mellomrom.
 - **«Fylkene» på forsiden heter det samme for alle:** Har du valgt fylke, står det under «Fylkene», f.eks. «Vestland og de andre fylkene.», og fylket ditt står øverst i listen med merket «Ditt fylke». Før het boksen det samme som fylket ditt og gikk rett dit.
 
 ### Rettet
