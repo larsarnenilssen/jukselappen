@@ -507,20 +507,14 @@ main {
 }
 
 /* Skolene, yrkene og opplæringskontorene i Opplæringsløp (avgjørelse 053). */
-.lop-dinskole,
-.ditt-fylke {
+.lop-dinskole {
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
   margin-left: var(--rom-2);
-  color: var(--farge-skole);
+  color: var(--farge-sted);
   font-weight: 600;
   white-space: nowrap;
-}
-
-/* «Ditt fylke» står alene på linjen under navnet i oversikten over fylkene (avgjørelse 117). */
-.ditt-fylke {
-  margin-left: 0;
 }
 
 .lop-skolestatus {
@@ -535,7 +529,7 @@ main {
 }
 
 .lop-skolestatus-ja .ikon {
-  color: var(--farge-skole);
+  color: var(--farge-sted);
 }
 
 .lop-yrker {
@@ -916,10 +910,23 @@ main {
   height: 1.1em;
 }
 
-.merke-fylke,
-.merke-skole {
+/* Filtre og andre merker uten stedfargen. */
+.merke-info {
   background: var(--farge-info-flate);
   border-color: var(--farge-merke);
+}
+
+/*
+ * Stedfargen (avgjørelse 119): innhold som vises fordi brukeren har valgt fylke eller skole. «Din skole» og «Ditt
+ * fylke» (Stedmerke), lokale verdier for fylket og skolen (Nivamerke) og fylkets og skolens oppføringer i kalenderen.
+ * Uten valgt fylke og skole brukes ikke fargen.
+ */
+.merke-sted,
+.merke-fylke,
+.merke-skole {
+  background: var(--farge-sted-flate);
+  border-color: var(--farge-sted);
+  color: var(--farge-sted);
 }
 
 .merke-bor_kontrolleres,
@@ -4513,6 +4520,12 @@ p.fagkort-tittel {
   color: var(--farge-tekst-dempet);
 }
 
+/* Valgt fylke eller skole står i stedfargen (avgjørelse 119). */
+.sted-valgt-ja > .ikon,
+.sted-valgt-ja a {
+  color: var(--farge-sted);
+}
+
 /* Ingen favoritter ennå: et lite kort med stjerne. */
 .tom-favoritter {
   display: flex;
@@ -5026,16 +5039,16 @@ p.fagkort-tittel {
    tone når løpet videre har tilbud ved skolen (samme tone som kortet når den er åpen). Merket «✓ Din skole» og
    teksten på knappen sier det samme uten farge. */
 .lop-kort[data-skole='ja'] {
-  border: 2px solid var(--farge-skole);
-  background: var(--farge-skole-flate);
+  border: 2px solid var(--farge-sted);
+  background: var(--farge-sted-flate);
 }
 
 .lop-knapp[data-skole='ja'] {
-  background: var(--farge-skole-knapp);
+  background: var(--farge-sted-knapp);
 }
 
 .lop-knapp[data-skole='ja'][aria-expanded='true'] {
-  background: var(--farge-skole-flate);
+  background: var(--farge-sted-flate);
 }
 
 .lop-knapp-skole {
@@ -5238,6 +5251,8 @@ p.fagkort-tittel {
   background: var(--farge-flate-2);
 }
 
+.listelenke-tittel .merke-sted,
+.listelenke-tittel .merke-info,
 .listelenke-tittel .merke-skole {
   margin-left: var(--rom-1);
   vertical-align: middle;
@@ -5604,6 +5619,16 @@ p.fagkort-tittel {
 .hos-fylket-tittel .ikon,
 .hos-fylket-topp .forklaring-pil {
   color: var(--farge-lenke);
+}
+
+/* Med valgt fylke står boksen i stedfargen (avgjørelse 119). Uten står den i den blå flaten, med valget av fylke. */
+.hos-fylket-valgt {
+  background: var(--farge-sted-flate);
+}
+
+.hos-fylket-valgt .hos-fylket-tittel .ikon,
+.hos-fylket-valgt .hos-fylket-topp .forklaring-pil {
+  color: var(--farge-sted);
 }
 
 .hos-fylket[open] .forklaring-pil {

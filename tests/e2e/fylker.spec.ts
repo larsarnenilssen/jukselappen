@@ -11,6 +11,7 @@ test.describe('fylker', () => {
     await settLagret(page, { fylke: '46' });
     await page.goto('./');
     // Undertittelen nevner fylket (eier 12.10.2026, avgjørelse 117).
+    await expect(page.locator(`${SYNLIG_SIDE} .sted-valgt`)).toHaveClass(/sted-valgt-ja/);
     const inngang = page.getByRole('link', { name: /^Fylkene/ });
     await expect(inngang).toContainText('Vestland og de andre fylkene.');
     await inngang.click();
@@ -18,8 +19,8 @@ test.describe('fylker', () => {
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
     const forste = page.locator(`${SYNLIG_SIDE} .liste > li`).first();
     await expect(forste.locator('.listelenke-tittel')).toHaveText('Vestland fylkeskommune');
-    await expect(forste.locator('.ditt-fylke')).toHaveText('Ditt fylke');
-    await expect(page.locator(`${SYNLIG_SIDE} .ditt-fylke`)).toHaveCount(1);
+    await expect(forste.locator('.merke-sted')).toHaveText('Ditt fylke');
+    await expect(page.locator(`${SYNLIG_SIDE} .merke-sted`)).toHaveCount(1);
     await forste.getByRole('link').click();
     await expect(page).toHaveURL(/#\/fylker\/46$/);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
@@ -31,7 +32,7 @@ test.describe('fylker', () => {
     await expect(inngang).toContainText('Fylkets sider, forskrifter og skoler.');
     await inngang.click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
-    await expect(page.locator(`${SYNLIG_SIDE} .ditt-fylke`)).toHaveCount(0);
+    await expect(page.locator(`${SYNLIG_SIDE} .merke-sted`)).toHaveCount(0);
   });
 
   test('fylkessiden lenker til fylkets sider og viser fylkets og skolenes forskrifter', async ({ page }) => {
@@ -48,13 +49,21 @@ test.describe('fylker', () => {
     // Fylkets forskrifter og skolen din står åpent, de andre skolenes regler i en lukket gruppe.
     const lokale = page.locator('[data-rubrikk="fylke-lokale"]');
     await expect(lokale.getByRole('link', { name: /^Skoleregler i Vestland/ })).toBeVisible();
-    await expect(lokale.getByRole('link', { name: /Fyllingsdalen videregående skole.*Skolen din/ })).toBeVisible();
+    await expect(lokale.getByRole('link', { name: /Fyllingsdalen videregående skole.*Din skole/ })).toBeVisible();
     const gruppe = lokale.locator('details.fylke-skolegruppe');
     await expect(gruppe).not.toHaveAttribute('open', '');
     await gruppe.locator('summary').click();
     await expect(gruppe.getByRole('link', { name: /Arna vidaregåande skule/ })).toBeVisible();
     await lokale.getByRole('link', { name: /^Skoleregler i Vestland/ }).click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoleregler i Vestland');
+  });
+
+  test('stedfargen brukes bare når fylke eller skole er valgt (avgjørelse 119)', async ({ page }) => {
+    await page.goto('./');
+    await expect(page.locator(`${SYNLIG_SIDE} .sted-valgt`)).not.toHaveClass(/sted-valgt-ja/);
+    await page.goto(POENGSTEG);
+    await aapneAlleSteg(page);
+    await expect(page.locator('details.hos-fylket').first()).not.toHaveClass(/hos-fylket-valgt/);
   });
 
   test('et ukjent fylke gir en melding', async ({ page }) => {
@@ -75,6 +84,8 @@ test.describe('fylker', () => {
       await expect(boks).toHaveAttribute('open', '');
     }
     await expect(boks.locator('summary')).toContainText('Vestland fylkeskommune');
+    // Med valgt fylke står boksen i stedfargen (avgjørelse 119).
+    await expect(boks).toHaveClass(/hos-fylket-valgt/);
     await expect(boks.getByRole('link', { name: /Søknad og inntak/ })).toHaveAttribute('href', /vestlandfylke\.no/);
     await boks.getByRole('link', { name: 'Alt om Vestland' }).click();
     await expect(page).toHaveURL(/#\/fylker\/46$/);

@@ -61,7 +61,7 @@ test.describe('regelverk', () => {
     // Gruppene står åpne på skrivebord (avgjørelse 100) og er lukket på mobil (eier 09.10.2026).
     await expect(page.getByRole('heading', { level: 2, name: /^Lokale forskrifter i Vestland \d+$/ })).toBeVisible();
     await aapneDel(page, /^Lokale forskrifter i Vestland \d+$/);
-    await expect(page.getByRole('link', { name: /Fyllingsdalen videregående skole.*Skolen din/ })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Fyllingsdalen videregående skole.*Din skole/ })).toBeVisible();
     // Navnet på de lokale forskriftene følger brukerens målform, og datoen forskriften tok til å gjelde står under.
     const regler = page.getByRole('link', { name: /^Skoleregler i Vestland/ });
     await expect(regler).toContainText('I kraft');

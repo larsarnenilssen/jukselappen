@@ -41,7 +41,7 @@ export const nyheterNn = {
     fylke: 'Fylke',
     ingenFylke: 'Ingen (berre nasjonale)',
     alleFylker: 'Alle fylka',
-    mittFylke: '{fylke} (fylket ditt)',
+    mittFylke: '{fylke} (ditt fylke)',
     kilde: 'Kjelde',
     alleKilder: 'Alle kjeldene',
     sammendrag: '{hvem} · {kilde}',

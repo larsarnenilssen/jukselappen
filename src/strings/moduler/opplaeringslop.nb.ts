@@ -6,12 +6,11 @@ export const opplaeringslopNb = {
   skolear: 'Fag og timer for skoleåret {skolear}.',
   lasterFeil: 'Tilbudene kunne ikke lastes. Prøv igjen.',
   ikkeFunnet: 'Fant ikke tilbudet.',
-  dinSkole: 'Din skole',
   registre: 'Skoler og opplæringskontorer',
   tilbudVedSkolen: 'Tilbudene ved {skole}',
   visning: {
     etikett: 'Vis tilbud',
-    skole: 'Min skole',
+    skole: 'Din skole',
     alle: 'Alle',
     viser: 'Viser tilbudene ved {skole}.',
     velgSkole: 'Velg skole under Innstillinger, så ser du tilbudene ved skolen din.',

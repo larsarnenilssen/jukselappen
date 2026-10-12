@@ -5,6 +5,7 @@ import { type T, tilstand, useTekst, useTilstand } from '../../../app/tilstand.t
 import { Bryter } from '../../../components/Bryter.tsx';
 import { lastSkoler, type Skoleregister } from '../../../data/utdanning.ts';
 import { type Skoleoppforing, valgtSkole } from '../skoler.ts';
+import { Stedmerke } from '../../../components/Stedmerke.tsx';
 import { Ikon } from '../../../components/Ikon.tsx';
 export { Rubrikk } from '../../../components/Rubrikk.tsx';
 import { lastFagindeks } from '../../fag/data.ts';
@@ -169,14 +170,13 @@ export function tilbudsnavn(t: T, indeks: Fagindeks, kode: string, malform: 'nb'
   return po.navn[malform].toLowerCase().startsWith(trinn.toLowerCase()) ? po.navn[malform] : `${trinn} ${po.navn[malform]}`;
 }
 
-/** Merket for tilbud ved skolen brukeren har valgt. */
+/** Merket for tilbud ved skolen brukeren har valgt: «Din skole», som ellers i appen (avgjørelse 119). */
 export function DinSkole() {
-  const { t } = useTekst();
   return (
-    <span class="lop-dinskole">
-      <Ikon navn="hake" class="ikon-liten" />
-      {t('opplaeringslop.dinSkole')}
-    </span>
+    <>
+      {' '}
+      <Stedmerke sted="skole" />
+    </>
   );
 }
 

@@ -7,6 +7,7 @@ import { fylkesnavn } from '../../../app/Stedmerknad.tsx';
 import { usePrivatskole, useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { PRIVATSKOLEDOKUMENTER } from '../../../core/privatskole.ts';
 import { Ikon } from '../../../components/Ikon.tsx';
+import { Stedmerke } from '../../../components/Stedmerke.tsx';
 import { Rubrikk } from '../../../components/Rubrikk.tsx';
 import { Sidetopp } from '../../../components/Sidetopp.tsx';
 import { useBred } from '../../../components/ToKolonner.tsx';
@@ -25,7 +26,8 @@ interface Rad {
   tittel: string;
   under: string;
   lang?: 'nb' | 'nn';
-  merke?: string;
+  /** Merket etter tittelen: «Din skole» for skolens egne regler, eller privatskolemerket. */
+  merke?: 'skole' | string;
 }
 
 /** Rekkefølgen på de lokale forskriftene: fylkets regler først, så skolens, inntak og skolerute. */
@@ -42,7 +44,7 @@ function Rader({ rader }: { rader: readonly Rad[] }) {
             <span class="listelenke-tekst">
               <span class="listelenke-tittel" lang={r.lang}>
                 {r.tittel}
-                {r.merke && <span class="merke merke-skole">{r.merke}</span>}
+                {r.merke === 'skole' ? <Stedmerke sted="skole" /> : r.merke && <span class="merke merke-info">{r.merke}</span>}
               </span>
               <span class="listelenke-under">{r.under}</span>
             </span>
@@ -117,7 +119,7 @@ export default function Oversikt() {
     id: d.id,
     tittel: dokumentnavn(d, malform),
     ...(d.korttittelNn ? {} : { lang: d.malform }),
-    ...(d.gyldighet.niva === 'skole' ? { merke: t('lov.skolenDin') } : privatskole && erPrivat(d) ? { merke: t('lov.privatskoleMerke') } : {}),
+    ...(d.gyldighet.niva === 'skole' ? { merke: 'skole' } : privatskole && erPrivat(d) ? { merke: t('lov.privatskoleMerke') } : {}),
     under: [
       ...(d.iKraft && d.iKraftTil ? [t('lov.iKraftPeriode', { fra: dato(d.iKraft), til: dato(d.iKraftTil) })] : d.iKraft ? [t('lov.iKraft', { dato: dato(d.iKraft) })] : []),
       ...(d.sistEndret && d.sistEndret !== d.iKraft ? [t('lov.endret', { dato: dato(d.sistEndret) })] : []),

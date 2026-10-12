@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-117 avgjørelser: 78 gjeldende, 38 endret og 1 erstattet.
+118 avgjørelser: 77 gjeldende, 40 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -66,7 +66,7 @@ Status:
 | 050 | [Lenker til begrepsbanken i brødtekst](050-begrepslenker.md) | gjeldende |
 | 051 | [Status på søkerønsker, Vg4 påbygging og yrkesfaglig opphenting](051-vigo-inntak.md) | gjeldende |
 | 052 | [utdanning.no som kontrollkilde, og merking når kildene er uenige om løpene](052-utdanning-no-og-kildesamsvar.md) | gjeldende |
-| 053 | [Skoler og tilbud, yrker, opplæringskontorer og NDLA](053-skoler-yrker-opplaeringskontor-ndla.md) | gjeldende |
+| 053 | [Skoler og tilbud, yrker, opplæringskontorer og NDLA](053-skoler-yrker-opplaeringskontor-ndla.md) | endret av 119 |
 | 054 | [Vurdering: underveis og slutt, grunnlag for vurdering og orden og oppførsel](054-vurdering.md) | gjeldende |
 | 055 | [Ende-til-ende: berørte tester lokalt, hele suiten fordelt i CI](055-e2e-berorte-og-fordelt.md) | gjeldende |
 | 056 | [Forsiden som kan tilpasses, og toppfeltet i stedet for bunnmenyen](056-forside-og-toppfelt.md) | endret av 102, 108 |
@@ -130,4 +130,5 @@ Status:
 | 114 | [Endringer på nettsider under overskriftene](114-endringer-under-overskrifter.md) | gjeldende |
 | 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
 | 116 | [Appen publiseres etter hver henting av nyhetene](116-appen-publiseres-etter-hver-nyhetshenting.md) | endret |
-| 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | gjeldende |
+| 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | endret av 119 |
+| 119 | [Stedfargen og ett merke for skolen og fylket ditt](119-stedfargen-og-stedmerket.md) | gjeldende |

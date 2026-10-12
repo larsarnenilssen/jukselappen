@@ -9,3 +9,5 @@
 - Lenken øverst på forsiden («Velg fylke og skole») er ikke endret (eier 12.10.2026).
 
 **Konsekvens:** Det er ett trykk mer til ditt eget fylke fra forsiden. Alle fylkene er like nær for alle. Favoritten til et fylke, og boksen «Hos fylkeskommunen» i veiviserne, går fortsatt rett til fylkessiden.
+
+**Endret 12.10.2026:** Merket «Ditt fylke» er `Stedmerke` i stedfargen, det samme merket som «Din skole» (avgjørelse 119).

@@ -1,7 +1,6 @@
 // UI-tekstar for fylkessida (fase 6, pakke 4, avgjerd 061) på nynorsk. Same nøklar som fylker.nb.ts.
 export const fylkerNn = {
   tittel: 'Fylka',
-  dittFylke: 'Fylket ditt',
   innledning: 'Det fylkeskommunen avgjer sjølv, står på sidene til fylket. Vel fylket for å sjå lenkjene, dei lokale forskriftene frå Lovdata og skulane og opplæringskontora i fylket.',
   fylkeInnledning: 'Det fylkeskommunen avgjer sjølv: lenkjer til sidene til fylket, dei lokale forskriftene frå Lovdata og skulane og opplæringskontora i fylket.',
   ukjent: 'Fann ikkje fylket. Vel eit fylke i lista.',

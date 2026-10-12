@@ -26,9 +26,10 @@ export function Stedmerknad() {
     );
   }
   const sted = innstillinger.skole ? `${innstillinger.skole.navn}, ${fylke}` : fylke;
-  // Valgt sted står som en kort linje, ikke som en boks (eier 02.10.2026).
+  // Valgt sted står som en kort linje, ikke som en boks (eier 02.10.2026), i stedfargen (avgjørelse 119). Uten valgt sted
+  // står linjen som før, uten stedfargen.
   return (
-    <p class="sted-valgt">
+    <p class="sted-valgt sted-valgt-ja">
       <Ikon navn="skole" class="ikon-liten" />
       <a href="#/innstillinger">{t('forside.stedValgt', { sted })}</a>
     </p>
