@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-117 avgjørelser: 79 gjeldende, 37 endret og 1 erstattet.
+117 avgjørelser: 78 gjeldende, 38 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -129,5 +129,5 @@ Status:
 | 113 | [Nettleseren gjenoppretter også rullingen](113-nettleseren-gjenoppretter-rullingen.md) | gjeldende |
 | 114 | [Endringer på nettsider under overskriftene](114-endringer-under-overskrifter.md) | gjeldende |
 | 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
-| 116 | [Appen publiseres etter hver henting av nyhetene](116-appen-publiseres-etter-hver-nyhetshenting.md) | gjeldende |
+| 116 | [Appen publiseres etter hver henting av nyhetene](116-appen-publiseres-etter-hver-nyhetshenting.md) | endret |
 | 117 | [Fylkene heter «Fylkene» også med valgt fylke, og fylket ditt er merket](117-fylkene-med-ditt-fylke.md) | gjeldende |
