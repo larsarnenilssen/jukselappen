@@ -4,7 +4,7 @@ export const nyheterNn = {
   tittel: 'Nyheiter',
   lovdata: 'Vedteken endring i {hva}',
   sisteNytt: 'Siste nytt',
-  innledning: 'Det siste frå styresmaktene, fylkeskommunane, fagpressa, forskinga og organisasjonane i skulen, valt ut for vidaregåande. Nyheitene blir henta kvar dag, og lenkjene går til kjeldene.',
+  innledning: 'Det siste frå styresmaktene, fylkeskommunane, fagpressa, forskinga og organisasjonane i skulen, valt ut for vidaregåande. Nyheitene blir henta kvar time, og lenkjene går til kjeldene.',
   laster: 'Lastar nyheitene …',
   feil: 'Klarte ikkje å laste nyheitene.',
   ingen: 'Ingen saker med dette filteret.',
