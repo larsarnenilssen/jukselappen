@@ -1,7 +1,7 @@
 // Læreplanverket (pakke 6, avgjørelse 037): overordnet del i rubrikker med søk og bokser, ferdigheter og
 // temaer, og lenkene fra fagarket.
 import { expect, test } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 test.describe('læreplanverket', () => {
   test('fra forsiden til overordnet del i rubrikker, og en adresse som åpner en del', async ({ page }) => {
@@ -16,7 +16,7 @@ test.describe('læreplanverket', () => {
     await expect(inntak.locator('h2 .gruppeknapp-tekst > span').first()).toHaveText('Inntak og opplæringstilbud');
     await expect(inntak.locator('a.listelenke .listelenke-tittel')).toHaveText(['Inntak', 'Opplæringstilbud']);
     await page.getByRole('link', { name: /^Overordnet del/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Overordnet del');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Overordnet del');
     // Hele overordnet del står i rubrikker som er lukket, med søket øverst og ferdighetene og temaene til slutt.
     await expect(page.getByRole('searchbox', { name: 'Søk i overordnet del' })).toBeVisible();
     for (const navn of ['1 Opplæringens verdigrunnlag', '2 Prinsipper for læring, utvikling og danning', '3 Prinsipper for skolens praksis', 'Grunnleggende ferdigheter 5', 'Tverrfaglige temaer 3']) {
@@ -59,7 +59,7 @@ test.describe('læreplanverket', () => {
   test('teksten står på nynorsk når nynorsk er valt', async ({ page }) => {
     await settLagret(page, { malform: 'nn' });
     await page.goto('./#/laereplanverket/overordnet-del/1.1');
-    await expect(page.locator('main h1')).toHaveText('Overordna del');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Overordna del');
     await expect(page.getByText(/Formålsparagrafen byggjer på at menneskeverdet er ukrenkjeleg/)).toBeVisible();
   });
 
@@ -80,7 +80,7 @@ test.describe('læreplanverket', () => {
     await page.goto('./#/sok?q=formålsparagrafen');
     await expect(page.getByRole('link', { name: /Formålsparagrafen/ }).first()).toHaveAttribute('href', '#/begreper/formalsparagrafen');
     await page.goto('./#/begreper/grunnleggende-ferdigheter');
-    await expect(page.locator('main h1')).toHaveText('Grunnleggende ferdigheter');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Grunnleggende ferdigheter');
   });
 
   test('søket på nynorsk finner overskriftene', async ({ page }) => {

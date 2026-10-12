@@ -2,7 +2,7 @@
 // sorteres, temasidene med tallene fra Udir og SSB, tallene på forsiden og boksene på sidene der tallene er nyttige. Tallene hentes hver uke, så testene sjekker oppsettet og
 // rekkefølgen, ikke bestemte tall.
 import { expect, test } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, synlig } from './hjelp.ts';
 
 const SLATTHAUG = { id: '974557320', navn: 'Slåtthaug videregående skole' };
 /** «25 090» → 25090, «84,0 %» → 84. */
@@ -195,9 +195,9 @@ test.describe('tallene der de hører hjemme', () => {
     test.skip(info.project.name.includes('mobil'), 'Samme innhold på mobil. Overflyten testes for alle rutene.');
     await settLagret(page, { fylke: '46', skole: SLATTHAUG });
     await page.goto('./#/fylker/46');
-    await expect(page.locator('.st-fylket')).toContainText('Vestland i tall');
-    await expect(page.locator('.st-fylket .st-boks-merke')).toHaveText('Videregående i tall');
-    await expect(page.locator('.st-fylket .st-fliser > li')).toHaveCount(4);
+    await expect(synlig(page).locator('.st-fylket')).toContainText('Vestland i tall');
+    await expect(synlig(page).locator('.st-fylket .st-boks-merke')).toHaveText('Videregående i tall');
+    await expect(synlig(page).locator('.st-fylket .st-fliser > li')).toHaveCount(4);
     // Hver boks har merkelappen og en tittel, og lenker til Videregående i tall (avgjørelse 091).
     for (const [rute, tittel, lenke] of [
       ['#/inntak', 'Søkere og ungdomskull i Vestland', '#/statistikk/ungdom?fylke=46'],
@@ -209,19 +209,19 @@ test.describe('tallene der de hører hjemme', () => {
       ['#/arbeidstid/arbeidsplan', 'Lærerne i videregående i Vestland', '#/statistikk/skolen?fylke=46'],
     ] as const) {
       await page.goto(`./${rute}`);
-      const boks = page.locator('.st-boks');
+      const boks = synlig(page).locator('.st-boks');
       await expect(boks.locator('.st-boks-merke'), rute).toHaveText('Videregående i tall');
       await expect(boks.locator('.st-boks-tittel'), rute).toHaveText(tittel);
       await expect(boks.locator('.st-boks-lenke a'), rute).toHaveAttribute('href', lenke);
     }
     // Fraværet på skolen brukeren har valgt.
     await page.goto('./#/vurdering/fravaer');
-    await expect(page.locator('.st-boks')).toContainText(SLATTHAUG.navn);
+    await expect(synlig(page).locator('.st-boks')).toContainText(SLATTHAUG.navn);
     // Skolekortet: tallene og knappen til nettsiden i samme ramme.
     await page.goto('./#/opplaeringslop/skoler?fylke=alle&skole=46011');
-    const skolen = page.locator('.st-skolen');
+    const skolen = synlig(page).locator('.st-skolen');
     await expect(skolen).toContainText('Skolen i tall');
     await expect(skolen.getByRole('link', { name: /Nettsiden/ })).toBeVisible();
-    await expect(page.locator('.skolekort-snarveier')).toHaveCount(0);
+    await expect(synlig(page).locator('.skolekort-snarveier')).toHaveCount(0);
   });
 });

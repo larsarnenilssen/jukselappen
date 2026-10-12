@@ -1,7 +1,7 @@
 // Elevundersøkelsen (fase 7, avgjørelse 077), egen modul under Skolemiljø fra 0.43.0 (avgjørelse 087): «Kort om»
 // skolen, søk i seriene og det beste tallet i tabellen, modulen på forsiden og den gamle adressen.
 import { expect, test } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 const SLATTHAUG = { id: '974557320', navn: 'Slåtthaug videregående skole' };
 
@@ -28,13 +28,13 @@ test.describe('Elevundersøkelsen', () => {
     await expect(gruppe.getByRole('link', { name: /Elevundersøkelsen/ })).toHaveAttribute('href', '#/elevundersokelsen');
     await expect(gruppe.getByRole('link', { name: /Aktivitetsplikt og skoleregler/ })).toBeVisible();
     await page.goto('./#/skolemiljo');
-    await expect(page.locator('main h1')).toHaveText('Aktivitetsplikt og skoleregler');
-    await expect(page.locator('main a[href="#/elevundersokelsen"]')).toHaveCount(0);
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Aktivitetsplikt og skoleregler');
+    await expect(page.locator(`${SYNLIG_SIDE} a[href="#/elevundersokelsen"]`)).toHaveCount(0);
   });
 
   test('den gamle adressen sender videre med valgene', async ({ page }) => {
     await page.goto('./#/skolemiljo/elevundersokelsen?s=L,L|o&trinn=2');
     await expect(page).toHaveURL(/#\/elevundersokelsen\?s=L(%2C|,)L(%7C|\|)o&trinn=2/);
-    await expect(page.locator('main h1')).toHaveText('Elevundersøkelsen');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Elevundersøkelsen');
   });
 });

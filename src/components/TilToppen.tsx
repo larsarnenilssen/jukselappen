@@ -21,7 +21,8 @@ export function TilToppen() {
   const tilToppen = () => {
     const rolig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: rolig ? 'auto' : 'smooth' });
-    document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true });
+    // Overskriften på siden som vises, ikke på en side som står skjult i bakgrunnen (avgjørelse 111).
+    document.querySelector<HTMLElement>('main > .sideramme:not([hidden]) h1')?.focus({ preventScroll: true });
   };
   return (
     <button type="button" class="til-toppen" onClick={tilToppen}>

@@ -1,6 +1,6 @@
 // Fag og læreplaner (fase 2): søk og filter, fagside med kompetansemål og vurdering, målform og favoritter.
 import { expect, type Page, test } from '@playwright/test';
-import { aapneDel, erMobil, settLagret } from './hjelp.ts';
+import { aapneDel, erMobil, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 /** Åpner gruppene i fagsøket, som er lukket når siden åpnes (eier 09.10.2026). */
 async function aapneFaggrupper(page: Page): Promise<void> {
@@ -119,7 +119,7 @@ test.describe('fag og læreplaner', () => {
     }
     await expect(page.getByRole('link', { name: 'Om begrepet felles programfag' })).toHaveAttribute('href', '#/begreper/felles-programfag');
     await ramme.getByRole('link', { name: 'Regn ut i Arbeidsplan' }).click();
-    await expect(page.locator('main h1')).toHaveText('Arbeidsplan');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Arbeidsplan');
     await expect(page.locator('[data-gruppe="1"] .fagvalg')).toContainText('HEA2005');
     await expect(page.getByLabel('Antall årstimer')).toHaveValue('197');
   });
@@ -155,7 +155,7 @@ test.describe('fag og læreplaner', () => {
     await page.goto('./#/fag/AKT2004');
     await aapneDel(page, /^Kompetansemål og læreplan/);
     await expect(page.getByText('Fastsatt på nynorsk.', { exact: false })).toBeVisible();
-    await expect(page.locator('main [lang="nn"]:visible').first()).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} [lang="nn"]:visible`).first()).toBeVisible();
   });
 
   test('appen på nynorsk viser egne tekster på nynorsk og læreplanen uoversatt', async ({ page }) => {
@@ -164,7 +164,7 @@ test.describe('fag og læreplaner', () => {
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Helsefremjande arbeid');
     await aapneDel(page, /^Kompetansemål og læreplan/);
     await expect(page.getByText('Fastsett på bokmål. Teksten frå læreplanen er gjengitt utan omsetjing.')).toBeVisible();
-    await expect(page.locator('main [lang="nb"]:visible').first()).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} [lang="nb"]:visible`).first()).toBeVisible();
   });
 
   test('fag kan legges til som favoritt', async ({ page }) => {
@@ -212,7 +212,7 @@ test.describe('fag og læreplaner', () => {
     await expect(knapp).toBeVisible();
     await knapp.click();
     await expect.poll(() => page.evaluate(() => window.scrollY)).toBeLessThan(5);
-    await expect(page.locator('main h1')).toBeFocused();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toBeFocused();
     await expect(knapp).toHaveCount(0);
   });
 });

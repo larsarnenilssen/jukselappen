@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { settLagret } from './hjelp.ts';
+import { settLagret, synlig } from './hjelp.ts';
 
 test.describe('fylke og skole', () => {
   test('kan velges, endres og fjernes, og huskes', async ({ page }) => {
@@ -93,7 +93,7 @@ test.describe('sikkerhetskopien (avgjørelse 104)', () => {
       }
     }, kopi);
     await page.goto('./#/innstillinger');
-    await expect(page.getByText('Sikkerhetskopien på denne enheten har 2 favoritter.')).toBeVisible();
+    await expect(synlig(page).getByText('Sikkerhetskopien på denne enheten har 2 favoritter.')).toBeVisible();
 
     const dialoger: string[] = [];
     page.on('dialog', (d) => {
@@ -104,18 +104,18 @@ test.describe('sikkerhetskopien (avgjørelse 104)', () => {
     expect(dialoger[0]).toContain('Det som er lagret nå, blir den nye sikkerhetskopien');
     await expect(page.getByRole('status').filter({ hasText: 'Sikkerhetskopien er gjenopprettet.' })).toBeVisible();
     // Det som var lagret før, er nå sikkerhetskopien: ingen favoritter.
-    await expect(page.getByText('Sikkerhetskopien på denne enheten har ingen favoritter.')).toBeVisible();
+    await expect(synlig(page).getByText('Sikkerhetskopien på denne enheten har ingen favoritter.')).toBeVisible();
 
     await page.reload();
     await page.locator('.topplinje .appnavn').click();
-    const titler = page.locator('[data-gruppe="favoritter"] .listelenke-tittel');
+    const titler = synlig(page).locator('[data-gruppe="favoritter"] .listelenke-tittel');
     await expect(titler).toHaveText(['Testfunksjon', 'Skolemiljø (testbegrep)']);
 
     // Angre: gjenopprett én gang til.
     await page.getByRole('navigation', { name: 'Hovedmeny' }).getByRole('link', { name: 'Innstillinger' }).click();
-    await expect(page.getByText('Sikkerhetskopien på denne enheten har ingen favoritter.')).toBeVisible();
+    await expect(synlig(page).getByText('Sikkerhetskopien på denne enheten har ingen favoritter.')).toBeVisible();
     await page.getByRole('button', { name: 'Gjenopprett sikkerhetskopien' }).click();
-    await expect(page.getByText('Sikkerhetskopien på denne enheten har 2 favoritter.')).toBeVisible();
+    await expect(synlig(page).getByText('Sikkerhetskopien på denne enheten har 2 favoritter.')).toBeVisible();
     await page.locator('.topplinje .appnavn').click();
     await expect(titler).toHaveCount(0);
   });

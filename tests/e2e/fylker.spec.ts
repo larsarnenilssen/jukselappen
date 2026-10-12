@@ -1,7 +1,7 @@
 // Fylkene (fase 6, pakke 4, avgjørelse 061): fylkessiden under «Oppslag», boksen «Hos fylkeskommunen» i veiviserne,
 // de lokale forskriftene for fylket og skolen, og skolens regler på skolekortet.
 import { expect, test } from '@playwright/test';
-import { aapneAlleSteg, erMobil, settLagret } from './hjelp.ts';
+import { aapneAlleSteg, erMobil, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 const SKOLE = { id: '974557584', navn: 'Fyllingsdalen videregående skole' };
 const POENGSTEG = './#/inntak/rett-inntak-soknad?steg=sk-poeng&svar=norsk.ja.nei.nei.under19.vg1.poeng';
@@ -13,10 +13,10 @@ test.describe('fylker', () => {
     // Med valgt fylke går inngangen under «Oppslag» rett til fylket.
     await page.getByRole('link', { name: /^Vestland fylkeskommune/ }).click();
     await expect(page).toHaveURL(/#\/fylker\/46$/);
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     await page.locator('nav').getByRole('link', { name: 'Fylkene' }).click();
-    await expect(page.locator('main h1')).toHaveText('Fylkene');
-    await expect(page.locator('main .liste .listelenke-tittel').first()).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
+    await expect(page.locator(`${SYNLIG_SIDE} .liste .listelenke-tittel`).first()).toHaveText('Vestland fylkeskommune');
     await page.getByRole('link', { name: 'Rogaland fylkeskommune' }).click();
     await expect(page).toHaveURL(/#\/fylker\/11$/);
   });
@@ -24,13 +24,13 @@ test.describe('fylker', () => {
   test('uten valgt fylke går inngangen på forsiden til listen over fylkene', async ({ page }) => {
     await page.goto('./');
     await page.getByRole('link', { name: /^Fylkene/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Fylkene');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
   });
 
   test('fylkessiden lenker til fylkets sider og viser fylkets og skolenes forskrifter', async ({ page }) => {
     await settLagret(page, { fylke: '46', skole: SKOLE });
     await page.goto('./#/fylker/46');
-    await expect(page.locator('main h1')).toHaveText('Vestland fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
     // Lenkene til fylkets egne sider står lukket til brukeren åpner dem (eier 05.10.2026), og åpnes i en ny fane.
     const hos = page.locator('[data-rubrikk="fylke-lenker"]');
     const hosKnapp = hos.getByRole('button', { name: /Hos fylkeskommunen/ });
@@ -47,7 +47,7 @@ test.describe('fylker', () => {
     await gruppe.locator('summary').click();
     await expect(gruppe.getByRole('link', { name: /Arna vidaregåande skule/ })).toBeVisible();
     await lokale.getByRole('link', { name: /^Skoleregler i Vestland/ }).click();
-    await expect(page.locator('main h1')).toHaveText('Skoleregler i Vestland');
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Skoleregler i Vestland');
   });
 
   test('et ukjent fylke gir en melding', async ({ page }) => {
@@ -82,7 +82,7 @@ test.describe('fylker', () => {
     await boks.getByLabel('Vis siden hos').selectOption('11');
     await expect(boks.getByRole('link', { name: /Søknad og inntak|Videregående opplæring/ })).toHaveAttribute('href', /^https:\/\//);
     await page.goto('./#/fylker');
-    await expect(page.locator('main .liste .listelenke-tittel').first()).toHaveText('Agder fylkeskommune');
+    await expect(page.locator(`${SYNLIG_SIDE} .liste .listelenke-tittel`).first()).toHaveText('Agder fylkeskommune');
   });
 
   test('skolekortet lenker til skolens regler', async ({ page }) => {

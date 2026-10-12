@@ -76,7 +76,10 @@ export function gaaTilbake(): void {
 }
 
 export function startRuting(): void {
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  // Nettleseren gjenoppretter også rullingen selv (auto), i tillegg til appen. iOS venter på det før bildet fra
+  // sveipet tilbake tas bort. Med «manual» ble skjermen stående blank til en tidsfrist gikk ut (eier 12.10.2026,
+  // avgjørelse 113). Appen setter rullingen etterpå uansett, så de to gir samme sted.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
   const naa = gjeldende();
   if (naa) dybde = naa.dybde;
   else history.replaceState({ appId: nyId(), dybde: 0 }, '');
@@ -95,7 +98,8 @@ export function startRuting(): void {
 // Søket fra toppfeltet (eier 05.10.2026): legges over siden brukeren står på, som en egen oppføring i historikken på
 // samme adresse. Siden står synlig bak. Tilbake (også sveip tilbake i nettleseren), «Lukk» og et trykk utenfor søket
 // lukker det.
-// Følges en lenke i søket, kommer brukeren tilbake til søket med tilbake.
+// Følges en lenke i søket, lukkes søket først, så tilbake fra treffet viser siden uten søket (eier 12.10.2026,
+// avgjørelse 112).
 const toppsokLyttere = new Set<() => void>();
 const varsleToppsok = () => {
   for (const l of toppsokLyttere) l();
@@ -115,6 +119,23 @@ export function apneToppsok(): void {
   scrollPosisjoner.set(id, window.scrollY);
   history.pushState({ appId: id, dybde, sok: '' }, '');
   varsleToppsok();
+}
+
+/**
+ * Følger en lenke fra søket i toppfeltet. Oppføringen med søket fjernes først (tilbake), og lenken blir en ny oppføring
+ * etter siden brukeren søkte fra. Tilbake fra treffet viser da siden uten søket (eier 12.10.2026, avgjørelse 112).
+ */
+export function gaaFraToppsok(adresse: string): void {
+  if (toppsok() === null) {
+    window.location.hash = adresse;
+    return;
+  }
+  const videre = () => {
+    window.removeEventListener('popstate', videre);
+    window.location.hash = adresse;
+  };
+  window.addEventListener('popstate', videre);
+  history.back();
 }
 
 export function lukkToppsok(): void {
@@ -194,8 +215,11 @@ export function utforScroll(): void {
 
 export type Navigasjonstype = 'forste' | 'ny' | 'historikk';
 
-export function usePlassering(): Plassering & { type: Navigasjonstype } {
-  const [plassering, settPlassering] = useState(() => ({ ...lesHash(location.hash), type: 'forste' as Navigasjonstype }));
+/** Plasseringen med hvordan brukeren kom dit, og hvor langt inn i appen siden står (dybden i historikken). */
+export type Navigasjon = Plassering & { type: Navigasjonstype; dybde: number };
+
+export function usePlassering(): Navigasjon {
+  const [plassering, settPlassering] = useState<Navigasjon>(() => ({ ...lesHash(location.hash), type: 'forste', dybde }));
   useEffect(() => {
     const vedEndring = () => {
       let type: Navigasjonstype = 'historikk';
@@ -211,7 +235,7 @@ export function usePlassering(): Plassering & { type: Navigasjonstype } {
       const id = gjeldende();
       oensketScroll = type === 'ny' && beholdRulling ? null : type === 'ny' || !id ? 0 : (scrollPosisjoner.get(id.appId) ?? 0);
       beholdRulling = false;
-      settPlassering({ ...lesHash(location.hash), type });
+      settPlassering({ ...lesHash(location.hash), type, dybde });
     };
     window.addEventListener('hashchange', vedEndring);
     return () => window.removeEventListener('hashchange', vedEndring);

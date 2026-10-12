@@ -3,7 +3,7 @@
 // aktuelt.spec.ts). Faktumet avhenger av datoen, så testene ser på oppsettet og ikke på teksten.
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
-import { aapneAlt, settLagret } from './hjelp.ts';
+import { aapneAlt, settLagret, SYNLIG_SIDE } from './hjelp.ts';
 
 const VESTLAND = '46';
 const apen = (forside: Record<string, unknown> = {}) => ({ rekkefolge: [], lukket: [], apnet: ['panel'], bareFavoritter: false, ...forside });
@@ -95,7 +95,7 @@ test.describe('dagens jukselapp', () => {
     expect(adresse).toMatch(/^#\/[a-z]/);
     await lenke.click();
     await expect(page).toHaveURL(new RegExp(`${adresse.split('?')[0]?.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
-    await expect(page.locator('main h1').first()).toBeVisible();
+    await expect(page.locator(`${SYNLIG_SIDE} h1`).first()).toBeVisible();
   });
 
   test('har brukeren valgt jukselappen, står den med fanene som vanlig', async ({ page }) => {

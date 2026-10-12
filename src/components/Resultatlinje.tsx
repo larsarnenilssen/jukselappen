@@ -2,6 +2,7 @@
 // Et trykk ruller til resultatkortet. Slik ser brukeren svaret mens skjemaet fylles ut.
 import type { RefObject } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
+import { useSideAktiv } from '../app/sideaktiv.ts';
 import { useTekst } from '../app/tilstand.ts';
 
 interface Props {
@@ -15,14 +16,17 @@ interface Props {
 export function Resultatlinje({ mal, tittel, verdi, enhet }: Props) {
   const { t } = useTekst();
   const [kortSynlig, settKortSynlig] = useState(true);
+  // Står siden skjult i bakgrunnen (avgjørelse 111), følges ikke kortet. Linjen beholder det den viste, til siden
+  // vises igjen der brukeren var.
+  const aktiv = useSideAktiv();
 
   useEffect(() => {
     const el = mal.current;
-    if (!el || typeof IntersectionObserver === 'undefined') return;
+    if (!el || !aktiv || typeof IntersectionObserver === 'undefined') return;
     const observator = new IntersectionObserver(([oppforing]) => settKortSynlig(oppforing?.isIntersecting ?? true), { threshold: 0 });
     observator.observe(el);
     return () => observator.disconnect();
-  }, [mal]);
+  }, [mal, aktiv]);
 
   if (kortSynlig) return null;
 

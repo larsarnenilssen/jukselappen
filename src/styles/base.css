@@ -122,6 +122,21 @@ select {
   color: inherit;
 }
 
+/* Usynlig felt som holder tastaturet oppe på iPhone til søkefeltet er tegnet (avgjørelse 112). Minst 16 px, så iOS
+   ikke forstørrer siden når feltet får fokus. */
+.tastaturfelt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .skjult-visuelt {
   position: absolute !important;
   width: 1px !important;
@@ -266,6 +281,14 @@ main {
 
 .side {
   padding-top: var(--rom-2);
+}
+
+/*
+ * Hver side står i en ramme i main. Sidene brukeren har gått gjennom, står skjult (hidden) i bakgrunnen, så tilbake og
+ * fram viser dem med en gang (avgjørelse 111). Regler som ser på innholdet i main, ser bare på rammen som vises.
+ */
+.sideramme[hidden] {
+  display: none !important;
 }
 
 .laster {
@@ -2596,7 +2619,7 @@ p.fagkort-tittel {
    Resultatkolonnen er ikke et eget scrollområde (ett scrollområde på siden). Resultatlinjen nederst viser svaret. */
 
 @media (min-width: 64rem) {
-  main:has(.kalkulator) {
+  main:has(> .sideramme:not([hidden]) .kalkulator) {
     max-width: 72rem;
   }
 
@@ -4129,8 +4152,8 @@ p.fagkort-tittel {
 
 /* To spalter på stor skjerm, med bredere side for forsiden (eier 04.10.2026). */
 @media (min-width: 64rem) {
-  main:has(> .forside),
-  .skall:has(main > .forside) .topplinje-innhold {
+  main:has(> .sideramme:not([hidden]) > .forside),
+  .skall:has(main > .sideramme:not([hidden]) > .forside) .topplinje-innhold {
     max-width: 72rem;
   }
 
@@ -4172,8 +4195,8 @@ p.fagkort-tittel {
 }
 
 @media (min-width: 44rem) {
-  main:has(> .forside-bred),
-  .skall:has(main > .forside-bred) .topplinje-innhold {
+  main:has(> .sideramme:not([hidden]) > .forside-bred),
+  .skall:has(main > .sideramme:not([hidden]) > .forside-bred) .topplinje-innhold {
     max-width: 92rem;
   }
 
@@ -6354,7 +6377,7 @@ div + .veiviser-svargruppe {
 }
 
 @media (min-width: 64rem) {
-  main:has(.veiviser-med-faser) {
+  main:has(> .sideramme:not([hidden]) .veiviser-med-faser) {
     max-width: 66rem;
   }
 
@@ -7467,7 +7490,7 @@ a.knapp {
  * tre deler av året står side om side (`data-deler`).
  */
 @media (min-width: 64rem) {
-  main:has(.kalender) {
+  main:has(> .sideramme:not([hidden]) .kalender) {
     max-width: 76rem;
   }
 }
@@ -8323,7 +8346,7 @@ a.knapp {
    veien til høyre, som står fast når skjermen er høy nok. «Bytte vei»: utgangspunktene til venstre. Siden for hver vei:
    stegene og «Om veien» til venstre, «Kommer fra» og «Veien videre» til høyre. Én kolonne under 64rem. */
 @media (min-width: 64rem) {
-  main:has(.fb-bred) {
+  main:has(> .sideramme:not([hidden]) .fb-bred) {
     max-width: 72rem;
   }
 
@@ -8431,8 +8454,8 @@ a.knapp {
    og sidedelen til høyre (2/5). Én kolonne under 64rem, hoveddelen først. */
 @media (min-width: 64rem) {
   /* Toppfeltet står i linje med siden, så tilbakeknappen står over innholdet (avgjørelse 100). */
-  main:has(.side-bred),
-  .skall:has(main .side-bred) .topplinje-innhold {
+  main:has(> .sideramme:not([hidden]) .side-bred),
+  .skall:has(main > .sideramme:not([hidden]) .side-bred) .topplinje-innhold {
     max-width: 72rem;
   }
 

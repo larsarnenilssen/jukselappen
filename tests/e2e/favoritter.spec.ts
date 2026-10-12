@@ -1,7 +1,7 @@
 // Favorittene og forsiden (avgjørelse 056): favorittene står øverst på forsiden og sorteres der de står, gruppene kan
 // lukkes og sorteres, og forsiden kan vise bare favorittene under kategoriene sine.
 import { expect, test } from '@playwright/test';
-import { erMobil, ruter, settLagret, venterPaaSide } from './hjelp.ts';
+import { erMobil, ruter, settLagret, SYNLIG_SIDE, venterPaaSide } from './hjelp.ts';
 
 const TO = ['testmodul:funksjon', 'begreper:testbegrep-skolemiljo'];
 
@@ -236,11 +236,11 @@ test.describe('alle sider kan stjernemerkes, og favorittene finnes på forsiden'
     test(rute, async ({ page }) => {
       await page.goto(`./${rute}`);
       await venterPaaSide(page);
-      const stjerne = page.locator('main .tittelrad').first().locator('.favorittknapp:not(.favorittknapp-liten)');
+      const stjerne = page.locator(`${SYNLIG_SIDE} .tittelrad`).first().locator('.favorittknapp:not(.favorittknapp-liten)');
       await expect(stjerne).toHaveCount(1);
       await stjerne.click();
       await expect(stjerne).toHaveAttribute('aria-pressed', 'true');
-      const diskre = page.locator('main .favorittknapp-liten').filter({ visible: true }).first();
+      const diskre = page.locator(`${SYNLIG_SIDE} .favorittknapp-liten`).filter({ visible: true }).first();
       const antall = (await diskre.count()) > 0 ? 2 : 1;
       if (antall === 2) {
         await diskre.click();
