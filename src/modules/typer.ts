@@ -1,7 +1,7 @@
 // Manifestet hver modul eksporterer fra src/modules/<modul>/index.ts. Se docs/ARKITEKTUR.md.
 import type { Tema } from '../core/lokale/skjema.ts';
 import type { ComponentType } from 'preact';
-import type { Tekstverdi } from '../core/i18n/tekst.ts';
+import type { Tekstnokkel, Tekstverdi } from '../core/i18n/tekst.ts';
 import type { Flerspraak, Frist, Gyldighet, KildeRef } from '../core/innhold/skjema.ts';
 import type { Sokeoppforing } from '../core/sok/sok.ts';
 import type { Ikonnavn } from '../components/Ikon.tsx';
@@ -72,10 +72,10 @@ export interface Inngang {
   /** Står i den sammenleggbare boksen under hovedboksene (`flereTittel`), lukket til brukeren åpner den. */
   flere?: boolean;
   /**
-   * Tittel og adresse etter fylket brukeren har valgt, f.eks. «Vestland fylkeskommune» og #/fylker/46 (avgjørelse
-   * 061). Gir null når inngangen skal stå som den er.
+   * Undertittelen etter fylket brukeren har valgt, f.eks. «Vestland og de andre fylkene.» (avgjørelse 061 og 117). Gir
+   * null når inngangen skal stå som den er.
    */
-  etterFylke?: (fylke: string | null) => { tittel: string; rute: string } | null;
+  etterFylke?: (fylke: string | null) => { beskrivelse: Tekstnokkel; verdier: Record<string, string> } | null;
 }
 
 /** En lenke med ikon på en av modulens oversiktssider (`undersider`). */

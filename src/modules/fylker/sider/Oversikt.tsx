@@ -1,4 +1,5 @@
-// Fylkene (avgjørelse 061): listen over fylkene, med fylket brukeren har valgt øverst. Hvert fylke har egen side.
+// Fylkene (avgjørelse 061): listen over fylkene, med fylket brukeren har valgt øverst og merket «Ditt fylke», som skolen
+// brukeren har valgt i skoleregisteret (eier 12.10.2026, avgjørelse 117). Hvert fylke har egen side.
 import { fylker } from '../../../app/Stedmerknad.tsx';
 import { useTekst, useTilstand } from '../../../app/tilstand.ts';
 import { Ikon } from '../../../components/Ikon.tsx';
@@ -26,6 +27,14 @@ export default function Oversikt() {
               <Ikon navn="kontor" />
               <span class="listelenke-tekst">
                 <span class="listelenke-tittel">{f.navn}</span>
+                {f.nummer === innstillinger.fylke && (
+                  <span class="listelenke-under">
+                    <span class="ditt-fylke">
+                      <Ikon navn="hake" class="ikon-liten" />
+                      {t('fylker.dittFylke')}
+                    </span>
+                  </span>
+                )}
               </span>
               <Ikon navn="hoyre" class="ikon-liten" />
             </a>

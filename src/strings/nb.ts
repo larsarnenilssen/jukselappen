@@ -530,6 +530,7 @@ export const nb = {
     fylker: {
       navn: 'Fylkene',
       beskrivelse: 'Fylkets sider, forskrifter og skoler.',
+      beskrivelseValgt: '{fylke} og de andre fylkene.',
     },
     lov: {
       navn: 'Regelverk',

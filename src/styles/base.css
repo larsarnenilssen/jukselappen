@@ -507,7 +507,8 @@ main {
 }
 
 /* Skolene, yrkene og opplæringskontorene i Opplæringsløp (avgjørelse 053). */
-.lop-dinskole {
+.lop-dinskole,
+.ditt-fylke {
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
@@ -515,6 +516,11 @@ main {
   color: var(--farge-skole);
   font-weight: 600;
   white-space: nowrap;
+}
+
+/* «Ditt fylke» står alene på linjen under navnet i oversikten over fylkene (avgjørelse 117). */
+.ditt-fylke {
+  margin-left: 0;
 }
 
 .lop-skolestatus {

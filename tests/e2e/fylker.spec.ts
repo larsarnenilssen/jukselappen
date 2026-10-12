@@ -7,24 +7,31 @@ const SKOLE = { id: '974557584', navn: 'Fyllingsdalen videregående skole' };
 const POENGSTEG = './#/inntak/rett-inntak-soknad?steg=sk-poeng&svar=norsk.ja.nei.nei.under19.vg1.poeng';
 
 test.describe('fylker', () => {
-  test('fra forsiden til fylket brukeren har valgt, og til listen med det fylket øverst', async ({ page }) => {
+  test('med valgt fylke heter inngangen fortsatt «Fylkene», og fylket står øverst i listen med merket «Ditt fylke»', async ({ page }) => {
     await settLagret(page, { fylke: '46' });
     await page.goto('./');
-    // Med valgt fylke går inngangen under «Oppslag» rett til fylket.
-    await page.getByRole('link', { name: /^Vestland fylkeskommune/ }).click();
+    // Undertittelen nevner fylket (eier 12.10.2026, avgjørelse 117).
+    const inngang = page.getByRole('link', { name: /^Fylkene/ });
+    await expect(inngang).toContainText('Vestland og de andre fylkene.');
+    await inngang.click();
+    await expect(page).toHaveURL(/#\/fylker$/);
+    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
+    const forste = page.locator(`${SYNLIG_SIDE} .liste > li`).first();
+    await expect(forste.locator('.listelenke-tittel')).toHaveText('Vestland fylkeskommune');
+    await expect(forste.locator('.ditt-fylke')).toHaveText('Ditt fylke');
+    await expect(page.locator(`${SYNLIG_SIDE} .ditt-fylke`)).toHaveCount(1);
+    await forste.getByRole('link').click();
     await expect(page).toHaveURL(/#\/fylker\/46$/);
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Vestland fylkeskommune');
-    await page.locator('nav').getByRole('link', { name: 'Fylkene' }).click();
-    await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
-    await expect(page.locator(`${SYNLIG_SIDE} .liste .listelenke-tittel`).first()).toHaveText('Vestland fylkeskommune');
-    await page.getByRole('link', { name: 'Rogaland fylkeskommune' }).click();
-    await expect(page).toHaveURL(/#\/fylker\/11$/);
   });
 
-  test('uten valgt fylke går inngangen på forsiden til listen over fylkene', async ({ page }) => {
+  test('uten valgt fylke går inngangen på forsiden til listen over fylkene, uten merket', async ({ page }) => {
     await page.goto('./');
-    await page.getByRole('link', { name: /^Fylkene/ }).click();
+    const inngang = page.getByRole('link', { name: /^Fylkene/ });
+    await expect(inngang).toContainText('Fylkets sider, forskrifter og skoler.');
+    await inngang.click();
     await expect(page.locator(`${SYNLIG_SIDE} h1`)).toHaveText('Fylkene');
+    await expect(page.locator(`${SYNLIG_SIDE} .ditt-fylke`)).toHaveCount(0);
   });
 
   test('fylkessiden lenker til fylkets sider og viser fylkets og skolenes forskrifter', async ({ page }) => {

@@ -31,3 +31,5 @@
 - **Flere skoleregler med:** Eier fant ikke forskriften om mobil og smartklokker for Slåtthaug vgs. Tittelfilteret kjente ikke igjen «mobiltelefon». Nå er også en forskrift fra en fylkeskommune, Oslo kommune eller en videregående skole kandidat når tittelen har mobil, smartklokke, reglement, atferd (adferd, åtferd), oppførsel eller ordens. Slike forskrifter blir skoleregler når hjemmelen ikke sier noe annet.
 - **Regler for mobil** står for seg ved siden av skolereglene, med tittelen «Regler for mobil ved {sted}».
 - **Ny full lesing når kandidatreglene endres:** `KANDIDATREGLER` i `register.ts` lagres i `data/lovdata/lokale.json`. Er tallet et annet enn det som er lagret, leses hele registeret neste gang, så forskrifter som ble hoppet over før, kommer med. Tallet økes når reglene for hva som er kandidat, endres.
+
+**Endret 12.10.2026:** Boksen under «Oppslag» heter «Fylkene» også når brukeren har valgt fylke, med fylket i undertittelen, og fylket er merket «Ditt fylke» i oversikten (avgjørelse 117).
