@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { erIkkeGodkjent, grunnlagFor, lagFingeravtrykk, normaliserTekst, nyPost, vurderMotGrunnlag } from '../../scripts/kilder/logikk.ts';
 import { kfTekst } from '../../scripts/kilder/kf-infoserie.ts';
 import { ventetid } from '../../scripts/hent-grep.ts';
-import { feilmelding, filtrerSkoler, lovdataFilnavn, skoleendringer, strukturhint, trekkUt } from '../../scripts/kilder/metoder.ts';
+import { feilmelding, filtrerSkoler, lovdataFilnavn, skoleendringer, strukturhint, trekkUt, trekkUtOverskrifter } from '../../scripts/kilder/metoder.ts';
 
 const A = lagFingeravtrykk('a');
 const B = lagFingeravtrykk('b');
@@ -90,6 +90,15 @@ describe('uttrekk fra nettsider', () => {
 
   it('feiler tydelig når siden har fått ny struktur', () => {
     expect(() => trekkUt(html, { selektor: 'section.finnes-ikke', fjern: [] })).toThrow(/Fant ikke innholdet/);
+  });
+
+  it('henter overskriftene i samme del av siden, med nivået', () => {
+    expect(trekkUtOverskrifter(html, { selektor: 'main', fjern: ['article:first-child'] })).toEqual([{ niva: 3, tekst: 'Oversikt' }]);
+    expect(trekkUtOverskrifter('<main><h1>Side</h1><h2> Del  én </h2><p>Tekst</p><h3>Under</h3></main>', { selektor: 'main', fjern: [] })).toEqual([
+      { niva: 1, tekst: 'Side' },
+      { niva: 2, tekst: 'Del én' },
+      { niva: 3, tekst: 'Under' },
+    ]);
   });
 });
 

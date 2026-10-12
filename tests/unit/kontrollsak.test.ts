@@ -1,12 +1,12 @@
 // Steg 2 i kontrollsystemet: endringer per punkt, tabeller rad for rad, Grep-endringer og den ukentlige
 // kontrollsaken (avgjørelse 018).
 import { describe, expect, it } from 'vitest';
-import { delIBiter, finnEndringer, naermestePunkt } from '../../scripts/kilder/avsnitt.ts';
+import { delIBiter, finnEndringer, naermestePunkt, overskrifterVed } from '../../scripts/kilder/avsnitt.ts';
 import { avkryssede } from '../../scripts/kilder/godkjenning.ts';
 import { grepsammendrag, sammenlignGrep, type Grepdata } from '../../scripts/kilder/grep.ts';
 import { grepLaereplanlinjer } from '../../scripts/kilder/ukesrapport.ts';
 import { lesVedlegg1, sammenlignVedlegg1, sjekkGarantilonn } from '../../scripts/kilder/tabeller.ts';
-import { lagUkesrapport, planleggKontrollsak, punktTreff, type Ukesgrunnlag } from '../../scripts/kilder/ukesrapport.ts';
+import { lagUkesrapport, overskriftTreff, planleggKontrollsak, punktTreff, type Ukesgrunnlag } from '../../scripts/kilder/ukesrapport.ts';
 import type { Kilderegister } from '../../src/core/innhold/skjema.ts';
 import type { Kildekontroll } from '../../src/core/kontroll/indeks.ts';
 import type { Tabellrad } from '../../src/core/regler/skjema.ts';
@@ -44,6 +44,50 @@ describe('endringer per punkt', () => {
     const gamle = delIBiter(avtale).map((b) => b.hash);
     const ny = avtale.replace('Dersom man ikke blir enige om noe annet, er den planfestede arbeidstiden 1.150 timer. ', '');
     expect(finnEndringer(gamle, ny)).toEqual([{ punkt: '9', ny: [], fjernet: 1 }]);
+  });
+});
+
+// En side som Udirs «Administrere eksamen»: overskrifter i stedet for nummererte punkter.
+const side =
+  'Administrere eksamen Planlegge Særskilt tilrettelegging Hvordan få tilrettelagt eksamen? Søk i god tid. ' +
+  'Sikker nettleser Kandidater med lese- og skrivestøtte må søke om særskilt tilrettelegging. ' +
+  'Krav til utstyr på eksamen Filtyper i eksamenssvar Bruk vanlige filtyper. Gjennomføre Hjelpemidler til eksamen Alle hjelpemidler er tillatt.';
+const sideoverskrifter = [
+  { niva: 1, tekst: 'Administrere eksamen' },
+  { niva: 2, tekst: 'Planlegge' },
+  { niva: 3, tekst: 'Særskilt tilrettelegging' },
+  { niva: 3, tekst: 'Hvordan få tilrettelagt eksamen?' },
+  { niva: 3, tekst: 'Sikker nettleser' },
+  { niva: 3, tekst: 'Krav til utstyr på eksamen' },
+  { niva: 4, tekst: 'Filtyper i eksamenssvar' },
+  { niva: 2, tekst: 'Gjennomføre' },
+  { niva: 3, tekst: 'Hjelpemidler til eksamen' },
+];
+
+describe('endringer under overskrifter på nettsider', () => {
+  it('finner overskriftene foran endringen, uten sidetittelen, og en overskrift avslutter de på samme nivå', () => {
+    expect(overskrifterVed(side, sideoverskrifter, side.indexOf('Kandidater med'))).toEqual(['Planlegge', 'Sikker nettleser']);
+    expect(overskrifterVed(side, sideoverskrifter, side.indexOf('Bruk vanlige'))).toEqual(['Planlegge', 'Krav til utstyr på eksamen', 'Filtyper i eksamenssvar']);
+    expect(overskrifterVed(side, sideoverskrifter, side.indexOf('Alle hjelpemidler'))).toEqual(['Gjennomføre', 'Hjelpemidler til eksamen']);
+    // Overskrifter inne i den endrede teksten er med, og en overskrift som ikke finnes i teksten, hoppes over.
+    expect(overskrifterVed(side, [{ niva: 2, tekst: 'Finnes ikke' }, ...sideoverskrifter], side.indexOf('Særskilt'), side.indexOf('Søk i'))).toEqual(['Planlegge', 'Særskilt tilrettelegging', 'Hvordan få tilrettelagt eksamen?']);
+  });
+
+  it('viser endringen med overskriftene når siden har dem, og uten når den ikke har', () => {
+    const gamle = delIBiter(side).map((b) => b.hash);
+    const ny = side.replace('må søke om særskilt tilrettelegging.', 'må søke om særskilt tilrettelegging. Skolen registrerer dem i PAS.');
+    expect(finnEndringer(gamle, ny, sideoverskrifter)).toEqual([{ punkt: null, overskrifter: ['Planlegge', 'Sikker nettleser'], ny: ['Skolen registrerer dem i PAS.'], fjernet: 0 }]);
+    expect(finnEndringer(gamle, ny)).toEqual([{ punkt: null, ny: ['Skolen registrerer dem i PAS.'], fjernet: 0 }]);
+  });
+
+  it('overskrifter treffer punkter som nevner dem, også som en av flere deler', () => {
+    expect(overskriftTreff(['Planlegge', 'Sikker nettleser'], 'Særskilt tilrettelegging, Sikker nettleser')).toBe(true);
+    expect(overskriftTreff(['Følge opp', 'Hurtigklager (våreksamen)'], 'Hurtigklage')).toBe(true);
+    expect(overskriftTreff(['Planlegge', 'Hvordan få tilrettelagt eksamen?'], 'hvordan få tilrettelagt eksamen')).toBe(true);
+    expect(overskriftTreff(['Planlegge', 'Sikker nettleser'], 'Påmelding av eksamenskandidater')).toBe(false);
+    // Korte deler og overskrifter teller ikke, så «Om» ikke treffer alt.
+    expect(overskriftTreff(['Om'], 'Om eksamen')).toBe(false);
+    expect(overskriftTreff(['Sensur'], 'Om; Sensur')).toBe(true);
   });
 });
 
@@ -262,6 +306,32 @@ describe('den ukentlige kontrollsaken', () => {
       { type: 'bruk', id: 'ny' },
       { type: 'kilde', id: 'avtale', fingeravtrykk: 'sha256:b' },
     ]);
+  });
+
+  it('viser endringer på en nettside med overskriftene, og innholdet som viser til dem', () => {
+    const r = lagUkesrapport(
+      grunnlag({
+        register: { kilder: [...register.kilder, { id: 'udir', navn: 'Administrere eksamen', url: 'https://example.org/udir', sjekkmetode: 'side', aktiv: true, godkjent: '2026-10-08', godkjent_fingeravtrykk: 'sha256:a' }] } as unknown as Kilderegister,
+        kildestatus: { skjema: 1, kjort: '2026-10-12T04:17:00Z', kilder: { avtale: ok, lov: ok, grep: ok, udir: { ...ok, status: 'endret', fingeravtrykk: 'sha256:c', endret_siden: '2026-10-12T04:17:00Z' } } },
+        endringer: { udir: [{ punkt: '3', overskrifter: ['Planlegge', 'Sikker nettleser'], ny: ['Skolen registrerer dem i PAS.'], fjernet: 0 }] },
+        indeks: [
+          ...indeks,
+          {
+            kilde: 'udir',
+            verdier: [],
+            innhold: [
+              { type: 'innhold', id: 'tilrettelegging', tittel: 'Særskilt tilrettelegging av eksamen', elementtype: 'begrep', fil: 'x.yaml', punkter: ['Særskilt tilrettelegging, Sikker nettleser'], eier: 'utkast', kontrollert: null, sporsmal: ['Er sikker nettleser nevnt riktig?'], kilder: [{ id: 'udir', punkt: 'Særskilt tilrettelegging, Sikker nettleser', url: null }] },
+              { type: 'innhold', id: 'oppmelding', tittel: 'Oppmelding', elementtype: 'begrep', fil: 'x.yaml', punkter: ['Påmelding av eksamenskandidater'], eier: 'utkast', kontrollert: null, sporsmal: [], kilder: [{ id: 'udir', punkt: 'Påmelding av eksamenskandidater', url: null }] },
+            ],
+          },
+        ],
+      }),
+    );
+    expect(r.tekst).toContain('**Under «Planlegge › Sikker nettleser»** (ny tekst):');
+    expect(r.tekst).not.toContain('Punkt 3');
+    expect(r.tekst).toContain('Kan berøre: «Særskilt tilrettelegging av eksamen» (begrep).');
+    expect(r.tekst).toContain('- Særskilt tilrettelegging av eksamen: Er sikker nettleser nevnt riktig?');
+    expect(r.tekst).not.toContain('«Oppmelding»');
   });
 
   it('punkter treffer samme punkt, underpunkt og overordnet punkt', () => {
