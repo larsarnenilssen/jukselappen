@@ -60,9 +60,10 @@ grupper:
   - { kanonisk: begrunnelse, varianter: [grunngiving] }
   - { kanonisk: bolig, varianter: [bustad] }
 
-# Hverdagsord brukerne søker med, men som ikke står i teksten (avgjørelse 100). Et søk på et av ordene i `ord` finner
-# også det som står i `gir`. Bare søkehjelp, ikke en påstand om at ordene betyr det samme. Ett ord per oppføring i `ord`;
-# et uttrykk i `gir` må ha alle ordene. Ta bare med ord der appen har innhold å finne.
+# Hverdagsord brukerne søker med, men som ikke står i teksten eller som appen kaller noe annet («frister» for Kalender,
+# «statistikk» for Videregående i tall) (avgjørelse 100). Et søk på et av ordene i `ord` finner også det som står i
+# `gir`. Bare søkehjelp, ikke en påstand om at ordene betyr det samme. Ett ord per oppføring i `ord`; et uttrykk i `gir`
+# må ha alle ordene, skrevet slik de står i appen. Ta bare med ord der appen har innhold å finne.
 hverdagsord:
   - { ord: [leseplikt, undervisningsplikt, lesetimer], gir: [undervisningstid, årsramme, beskjeftigelse] }
   - { ord: [fagfordeling], gir: [beskjeftigelse, arbeidsplan] }
@@ -72,3 +73,5 @@ hverdagsord:
   - { ord: [terminkarakter], gir: [halvårsvurdering] }
   - { ord: [spesialundervisning], gir: [individuelt tilrettelagt opplæring] }
   - { ord: [9a], gir: [skolemiljø, aktivitetsplikt] }
+  - { ord: [frist, frister, fristar], gir: [kalender] }
+  - { ord: [statistikk], gir: [videregående i tall] }

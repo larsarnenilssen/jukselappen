@@ -57,6 +57,37 @@ describe('hverdagsord i søket', () => {
   });
 });
 
+describe('ord appen kaller noe annet (12.10.2026)', () => {
+  // Som i appen: et fag og en paragraf med ordet i tittelen, og oversiktene som har ordet bare i stikkordene.
+  const sider: Sokeoppforing[] = [
+    { id: 'kalender', type: 'modul', tittel: { nb: 'Kalender', nn: 'Kalender' }, stikkord: ['frister', 'datoer', 'årshjul', 'skolerute', 'ferie'], rute: '/kalender', modul: 'kalender' },
+    lov('lov:forvaltningsloven:11b', '§ 11 b Adgang for Kongen til å fastsette frister (forvaltningsloven)'),
+    { id: 'itall', type: 'modul', tittel: { nb: 'Videregående i tall', nn: 'Vidaregåande i tal' }, stikkord: ['statistikk', 'tall', 'søkere', 'elevtall', 'læreplass', 'formidling', 'gjennomføring', 'fravær'], rute: '/statistikk', modul: 'statistikk' },
+    { id: 'fag:REA3065', type: 'fag', tittel: { nb: 'Statistikk', nn: 'Statistikk' }, rute: '/fag/REA3065', modul: 'fag' },
+    // Har «videregående», et ord som begynner på i («ikke») og et ord én bokstav fra «tall» («tale»), men ikke «i»,
+    // «tall» eller «statistikk».
+    { id: 'stoy', type: 'begrep', tittel: { nb: 'Elevtale', nn: 'Elevtale' }, tekst: { nb: 'Eleven skal ikke holde en tale om videregående.', nn: 'Eleven skal ikkje halde ein tale om vidaregåande.' }, rute: '/stoy', modul: 'begreper' },
+  ];
+  const egen = byggIndeks(sider, synonymer);
+  const forst = (s: string) => sok(egen, s).map((t) => t.id);
+
+  it('«frister» og «frist» gir Kalender først', () => {
+    expect(forst('frister')[0]).toBe('kalender');
+    expect(forst('fristar')[0]).toBe('kalender');
+    expect(forst('frist')[0]).toBe('kalender');
+  });
+
+  it('«statistikk» gir Videregående i tall først, og faget står fortsatt i treffene', () => {
+    const treff = forst('statistikk');
+    expect(treff[0]).toBe('itall');
+    expect(treff).toContain('fag:REA3065');
+  });
+
+  it('korte ord i et uttrykk står som hele ord, og uttrykket tåler ikke skrivefeil', () => {
+    expect(forst('statistikk')).not.toContain('stoy');
+  });
+});
+
 describe('rangeringen av grunnskole og privatskole', () => {
   it('paragrafen om videregående står før grunnskolen og privatskolene når «Privatskole» ikke er valgt', () => {
     const treff = ider('fravær');

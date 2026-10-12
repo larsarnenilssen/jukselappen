@@ -178,7 +178,11 @@ function sporringFor(indeks: MiniSearch<Dokument>, s: string, combineWith: 'AND'
     combineWith,
     queries: ord.map((o): Query => {
       const gir = h.gir.get(h.normaliser(o));
-      return gir ? { combineWith: 'OR', queries: [o, ...gir.map((g): Query => ({ combineWith: 'AND', queries: [g] }))] } : o;
+      // Ordene i `gir` er appens egne og er skrevet riktig, så de søkes uten skrivefeil-toleranse. Korte ord i et
+      // uttrykk («i», «og») må stå som hele ord. Ellers finner «videregående i tall» også «til» og alt som begynner på i.
+      return gir
+        ? { combineWith: 'OR', queries: [o, ...gir.map((g): Query => ({ combineWith: 'AND', fuzzy: false, prefix: (term) => term.length > 2, queries: [g] }))] }
+        : o;
     }),
   };
 }

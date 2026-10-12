@@ -14,6 +14,8 @@ export const manifest: Modulmanifest = {
   ikon: 'kontor',
   kategori: 'felles',
   rekkefolge: 30,
+  // Oversikten står i søket som modulen selv, med disse ordene (én oppføring, ikke to).
+  stikkord: ['fylker', 'fylke', 'fylkeskommune', 'fylkeskommunene', 'lokale forskrifter'],
   ruter: [
     { sti: '/fylker', tittel: 'fylker.tittel', side: () => import('./sider/Oversikt.tsx') },
     { sti: '/fylker/:fylke', tittel: 'fylker.tittel', side: () => import('./sider/Fylke.tsx') },
@@ -32,13 +34,10 @@ export const manifest: Modulmanifest = {
     },
   ],
   async sokeoppforinger() {
-    return [
-      { id: 'fylker:oversikt', type: 'modul' as const, tittel: { nb: 'Fylkene', nn: 'Fylka' }, stikkord: ['fylkeskommune', 'fylke', 'lokale forskrifter'], rute: '/fylker', modul: 'fylker' },
-      ...fylker.flatMap((f) => {
-        const o = fylkeFor(f.nummer);
-        return o ? [{ id: `fylker:${f.nummer}`, type: 'side' as const, tittel: { nb: o.navn, nn: o.navn }, stikkord: [f.navn, 'fylkeskommune'], rute: fylkeRute(f.nummer), modul: 'fylker', sted: [f.nummer] }] : [];
-      }),
-    ];
+    return fylker.flatMap((f) => {
+      const o = fylkeFor(f.nummer);
+      return o ? [{ id: `fylker:${f.nummer}`, type: 'side' as const, tittel: { nb: o.navn, nn: o.navn }, stikkord: [f.navn, 'fylkeskommune'], rute: fylkeRute(f.nummer), modul: 'fylker', sted: [f.nummer] }] : [];
+    });
   },
   async favorittbare(ider) {
     return bareSpurte(
