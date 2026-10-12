@@ -205,8 +205,8 @@ test.describe('opplæringsløp', () => {
     // Løp som bare én kilde har, er med og merket med kilden. Er flere enige, står kilden som mangler løpet.
     await page.goto('./#/opplaeringslop/SR/SRSSR2');
     await expect(synlig(page).locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Sikkerhetsfaget.*Står bare i VIGO/ })).toBeVisible();
-    await page.goto('./#/opplaeringslop/IM/IMMED2');
-    await expect(synlig(page).locator('[data-rubrikk$="-kryss"]').getByRole('link', { name: /Profileringsdesignfaget.*Står ikke i utdanning\.no/ })).toBeVisible();
+    await page.goto('./#/opplaeringslop/TP/TPPIN2');
+    await expect(synlig(page).locator('[data-rubrikk$="-kryss"]').getByRole('link', { name: /Grafisk produksjonsteknikkfaget.*Står ikke i utdanning\.no/ })).toBeVisible();
     await page.goto('./#/opplaeringslop/BA/BAKEM2');
     await expect(synlig(page).locator('[data-rubrikk$="-videre"]').getByRole('link', { name: /Rørleggerfaget.*Står bare i Grep/ })).toBeVisible();
     await page.getByRole('button', { name: 'Kildene er ikke enige om alle løpene' }).click();
