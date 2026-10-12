@@ -2,6 +2,17 @@
 # versjons-PR-en ut fra CHANGELOG.md: 1–4 korte punkter på bokmål og nynorsk, med egne ord og det brukeren merker.
 # En test krever punkter for versjonen i package.json, så de ikke kan glemmes. Nyeste versjon øverst.
 versjoner:
+  - versjon: 1.2.4
+    dato: 2026-10-12
+    nytt:
+      - nb: Tilbake og fram går raskere. De siste sidene står klare, så du kommer tilbake dit du var, uten at skjermen blir tom.
+        nn: Tilbake og fram går raskare. Dei siste sidene står klare, så du kjem tilbake dit du var, utan at skjermen blir tom.
+      - nb: Sveip tilbake på iPhone viser siden så snart den er klar.
+        nn: Sveip tilbake på iPhone viser sida så snart ho er klar.
+      - nb: Søket øverst lukkes når du følger et treff, og på iPhone kommer tastaturet opp med en gang.
+        nn: Søket øvst blir lukka når du følgjer eit treff, og på iPhone kjem tastaturet opp med ein gong.
+      - nb: Raske trykk etter hverandre forstørrer ikke lenger siden. Du kan fortsatt zoome med to fingre.
+        nn: Raske trykk etter kvarandre forstørrar ikkje lenger sida. Du kan framleis zoome med to fingrar.
   - versjon: 1.2.3
     dato: 2026-10-11
     nytt:
