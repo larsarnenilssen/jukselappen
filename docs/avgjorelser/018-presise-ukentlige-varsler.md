@@ -26,3 +26,5 @@
 **Endret 09.10.2026:** Kontrollsaken har ukens kontroll nederst: fem punkter som ikke er kontrollert, valgt etter risiko. Saken står derfor åpen så lenge noe ikke er kontrollert, men ukens kontroll gir ikke e-post (avgjørelse 106).
 
 **Endret 12.10.2026:** På nettsider står endringen under overskriftene, og «Kan berøre» treffer også innhold som viser til en overskrift (avgjørelse 114).
+
+**Endret 12.10.2026:** Når eier godkjenner en endring, blir teksten eier godkjente grunnlaget med en gang, ikke først når kildesjekken ser kilden uendret (avgjørelse 115).

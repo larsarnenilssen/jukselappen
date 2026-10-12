@@ -16,9 +16,27 @@ export const kildetekstFil = z.strictObject({
       biter: z.array(z.string()),
     }),
   ),
+  /**
+   * Bitene i teksten slik kildesjekken så den sist, bare for kilder med status «endret». Godkjenner eier det
+   * fingeravtrykket, blir de det nye grunnlaget (taISiste), så neste endring sammenlignes med det eier har sett.
+   * Lages på nytt hver kildesjekk, så filen vokser ikke.
+   */
+  siste: z.optional(z.record(z.string(), z.strictObject({ fingeravtrykk: z.string(), biter: z.array(z.string()) }))),
 });
 
 export type Kildetekstfil = z.infer<typeof kildetekstFil>;
+
+/**
+ * Grunnlaget etter at eier har godkjent fingeravtrykket til en kilde: bitene kildesjekken så for akkurat det
+ * fingeravtrykket. Gir null når kildesjekken ikke har dem, f.eks. fordi kilden er endret igjen. Da står det gamle
+ * grunnlaget til kildesjekken ser kilden uendret.
+ */
+export function taISiste(fil: Kildetekstfil, id: string, fingeravtrykk: string, naa: string): Kildetekstfil | null {
+  const siste = fil.siste?.[id];
+  if (siste?.fingeravtrykk !== fingeravtrykk) return null;
+  const resten = Object.fromEntries(Object.entries(fil.siste ?? {}).filter(([k]) => k !== id));
+  return { skjema: fil.skjema, kilder: { ...fil.kilder, [id]: { fingeravtrykk, lagret: naa, biter: siste.biter } }, ...(Object.keys(resten).length > 0 ? { siste: resten } : {}) };
+}
 
 export function lesKildetekst(data: unknown): Kildetekstfil | null {
   const r = kildetekstFil.safeParse(data);

@@ -481,6 +481,7 @@ console.log(`Verdisjekk: ${antall('samsvarer')} samsvarer, ${antall('avvik')} av
 // endring sammenlignes teksten nå med dem. Endringene går til den ukentlige kontrollsaken (varsle.ts).
 const forrigeTekst: Kildetekstfil = lesKildetekst(lesJson(kildetekstfil)) ?? { skjema: 1, kilder: {} };
 const nyTekst: Kildetekstfil = { skjema: 1, kilder: { ...forrigeTekst.kilder } };
+const siste: NonNullable<Kildetekstfil['siste']> = {};
 const endringer: Record<string, Tekstendring[] | null> = {};
 for (const [id, post] of Object.entries(kilder)) {
   const t = tekster[id];
@@ -490,8 +491,11 @@ for (const [id, post] of Object.entries(kilder)) {
   } else if (post.status === 'endret') {
     const godkjent = forrigeTekst.kilder[id];
     endringer[id] = godkjent ? finnEndringer(godkjent.biter, t.tekst, t.overskrifter) : null;
+    // Bitene slik kilden er nå, så godkjenningen kan gjøre dem til grunnlaget (godkjenn.ts).
+    siste[id] = { fingeravtrykk: post.fingeravtrykk, biter: delIBiter(t.tekst).map((b) => b.hash) };
   }
 }
+if (Object.keys(siste).length > 0) nyTekst.siste = siste;
 writeFileSync(kildetekstfil, `${JSON.stringify(nyTekst, null, 2)}\n`);
 mkdirSync(join(generert, 'kildetekster'), { recursive: true });
 // Teksten fra kildene, til endringsforslagene (lag-forslag.ts). Ligger bare i .generert, som ikke committes.

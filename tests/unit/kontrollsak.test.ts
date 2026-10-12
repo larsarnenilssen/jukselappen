@@ -1,7 +1,7 @@
 // Steg 2 i kontrollsystemet: endringer per punkt, tabeller rad for rad, Grep-endringer og den ukentlige
 // kontrollsaken (avgjørelse 018).
 import { describe, expect, it } from 'vitest';
-import { delIBiter, finnEndringer, naermestePunkt, overskrifterVed } from '../../scripts/kilder/avsnitt.ts';
+import { delIBiter, finnEndringer, lesKildetekst, naermestePunkt, overskrifterVed, taISiste } from '../../scripts/kilder/avsnitt.ts';
 import { avkryssede } from '../../scripts/kilder/godkjenning.ts';
 import { grepsammendrag, sammenlignGrep, type Grepdata } from '../../scripts/kilder/grep.ts';
 import { grepLaereplanlinjer } from '../../scripts/kilder/ukesrapport.ts';
@@ -44,6 +44,35 @@ describe('endringer per punkt', () => {
     const gamle = delIBiter(avtale).map((b) => b.hash);
     const ny = avtale.replace('Dersom man ikke blir enige om noe annet, er den planfestede arbeidstiden 1.150 timer. ', '');
     expect(finnEndringer(gamle, ny)).toEqual([{ punkt: '9', ny: [], fjernet: 1 }]);
+  });
+});
+
+describe('grunnlaget etter godkjenning', () => {
+  const fil = {
+    skjema: 1 as const,
+    kilder: { udir: { fingeravtrykk: 'sha256:gammel', lagret: '2026-10-08T10:00:00Z', biter: ['a', 'b'] } },
+    siste: { udir: { fingeravtrykk: 'sha256:ny', biter: ['a', 'c'] }, ks: { fingeravtrykk: 'sha256:x', biter: ['x'] } },
+  };
+
+  it('gjør bitene kildesjekken så, til grunnlaget når eier godkjenner det samme fingeravtrykket', () => {
+    expect(taISiste(fil, 'udir', 'sha256:ny', '2026-10-12T14:00:00Z')).toEqual({
+      skjema: 1,
+      kilder: { udir: { fingeravtrykk: 'sha256:ny', lagret: '2026-10-12T14:00:00Z', biter: ['a', 'c'] } },
+      siste: { ks: { fingeravtrykk: 'sha256:x', biter: ['x'] } },
+    });
+    // Den siste kilden med bitene tar med seg hele «siste».
+    expect(taISiste({ ...fil, siste: { udir: fil.siste.udir } }, 'udir', 'sha256:ny', 'n')).not.toHaveProperty('siste');
+  });
+
+  it('gjør ingenting når kilden er endret igjen, eller kildesjekken ikke har bitene', () => {
+    expect(taISiste(fil, 'udir', 'sha256:annen', 'n')).toBeNull();
+    expect(taISiste(fil, 'lov', 'sha256:ny', 'n')).toBeNull();
+    expect(taISiste({ skjema: 1, kilder: {} }, 'udir', 'sha256:ny', 'n')).toBeNull();
+  });
+
+  it('leser filen med og uten «siste»', () => {
+    expect(lesKildetekst(fil)).toEqual(fil);
+    expect(lesKildetekst({ skjema: 1, kilder: fil.kilder })).toEqual({ skjema: 1, kilder: fil.kilder });
   });
 });
 
