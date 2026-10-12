@@ -116,6 +116,25 @@ export function punktTreff(endret: string, punkt: string): boolean {
   return e.some((a) => p.some((b) => a === b || b.startsWith(`${a}.`) || a.startsWith(`${b}.`)));
 }
 
+/** Teksten i en overskrift eller et punkt, for sammenligning: små bokstaver, uten tegn på slutten. */
+const somOverskrift = (t: string): string => t.toLocaleLowerCase('nb').replace(/[\s?:.!]+$/u, '').trim();
+
+/**
+ * Om innhold som viser til «punkt» kan være berørt av en endring under overskriftene på en nettside. Punktet kan
+ * nevne flere deler av siden, skilt med komma, semikolon eller «og» («Særskilt tilrettelegging, Sikker nettleser»).
+ * Én del treffer når den og en overskrift er like, eller den ene står i den andre («Hurtigklage» og «Hurtigklager
+ * (våreksamen)»). Deler og overskrifter på under fire tegn teller ikke. Heller for mye enn for lite, som punktTreff.
+ */
+export function overskriftTreff(overskrifter: readonly string[], punkt: string): boolean {
+  const deler = punkt.split(/[,;]|\s+og\s+/u).map(somOverskrift).filter((d) => d.length >= 4);
+  return overskrifter.map(somOverskrift).some((o) => o.length >= 4 && deler.some((d) => o.includes(d) || d.includes(o)));
+}
+
+/** Om en endring kan berøre innhold som viser til «punkt»: samme nummer eller samme overskrift. */
+function endringTreff(e: Tekstendring, punkt: string): boolean {
+  return (e.punkt !== null && punktTreff(e.punkt, punkt)) || (e.overskrifter !== undefined && overskriftTreff(e.overskrifter, punkt));
+}
+
 function kildeseksjon(g: Ukesgrunnlag, id: string, navn: string, url: string, endretSiden: string | null, fingeravtrykk: string | null): string[] {
   const linjer = [`### ${navn}`, '', `Endret siden ${endretSiden ? dato(endretSiden) : 'ukjent dato'}. [Åpne kilden](${url})`, ''];
   const liste = g.endringer[id];
@@ -127,11 +146,13 @@ function kildeseksjon(g: Ukesgrunnlag, id: string, navn: string, url: string, en
   } else {
     for (const e of liste) {
       const hva = e.ny.length === 0 ? `${e.fjernet} ${e.fjernet === 1 ? 'setning' : 'setninger'} fjernet` : e.fjernet > 0 ? 'endret tekst' : 'ny tekst';
-      linjer.push(`**${e.punkt ? `Punkt ${e.punkt}` : 'Ukjent punkt'}** (${hva}):`, '');
+      // En nettside med overskrifter vises med dem, fordi et tall foran teksten der sjelden er et punkt.
+      const hvor = e.overskrifter ? `Under «${e.overskrifter.join(' › ')}»` : e.punkt ? `Punkt ${e.punkt}` : 'Ukjent punkt';
+      linjer.push(`**${hvor}** (${hva}):`, '');
       for (const bit of e.ny.slice(0, MAKS_BITER)) linjer.push(sitat(bit), '');
       if (e.ny.length > MAKS_BITER) linjer.push(`… og ${e.ny.length - MAKS_BITER} setninger til.`, '');
-      const verdier = e.punkt && kontroll ? kontroll.verdier.filter((v) => v.punkt && punktTreff(e.punkt as string, v.punkt)) : [];
-      const innhold = e.punkt && kontroll ? kontroll.innhold.filter((i) => i.punkter.some((p) => punktTreff(e.punkt as string, p))) : [];
+      const verdier = kontroll ? kontroll.verdier.filter((v) => v.punkt && endringTreff(e, v.punkt)) : [];
+      const innhold = kontroll ? kontroll.innhold.filter((i) => i.punkter.some((p) => endringTreff(e, p))) : [];
       const berort = [...verdier.map((v) => `regelverdien \`${v.nokkel}\``), ...innhold.map((i) => `«${i.tittel}» (${i.elementtype})`)];
       if (berort.length > 0) linjer.push(`Kan berøre: ${berort.join(', ')}.`, '');
       const sporsmal = innhold.flatMap((i) => i.sporsmal.map((s) => `- ${i.tittel}: ${s}`));

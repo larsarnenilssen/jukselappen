@@ -1,8 +1,9 @@
 // Sjekkmetodene: side (hovedinnhold på en nettside) og nsr (skoleregisteret).
 import { createHash } from 'node:crypto';
-import { parse } from 'node-html-parser';
+import { parse, type HTMLElement } from 'node-html-parser';
 import type { Kilde } from '../../src/core/innhold/skjema.ts';
 import { lagFingeravtrykk, normaliserTekst } from './logikk.ts';
+import type { Overskrift } from './avsnitt.ts';
 import { pdfTekst } from './pdf.ts';
 
 export const USER_AGENT = 'Jukselappen-kildesjekk/0.1 (+https://github.com/larsarnenilssen/jukselappen)';
@@ -35,8 +36,8 @@ export function feilmelding(e: unknown): string {
   return deler.length === 1 ? (deler[0] as string) : `${deler[0]} (${deler.slice(1).join('; ')})`;
 }
 
-/** Trekker ut og normaliserer den delen av siden som skal sammenlignes. */
-export function trekkUt(html: string, uttrekk: NonNullable<Kilde['uttrekk']>): string {
+/** Elementene på siden som skal sammenlignes, uten skript, stil og det `fjern` peker på. */
+function velgInnhold(html: string, uttrekk: NonNullable<Kilde['uttrekk']>): HTMLElement[] {
   const rot = parse(html);
   for (const fjern of ['script', 'style', 'noscript', 'template', ...uttrekk.fjern]) {
     for (const el of rot.querySelectorAll(fjern)) el.remove();
@@ -46,14 +47,30 @@ export function trekkUt(html: string, uttrekk: NonNullable<Kilde['uttrekk']>): s
   if (treff.length === 0) {
     throw new Error(`Fant ikke innholdet (selektor «${uttrekk.selektor}»${uttrekk.inneholder ? `, tekst «${uttrekk.inneholder}»` : ''}). Siden kan ha fått ny struktur.`);
   }
-  return normaliserTekst(treff.map((el) => el.structuredText).join('\n'));
+  return treff;
 }
 
-export async function sjekkSide(kilde: Kilde): Promise<{ fingeravtrykk: string; tekst: string; nettleser: boolean }> {
+/** Trekker ut og normaliserer den delen av siden som skal sammenlignes. */
+export function trekkUt(html: string, uttrekk: NonNullable<Kilde['uttrekk']>): string {
+  return normaliserTekst(velgInnhold(html, uttrekk).map((el) => el.structuredText).join('\n'));
+}
+
+/**
+ * Overskriftene (h1–h6) i den samme delen av siden, i rekkefølge. Brukes til å finne hvilken del av siden en endring
+ * står under, når siden ikke har nummererte punkter (avsnitt.ts). Fingeravtrykket regnes fortsatt bare av teksten.
+ */
+export function trekkUtOverskrifter(html: string, uttrekk: NonNullable<Kilde['uttrekk']>): Overskrift[] {
+  return velgInnhold(html, uttrekk)
+    .flatMap((el) => el.querySelectorAll('h1, h2, h3, h4, h5, h6'))
+    .map((h) => ({ niva: Number(h.tagName.slice(1)), tekst: normaliserTekst(h.structuredText) }))
+    .filter((h) => h.tekst !== '');
+}
+
+export async function sjekkSide(kilde: Kilde): Promise<{ fingeravtrykk: string; tekst: string; overskrifter: Overskrift[]; nettleser: boolean }> {
   if (!kilde.uttrekk) throw new Error('Mangler uttrekk i kilderegisteret');
   const { html, nettleser } = await hentSide(kilde.url);
   const tekst = trekkUt(html, kilde.uttrekk);
-  return { fingeravtrykk: lagFingeravtrykk(tekst), tekst, nettleser };
+  return { fingeravtrykk: lagFingeravtrykk(tekst), tekst, overskrifter: trekkUtOverskrifter(html, kilde.uttrekk), nettleser };
 }
 
 /** Siden med fetch, og med Chromium hvis fetch ikke kommer fram (nettleser.ts). Begge feilene står i meldingen. */

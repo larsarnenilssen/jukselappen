@@ -58,9 +58,20 @@ export function delIBiter(tekst: string): Bit[] {
   return biter;
 }
 
+/** En overskrift på en nettside: nivået (1 for h1) og teksten, normalisert som resten av teksten. */
+export interface Overskrift {
+  niva: number;
+  tekst: string;
+}
+
 export interface Tekstendring {
   /** Punktet i kilden der endringen står, f.eks. «5.1» eller «§ 10-4», eller null hvis det ikke finnes. */
   punkt: string | null;
+  /**
+   * Overskriftene endringen står under på en nettside, ytterst først og uten sidetittelen (h1), og overskrifter inne
+   * i den endrede teksten. Bare for sider (sjekkmetode `side`), som oftest har overskrifter i stedet for nummererte punkter.
+   */
+  overskrifter?: string[];
   /** De nye bitene, slik de står i kilden nå. Tom når tekst bare er fjernet. */
   ny: string[];
   /** Antall biter som er fjernet eller erstattet. */
@@ -112,8 +123,34 @@ export function naermestePunkt(tekst: string, posisjon: number): string | null {
   return funnet;
 }
 
+/**
+ * Overskriftene en endring fra `start` til `slutt` står under: kjeden av overskrifter foran `start` (en overskrift
+ * avslutter de på samme eller lavere nivå), og overskrifter som begynner inne i den endrede teksten. Overskriftene
+ * finnes i teksten i rekkefølge, og en overskrift som ikke finnes, hoppes over. Sidetittelen (h1) er ikke med.
+ */
+export function overskrifterVed(tekst: string, overskrifter: readonly Overskrift[], start: number, slutt = start): string[] {
+  const kjede: Overskrift[] = [];
+  const inne: string[] = [];
+  let fra = 0;
+  for (const o of overskrifter) {
+    const pos = tekst.indexOf(o.tekst, fra);
+    if (pos === -1) continue;
+    fra = pos + o.tekst.length;
+    if (o.niva <= 1) continue;
+    if (pos <= start) {
+      while (kjede.length > 0 && (kjede.at(-1) as Overskrift).niva >= o.niva) kjede.pop();
+      kjede.push(o);
+    } else if (pos < slutt) {
+      inne.push(o.tekst);
+    } else {
+      break;
+    }
+  }
+  return [...new Set([...kjede.map((o) => o.tekst), ...inne])];
+}
+
 /** Sammenligner de godkjente bitene med teksten nå. Tom liste når ingenting er endret. */
-export function finnEndringer(gamle: readonly string[], tekst: string): Tekstendring[] {
+export function finnEndringer(gamle: readonly string[], tekst: string, overskrifter: readonly Overskrift[] = []): Tekstendring[] {
   const nye = delIBiter(tekst);
   const par = felles(
     gamle,
@@ -127,7 +164,10 @@ export function finnEndringer(gamle: readonly string[], tekst: string): Tekstend
     const nyeBiter = nye.slice(j, p.j);
     if (fjernet > 0 || nyeBiter.length > 0) {
       const posisjon = nyeBiter[0]?.start ?? nye[p.j]?.start ?? tekst.length;
-      endringer.push({ punkt: naermestePunkt(tekst, posisjon), ny: nyeBiter.map((b) => b.tekst), fjernet });
+      const siste = nyeBiter.at(-1);
+      const slutt = siste ? siste.start + siste.tekst.length : posisjon;
+      const under = overskrifter.length > 0 ? overskrifterVed(tekst, overskrifter, posisjon, slutt) : [];
+      endringer.push({ punkt: naermestePunkt(tekst, posisjon), ...(under.length > 0 ? { overskrifter: under } : {}), ny: nyeBiter.map((b) => b.tekst), fjernet });
     }
     i = p.i + 1;
     j = p.j + 1;

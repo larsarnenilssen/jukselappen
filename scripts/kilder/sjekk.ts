@@ -12,7 +12,7 @@ import { dokumenttekst, type Lovdokument } from '../../src/modules/lov/typer.ts'
 import { velgPeriode } from '../../src/core/regler/motor.ts';
 import { lesRegelsett } from '../innhold/alt.ts';
 import { lesFil } from '../innhold/last.ts';
-import { delIBiter, finnEndringer, lesKildetekst, type Kildetekstfil, type Tekstendring } from './avsnitt.ts';
+import { delIBiter, finnEndringer, lesKildetekst, type Kildetekstfil, type Overskrift, type Tekstendring } from './avsnitt.ts';
 import { antallEndringer, grepdetaljer, grepsammendrag, type Grependringer } from './grep.ts';
 import { grunnlagFor, lagFingeravtrykk, nyPost, vurderMotGrunnlag, type Grunnlagsfil, type Grunnlagspost, type Sjekkresultat } from './logikk.ts';
 import { sjekkKfInfoserie } from './kf-infoserie.ts';
@@ -52,7 +52,7 @@ const forrigeGrunnlag = (lesJson(grunnlagsfil) as Grunnlagsfil | null)?.kilder ?
 const naa = new Date().toISOString();
 const rapport: string[] = [];
 // Teksten fra hver kilde, eller hvorfor den ikke kunne leses. Brukes av verdisjekken etterpå.
-const tekster: Record<string, { tekst: string } | { feil: string }> = {};
+const tekster: Record<string, { tekst: string; overskrifter?: Overskrift[] } | { feil: string }> = {};
 // Dokumentet som HTML, for kilder med tabeller som sjekkes rad for rad (vedlegg 1).
 const html: Record<string, string> = {};
 
@@ -329,8 +329,8 @@ async function sjekk(kilde: Kilde): Promise<Sjekkresultat> {
   try {
     switch (kilde.sjekkmetode) {
       case 'side': {
-        const { fingeravtrykk, tekst, nettleser } = await sjekkSide(kilde);
-        tekster[kilde.id] = { tekst };
+        const { fingeravtrykk, tekst, overskrifter, nettleser } = await sjekkSide(kilde);
+        tekster[kilde.id] = { tekst, overskrifter };
         if (nettleser) rapport.push(`### ${kilde.navn}`, 'Lest med nettleser, fordi siden ikke svarte på vanlig henting.', '');
         return vurderMotGrunnlag(fingeravtrykk, grunnlagFor(kilde, forrigeGrunnlag[kilde.id]));
       }
@@ -489,7 +489,7 @@ for (const [id, post] of Object.entries(kilder)) {
     nyTekst.kilder[id] = { fingeravtrykk: post.fingeravtrykk, lagret: forrigeTekst.kilder[id]?.fingeravtrykk === post.fingeravtrykk ? (forrigeTekst.kilder[id]?.lagret ?? naa) : naa, biter: delIBiter(t.tekst).map((b) => b.hash) };
   } else if (post.status === 'endret') {
     const godkjent = forrigeTekst.kilder[id];
-    endringer[id] = godkjent ? finnEndringer(godkjent.biter, t.tekst) : null;
+    endringer[id] = godkjent ? finnEndringer(godkjent.biter, t.tekst, t.overskrifter) : null;
   }
 }
 writeFileSync(kildetekstfil, `${JSON.stringify(nyTekst, null, 2)}\n`);
@@ -498,7 +498,7 @@ mkdirSync(join(generert, 'kildetekster'), { recursive: true });
 for (const [id, t] of Object.entries(tekster)) if ('tekst' in t) writeFileSync(join(generert, 'kildetekster', `${id}.txt`), t.tekst);
 writeFileSync(join(generert, 'endringer.json'), `${JSON.stringify(endringer, null, 2)}\n`);
 for (const [id, liste] of Object.entries(endringer)) {
-  rapport.push(`### Endringer i ${id}`, ...(liste === null ? ['Ingen lagret tekst fra forrige godkjenning å sammenligne med.'] : liste.map((e) => `- ${e.punkt ?? 'ukjent punkt'}: ${e.ny.length} nye biter, ${e.fjernet} fjernet`)), '');
+  rapport.push(`### Endringer i ${id}`, ...(liste === null ? ['Ingen lagret tekst fra forrige godkjenning å sammenligne med.'] : liste.map((e) => `- ${e.overskrifter ? e.overskrifter.join(' › ') : (e.punkt ?? 'ukjent punkt')}: ${e.ny.length} nye biter, ${e.fjernet} fjernet`)), '');
 }
 
 const tabell = [
