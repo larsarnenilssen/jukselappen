@@ -25,6 +25,7 @@ import {
   type Godkjenning,
 } from './godkjenning.ts';
 import { settFylkeslenke } from '../lenker/fylkeslenker.ts';
+import { lesKildetekst, taISiste } from './avsnitt.ts';
 
 const rot = fileURLToPath(new URL('../..', import.meta.url));
 const sak = process.env.SAK ?? '?';
@@ -61,6 +62,8 @@ const praksisfil = join(rot, 'content/kontroll/praksis.yaml');
 const praksisIder = new Set((lesFil(rot, praksisfil) as Praksisfil).praksis.map((p) => p.id));
 const kildestatusfil = join(rot, 'data/status/kildestatus.json');
 let kildestatus = lesKildestatus(existsSync(kildestatusfil) ? JSON.parse(readFileSync(kildestatusfil, 'utf8')) : null);
+const kildetekstfil = join(rot, 'data/status/kildetekst.json');
+let kildetekst = lesKildetekst(existsSync(kildetekstfil) ? JSON.parse(readFileSync(kildetekstfil, 'utf8')) : null);
 
 /** Gjør en id eier har skrevet, om til en godkjenning: innhold, regelverdi, praksis eller kilde. */
 function tolk(id: string): Godkjenning | null {
@@ -97,6 +100,12 @@ function godkjenn(g: Godkjenning): boolean {
     if (ny) {
       kildestatus = ny;
       writeFileSync(kildestatusfil, `${JSON.stringify(ny, null, 2)}\n`);
+    }
+    // Teksten eier har godkjent, blir grunnlaget for neste endring.
+    const tekst = kildetekst && taISiste(kildetekst, g.id, g.fingeravtrykk, new Date().toISOString());
+    if (tekst) {
+      kildetekst = tekst;
+      writeFileSync(kildetekstfil, `${JSON.stringify(tekst, null, 2)}\n`);
     }
     return true;
   }
@@ -143,7 +152,7 @@ if (git('status', '--porcelain', '--', 'content', 'rules') === '') {
   process.exit(0);
 }
 execFileSync('npm', ['run', 'kontroll:rapport'], { cwd: rot, stdio: 'inherit' });
-git('add', 'data/status/kildestatus.json', 'docs/KONTROLL.md');
+git('add', 'data/status/kildestatus.json', 'data/status/kildetekst.json', 'docs/KONTROLL.md');
 git('commit', '-m', melding);
 let hvor: string;
 if (testerOk) {

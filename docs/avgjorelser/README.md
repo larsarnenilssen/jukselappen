@@ -10,7 +10,7 @@ Status:
 - **endret:** notatet har minst én linje «**Endret …**» nederst, eller en del som sier «(Erstattet i avgjørelse NNN …)». Avgjørelsene disse linjene viser til, står etter «av». Det som står nederst, gjelder foran det over.
 - **erstattet:** notatet gjelder ikke lenger. Se avgjørelsen som erstattet det.
 
-114 avgjørelser: 78 gjeldende, 35 endret og 1 erstattet.
+115 avgjørelser: 79 gjeldende, 35 endret og 1 erstattet.
 
 | Nr. | Avgjørelse | Status |
 |---|---|---|
@@ -31,7 +31,7 @@ Status:
 | 015 | [Periodebeskjeftigelse er en del av Arbeidsplan](015-periode-i-arbeidsplan.md) | gjeldende |
 | 016 | [Brukserklæring i stedet for «ikke kontrollert»-merker](016-brukserklaering-i-stedet-for-kontrollmerker.md) | endret av 064 |
 | 017 | [Automatisk kontroll av regelverdier mot kildeteksten](017-automatisk-kontroll-av-regelverdier.md) | gjeldende |
-| 018 | [Presise ukentlige varsler og registerdata som oppdateres automatisk](018-presise-ukentlige-varsler.md) | endret av 098, 106, 114 |
+| 018 | [Presise ukentlige varsler og registerdata som oppdateres automatisk](018-presise-ukentlige-varsler.md) | endret av 098, 106, 114, 115 |
 | 019 | [Kontrollspørsmål, praksis og kontrollrunder](019-kontrollsporsmal-praksis-og-kontrollrunder.md) | gjeldende |
 | 020 | [Automatiske endringsforslag fra kildesjekken](020-automatiske-endringsforslag.md) | gjeldende |
 | 021 | [Godkjenning med avkrysning og /godkjent](021-godkjenning-med-avkrysning.md) | endret av 106 |
@@ -128,3 +128,4 @@ Status:
 | 112 | [Søket lukkes ved et treff, og tastaturet åpnes på iPhone](112-sok-lukkes-og-tastatur-pa-iphone.md) | gjeldende |
 | 113 | [Nettleseren gjenoppretter også rullingen](113-nettleseren-gjenoppretter-rullingen.md) | gjeldende |
 | 114 | [Endringer på nettsider under overskriftene](114-endringer-under-overskrifter.md) | gjeldende |
+| 115 | [Grunnlaget for endringer flyttes når eier godkjenner](115-grunnlaget-for-endringer-ved-godkjenning.md) | gjeldende |
