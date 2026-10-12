@@ -28,3 +28,5 @@
 - **Ingen garanti:** GitHub lover ikke når planlagte kjøringer kommer, eller at de kommer. Skal nyhetene være der på et bestemt tidspunkt, må kjøringen startes utenfra (eier vurderer en ekstern tjeneste).
 
 **Endret 09.10.2026:** Nyhetsfilen ligger på grenen `nyheter` med én commit som skrives over, ikke på `main`, og appen publiseres bare når sakene er endret (avgjørelse 098).
+
+**Endret 12.10.2026:** Appen publiseres etter hver henting, ikke bare når sakene er endret (avgjørelse 116).

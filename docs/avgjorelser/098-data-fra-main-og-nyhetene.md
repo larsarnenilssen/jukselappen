@@ -14,3 +14,5 @@
 - **60-dagersregelen:** Kildesjekken committer `kildestatus.json` til `main` hver uke (filen har tidspunktet for kjøringen, så det blir alltid en commit). Det holder de planlagte jobbene i live.
 
 **Konsekvens:** Ny lovtekst, nye datoer og ny statistikk kommer ut i appen uten ny versjon, innen et døgn etter at kildesjekken har hentet dem, og bare når appens tester består med dem. Historikken på `main` får ikke lenger nyhetscommits. Lokalt finnes ikke nyhetene før `npm run hent:nyheter` er kjørt. En gammel gren som fortsatt har `data/nyheter/nyheter.json`, får en konflikt når `main` flettes inn: behold slettingen.
+
+**Endret 12.10.2026:** Appen publiseres etter hver henting av nyhetene, også når bare tidspunktet eller statusen for en kilde er endret, så «Sist oppdatert» er den siste hentingen (avgjørelse 116).
