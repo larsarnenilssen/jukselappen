@@ -137,10 +137,15 @@ describe('arbeidsflyter', () => {
     }
   });
 
-  it('oppetiden sjekkes hver time, og eier varsles først etter to feil på rad (avgjørelse 099)', () => {
-    type Jobb = { name?: string; with?: Record<string, string>; steps?: { id?: string; 'continue-on-error'?: boolean; run?: string }[] };
-    const nyheter = parse(readFileSync(join(rot, '.github/workflows/nyheter.yml'), 'utf8')) as { on: { schedule: { cron: string }[] }; jobs: Record<string, Jobb> };
-    expect(nyheter.on.schedule[0]?.cron).toBe('47 * * * *');
+  it('oppetiden sjekkes ved hver henting, og eier varsles først etter to feil på rad (avgjørelse 099)', () => {
+    type Jobb = { name?: string; with?: Record<string, string>; steps?: { id?: string; if?: string; 'continue-on-error'?: boolean; run?: string }[] };
+    type Nyheter = { on: { schedule: { cron: string }[]; workflow_dispatch: { inputs: Record<string, { type: string; default: boolean }> } }; jobs: Record<string, Jobb> };
+    const nyheter = parse(readFileSync(join(rot, '.github/workflows/nyheter.yml'), 'utf8')) as Nyheter;
+    // cron-job.org starter hentingen hver time. GitHubs egen plan er reserve, hver tredje time (avgjørelse 118).
+    expect(nyheter.on.schedule[0]?.cron).toBe('47 */3 * * *');
+    // Prøvekildene hentes bare i PR-er og når eier ber om det, ikke ved kjøringene fra cron-job.org.
+    expect(nyheter.on.workflow_dispatch.inputs.prove).toMatchObject({ type: 'boolean', default: false });
+    expect(nyheter.jobs.hent?.steps?.find((s) => s.run?.includes('nyheter:prove'))?.if).toBe("github.event_name == 'pull_request' || inputs.prove");
     const sjekk = nyheter.jobs.oppe?.steps?.find((s) => s.id === 'sjekk');
     expect(sjekk?.['continue-on-error']).toBe(true);
     expect(sjekk?.run).toContain('sleep 600');
