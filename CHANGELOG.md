@@ -4,6 +4,8 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+## [1.2.4] – 2026-10-12
+
 ### Endret
 
 - **Søket lukkes når du følger et treff:** Går du tilbake fra et treff i søket øverst, kommer du til siden du søkte fra, uten at søket står åpent.
