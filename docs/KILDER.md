@@ -92,6 +92,7 @@ Kildene appen bygger på. Kildejobben (`.github/workflows/kilder.yml`) sjekker d
 | [Nyheter fra Kunnskapsdepartementet (RSS)](https://www.regjeringen.no/no/dep/kd/id586/) | Kunnskapsdepartementet | nasjonal | data | NLOD 2.0 | nyheter | 08.10.2026 | 7 |
 | [Siste nytt, Utdanningsdirektoratet](https://www.udir.no/om-udir/siste-nytt/) | Utdanningsdirektoratet | nasjonal | data | NLOD 2.0 | nyheter | 08.10.2026 | 7 |
 | [Nyheter fra Skolelederforbundet (RSS)](https://www.skolelederforbundet.no/) | Skolelederforbundet | nasjonal | data | Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken. | nyheter | 08.10.2026 | 7 |
+| [Nyheter fra Skolenes landsforbund (RSS)](https://skoleneslandsforbund.no/) | Skolenes landsforbund | nasjonal | data | Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken. | nyheter | nei | 7 |
 | [Nyheter fra Utdanningsforbundet](https://www.utdanningsforbundet.no/nyheter) | Utdanningsforbundet | nasjonal | data | Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra nyhetslisten, med lenke til saken. | nyheter | 08.10.2026 | 7 |
 | [Nyheter fra Statsforvalteren (RSS per embete)](https://www.statsforvalteren.no/nb/portal/) | Statsforvalteren | nasjonal | data | Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken. | nyheter | 08.10.2026 | 7 |
 | [Utdanningsnytt, saker merket videregående (RSS)](https://www.utdanningsnytt.no/tag/videreg%C3%A5ende) | Utdanningsforbundet | nasjonal | data | Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken. | nyheter | 08.10.2026 | 7 |
@@ -190,6 +191,7 @@ Sender udir.no hentingen videre til en annen adresse, f.eks. «tidligere rundskr
 - **regjeringen-kd-nyheter:** Alle publiseringer fra departementet (RSS). Filtreres på ord for videregående, fordi KD også har barnehage, høyere utdanning og forskning.
 - **udir-siste-nytt:** Nyhetslisten (første side, ti saker). Udir har ingen RSS. Filtreres på ord for videregående.
 - **skolelederforbundet-nyheter:** Interesseorganisasjon. Medlemstilbud tas ikke med.
+- **skoleneslandsforbund-nyheter:** Interesseorganisasjon (LO). robots.txt stenger ingenting (12.10.2026). Filtreres på ord for videregående, fordi forbundet også organiserer barnehage, grunnskole, fagskole og trafikklærere.
 - **utdanningsforbundet-nyheter:** Interesseorganisasjon. Nyhetslisten (første side). Ingen RSS. Eier må si ja til å lese en liste og ikke en feed.
 - **statsforvalteren-nyheter:** Ti embeter, hvert med sin feed. Filtreres på ord for videregående, og vises bare når fylket er valgt. Feeden har bare datoen saken sist ble oppdatert (atom:updated); hentingen beholder den første datoen den så.
 - **utdanningsnytt-nyheter:** Fagpresse, utgitt av Utdanningsforbundet. robots.txt tillater alt.

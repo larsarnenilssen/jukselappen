@@ -12,7 +12,7 @@ Kilder vi har prøvd å ta med i appen, men som ikke er med, eller bare er delvi
 | Østfold fylkeskommune | Nyheter om videregående i Østfold | Nettstedet svarer ikke, verken fra skymiljøet eller fra Actions. | Prøv igjen fra Actions (`npm run nyheter:prove`). |
 | Oslo kommune, Utdanningsetaten | Nyheter om videregående i Oslo | Ingen nyhetsliste for videregående. | En nyhetsside eller feed for videregående. |
 | Agder, Akershus, Buskerud, Finnmark, Møre og Romsdal, Nordland, Rogaland og Troms | – | Med. Feeden (`/ArtikkelRSS.ashx`) er tillatt etter ordlyden i robots.txt, som stenger `/artikkelRSS.aspx`. | Tas ut hvis et fylke sier fra. |
-| Skolenes landsforbund | Nyheter fra et lærerforbund | WordPress-feeden svarer ikke, verken fra skymiljøet eller fra Actions. | Prøv igjen fra Actions. Står som prøvekilde i `content/nyheter/kilder.yaml`. |
+| Skolenes landsforbund | – | Med fra 12.10.2026, med filteret for videregående. Adressen var feil: `skolenes.no` finnes ikke, forbundet er på `skoleneslandsforbund.no`. | – |
 | Norsk Lektorlag | Nyheter fra et lærerforbund | Ingen feed, og listen har ingen datoer. Det ville krevd henting av hver sak. | En feed, eller datoer i listen. |
 | KS | Nyheter om skole og arbeidsgiverpolitikk | Ingen feed, og robots.txt stenger hele nettstedet. Nyhetssiden har i stedet en fast lenke til KS. | En feed, eller at KS åpner for henting. |
 | KF Infoserie (Kommuneforlaget) | Nyheter om regelverk | Krever abonnement og innlogging. Henting kan bryte vilkårene. | Avtale med Kommuneforlaget. |

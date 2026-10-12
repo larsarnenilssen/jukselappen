@@ -1581,6 +1581,23 @@ kilder:
     faser: [7]
     merknad: Interesseorganisasjon. Medlemstilbud tas ikke med.
 
+  - id: skoleneslandsforbund-nyheter
+    navn: Nyheter fra Skolenes landsforbund (RSS)
+    kortnavn: Skolenes landsforbund
+    utgiver: Skolenes landsforbund
+    url: https://skoleneslandsforbund.no/
+    type: data
+    niva: nasjonal
+    lisens: Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken.
+    sjekkmetode: nyheter
+    aktiv: true
+    godkjent: null
+    godkjent_fingeravtrykk: null
+    faser: [7]
+    merknad: >-
+      Interesseorganisasjon (LO). robots.txt stenger ingenting (12.10.2026). Filtreres på ord for videregående, fordi
+      forbundet også organiserer barnehage, grunnskole, fagskole og trafikklærere.
+
   - id: utdanningsforbundet-nyheter
     navn: Nyheter fra Utdanningsforbundet
     kortnavn: Utdanningsforbundet

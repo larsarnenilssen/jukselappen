@@ -28,7 +28,7 @@ export const manifest: Modulmanifest = {
   async fakta() {
     return [];
   },
-  kilder: ['regjeringen-kd-nyheter', 'udir-siste-nytt', 'utdanningsnytt-nyheter', 'statsforvalteren-nyheter', 'lovdata-lovtidend', 'forskning-no-skole', 'nifu-nyheter', 'hkdir-aktuelt', 'fylkeskommunene-nyheter', 'skolelederforbundet-nyheter', 'utdanningsforbundet-nyheter'],
+  kilder: ['regjeringen-kd-nyheter', 'udir-siste-nytt', 'utdanningsnytt-nyheter', 'statsforvalteren-nyheter', 'lovdata-lovtidend', 'forskning-no-skole', 'nifu-nyheter', 'hkdir-aktuelt', 'fylkeskommunene-nyheter', 'skolelederforbundet-nyheter', 'skoleneslandsforbund-nyheter', 'utdanningsforbundet-nyheter'],
   // Står i panelet øverst på forsiden, ikke under «Oppslag» (eier 07.10.2026).
   paaForsiden: false,
   status: 'aktiv',

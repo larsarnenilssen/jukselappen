@@ -23,12 +23,16 @@ const utelatFiler = new Set(['content/versjoner.yaml']);
 /** Egennavn og navn på lover og dokumenter som har «skole» også på nynorsk (en del av ordet, små bokstaver). */
 const unntak = ['privatskolelov', 'privatskoleforskrift', 'skoleporten', 'skolelederforbundet', 'skoleregister'];
 
+/** Egennavn på flere ord, som tas bort før ordene sjekkes, så ordet alene («skolenes») fortsatt blir funnet. */
+const navn = /Skolenes landsforbund/g;
+
 /** Ordene med «skole» eller «skolar» i en nynorsk tekst, uten lenkemål, adresser og plassholdere. */
 function skoleord(tekst: string): string[] {
   const vasket = tekst
     .replace(/\]\([^)]*\)/g, ']')
     .replace(/(https?:\/\/|#\/)\S*/g, '')
-    .replace(/\{[^}]*\}/g, '');
+    .replace(/\{[^}]*\}/g, '')
+    .replace(navn, '');
   return [...vasket.matchAll(/[\p{L}-]*[sS]kol[ea][\p{L}-]*/gu)]
     .map(([ord]) => ord)
     .filter((ord) => !unntak.some((u) => ord.toLowerCase().includes(u)));

@@ -4,6 +4,10 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+### Lagt til
+
+- **Nyheter fra Skolenes landsforbund:** Sakene om videregående fra LO-forbundet for skolen står nå sammen med de andre organisasjonene.
+
 ### Endret
 
 - **Nyhetene hentes hver time:** Før kom de bare når GitHub startet hentingen, noen ganger med mange timers mellomrom.
