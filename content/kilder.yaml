@@ -1581,6 +1581,23 @@ kilder:
     faser: [7]
     merknad: Interesseorganisasjon. Medlemstilbud tas ikke med.
 
+  - id: skoleneslandsforbund-nyheter
+    navn: Nyheter fra Skolenes landsforbund (RSS)
+    kortnavn: Skolenes landsforbund
+    utgiver: Skolenes landsforbund
+    url: https://skoleneslandsforbund.no/
+    type: data
+    niva: nasjonal
+    lisens: Ingen lisens oppgitt. Bare tittel, dato, lenke og ingress fra feeden, med lenke til saken.
+    sjekkmetode: nyheter
+    aktiv: true
+    godkjent: 2026-10-12
+    godkjent_fingeravtrykk: null
+    faser: [7]
+    merknad: >-
+      Interesseorganisasjon (LO). robots.txt stenger ingenting (12.10.2026). Filtreres på ord for videregående, fordi
+      forbundet også organiserer barnehage, grunnskole, fagskole og trafikklærere.
+
   - id: utdanningsforbundet-nyheter
     navn: Nyheter fra Utdanningsforbundet
     kortnavn: Utdanningsforbundet
@@ -1709,6 +1726,7 @@ kilder:
     godkjent_fingeravtrykk: null
     faser: [7]
     merknad: >-
-      Akershus, Buskerud, Innlandet, Agder, Rogaland, Møre og Romsdal, Nordland, Troms og Finnmark, med feeden fylket
-      selv lenker til (ArtikkelRSS.ashx). Vestland (arkivet for temaet Utdanning), Vestfold og Telemark (nyhetssiden),
-      som ikke har feed. Vises bare når fylket er valgt. Eier 07.10.2026 (K4 og K4b).
+      Akershus, Østfold, Buskerud, Innlandet, Agder, Rogaland, Møre og Romsdal, Nordland, Troms og Finnmark, med feeden
+      fylket selv lenker til (ArtikkelRSS.ashx). Vestland (arkivet for temaet Utdanning), Vestfold og Telemark
+      (nyhetssiden), som ikke har feed. Vises bare når fylket er valgt. Eier 07.10.2026 (K4 og K4b). Østfold og Oslo
+      (feeden for hele kommunen, aktuelt.oslo.kommune.no) er med fra 12.10.2026 (eier).

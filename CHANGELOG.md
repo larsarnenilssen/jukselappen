@@ -4,6 +4,11 @@ Alle endringer brukerne merker, føres her. Formatet følger [Keep a Changelog](
 
 ## [Unreleased]
 
+### Lagt til
+
+- **Nyheter fra Skolenes landsforbund:** Sakene om videregående fra LO-forbundet for skolen står nå sammen med de andre organisasjonene.
+- **Nyheter fra Østfold og Oslo:** Har du valgt Østfold eller Oslo, får du nå nyhetene om videregående derfra, som i de andre fylkene med feed. Fra Oslo blir det få saker, fordi feeden gjelder hele kommunen.
+
 ### Endret
 
 - **Én farge for skolen og fylket ditt:** Det som vises fordi du har valgt fylke eller skole, står i samme dempede turkise farge, med merket «Din skole» eller «Ditt fylke». Det gjelder f.eks. linjen øverst på forsiden, boksen «Hos fylkeskommunen» og lokale verdier. Valget i Opplæringsløp heter «Din skole» / «Alle».

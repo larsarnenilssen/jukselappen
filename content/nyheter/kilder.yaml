@@ -188,6 +188,17 @@ kilder:
     ingress: true
     utelat: [forsikring, YS Fordel, Kampanje]
 
+  # Skolenes landsforbund (SL, LO-forbundet for skolen, eier 12.10.2026): organiserer også barnehage, grunnskole,
+  # fagskole og trafikklærere, så sakene filtreres på ord for videregående.
+  - id: skoleneslandsforbund
+    navn: { nb: Skolenes landsforbund, nn: Skolenes landsforbund }
+    type: organisasjon
+    kilde: skoleneslandsforbund-nyheter
+    format: rss
+    url: https://skoleneslandsforbund.no/feed/
+    filter: vgs
+    ingress: true
+
   - id: utdanningsforbundet
     navn: { nb: Utdanningsforbundet, nn: Utdanningsforbundet }
     type: organisasjon
@@ -347,6 +358,32 @@ kilder:
     ingress: true
     fylker: ["32"]
 
+  # Oslo (eier 12.10.2026): Utdanningsetaten har ingen nyhetsliste, så dette er feeden for hele kommunen. Filteret for
+  # videregående gir få saker (1–2 relevante av om lag 14 i uka ved prøvehentingen), og eier vil ha dem likevel.
+  - id: oslo-kommune
+    navn: { nb: Oslo kommune, nn: Oslo kommune }
+    kortnavn: { nb: Oslo kommune, nn: Oslo kommune }
+    type: myndighet
+    kilde: fylkeskommunene-nyheter
+    format: rss
+    url: https://aktuelt.oslo.kommune.no/rss
+    filter: vgs
+    ingress: true
+    fylker: ["03"]
+
+  # Østfold (eier 12.10.2026): nettstedet flyttet til ofk.no. Feeden «Aktuelt skole og opplæring», som siden selv lenker
+  # til. Samme plattform og samme robots.txt som Akershus og Buskerud.
+  - id: fylkeskommune-ostfold
+    navn: { nb: Østfold fylkeskommune, nn: Østfold fylkeskommune }
+    kortnavn: { nb: Østfold fylkeskommune, nn: Østfold fylkeskommune }
+    type: myndighet
+    kilde: fylkeskommunene-nyheter
+    format: rss
+    url: "https://ofk.no/ArtikkelRSS.ashx?NyhetsKategoriId=20687&Spraak=Norsk"
+    filter: vgs
+    ingress: true
+    fylker: ["31"]
+
   - id: fylkeskommune-buskerud
     navn: { nb: Buskerud fylkeskommune, nn: Buskerud fylkeskommune }
     kortnavn: { nb: Buskerud fylkeskommune, nn: Buskerud fylkeskommune }
@@ -474,8 +511,7 @@ kilder:
 # Prøvekilder: hentes bare av «npm run nyheter:prove» (i PR-er og ved manuell kjøring av arbeidsflyten Nyheter), og
 # vises ikke i appen. Rapporten viser om kilden svarer, hvor mange saker den har, og hva filteret ville tatt med, så
 # eier kan avgjøre om kilden skal med (K3, K5, K6 og K8, eier 07.10.2026). `streng`: bare sterke ord i tittelen.
-prove:
-  - { id: skolenes, navn: Skolenes landsforbund, url: https://www.skolenes.no/feed/, alle: true }
+prove: []
 
 # Sider der prøvehentingen leter etter feeder (<link rel="alternate">), leser robots.txt og viser HTML-en rundt datoene.
 oppdag: []
