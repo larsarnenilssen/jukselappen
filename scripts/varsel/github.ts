@@ -6,21 +6,43 @@ export interface Github {
   kall<T>(metode: string, sti: string, kropp?: unknown): Promise<T>;
 }
 
-export function lagGithub(token: string, repo = process.env.GITHUB_REPOSITORY ?? 'larsarnenilssen/jukselappen', api = process.env.GITHUB_API_URL ?? 'https://api.github.com'): Github {
+const FORSOK = 3;
+const vent = (ms: number): Promise<void> => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * GitHub svarer av og til 502 eller 503 en kort stund. Slike svar og nettfeil prøves på nytt, høyst tre ganger
+ * med 5 s mer ventetid for hvert forsøk. Svar i 400-serien er ikke tilfeldige og gir feil med en gang.
+ */
+export function lagGithub(token: string, repo = process.env.GITHUB_REPOSITORY ?? 'larsarnenilssen/jukselappen', api = process.env.GITHUB_API_URL ?? 'https://api.github.com', pause = vent): Github {
   return {
     async kall<T>(metode: string, sti: string, kropp?: unknown): Promise<T> {
-      const svar = await fetch(`${api}/repos/${repo}${sti}`, {
-        method: metode,
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2022-11-28',
-          'Content-Type': 'application/json',
-        },
-        ...(kropp === undefined ? {} : { body: JSON.stringify(kropp) }),
-      });
-      if (!svar.ok) throw new Error(`GitHub ${metode} ${sti}: ${svar.status} ${await svar.text()}`);
-      return (svar.status === 204 ? null : await svar.json()) as T;
+      for (let forsok = 1; ; forsok++) {
+        let svar: Response;
+        try {
+          svar = await fetch(`${api}/repos/${repo}${sti}`, {
+            method: metode,
+            headers: {
+              Authorization: `Bearer ${token}`,
+              Accept: 'application/vnd.github+json',
+              'X-GitHub-Api-Version': '2022-11-28',
+              'Content-Type': 'application/json',
+            },
+            ...(kropp === undefined ? {} : { body: JSON.stringify(kropp) }),
+          });
+        } catch (e) {
+          if (forsok === FORSOK) throw e;
+          console.log(`GitHub ${metode} ${sti}: ${String(e)}. Prøver igjen (forsøk ${forsok} av ${FORSOK}).`);
+          await pause(5000 * forsok);
+          continue;
+        }
+        if (svar.status >= 500 && forsok < FORSOK) {
+          console.log(`GitHub ${metode} ${sti}: ${svar.status}. Prøver igjen (forsøk ${forsok} av ${FORSOK}).`);
+          await pause(5000 * forsok);
+          continue;
+        }
+        if (!svar.ok) throw new Error(`GitHub ${metode} ${sti}: ${svar.status} ${await svar.text()}`);
+        return (svar.status === 204 ? null : await svar.json()) as T;
+      }
     },
   };
 }
