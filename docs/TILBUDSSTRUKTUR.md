@@ -27,13 +27,11 @@ Kontrollen av hver kolonne i rundskrivet fant disse. De påvirker ikke tilbudene
 
 ### Løpene i Grep, VIGO og utdanning.no
 
-648 koblinger mellom programområdene i Grep står i minst én av kildene, og alle vises i appen. 579 har ingen kilde som er uenig. Hver kilde teller bare der den beskriver løpet (se avgjørelse 052 og 070). Uenigheter som er nye siden forrige uke, kommer i kontrollsaken.
+648 koblinger mellom programområdene i Grep står i minst én av kildene, og alle vises i appen. 581 har ingen kilde som er uenig. Hver kilde teller bare der den beskriver løpet (se avgjørelse 052 og 070). Uenigheter som er nye siden forrige uke, kommer i kontrollsaken.
 
-Står bare i Grep, ikke i VIGO og utdanning.no (61):
+Står bare i Grep, ikke i VIGO og utdanning.no (59):
 
 - Klima, energi og miljøteknikk (BAKEM2) → Rørleggerfaget (BARLF3) · vist i appen, merket
-- Håndverk, design og produktutvikling (DTDTH1) → Treteknikk (BATRT2) · vist i appen, merket
-- Akvakultur (NAAKV2) → Sjømatproduksjon (RMSMP3) · vist i appen, merket
 - Fiske og fangst (NAFFA2) → Sjømatproduksjon (RMSMP3) · vist i appen, merket
 - Naturbruk (NANAB1) → Byggdrifterfaget (BABDR3) · vist i appen, merket
 - Restaurant- og matfag (RMRMF1) → Fiske og fangst (NAFFA2) · vist i appen, merket
@@ -101,19 +99,14 @@ Står i Grep og VIGO, ikke i utdanning.no (5):
 - Kjøretøy (TPKJT2) → Truck- og liftmekanikerfaget (TPTLM3) · vist i appen, merket
 - Industriteknologi (TPPIN2) → Grafisk produksjonsteknikkfaget (IMGPT3) · vist i appen, merket
 
-Står bare i VIGO, ikke i utdanning.no (2):
-
-- Salg, service og reiseliv (SRSSR2) → Sikkerhetsfaget (SRSIK3) · vist i appen, merket
-- Salg, service og reiseliv (SRSSR2) → Service- og administrasjonsfaget (SRSOA3) · vist i appen, merket
-
-Står i Grep og utdanning.no, ikke i VIGO (1):
+Står i Grep og utdanning.no, ikke i VIGO (3):
 
 - Bygg- og anleggsteknikk (BABAT1) → Gipsmakerfaget (DTGIP3) · vist i appen, merket
+- Håndverk, design og produktutvikling (DTDTH1) → Treteknikk (BATRT2) · vist i appen, merket
+- Akvakultur (NAAKV2) → Sjømatproduksjon (RMSMP3) · vist i appen, merket
 
-Står bare i VIGO, uten at en annen kilde er uenig (5):
+Står bare i VIGO, uten at en annen kilde er uenig (3):
 
-- Sikkerhetsfaget (SRSIK3) → Fag for studiekompetanse (PBPBY4) · vist i appen, merket
-- Service- og administrasjonsfaget (SRSOA3) → Fag for studiekompetanse (PBPBY4) · vist i appen, merket
 - Realfag vg2 tyske skole (STREA2TY) → Realfag vg3 tyske skole (STREA3TY) · vist i appen, merket
 - Studiespesialisering vg1 tyske skole (STUSP1TY) → Realfag vg2 tyske skole (STREA2TY) · vist i appen, merket
 - Sykkelmekanikerfaget (TPSYM3) → Fag for studiekompetanse (PBPBY4) · vist i appen, merket

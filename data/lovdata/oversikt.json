@@ -1392,11 +1392,11 @@
     "fylke": "11"
    },
    "utvalg": null,
-   "sistEndret": "2026-05-26",
+   "sistEndret": null,
    "iKraft": "2025-01-01",
    "lokaltype": "inntak",
    "antallKapitler": 0,
-   "antallParagrafer": 39,
+   "antallParagrafer": 37,
    "paragrafer": [
     "1",
     "2",
@@ -1434,9 +1434,7 @@
     "34",
     "35",
     "36",
-    "37",
-    "38",
-    "39"
+    "37"
    ]
   },
   {

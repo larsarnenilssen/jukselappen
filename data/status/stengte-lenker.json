@@ -1,5 +1,5 @@
 {
-  "sjekket": "2026-10-12",
+  "sjekket": "2026-10-19",
   "nettsteder": [
     {
       "vert": "inschool.zendesk.com",
@@ -26,39 +26,7 @@
       "stikkprover": 0
     },
     {
-      "vert": "overbo.vgs.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "pro.sf.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "rvbl.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "skolenes.no",
-      "lenker": [
-        {
-          "url": "https://www.skolenes.no/feed/",
-          "brukt": [
-            "content/nyheter/kilder.yaml"
-          ]
-        }
-      ],
-      "stikkprover": 0
-    },
-    {
-      "vert": "tobok.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "treringen.no",
+      "vert": "verfag.no",
       "lenker": [],
       "stikkprover": 1
     },

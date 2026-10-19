@@ -7,11 +7,11 @@
  "korttittelNn": "Inntak og formidling i Rogaland",
  "malform": "nb",
  "refid": "forskrift/2024-12-11-3099",
- "sistEndret": "2026-05-26",
+ "sistEndret": null,
  "iKraft": "2025-01-01",
  "iKraftTil": null,
  "lokaltype": "inntak",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-19",
  "gyldighet": {
   "niva": "fylke",
   "fylke": "11"
@@ -508,25 +508,6 @@
     {
      "nr": "21",
      "visNr": "§ 21",
-     "tittel": "Begynneropplæring i fremmedspråk",
-     "ledd": [
-      {
-       "tekst": [
-        "Ikke alle videregående skoler tilbyr begynneropplæring i fremmedspråk."
-       ]
-      },
-      {
-       "tekst": [
-        "Søkere til videregående trinn 1 studieforberedende utdanningsprogram som ikke har hatt fremmedspråk i grunnskolen, må orientere seg om hvilke skoler som tilbyr fremmedspråk på begynnernivå. Dette gjelder også elever som ønsker å bytte skole på videregående trinn 2 og 3."
-       ]
-      }
-     ],
-     "endringer": [],
-     "fotnoter": []
-    },
-    {
-     "nr": "22",
-     "visNr": "§ 22",
      "tittel": "Søknader mottatt etter søknadsfrist",
      "ledd": [
       {
@@ -541,12 +522,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 22)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "23",
-     "visNr": "§ 23",
+     "nr": "22",
+     "visNr": "§ 22",
      "tittel": "Flytting til Rogaland",
      "ledd": [
       {
@@ -570,12 +560,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 23)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "24",
-     "visNr": "§ 24",
+     "nr": "23",
+     "visNr": "§ 23",
      "tittel": "Frammøte første skoledag",
      "ledd": [
       {
@@ -584,12 +583,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 24)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "25",
-     "visNr": "§ 25",
+     "nr": "24",
+     "visNr": "§ 24",
      "tittel": "Ventelister",
      "ledd": [
       {
@@ -603,12 +611,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 25)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "26",
-     "visNr": "§ 26",
+     "nr": "25",
+     "visNr": "§ 25",
      "tittel": "Inntak til yrkes- og studiekompetanse YSK",
      "ledd": [
       {
@@ -628,12 +645,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 26)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "27",
-     "visNr": "§ 27",
+     "nr": "26",
+     "visNr": "§ 26",
      "tittel": "Tilbud om videregående opplæring ved Møllehagen- og Hollenderhaugen skolesenter",
      "ledd": [
       {
@@ -652,7 +678,16 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 27)."
+      ]
+     ],
      "fotnoter": []
     }
    ]
@@ -666,8 +701,8 @@
    "seksjoner": [],
    "paragrafer": [
     {
-     "nr": "28",
-     "visNr": "§ 28",
+     "nr": "27",
+     "visNr": "§ 27",
      "tittel": "Søknad om formidling av læreplass",
      "ledd": [
       {
@@ -704,12 +739,21 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 28)."
+      ]
+     ],
      "fotnoter": []
     },
     {
-     "nr": "29",
-     "visNr": "§ 29",
+     "nr": "28",
+     "visNr": "§ 28",
      "tittel": "Formidling til læreplass",
      "ledd": [
       {
@@ -782,7 +826,16 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 29)."
+      ]
+     ],
      "fotnoter": []
     }
    ]
@@ -796,13 +849,13 @@
    "seksjoner": [],
    "paragrafer": [
     {
-     "nr": "30",
-     "visNr": "§ 30",
+     "nr": "29",
+     "visNr": "§ 29",
      "tittel": "Søknadsfrist og løpende inntak",
      "ledd": [
       {
        "tekst": [
-        "Videregående opplæring for voksne har ingen søknadsfrist, og mottar søknader fra www.vigo.no hele året. Vi anbefaler voksne å søke innen 1. mars eller 15. september for mulighet til å starte opplæring påfølgende semester."
+        "Videregående opplæring for voksne har ingen søknadsfrist, og mottar søknader fra www.vigo.no hele året."
        ]
       },
       {
@@ -817,13 +870,13 @@
       },
       {
        "tekst": [
-        "Søker får svar på søknad tilsendt digitalt eller i papirpost."
+        "Søker får svar på søknad i vedtak sendt til digital postkasse."
        ]
       }
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -833,14 +886,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 31)."
+       ", tidligere § 31), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 30)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "31",
-     "visNr": "§ 31",
+     "nr": "30",
+     "visNr": "§ 30",
      "tittel": "Inntaksrekkefølge",
      "ledd": [
       {
@@ -867,7 +925,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -877,14 +935,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 32)."
+       ", tidligere § 32), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 31)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "32",
-     "visNr": "§ 32",
+     "nr": "31",
+     "visNr": "§ 31",
      "tittel": "Flytting til Rogaland",
      "ledd": [
       {
@@ -905,7 +968,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -915,14 +978,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 33)."
+       ", tidligere § 33), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 32)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "33",
-     "visNr": "§ 33",
+     "nr": "32",
+     "visNr": "§ 32",
      "tittel": "Godkjenning av fag og vurdering av realkompetanse",
      "ledd": [
       {
@@ -938,7 +1006,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -948,14 +1016,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 34)."
+       ", tidligere § 34), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 33)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "34",
-     "visNr": "§ 34",
+     "nr": "33",
+     "visNr": "§ 33",
      "tittel": "Opplæring som ikke er spesielt organisert som videregående opplæring for voksne",
      "ledd": [
       {
@@ -966,7 +1039,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -976,42 +1049,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 35)."
+       ", tidligere § 35), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 34)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "35",
-     "visNr": "§ 35",
-     "tittel": "Tilbud til søkere uten rett",
-     "ledd": [
-      {
-       "tekst": [
-        "Søker med godkjent studiekompetanse fra utlandet (GSU) eller høyere utdanning fra utlandet som er godkjent som studiepoeng eller høyere utdanning i Norge, kan få tilbud om opplæring i norsk og engelsk for å dekke språkkrav for inntak til høyere utdanning i Norge. Søker må ha grunnleggende kompetanse i engelsk for å få tilbud om opplæring i faget."
-       ]
-      }
-     ],
-     "endringer": [
-      [
-       "Endret ved forskriftt ",
-       {
-        "t": "17 feb 2026 nr. 899",
-        "l": "forskrift/2026-02-17-899"
-       },
-       " (i kraft 26 mai 2026 ved vedtak ",
-       {
-        "t": "26 mai 2026 nr. 903",
-        "l": "forskrift/2026-05-26-903"
-       },
-       ", tidligere § 36)."
-      ]
-     ],
-     "fotnoter": []
-    },
-    {
-     "nr": "36",
-     "visNr": "§ 36",
+     "nr": "34",
+     "visNr": "§ 34",
      "tittel": "Fremmøte ved oppstart",
      "ledd": [
       {
@@ -1022,7 +1072,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -1032,14 +1082,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 37)."
+       ", tidligere § 37), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 36)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "37",
-     "visNr": "§ 37",
+     "nr": "35",
+     "visNr": "§ 35",
      "tittel": "Holde tilbake viktig informasjon eller gi feilaktig informasjon",
      "ledd": [
       {
@@ -1050,7 +1105,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -1060,7 +1115,12 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 38)."
+       ", tidligere § 38), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 37)."
       ]
      ],
      "fotnoter": []
@@ -1076,8 +1136,8 @@
    "seksjoner": [],
    "paragrafer": [
     {
-     "nr": "38",
-     "visNr": "§ 38",
+     "nr": "36",
+     "visNr": "§ 36",
      "tittel": "Mindre endringer i forskriften",
      "ledd": [
       {
@@ -1088,7 +1148,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -1098,14 +1158,19 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 39)."
+       ", tidligere § 39), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 38)."
       ]
      ],
      "fotnoter": []
     },
     {
-     "nr": "39",
-     "visNr": "§ 39",
+     "nr": "37",
+     "visNr": "§ 37",
      "tittel": "Ikrafttredelse",
      "ledd": [
       {
@@ -1121,7 +1186,7 @@
      ],
      "endringer": [
       [
-       "Endret ved forskriftt ",
+       "Endret ved forskrifter ",
        {
         "t": "17 feb 2026 nr. 899",
         "l": "forskrift/2026-02-17-899"
@@ -1131,7 +1196,12 @@
         "t": "26 mai 2026 nr. 903",
         "l": "forskrift/2026-05-26-903"
        },
-       ", tidligere § 40)."
+       ", tidligere § 40), ",
+       {
+        "t": "13 okt 2026 nr. 2058",
+        "l": "forskrift/2026-10-13-2058"
+       },
+       " (tidligere § 39)."
       ]
      ],
      "fotnoter": []

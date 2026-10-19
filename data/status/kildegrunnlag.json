@@ -79,7 +79,7 @@
     },
     "udir-foring-vitnemal-merknader": {
       "grunnlag": "sha256:4418ff1c52eb68e3ff719296eea9ade97a40ac5a5ebfbbde5e8a34a709c79b95",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-regbok-fam": {
       "grunnlag": "sha256:7ef8d225a2641ec70ac31e8cf7099d1accf25d9ff2eb4be2eee0c201070fe4d2",
@@ -111,7 +111,7 @@
     },
     "udir-lareplanverket": {
       "grunnlag": "sha256:0f82148c9ac275cac6851296383da2e288474823806a5896889658e74c34cee5",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "lovdata-lokale": {
       "grunnlag": null,
@@ -127,7 +127,7 @@
     },
     "udir-lokale-forskrifter": {
       "grunnlag": "sha256:031d3ba80557916c5550ef487aca137450b03e1305717cd97af6bdafdf268a64",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-ord-og-omgrep": {
       "grunnlag": "sha256:777be696fa1fd1360ef8d191f5357cb598de09ee95e5d1db78dd87f1a78758cf",
@@ -135,7 +135,7 @@
     },
     "udir-veileder-tilpasset-opplaering": {
       "grunnlag": "sha256:4fbe5c3c4bb76ff75191cdec6d94226e96646372552cf782e73761f4cb1fc9ed",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-sarskilt-sprakopplaring": {
       "grunnlag": "sha256:f86756f5d3341e54fa045a857390f7aaff637d73599c5a7560907cf6129407fa",
@@ -155,15 +155,15 @@
     },
     "udir-rundskriv-skolemiljo": {
       "grunnlag": "sha256:84d166ddd53a120697ef20dd1bee7ec01551bad8430a7dd0d1572709d66d86cf",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-rundskriv-skolemiljo-statsforvalteren": {
       "grunnlag": "sha256:909db6c64d5ebed7c9cdc53a5df7a9f2ef3afc666840f46d69121f7c7a3827c6",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-rundskriv-skolemiljo-hvem": {
       "grunnlag": "sha256:3abcef62f4f5133eaff5f74bff2669772676ecf98208e2487b2da9496c153992",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-rundskriv-skolemiljo-retten": {
       "grunnlag": "sha256:311dae08d215ec9b1e982541e88a0c18196af1d604acb1a7d57416d0f4ebfa56",
@@ -171,7 +171,7 @@
     },
     "udir-rundskriv-skolemiljo-nulltoleranse": {
       "grunnlag": "sha256:f4296a4ebd5dcfaad665a820b13970661cbc09e4ff7386275d9766d041282483",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-rundskriv-skolemiljo-informasjon": {
       "grunnlag": "sha256:66d93d73048b480c3735e279097514680ff43152fa675736284ef24c0381388f",
@@ -191,11 +191,11 @@
     },
     "udir-mer-opplaering-voksne": {
       "grunnlag": "sha256:befa419853e00d6eb7564d89c6b26e1d58d7f443e452a705286dfa6cf68833a9",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-fullforingsretten-iop": {
       "grunnlag": "sha256:6e4b9adb1d4792be39d8e39818979f106253c60ddf1e50a36577c519b02e5a33",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-fag-og-timefordeling-grunnskole": {
       "grunnlag": "sha256:0422aa0369374200b7fd79d4775a894413ff918a062643ac1eaa0d05d2a37385",
@@ -203,15 +203,15 @@
     },
     "udir-merknader-ofo": {
       "grunnlag": "sha256:e346bf9231673578a0629fd1883ee623cfd4497ac6911c6b8f5d807b03f97f25",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-klageinstanser": {
       "grunnlag": "sha256:b8f1656eaaf8fbfea99f59888dba26603ef635a6f31bdd8cbcbba634e1370df6",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-merknader-ofo-kap9": {
       "grunnlag": "sha256:2304690f18e8f4d7a24f646a47067b5447f23cd9d04231b4ce68ececc69a4770",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-rundskriv-fravarsgrensen": {
       "grunnlag": "sha256:2eef376a59d502ca06480eedc57ba03ba18164c0a0a2545785caf365e83296f8",
@@ -219,7 +219,7 @@
     },
     "udir-standpunktvurdering": {
       "grunnlag": "sha256:c47f780d7ba33572638eacd82b729dae3fa45af45bb04784fafb3462b958604c",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-merknader-ofo-kap10": {
       "grunnlag": "sha256:b154be37e230bd6ff9f7d95301242c7cecc89a715ff180f43392e72b7cc3e95e",
@@ -235,15 +235,15 @@
     },
     "udir-oppfolging-fravaer": {
       "grunnlag": "sha256:f536a37abcecfc371d1bb1a1bb73dc776b617c3771ddb696e95639e5922e3ac8",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-meldeplikt-barnevernet": {
       "grunnlag": "sha256:c267c51af4e33c2c791de538a027d4bee944eb799c63e7389e55dc89385dc3ca",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-gratisprinsippet": {
       "grunnlag": "sha256:8a5177ef7783ba34d91c5118c40d34cd5a813ef30b821c3f7fb7bf721e27b4e8",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "straffeloven": {
       "grunnlag": null,
@@ -251,7 +251,7 @@
     },
     "udir-klage-standpunkt": {
       "grunnlag": "sha256:9e12afa10e676c14eaa12874d48e25cbef51b4752809f3fdbaf474bd7559c41f",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-sarskilt-tilrettelegging-eksamen": {
       "grunnlag": "sha256:95f6fe81352578a4b82a163b7cc85bd6940c2ff3ebc86a6bb05dcd0fb91705a9",
@@ -259,7 +259,7 @@
     },
     "udir-administrere-eksamen": {
       "grunnlag": "sha256:fead848f6c009b852de884b8efcd374aeaac8fa86da48d1a88171fe03c452226",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "udir-fag-og-svenneprover": {
       "grunnlag": "sha256:64ae2e1a5d7ffb2eb5d48ba896954dd4681978e9eaa14fb8cf348fa17c4f36cc",
@@ -267,7 +267,7 @@
     },
     "udir-laerekandidatordningen": {
       "grunnlag": "sha256:8c9dcd8db713b49cd01205e8b3c3040d516a42b77552286fa25f7edb867d9ffe",
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "eksamensdatoer": {
       "grunnlag": null,
@@ -305,13 +305,17 @@
       "grunnlag": null,
       "feil_pa_rad": 0
     },
+    "skoleneslandsforbund-nyheter": {
+      "grunnlag": null,
+      "feil_pa_rad": 0
+    },
     "utdanningsforbundet-nyheter": {
       "grunnlag": null,
       "feil_pa_rad": 0
     },
     "statsforvalteren-nyheter": {
       "grunnlag": null,
-      "feil_pa_rad": 0
+      "feil_pa_rad": 1
     },
     "utdanningsnytt-nyheter": {
       "grunnlag": null,
