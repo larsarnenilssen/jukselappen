@@ -1,6 +1,11 @@
 {
-  "sjekket": "2026-10-19",
+  "sjekket": "2026-10-26",
   "nettsteder": [
+    {
+      "vert": "blakors.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
     {
       "vert": "inschool.zendesk.com",
       "lenker": [
@@ -26,7 +31,17 @@
       "stikkprover": 0
     },
     {
-      "vert": "verfag.no",
+      "vert": "nnog.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "ovrebo.vgs.no",
+      "lenker": [],
+      "stikkprover": 1
+    },
+    {
+      "vert": "sami.vgs.no",
       "lenker": [],
       "stikkprover": 1
     },

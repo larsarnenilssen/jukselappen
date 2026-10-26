@@ -11,7 +11,7 @@
  "iKraft": null,
  "iKraftTil": null,
  "lokaltype": "fagfordeling",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-26",
  "gyldighet": {
   "niva": "skole",
   "fylke": "18",
@@ -415,10 +415,10 @@
         "rader": [
          [
           [
-           "Matematikk R2 eller Kjemi 1"
+           "Matematikk R2 eller\nKjemi 1"
           ],
           [
-           "REA3024 REA3045"
+           "REA3024\nREA3045"
           ],
           [
            "140"
@@ -529,10 +529,10 @@
         "rader": [
          [
           [
-           "Kjemi 2 eller Biologi 1"
+           "Kjemi 2 eller\nBiologi 1"
           ],
           [
-           "REA3046 REA3035"
+           "REA3046\nREA3035"
           ],
           [
            "140"

@@ -11,7 +11,7 @@
  "iKraft": "2024-08-01",
  "iKraftTil": null,
  "lokaltype": "skoleregler",
- "hentet": "2026-10-05",
+ "hentet": "2026-10-26",
  "gyldighet": {
   "niva": "fylke",
   "fylke": "18"
@@ -485,7 +485,7 @@
          "ledd": [
           {
            "tekst": [
-            "bruke mobiltelefoner, PC-er og annet elektronisk utstyr på en slik måte at det virker forstyrrende på opplæringen eller krenkende overfor andre"
+            "bruke mobiltelefoner, nettbrett og PC-er på en slik måte at det virker forstyrrende eller krenkende overfor andre, eller bruke slikt utstyr til å ta eller dele film, bilder eller lydfiler av andre på skolens område i skoletiden eller på arrangementer i skolens regi uten først å ha fått gyldig samtykke fra den eller de som er filmet eller avbildet."
            ]
           }
          ]
@@ -495,7 +495,7 @@
          "ledd": [
           {
            "tekst": [
-            "ta eller dele film, bilder eller lydfiler av andre på skolens område i skoletiden eller på arrangementer i skolens regi uten først å ha fått gyldig samtykke fra den eller de som er filmet eller avbildet"
+            "bruke eller bære annet elektronisk utstyr som kan registrere, ta opp, lagre, behandle eller formidle informasjon om personer eller omgivelser, eller som muliggjør kommunikasjon, informasjonsinnhenting eller digital assistanse gjennom lyd, bilde, sensorer, kunstig intelligens eller tilsvarende teknologi, som f.eks. smartbriller eller airpods med kamera. Unntak kan gjøres når bruken er godkjent av skolen eller nødvendig av hensyn til særskilte behov."
            ]
           }
          ]
@@ -518,7 +518,16 @@
        ]
       }
      ],
-     "endringer": [],
+     "endringer": [
+      [
+       "Endret ved forskrift ",
+       {
+        "t": "20 okt 2026 nr. 2112",
+        "l": "forskrift/2026-10-20-2112"
+       },
+       "."
+      ]
+     ],
      "fotnoter": []
     },
     {
@@ -604,12 +613,7 @@
       },
       {
        "tekst": [
-        "I forarbeidene til ny ",
-        {
-         "t": "opplæringslov",
-         "l": "lov/2023-06-09-30"
-        },
-        " skilles det mellom «reaksjoner» og «mindre inngripende tiltak» for å organisere og lede undervisninga. Som eksempler på «mindre inngripende tiltak» vises det til at skolen kan flytte elever i klasserommet eller endre klasseinndeling. Slike mindre inngripende tiltak vil kunne benyttes uten at det trenger å stå i forskrift om skoleregler."
+        "I forarbeidene til ny opplæringslov skilles det mellom «reaksjoner» og «mindre inngripende tiltak» for å organisere og lede undervisninga. Som eksempler på «mindre inngripende tiltak» vises det til at skolen kan flytte elever i klasserommet eller endre klasseinndeling. Slike mindre inngripende tiltak vil kunne benyttes uten at det trenger å stå i forskrift om skoleregler."
        ]
       },
       {

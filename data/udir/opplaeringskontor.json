@@ -1,6 +1,6 @@
 {
 "kilde": "udir-nor",
-"hentet": "2026-10-12T11:57:30.644Z",
+"hentet": "2026-10-26T10:07:46.007Z",
 "lisens": "NLOD",
 "kontor": [
 {"orgnr":"938371547","navn":"Adam og Eva skolen AS","fylke":"03","kommune":"Oslo","nettside":"https://www.adamogeva.no/","laerlinger":74,"godkjentI":["03","31","32","46","50"]},
@@ -184,7 +184,6 @@
 {"orgnr":"968485962","navn":"Opplæringskontoret for Fiskerifag Nord i Trøndelag SA","fylke":"50","kommune":"Nærøysund","nettside":null,"laerlinger":94,"godkjentI":["50"]},
 {"orgnr":"915569633","navn":"Opplæringskontoret for Fiskerifagene i Hordaland","fylke":"46","kommune":"Bergen","nettside":"https://www.okfisk.no/","laerlinger":51,"godkjentI":["46"]},
 {"orgnr":"918792619","navn":"Opplæringskontoret for Frisør- og Velværefag Møre og Romsdal","fylke":"15","kommune":"Ålesund","nettside":null,"laerlinger":19,"godkjentI":["15"]},
-{"orgnr":"956604621","navn":"Opplæringskontoret for Frisørfag i Midt-Norge SA","fylke":"50","kommune":"Trondheim - Tråante","nettside":null,"laerlinger":47,"godkjentI":["50"]},
 {"orgnr":"987957956","navn":"Opplæringskontoret for Handel Håndverk og Industri AS","fylke":"34","kommune":"Lillehammer","nettside":"https://www.ohhi.no/","laerlinger":38,"godkjentI":["31","32","34"]},
 {"orgnr":"914557216","navn":"Opplæringskontoret for Helse- og Oppvekstfag","fylke":"03","kommune":"Oslo","nettside":null,"laerlinger":555,"godkjentI":["03"]},
 {"orgnr":"981112970","navn":"Opplæringskontoret for Hestefaget og Hovslagerfaget","fylke":"34","kommune":"Østre Toten","nettside":null,"laerlinger":89,"godkjentI":["03","11","15","18","31","32","33","34","39","40","42","46","50","55"]},
@@ -244,6 +243,7 @@
 {"orgnr":"826434082","navn":"Opplæringskontoret i Follo AS","fylke":"32","kommune":"Ås","nettside":null,"laerlinger":10,"godkjentI":["03","31","32"]},
 {"orgnr":"974682257","navn":"Opplæringskontoret i Hardanger","fylke":"46","kommune":"Ullensvang","nettside":null,"laerlinger":131,"godkjentI":["46"]},
 {"orgnr":"919733489","navn":"Opplæringskontoret i Meløy","fylke":"18","kommune":"Meløy","nettside":null,"laerlinger":59,"godkjentI":["18"]},
+{"orgnr":"956604621","navn":"Opplæringskontoret i Midt-Norge SA","fylke":"50","kommune":"Trondheim - Tråante","nettside":null,"laerlinger":47,"godkjentI":["50"]},
 {"orgnr":"918424245","navn":"Opplæringskontoret i Oppdal og Rennebu SA","fylke":"50","kommune":"Oppdal","nettside":"https://www.okor.no/","laerlinger":39,"godkjentI":["50"]},
 {"orgnr":"984481586","navn":"Opplæringskontoret i Reindrift og Duodji","fylke":"56","kommune":"Guovdageaidnu - Kautokeino","nettside":"https://www.reindriftsopplaering.no/","laerlinger":58,"godkjentI":["18","34","50","55","56"]},
 {"orgnr":"971379626","navn":"Opplæringskontoret i Sør Fosen Sti","fylke":"50","kommune":"Frøya","nettside":"https://www.oksf.no/","laerlinger":136,"godkjentI":["50"]},

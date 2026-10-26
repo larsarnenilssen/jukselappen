@@ -1,6 +1,6 @@
 {
 "kilde": "utdanning-no",
-"hentet": "2026-10-19T09:56:57.880Z",
+"hentet": "2026-10-26T10:06:29.419Z",
 "lisens": "NLOD",
 "programomrader": {
 "BAAMF3----":{"sluttkompetanse":"Fagbrev","tittel":"Anleggsmaskinførerfaget","sti":"/utdanningsoversikt/anleggsmaskinforerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er anleggsmaskinfører.","yrker":[{"tittel":"Anleggsmaskinfører","sti":"/yrker/beskrivelse/anleggsmaskinforer"},{"tittel":"Arbeidsleder bygg og anlegg","sti":"/yrker/beskrivelse/arbeidsleder_bygg_og_anlegg"}]},
@@ -22,7 +22,7 @@
 "BARLF3----":{"sluttkompetanse":"Svennebrev","tittel":"Rørleggerfaget","sti":"/utdanningsoversikt/rorleggerfaget","tekst":"Fullført og bestått opplæring fører fram til svennebrev. Yrkestittelen er rørlegger.","yrker":[{"tittel":"Rørlegger","sti":"/yrker/beskrivelse/rorlegger"}]},
 "BAROF3----":{"sluttkompetanse":"Fagbrev","tittel":"Renholdsoperatørfaget","sti":"/utdanningsoversikt/renholdsoperatorfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er renholdsoperatør.","yrker":[{"tittel":"Renholdsoperatør","sti":"/yrker/beskrivelse/renholdsoperator"}]},
 "BASBF3----":{"sluttkompetanse":"Fagbrev","tittel":"Stillasbyggerfaget","sti":"/utdanningsoversikt/stillasbyggerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er stillasbygger.","yrker":[{"tittel":"Stillasbygger","sti":"/yrker/beskrivelse/stillasbygger"}]},
-"BASNE3----":{"sluttkompetanse":"Svennebrev","tittel":"Snekkerfaget","sti":"/utdanningsoversikt/snekkerfaget","tekst":null,"yrker":[{"tittel":"Snekker","sti":"/yrker/beskrivelse/snekker_0"}]},
+"BASNE3----":{"sluttkompetanse":"Svennebrev","tittel":"Snekkerfaget","sti":"/utdanningsoversikt/snekkerfaget","tekst":null,"yrker":[{"tittel":"Snekker","sti":"/yrker/beskrivelse/snekker"}]},
 "BASTE3----":{"sluttkompetanse":"Fagbrev","tittel":"Steinfaget","sti":"/utdanningsoversikt/steinfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er steinfagarbeider.","yrker":[{"tittel":"Steinfagarbeider","sti":"/yrker/beskrivelse/steinfagarbeider"}]},
 "BATAK3----":{"sluttkompetanse":"Fagbrev","tittel":"Tak- og membrantekkerfaget","sti":"/utdanningsoversikt/tak-_og_membrantekkerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er taktekker.","yrker":[{"tittel":"Tak- og membrantekker","sti":"/yrker/beskrivelse/tak-_og_membrantekker"}]},
 "BATLT3----":{"sluttkompetanse":"Fagbrev","tittel":"Trelast- og limtreproduksjonsfaget","sti":"/utdanningsoversikt/trelast-_og_limtreproduksjonsfaget","tekst":null,"yrker":[{"tittel":"Fagoperatør i trelast- og limtreproduksjon","sti":"/yrker/beskrivelse/fagoperator_i_trelast-_og_limtreproduksjon"}]},
