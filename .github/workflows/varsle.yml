@@ -44,7 +44,7 @@ jobs:
         with:
           # Filene på rotnivå (som .nvmrc) kommer alltid med.
           sparse-checkout: scripts/varsel
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
       - name: Lag, oppdater eller lukk saken
