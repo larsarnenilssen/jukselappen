@@ -1,8 +1,8 @@
 {
-  "sjekket": "2026-10-26",
+  "sjekket": "2026-11-02",
   "nettsteder": [
     {
-      "vert": "blakors.no",
+      "vert": "elfosor.no",
       "lenker": [],
       "stikkprover": 1
     },
@@ -31,18 +31,21 @@
       "stikkprover": 0
     },
     {
-      "vert": "nnog.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "ovrebo.vgs.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
-    {
-      "vert": "sami.vgs.no",
-      "lenker": [],
+      "vert": "nifu.no",
+      "lenker": [
+        {
+          "url": "https://www.nifu.no/",
+          "brukt": [
+            "content/kilder.yaml"
+          ]
+        },
+        {
+          "url": "https://www.nifu.no/category/nyhet/feed/",
+          "brukt": [
+            "content/nyheter/kilder.yaml"
+          ]
+        }
+      ],
       "stikkprover": 1
     },
     {

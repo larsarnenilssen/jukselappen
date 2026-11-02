@@ -15,26 +15,26 @@ fylker:
   - fylke: "03"
     navn: Oslo kommune
     lenker:
-      forside: { url: "https://www.oslo.kommune.no/skole-og-utdanning/videregaende-skole/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://www.oslo.kommune.no/skole-og-utdanning/videregaende-skole/soke-videregaende-skole/slik-soker-du-om-skoleplass/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://www.oslo.kommune.no/skole-og-utdanning/sprakopplaring/tilbud-til-minoritetsspraklige-elever/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.oslo.kommune.no/skole-og-utdanning/individuell-tilrettelegging/individuell-tilrettelegging/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://www.oslo.kommune.no/skole-og-utdanning/eksamen-og-elevvurdering/eksamen/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.oslo.kommune.no/skole-og-utdanning/eksamen-og-elevvurdering/klage-pa-standpunktkarakter/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.oslo.kommune.no/skole-og-utdanning/privatisteksamen/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.oslo.kommune.no/skole-og-utdanning/opplaring-i-bedrift/fag-og-svenneproven/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.oslo.kommune.no/skole-og-utdanning/videregaende-skole/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://www.oslo.kommune.no/skole-og-utdanning/videregaende-skole/soke-videregaende-skole/slik-soker-du-om-skoleplass/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://www.oslo.kommune.no/skole-og-utdanning/sprakopplaring/tilbud-til-minoritetsspraklige-elever/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.oslo.kommune.no/skole-og-utdanning/individuell-tilrettelegging/individuell-tilrettelegging/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://www.oslo.kommune.no/skole-og-utdanning/eksamen-og-elevvurdering/eksamen/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://www.oslo.kommune.no/skole-og-utdanning/eksamen-og-elevvurdering/klage-pa-standpunktkarakter/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.oslo.kommune.no/skole-og-utdanning/privatisteksamen/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.oslo.kommune.no/skole-og-utdanning/opplaring-i-bedrift/fag-og-svenneproven/", bekreftet: 2026-11-02 }
   - fylke: "11"
     navn: Rogaland fylkeskommune
     lenker:
-      forside: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-10-05 }
-      klage-inntak: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/klage/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://www.rogfk.no/vare-tjenester/folkehelse-og-integrering/integrering/skole-og-utdanning-for-innvandrere/videregaende-opplaring-for-innvandrere-16-24-ar/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/ppt-og-oppfolgingstjenesten/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/eksamen-for-elever-og-privatister/eksamen-for-elever/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/klage/klage-pa-karakter/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/eksamen-for-elever-og-privatister/eksamen-for-privatister/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/opplaring-i-bedrift/larling-og-larekandidat/fagprove-svenneprove-eller-kompetanseprove/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-11-02 }
+      klage-inntak: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/klage/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://www.rogfk.no/vare-tjenester/folkehelse-og-integrering/integrering/skole-og-utdanning-for-innvandrere/videregaende-opplaring-for-innvandrere-16-24-ar/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/ppt-og-oppfolgingstjenesten/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/eksamen-for-elever-og-privatister/eksamen-for-elever/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/klage/klage-pa-karakter/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/eksamen-for-elever-og-privatister/eksamen-for-privatister/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.rogfk.no/vare-tjenester/skole-og-utdanning/opplaring-i-bedrift/larling-og-larekandidat/fagprove-svenneprove-eller-kompetanseprove/", bekreftet: 2026-11-02 }
   - fylke: "15"
     navn: Møre og Romsdal fylkeskommune
     lenker:
@@ -48,15 +48,15 @@ fylker:
   - fylke: "18"
     navn: Nordland fylkeskommune
     lenker:
-      forside: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-11-02 }
       inntak: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/sok/", bekreftet: 2026-10-07 }
-      klage-inntak: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-skole/opplaring-for-minoritetsspraklige/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-skole/pp-tjenesten/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/eksamen/eksamen-for-elever-og-deltakere-i-videregaende-opplaring-for-voksne/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/eksamen/privatisteeksamen/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-10-05 }
+      klage-inntak: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-skole/opplaring-for-minoritetsspraklige/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-skole/pp-tjenesten/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/eksamen/eksamen-for-elever-og-deltakere-i-videregaende-opplaring-for-voksne/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/eksamen/privatisteeksamen/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.nfk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-11-02 }
   - fylke: "31"
     navn: Østfold fylkeskommune
     lenker:
@@ -72,15 +72,15 @@ fylker:
   - fylke: "32"
     navn: Akershus fylkeskommune
     lenker:
-      forside: { url: "https://afk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-10-05 }
-      klage-inntak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/minoritetsspraklige/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://afk.no/tjenester/skole-og-opplaring/ppt-oppfolgingstjenesten/pp-tjenesten-ppt/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/eksamen-for-elever/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/eksamen-for-elever/klage-pa-karakter/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/privatisteksamen/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-10-05 }
+      forside: { url: "https://afk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-11-02 }
+      klage-inntak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-skole/minoritetsspraklige/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://afk.no/tjenester/skole-og-opplaring/ppt-oppfolgingstjenesten/pp-tjenesten-ppt/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/eksamen-for-elever/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/eksamen-for-elever/klage-pa-karakter/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://afk.no/tjenester/skole-og-opplaring/eksamen-og-vitnemal/privatisteksamen/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://afk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-11-02 }
   - fylke: "33"
     navn: Buskerud fylkeskommune
     lenker:
@@ -96,14 +96,14 @@ fylker:
   - fylke: "34"
     navn: Innlandet fylkeskommune
     lenker:
-      forside: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-skole/samisk-og-minoritetsspraklige/minoritetsspraklige/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/elevtjenesten/ppt/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/eksamen-for-elever/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/klage-pa-karakterer/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/eksamen-for-privatister/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-bedrift/fagbrev-svennebrev/", bekreftet: 2026-10-05 }
+      forside: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-skole/soke-skoleplass/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-skole/samisk-og-minoritetsspraklige/minoritetsspraklige/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/elevtjenesten/ppt/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/eksamen-for-elever/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/klage-pa-karakterer/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/eksamen-og-vitnemal/eksamen-for-privatister/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://innlandetfylke.no/tjenester/skole-og-utdanning/opplaring-i-bedrift/fagbrev-svennebrev/", bekreftet: 2026-11-02 }
   - fylke: "39"
     navn: Vestfold fylkeskommune
     lenker:
@@ -151,35 +151,35 @@ fylker:
   - fylke: "50"
     navn: Trøndelag fylkeskommune
     lenker:
-      forside: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/inntak-videregaende-opplaring/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/Regional_Veileder/Sarskilt_sprakopplaring/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/pp-tjenesten/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/inntak-videregaende-opplaring/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/Regional_Veileder/Sarskilt_sprakopplaring/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/pp-tjenesten/", bekreftet: 2026-11-02 }
       eksamen: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/eksamen/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/klage-pa-karakter2/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/privatisteksamen/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/Opplaering_i_bedrift/provenemnder/", bekreftet: 2026-10-05 }
+      klage-standpunkt: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/elev/klage-pa-karakter2/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/privatisteksamen/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.trondelagfylke.no/vare-tjenester/utdanning/Opplaering_i_bedrift/provenemnder/", bekreftet: 2026-11-02 }
   - fylke: "55"
     navn: Troms fylkeskommune
     lenker:
-      forside: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/slik-soker-du-skoleplass/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/opplaring-i-skole/soke-skoleplass/slik-soker-du-skoleplass/", bekreftet: 2026-11-02 }
       klage-inntak: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-10-09 }
-      sprak: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/flyktninger-og-innvandrere/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/elev-og-larlingtjenester/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/eksamen-for-elever/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/klage/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/eksamen-for-privatister/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-10-05 }
+      sprak: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/flyktninger-og-innvandrere/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/elev-og-larlingtjenester/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/eksamen-for-elever/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/klage/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/eksamen-fag-og-svenneprove/eksamen-for-privatister/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.tromsfylke.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-11-02 }
   - fylke: "56"
     navn: Finnmark fylkeskommune
     lenker:
-      forside: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-10-05 }
-      inntak: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/opplaring-i-skole-for-elever/inntak-til-videregaende-opplaring/slik-soker-du-skoleplass/", bekreftet: 2026-10-05 }
-      klage-inntak: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-10-05 }
-      sprak: { url: "https://www.ffk.no/tjenester/integrering/minoritetsspraklige-elever/", bekreftet: 2026-10-05 }
-      tilrettelegging: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/elevtjenester/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-10-05 }
-      eksamen: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/eksamen-for-elever/", bekreftet: 2026-10-05 }
-      klage-standpunkt: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/klage-pa-standpunkt-og-eksamenskarakter/", bekreftet: 2026-10-05 }
-      privatist: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/eksamen-for-privatister/", bekreftet: 2026-10-05 }
-      fagprove: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-10-05 }
+      forside: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/", bekreftet: 2026-11-02 }
+      inntak: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/opplaring-i-skole-for-elever/inntak-til-videregaende-opplaring/slik-soker-du-skoleplass/", bekreftet: 2026-11-02 }
+      klage-inntak: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/klage/", bekreftet: 2026-11-02 }
+      sprak: { url: "https://www.ffk.no/tjenester/integrering/minoritetsspraklige-elever/", bekreftet: 2026-11-02 }
+      tilrettelegging: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/elevtjenester/pedagogisk-psykologisk-tjeneste-ppt/", bekreftet: 2026-11-02 }
+      eksamen: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/eksamen-for-elever/", bekreftet: 2026-11-02 }
+      klage-standpunkt: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/klage-pa-standpunkt-og-eksamenskarakter/", bekreftet: 2026-11-02 }
+      privatist: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/eksamen-for-elever-og-privatister/eksamen-for-privatister/", bekreftet: 2026-11-02 }
+      fagprove: { url: "https://www.ffk.no/tjenester/skole-og-opplaring/opplaring-i-bedrift/fag-svenne-og-kompetanseprove/", bekreftet: 2026-11-02 }

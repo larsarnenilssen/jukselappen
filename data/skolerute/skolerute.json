@@ -1,5 +1,5 @@
 {
- "lest": "2026-10-05",
+ "lest": "2026-11-02",
  "fylker": {
   "11": {
    "dokumenter": [
@@ -47,6 +47,8 @@
     {"type":"elevfri","fra":"2026-11-06","tekst":"Felles elevfri dag vgs.: Fredag 6. november","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"},
     {"type":"juleferie","fra":"2026-12-23","til":"2027-01-01","tekst":"Juleferie: Onsdag 23. desember–fredag 1. januar","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"},
     {"type":"vinterferie","fra":"2027-02-22","til":"2027-02-26","tekst":"Vinterferie: Veke 8 måndag 22.–fredag 26. februar","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"},
+    {"type":"elevfri","fra":"2027-05-07","tekst":"Elevfri dag: Fredag 7. mai","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"},
+    {"type":"elevfri","fra":"2027-05-28","tekst":"Elevfri dag: Fredag 28. mai","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"},
     {"type":"siste-skoledag","fra":"2027-06-18","tekst":"Siste skuledag: Fredag 18. juni","dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027"}
    ]
   },
@@ -136,8 +138,7 @@
   }
  },
  "ulest": [
-  {"dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027","tekst":"Første skuledag måndag 4. januar Elevfri dag: Fredag 29. januar","grunn":"Hendingen ser ut til å ha flere hendelser, men cellen har ikke linjeskift."},
-  {"dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027","tekst":"Påskeferie: Veke 9 måndag 1.–fredag 5. mars Siste skuledag før påske fredag 19. mars Første skuledag etter påske tysdag 30. mars","grunn":"Datoene og hendingene i cellene kan ikke pares sikkert."},
-  {"dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027","tekst":"Elevfri dag Elevfri dag: Fredag 7. mai Fredag 28. mai","grunn":"Hendingen ser ut til å ha flere hendelser, men cellen har ikke linjeskift."}
+  {"dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027","tekst":"Første skuledag måndag 4. januar / Elevfri dag: Fredag 29. januar","grunn":"1 linjer med dato og 2 med hending."},
+  {"dokument":"vestland-skolerute-2026-2027","skolear":"2026-2027","tekst":"Påskeferie: Veke 9 måndag 1.–fredag 5. mars / Siste skuledag før påske fredag 19. mars / Første skuledag etter påske tysdag 30. mars","grunn":"3 linjer med dato og 1 med hending."}
  ]
 }

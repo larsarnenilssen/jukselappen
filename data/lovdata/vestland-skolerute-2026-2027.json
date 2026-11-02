@@ -11,7 +11,7 @@
  "iKraft": "2026-08-01",
  "iKraftTil": "2027-07-31",
  "lokaltype": "skolerute",
- "hentet": "2026-10-05",
+ "hentet": "2026-11-02",
  "gyldighet": {
   "niva": "fylke",
   "fylke": "46"
@@ -134,7 +134,7 @@
            "Fredag 29. januar"
           ],
           [
-           "Første skuledag måndag 4. januar Elevfri dag"
+           "Første skuledag måndag 4. januar\nElevfri dag"
           ]
          ],
          [
@@ -153,7 +153,7 @@
            "Mars"
           ],
           [
-           "Veke 9 måndag 1.–fredag 5. mars Siste skuledag før påske fredag 19. mars Første skuledag etter påske tysdag 30. mars"
+           "Veke 9 måndag 1.–fredag 5. mars\nSiste skuledag før påske fredag 19. mars\nFørste skuledag etter påske tysdag 30. mars"
           ],
           [
            "Påskeferie"
@@ -171,10 +171,10 @@
            "Mai"
           ],
           [
-           "Fredag 7. mai Fredag 28. mai"
+           "Fredag 7. mai\nFredag 28. mai"
           ],
           [
-           "Elevfri dag Elevfri dag"
+           "Elevfri dag\nElevfri dag"
           ]
          ],
          [
