@@ -1,11 +1,6 @@
 {
-  "sjekket": "2026-11-02",
+  "sjekket": "2026-11-09",
   "nettsteder": [
-    {
-      "vert": "elfosor.no",
-      "lenker": [],
-      "stikkprover": 1
-    },
     {
       "vert": "inschool.zendesk.com",
       "lenker": [
@@ -29,24 +24,6 @@
         }
       ],
       "stikkprover": 0
-    },
-    {
-      "vert": "nifu.no",
-      "lenker": [
-        {
-          "url": "https://www.nifu.no/",
-          "brukt": [
-            "content/kilder.yaml"
-          ]
-        },
-        {
-          "url": "https://www.nifu.no/category/nyhet/feed/",
-          "brukt": [
-            "content/nyheter/kilder.yaml"
-          ]
-        }
-      ],
-      "stikkprover": 1
     },
     {
       "vert": "vilbli.no",
