@@ -1,6 +1,6 @@
 {
 "kilde": "udir-nor",
-"hentet": "2026-10-26T10:07:46.007Z",
+"hentet": "2026-11-09T12:51:14.959Z",
 "lisens": "NLOD",
 "kontor": [
 {"orgnr":"938371547","navn":"Adam og Eva skolen AS","fylke":"03","kommune":"Oslo","nettside":"https://www.adamogeva.no/","laerlinger":74,"godkjentI":["03","31","32","46","50"]},
@@ -198,7 +198,7 @@
 {"orgnr":"991429190","navn":"Opplæringskontoret for Jernbanesektoren","fylke":"03","kommune":"Oslo","nettside":null,"laerlinger":286,"godkjentI":["03","11","18","31","32","33","34","39","40","42","46","50"]},
 {"orgnr":"989538462","navn":"Opplæringskontoret for Kobber og Blikkenslagerfaget i Rogaland","fylke":"11","kommune":"Stavanger","nettside":"https://www.rvbl.no/","laerlinger":46,"godkjentI":["11","42","46"]},
 {"orgnr":"932946351","navn":"Opplæringskontoret for Låsesmedfaget","fylke":"31","kommune":"Råde","nettside":null,"laerlinger":10,"godkjentI":["03","32","33","34","39","42"]},
-{"orgnr":"934293088","navn":"Opplæringskontoret for Marin Næring","fylke":"15","kommune":"Kristiansund","nettside":null,"laerlinger":99,"godkjentI":["15","50"]},
+{"orgnr":"934293088","navn":"Opplæringskontoret for Marin Næring","fylke":"15","kommune":"Kristiansund","nettside":"https://www.okmarin.no/","laerlinger":99,"godkjentI":["15","50"]},
 {"orgnr":"979351194","navn":"Opplæringskontoret for Mat- og Servicefag i Trøndelag","fylke":"50","kommune":"Trondheim - Tråante","nettside":"https://www.okms.no/","laerlinger":93,"godkjentI":["15","50"]},
 {"orgnr":"982160022","navn":"Opplæringskontoret for Mekaniske Fag","fylke":"32","kommune":"Lillestrøm","nettside":"https://okmf.no/","laerlinger":95,"godkjentI":["03","31","32","33","34","39","46"]},
 {"orgnr":"971368233","navn":"Opplæringskontoret for Møbel-, Tre- og Mekanisk Industri","fylke":"15","kommune":"Sykkylven","nettside":"https://www.omtm.no/","laerlinger":32,"godkjentI":["15"]},
@@ -236,7 +236,6 @@
 {"orgnr":"971316985","navn":"Opplæringskontoret for Tømrerfaget i Vestfold Sti","fylke":"39","kommune":"Tønsberg","nettside":"https://okt-vestfold.no/","laerlinger":163,"godkjentI":["39"]},
 {"orgnr":"983535852","navn":"Opplæringskontoret for Tømrerfaget i Østfold","fylke":"31","kommune":"Sarpsborg","nettside":"https://www.blitomrer.no/","laerlinger":49,"godkjentI":["31","32"]},
 {"orgnr":"995830388","navn":"Opplæringskontoret for Vekst-Bedrifter i Viken, Okvekst","fylke":"31","kommune":"Sarpsborg","nettside":null,"laerlinger":180,"godkjentI":["31","32","33"]},
-{"orgnr":"883361962","navn":"Opplæringskontoret for Vekterfag i Rogaland SA","fylke":"11","kommune":"Stavanger","nettside":"https://www.noh.no/","laerlinger":1,"godkjentI":["11"]},
 {"orgnr":"987563699","navn":"Opplæringskontoret for Ventilasjons- og Blikkenslagerfaget Oslo og Omegn","fylke":"03","kommune":"Oslo","nettside":"https://www.bliblikkenslageroslo.no/","laerlinger":31,"godkjentI":["03","32"]},
 {"orgnr":"971302143","navn":"Opplæringskontoret Gudbrandsdalen","fylke":"34","kommune":"Sel","nettside":"https://www.opplaeringotta.no/","laerlinger":37,"godkjentI":["34"]},
 {"orgnr":"960985087","navn":"Opplæringskontoret i Bilfag Oslo og Akershus AS","fylke":"03","kommune":"Oslo","nettside":"https://www.oboa.no/","laerlinger":272,"godkjentI":["03","32"]},
