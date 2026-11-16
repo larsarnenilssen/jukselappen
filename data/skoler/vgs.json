@@ -1,5 +1,5 @@
 {
-  "kilde": "udir-nsr", "hentet": "2026-10-06T15:14:15.874Z", "antall": 563,
+  "kilde": "udir-nsr", "hentet": "2026-11-16T12:51:25.190Z", "antall": 563,
   "skoler": [
     {"id":"913711793","navn":"Akademiet Norsk restaurantskole Sti","fylke":"03","kommune":"0301","privat":true},
     {"id":"887664102","navn":"Akademiet Oslo AS","fylke":"03","kommune":"0301","privat":true},
@@ -538,13 +538,13 @@
     {"id":"915553354","navn":"Ishavsbyen videregående skole","fylke":"55","kommune":"5501"},
     {"id":"974546744","navn":"Kongsbakken videregående skole","fylke":"55","kommune":"5501"},
     {"id":"974546906","navn":"Kvaløya videregående skole","fylke":"55","kommune":"5501"},
-    {"id":"930724785","navn":"Nettskolen Troms","fylke":"55","kommune":"5501"},
     {"id":"974546957","navn":"Nord-Troms videregående skole avd Nordreisa","fylke":"55","kommune":"5544"},
     {"id":"974546949","navn":"Nord-Troms videregående skole avd Skjervøy","fylke":"55","kommune":"5542"},
     {"id":"974117703","navn":"Nordborg Vgs","fylke":"55","kommune":"5530","privat":true},
     {"id":"974546922","navn":"Nordkjosbotn videregående skole","fylke":"55","kommune":"5532"},
     {"id":"973802607","navn":"Norges brannskole","fylke":"55","kommune":"5512"},
     {"id":"991575731","navn":"Norges Toppidrettsgymnas Tromsø AS","fylke":"55","kommune":"5501","privat":true},
+    {"id":"930724785","navn":"Polarstjerna videregående Opplæring","fylke":"55","kommune":"5501"},
     {"id":"974546698","navn":"Senja videregående skole avd Finnfjordbotn","fylke":"55","kommune":"5530"},
     {"id":"874546712","navn":"Senja videregående skole avd Gibostad","fylke":"55","kommune":"5530"},
     {"id":"974546809","navn":"Sjøvegan videregående skole","fylke":"55","kommune":"5522"},
