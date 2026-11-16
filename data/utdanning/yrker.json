@@ -1,6 +1,6 @@
 {
 "kilde": "utdanning-no",
-"hentet": "2026-10-26T10:06:29.419Z",
+"hentet": "2026-11-16T12:44:57.393Z",
 "lisens": "NLOD",
 "programomrader": {
 "BAAMF3----":{"sluttkompetanse":"Fagbrev","tittel":"Anleggsmaskinførerfaget","sti":"/utdanningsoversikt/anleggsmaskinforerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er anleggsmaskinfører.","yrker":[{"tittel":"Anleggsmaskinfører","sti":"/yrker/beskrivelse/anleggsmaskinforer"},{"tittel":"Arbeidsleder bygg og anlegg","sti":"/yrker/beskrivelse/arbeidsleder_bygg_og_anlegg"}]},
@@ -174,7 +174,7 @@
 "TPITA3----":{"sluttkompetanse":"Fagbrev","tittel":"Industritapetsererfaget","sti":"/utdanningsoversikt/industritapetsererfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er industritapetserer.","yrker":[{"tittel":"Industritapetserer","sti":"/yrker/beskrivelse/industritapetserer"}]},
 "TPITF3----":{"sluttkompetanse":"Fagbrev","tittel":"Industritekstilfaget","sti":"/utdanningsoversikt/industritekstilfaget","tekst":null,"yrker":[{"tittel":"Fagoperatør i industritekstilfaget","sti":"/yrker/beskrivelse/fagoperator_i_industritekstilfaget"}]},
 "TPKAR3----":{"sluttkompetanse":"Fagbrev","tittel":"Chassispåbyggerfaget","sti":"/utdanningsoversikt/chassispabyggerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er chassispåbygger.","yrker":[{"tittel":"Chassispåbygger","sti":"/yrker/beskrivelse/chassispabygger"}]},
-"TPKJP3----":{"sluttkompetanse":"Fagbrev","tittel":"Kjemiprosessfaget","sti":"/utdanningsoversikt/kjemiprosessfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er fagoperatør i kjemisk prosessindustri.","yrker":[{"tittel":"Fagoperatør i kjemisk prosessindustri (Prosesstekniker)","sti":"/yrker/beskrivelse/fagoperator_i_kjemisk_prosessindustri_prosesstekniker"},{"tittel":"Prosessingeniør","sti":"/yrker/beskrivelse/prosessingenior"}]},
+"TPKJP3----":{"sluttkompetanse":"Fagbrev","tittel":"Kjemiprosessfaget","sti":"/utdanningsoversikt/kjemiprosessfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er fagoperatør i kjemisk prosessindustri.","yrker":[{"tittel":"Fagoperatør i kjemisk prosessindustri (Prosesstekniker)","sti":"/yrker/beskrivelse/fagoperator_i_kjemisk_prosessindustri_prosesstekniker"}]},
 "TPKLO3----":{"sluttkompetanse":"Fagbrev","tittel":"Kran- og løfteoperasjonsfaget","sti":"/utdanningsoversikt/kran-_og_lofteoperasjonsfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er fagoperatør i kran- og løfteoperasjoner.","yrker":[{"tittel":"Fagoperatør kran- og løfteoperasjoner (Kranfører)","sti":"/yrker/beskrivelse/fagoperator_kran-_og_lofteoperasjoner_kranforer"}]},
 "TPLAB3----":{"sluttkompetanse":"Fagbrev","tittel":"Laboratoriefaget","sti":"/utdanningsoversikt/laboratoriefaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er faglaborant.","yrker":[{"tittel":"Laborant","sti":"/yrker/beskrivelse/laborant"}]},
 "TPLMM3----":{"sluttkompetanse":"Fagbrev","tittel":"Landbruksmaskinmekanikerfaget","sti":"/utdanningsoversikt/landbruksmaskinmekanikerfaget","tekst":"Fullført og bestått opplæring fører fram til fagbrev. Yrkestittel er landbruksmaskinmekaniker.","yrker":[{"tittel":"Landbruksmaskinmekaniker","sti":"/yrker/beskrivelse/landbruksmaskinmekaniker"}]},
